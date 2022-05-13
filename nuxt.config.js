@@ -26,4 +26,7 @@ export default theme({
       },
     },
   },
+  content: {
+    liveEdit: false,
+  },
 });
