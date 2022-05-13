@@ -1,10 +1,7 @@
 {
   "title": "Ultramarine Wiki",
   "url": "https://wiki.ultramarine-linux.org",
-  "logo": {
-    "light": "/logo-light.svg",
-    "dark": "/logo-dark.svg"
-  },
+  "logo": "ultramarine-logo.svg",
   "github": "ultramarine-linux/wiki",
   "twitter": "@UltramarineProj"
 }
