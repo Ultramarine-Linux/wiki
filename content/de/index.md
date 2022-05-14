@@ -1,27 +1,16 @@
 ---
-title: Introduction
-description: ''
+title: Welcome
+description: 'This wiki is meant to be the extended documentation for both end users and developers, so it is separated in those two categories.'
 position: 1
 category: ''
-features:
-  - Feature 1
-  - Feature 2
-  - Feature 3
 ---
+Wilkommen in der Ultramarine Linux Wiki! Diese wiki dient als Dokumentation für den allgemeinen Benutzer, jedoch auch für Entwickler des Projektes. Somit werden alle Artikel in eine dieser zwei Kategorien eingeteilt.
 
-<img src="/preview.png" class="light-img" width="1280" height="640" alt=""/>
-<img src="/preview-dark.png" class="dark-img" width="1280" height="640" alt=""/>
+Diese Hauptseite dient der Einführung der Linux Distribution und ihrer Philosophie und sollte von einem neuen Nutzer als Einstiegspunkt zuerst gelesen werden.
 
-[Module]() for [NuxtJS](https://nuxtjs.org).
 
-<alert type="success">
 
-Coming soon - bald auf Deutsch!
 
-</alert>
+## Funktionen
 
-## Features
-
-<list :items="features"></list>
-
-<p class="flex items-center">Enjoy light and dark mode:&nbsp;<app-color-switcher class="inline-flex ml-2"></app-color-switcher></p>
+<p class="flex items-center">Wechseln zwischen dunklem und hellem Modus:&nbsp;<app-color-switcher class="inline-flex ml-2"></app-color-switcher></p>
