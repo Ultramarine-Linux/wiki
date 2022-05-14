@@ -1,27 +1,13 @@
 ---
-title: Introduction
-description: ''
+title: Welcome
+description: 'This wiki is meant to be the extended documentation for both end users and developers, so it is separated in those two categories.'
 position: 1
 category: ''
-features:
-  - Feature 1
-  - Feature 2
-  - Feature 3
 ---
+Welcome to the Ultramarine Wiki! This wiki is meant to be the extended documentation for both end users and developers, so it is separated in those two categories.
 
-<img src="/preview.png" class="light-img" width="1280" height="640" alt=""/>
-<img src="/preview-dark.png" class="dark-img" width="1280" height="640" alt=""/>
-
-[Module]() for [NuxtJS](https://nuxtjs.org).
-
-<alert type="success">
-
-Your documentation has been created successfully!
-
-</alert>
+On this page you can read about all the general project information, so if you want to become familiar with important concepts and our philosophy make sure to read this first!
 
 ## Features
-
-<list :items="features"></list>
 
 <p class="flex items-center">Enjoy light and dark mode:&nbsp;<app-color-switcher class="inline-flex ml-2"></app-color-switcher></p>
