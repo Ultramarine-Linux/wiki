@@ -29,4 +29,18 @@ export default theme({
   content: {
     liveEdit: false,
   },
+  i18n: {
+    locales: () => [{
+      code: 'de',
+      iso: 'de-DE',
+      file: 'de-DE.js',
+      name: 'Deutsch'
+    }, {
+      code: 'en',
+      iso: 'en-US',
+      file: 'en-US.js',
+      name: 'English'
+    }],
+    defaultLocale: 'en'
+  }
 });
