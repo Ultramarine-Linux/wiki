@@ -1,7 +1,7 @@
 ---
 title: Welcome
 description: 'This wiki is meant to be the extended documentation for both end users and developers, so it is separated in those two categories.'
-position: 1
+position: 0
 category: ''
 ---
 Welcome to the Ultramarine Wiki! This wiki is meant to be the extended documentation for both end users and developers, so it is separated in those two categories.
