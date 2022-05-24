@@ -19,8 +19,23 @@ There are many various shells that are available on Linux, such as:
 
 Ultramarine Linux uses the [Z Shell](https://en.wikipedia.org/wiki/Z_shell) as its default shell, combined with the [Starship Prompt](https://starship.rs/) for a more clean interface.
 
-The Z shell is also used Kali Linux and newer versions of macOS.
 
+<alert>
+
+To learn more about shell scripting, you can watch this Bash introduction video by Fireship here:
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/I4EWvMFj37g" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+NOTE: The Z shell is mostly compatible with Bash, so most of the knowledge you will learn will be mostly applicable in Ultramarine Linux.
+
+</alert>
+
+
+<alert>
+
+The Z shell is also used Kali Linux and newer versions of macOS (Catalina and newer).
+
+</alert>
 
 ## Interacting with the shell
 

@@ -45,3 +45,9 @@ Ultramarine Linux already includes the necessary codecs for the majority of the 
 ## Set up Snapper (Btrfs Snapshots)
 
 TO BE DONE
+
+<alert type=warning>
+
+Currently, RPM's architecture does not handle snapper properly. You might experience broken RPM transactions when doing rollbacks. This is a known issue and must be addressed upstream.
+
+</alert>
