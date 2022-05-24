@@ -8,6 +8,8 @@ Wilkommen in der Ultramarine Linux Wiki! Diese wiki dient als Dokumentation für
 
 Diese Hauptseite dient der Einführung der Linux Distribution und ihrer Philosophie und sollte von einem neuen Nutzer als Einstiegspunkt zuerst gelesen werden.
 
+Die deutsche Übersetzung ist momentan noch in Arbeit. Bitte zur englischen Version mit dem Zeichen unten rechts wechseln. Danke!
+
 
 
 
