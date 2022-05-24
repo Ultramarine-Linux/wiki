@@ -1,5 +1,5 @@
 # ultramarine-wiki
-WIP wiki page made using nuxt content and its docs template
+WIP wiki page made using nuxt content and its docs template.
 
 ## Setup
 
