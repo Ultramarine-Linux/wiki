@@ -4,7 +4,7 @@ description: 'This wiki is meant to be the extended documentation for both end u
 position: 1
 category: ''
 ---
-Wilkommen in der Ultramarine Linux Wiki! Diese wiki dient als Dokumentation für den allgemeinen Benutzer, jedoch auch für Entwickler des Projektes. Somit werden alle Artikel in eine dieser zwei Kategorien eingeteilt.
+Wilkommen im Ultramarine Linux Wiki! Diese wiki dient als Dokumentation für den allgemeinen Benutzer, jedoch auch für Entwickler des Projektes. Somit werden alle Artikel in eine dieser zwei Kategorien eingeteilt.
 
 Diese Hauptseite dient der Einführung der Linux Distribution und ihrer Philosophie und sollte von einem neuen Nutzer als Einstiegspunkt zuerst gelesen werden.
 
