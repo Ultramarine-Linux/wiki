@@ -14,15 +14,14 @@ Diese Anleitung bietet Hilfe bei der Auswahl des richtigen Abbildes, Erstellung 
 
 Ultramarine Linux ist in 5 Editionen erhältlich:
 - Die **Flagship Edition**, welche die Standardvariante ist. Diese benutzt das Budgie Desktop Environment, welches ein ähnliches Layout wie ChromeOS oder Windows bietet. Diese Edition ist am beliebtesten und die beste Wahl. 
-- Die **GNOME Edition**, with the GNOME desktop environment designed to be elegant and modern. This is the variant you want if you would like a simple, unique experience.
-- Die **Pantheon Edition**, featuring elementary OS' Pantheon Desktop, made to be familiar to users coming from macOS.
-- Die **Cutefish Edition**, an experimental version using the Cutefish desktop environment, this is currently the smallest variant, but the Cutefish desktop itself is far from finished, and is heavily under development.
-- **Ultramarine Lapis**, an OSTree-based variant of the Flagship edition. This variant is designed to be completely immutable, which means the system image itself is not modifiable. This is a variant recommended for non-technical users, or users who mostly work with container-based environments.
+- Die **GNOME Edition**, welche mit dem GNOME Desktop Environment kommt. GNOME wurde erstellt, um elegant und modern zu sein. Diese Variante ist für alle Nutzer, die eine simple und einzigartige Erfahrung bevorzugen, geeignet.
+- Die **Pantheon Edition**, welche mit dem Pantheon Desktop Environment von Elementary OS ausgeliefert wird. Pantheon ist die beste Wahl für alle Nutzer, die von MacOS kommen.
+- Die **Cutefish Edition**, eine experimentelle Version mit dem Cutefish Desktop Environment. Diese ist aktuell die kleinste Variante, aber der Cutefish Desktop selbst ist noch lange nicht fertig und wird noch entwickelt.
+- **Ultramarine Lapis**, eine OSTree-basierende Variante der Flagship Edition. Diese Variante ist gemacht, um komplett unveränderbar zu sein, was bedeutet, dass das System-Abbild selbst nicht modifizierbar ist. Diese Variante wird für nicht-technische Nutzer oder Nutzer, die meistens mit einer Container-basierenden Umgebung arbeiten, empfohlen.
 
-Ultramarine Linux is only compatible with x86_64 (AMD64) systems. This is usually the case for most modern computers. On Macs, this means that Ultramarine Linux only supports Intel Macs.
+Ultramarine Linux ist nur mit x86_64 (AMD64) Systemen kompatibel. Das ist normalerweise auf modernen Computern der Fall. Für Macs heißt das, dass Ultramarine Linux nur Intel Macs unterstützt. 
 
-The ISO images are available for download from the [Ultramarine Linux website](https://ultramarine-linux.org).
-
+Das ISO-Abbild ist zum herunterladen verfügbar auf der [Ultramarine Linux Website](https://ultramarine-linux.org).
 ## Checking the integrity of the ISO image (Recommended)
 
 If you would like to make sure the ISO image is valid, Ultramarine ISO images all come with a `CHECKSUM` file that can be checked against the image itself.
@@ -43,40 +42,43 @@ CertUtil -hashfile PATH\TO\ULTRAMARINE.ISO SHA256
 # Open the CHECKSUM file with Nodepad and compare the checksum
 ```
 
-## Creating the bootable media
+## Erstellen eines bootfähigen Mediums
 
-### With Ultramarine Linux
+### Mit Ultramarine Linux
 
-You can use the Fedora Media Writer to create a bootable media from the ISO image.
+Nutzer können den Fedora Media Writer verwenden um ein bootfähiges Medium aus dem ISO-Abbild zu erstellen.
+
 ![](/assets/fedoramediawriter.png)
 
-### With other operating systems (Windows, macOS, other Linux distributions)
+### Mit einem anderen Betriebssystem (Windows, macOS, andere Linux Distributionen)
 
-You can use [balenaEtcher](https://www.balena.io/etcher/) to create a bootable media from the ISO image.
+Nutzer können [balenaEtcher](https://www.balena.io/etcher/) nutzen, um ein bootfähiges Medium aus dem ISO-Abbild zu erstellen.
 
 ![](/assets/balenaetcher.png)
 
-### With Windows (alternative)
+### Mit Windows (Alternative)
 
-You can use [Rufus](https://rufus.ie/) to create the bootable image.
+Nutzer können alternativ auch [Rufus](https://rufus.ie/) nutzen, um ein bootfähiges Medium zu erstellen.
 
 ![](/assets/rufus_en.png)
 
 
-## Booting to Ultramarine Linux
+## In Ultramarine Linux booten
 
-After flashing the image to your USB drive, you can boot to Ultramarine Linux by plugging in the drive and restarting your computer.
+Nachdem erstellen eines bootfähigen Mediums, können Sie Ultramarine Linux starten, indem Sie das bootfähige Medium anschlißen und den Computer neu starten.
 
-Before your computer boots to your current OS, please refer to your computer's documentation on which key to press to select a custom boot option.
+Bevor der Computer in ihr aktuelles Betriebssystem bootet, lesen Sie in der Dokumentation ihres Computer nach, mit welcher Taste Sie eine individuelle Boot-Option auszuwählen.
 
 <alert type='info'>
 
-Most BIOS has a special key that can be used to select a boot device, or to enter the BIOS setup screen. This varies from brand to brand. These keys may be `Esc`, `F1`, `F2`, `F8`, `F11`, `F12`, or even `Del`. The BIOS will usually display a message on the screen briefly on startup. If you're not sure which key to press, look up the BIOS setup instructions on the internet or ask your computer manufacturer.
+Die meisten BIOS verfügen über eine spezielle Taste, die zur Auswahl eines Boot-Geräts oder zum Aufrufen des BIOS-Setup-Bildschirms verwendet werden kann. Diese Taste variiert von Marke zu Marke. Diese Tasten sind vielleicht `Esc`, `F1`, `F2`, `F8`, `F11`, `F12`, oder sogar `Del`. Das BIOS zeigt in der Regel beim Starten kurz eine Meldung auf dem Bildschirm an. Wenn Sie nicht sicher sind, welche Taste Sie drücken müssen, sehen Sie in den BIOS-Anweisungen ihres Computers im Internet nach oder fragen Sie Ihren Computerhersteller.
 
 </alert>
 
 <alert type='info'>
 
-On Macs, hold down the `Alt` or `Option` key after hearing the boot chime.
+Auf Macs, halten Sie `Alt` oder `Option` gedrückt, nachdem Sie das Startgeräusch hören.
 
 </alert>
+
+
