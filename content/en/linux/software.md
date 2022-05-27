@@ -27,6 +27,12 @@ To install an RPM package from the Ultramarine and Fedora repositories, use the 
 sudo dnf install steam # Install Steam
 ```
 
+You can also install groups of packages, like full desktop environments or a suite of tools for music production, using the `dnf groupinstall` command.
+
+```bash
+sudo dnf groupinstall "Audio Production" # installs multiple packages at once, in this case a suite of music/audio production tools
+```
+
 ## Other package managers
 
 You can also install software using other package managers.
