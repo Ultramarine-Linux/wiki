@@ -37,6 +37,8 @@ If you, however, do not prefer to use the official Microsoft distribution of Vis
 
 Our preferred programming languages are Python and Rust, and our preferred GUI toolkit is GTK.
 
+To build packages for Ultramarine, see [Using umpkg](/development/umpkg).
+
 ### UI development
 
 It is recommended to follow the [GNOME guidelines](https://developer.gnome.org/hig/) for UI development for Ultramarine apps. However, if you think that the GNOME guidelines do not fit the aesthetic of Ultramarine, you can deviate from the GNOME guidelines and do your own UI design.
