@@ -10,7 +10,7 @@ Since Ultramarine Linux is based on Fedora, [Koji] is used to manage builds and 
 
 To make package management easier for everyone, Ultramarine Linux developers have created the Ultramarine Packager, aka. [`umpkg`](https://github.com/ultramarine-linux/umpkg).
 
-The latest version as of writing is `0.3.1`.
+The latest version as of writing is `0.3.2`.
 
 
 ## Getting Started
