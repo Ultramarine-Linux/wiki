@@ -10,7 +10,7 @@ Since Ultramarine Linux is based on Fedora, [Koji] is used to manage builds and 
 
 To make package management easier for everyone, Ultramarine Linux developers have created the Ultramarine Packager, aka. [`umpkg`](https://github.com/ultramarine-linux/umpkg).
 
-The latest version as of writing is `0.3.2`.
+The latest version as of writing is `0.3.3`.
 
 
 ## Getting Started
@@ -20,6 +20,13 @@ Initialise your koji profile (for Ultramarine Linux by default) and RPM build en
 
 Login with `kinit `*`username`*`@ULTRAMARINE-LINUX.ORG`.
 
+<alert>
+
+To get a Kerberos principal for pushing Ultramarine packages to the build system, sign up for an account at [The Ultramarine Accounts Portal](https://auth.ultramarine-linux.org/auth/realms/ultramarine/account/).
+
+GitHub logins may not work if you do not have a full name and last name in your GitHub profile. This is a FreeIPA limitation.
+
+</alert>
 
 ## Configurations
 Most umpkg-related configurations can be set within `./umpkg.toml` when inside a package, or globally `~/.config/umpkg.toml`, including:
