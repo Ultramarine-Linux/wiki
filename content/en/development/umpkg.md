@@ -88,7 +88,8 @@ After building your package, you have to upload the package to Koji so that it c
 If the package is not in Koji, run `umpkg add `*`tag`*.
 See all the tags for Ultramarine Linux [here](https://lapis.ultramarine-linux.org/koji/tags).
 
-For pushing, run `umpkg push `*`tag`*.
+For pushing, run `umpkg push `*`target`*.
+For the list of available build targets in Ultramarine Linux, see [here](https://lapis.ultramarine-linux.org/koji/buildtargets).
 
 
 
