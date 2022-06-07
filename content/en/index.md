@@ -19,6 +19,38 @@ While most tweaks could be achieved by an install script, such a script defeats 
 - Good unified documentation for both developers and end users
 - Possible but not set in stone: DNF GUI frontend for easy package installation
 
+## FAQ
+
+### What does the migration script do?
+
+The migration scripts install RPMFusion, then installs the bare minimum of an Ultramarine Linux installation on top of an existing Fedora installation (Swapping Fedora release packages with the Ultramarine ones).
+
+The script only installs the bare minimum required for Ultramarine Linux to work because we don't want to add additional bloat to your current system.
+
+### Why does this distro exist? What difference does it have other than just Fedora with RPMFusion?
+
+Ultramarine Linux was created out of frustration with the legal limits of Fedora. As Fedora (and Red Hat) is an American entity, there are legal restrictions on what software can be
+packaged in the distribution due to the US patent system.
+
+Ultramarine, on the other hand is based in Thailand, and is not subject to any of the copyright restrictions on what software can be packaged.
+
+The Ultramarine team aims to make Fedora a little more user friendly by allowing users to install or package any software they want as long as someone maintains it in either RPMFusion or the Ultramarine repository.
+
+As the time of this writing, there are currently few Ultramarine packages available, but we are looking to add more software to the distribution.
+
+Ultramarine highly encourages users to contribute to the project by submitting packages to the Ultramarine repository and maintaining them. We provide a Github bot that will automatically bump package versions and build them as new versions are released upstream, so you only have to worry about fixing packaging issues downstream.
+
+### Is Ultramarine simply just Fedora with extra desktop environments?
+
+No, Ultramarine is not just Fedora with extra desktop environments. We aim to ease the user experience by providing a more friendly first-time experience, and to make the system "just works" for new and advanced users.
+
+### Does Ultramarine track or collect my data?
+
+We do not track nor collect any data from you. Ever. We could track your personal data, but we don't even have any means of storing it.
+Databases are expensive and we can't even afford to store them.
+
+If you still don't trust us, we're fully open source! You can find all the source code on our [Github](https://github.com/Ultramarine-Linux).
+
 ## Core team
 - 🇹🇭 Cappy Ishihara (Anonymous) - Project lead, Release Engineer
 - 🇩🇪 Trobonox (Anonymous) - Documentation, Web Developer, UI/UX Designer
