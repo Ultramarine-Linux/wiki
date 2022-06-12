@@ -11,8 +11,12 @@ Diese Hauptseite dient der Einführung der Linux Distribution und ihrer Philosop
 Die deutsche Übersetzung ist momentan noch in Arbeit. Bitte zur englischen Version mit dem Zeichen unten rechts wechseln. Danke!
 
 
+## Allgemeine Philosophie
+Ultramarine Linux ist der spirituelle Nachfolger zu Korora Linux, mit dem Ziel, ein Betriebssystem zu erstellen welches einfach funktioniert (engl. "it just works"). Mit einigen Anpassungen wird die Fedora-Erfahrung für neue und erfahrene Benutzer gleichermaßen verbessert. Diese Anpassungen können hauptsächlich auch durch ein Skript manuell erzielt werden, jedoch benötigt man dafür extra Aufwand (den wir mit diesem Betriebssystem verhindern wollen). Außerdem sind einige der geplanten Funktionen ohne ein separates ISO Abbild nicht möglich.
 
-
-## Funktionen
-
-<p class="flex items-center">Wechseln zwischen dunklem und hellem Modus:&nbsp;<app-color-switcher class="inline-flex ml-2"></app-color-switcher></p>
+## Team
+- 🇹🇭 Cappy Ishihara (Anonym) - Project lead, Release Engineer
+- 🇩🇪 Trobonox (Anonym) - Documentation, Web Developer, UI/UX Designer
+- 🇮🇳 Vihag Chaturvedi - Community Manager, Documentation
+- 🇮🇩 Mo (Anonym) - Additional Support, Consulting
+- 🇵🇱 Toru Ishikawa (Anonym) - Infrastructure SIG
