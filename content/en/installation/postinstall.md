@@ -7,12 +7,6 @@ category: Installation
 
 After installing Ultramarine Linux, There are a few things you should do to make the most out of your new system.
 
-<alert>
-
-These tweaks should be made available later on the Ultramarine Welcome or Settings app. (TODO)
-
-</alert>
-
 
 ## Install NVIDIA Drivers
 
@@ -43,8 +37,6 @@ Make sure you're using the Xorg version of your desktop environment.
 Ultramarine Linux already includes the necessary codecs for the majority of the popular multimedia formats. You do not need to install any additional codecs.
 
 ## Set up Snapper (Btrfs Snapshots)
-
-TO BE DONE
 
 <alert type=warning>
 
