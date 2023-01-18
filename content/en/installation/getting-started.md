@@ -17,10 +17,9 @@ Ultramarine Linux comes in 5 variants:
 - The **Flagship Edition**, which is the default and most popular variant, powered by the Budgie desktop environment and is made to stay out of your way. This is probably the version you want to use, and its desktop layout is similar to Windows or Chrome OS.
 - The **GNOME Edition**, with the GNOME desktop environment designed to be elegant and modern. This is the variant you want if you would like a simple, unique experience.
 - The **Pantheon Edition**, featuring elementary OS' Pantheon Desktop, made to be familiar to users coming from macOS.
-- The **Cutefish Edition**, an experimental version using the Cutefish desktop environment, this is currently the smallest variant, but the Cutefish desktop itself is far from finished, and is heavily under development.
-- **Ultramarine Lapis**, an OSTree-based variant of the Flagship edition. This variant is designed to be completely immutable, which means the system image itself is not modifiable. This is a variant recommended for non-technical users, or users who mostly work with container-based environments.
+- The **KDE Edition**, a new variant for Ultramatine 37, with a fresh look and feel inspired by Pop!_OS.
 
-Ultramarine Linux is only compatible with x86_64 (AMD64) systems. This is usually the case for most modern computers. On Macs, this means that Ultramarine Linux only supports Intel Macs.
+Ultramarine Linux supports Intel and AMD (amd64/x86_64) and ARM computers. Despite supporting ARM computers, Ultramarine Linux ***DOES NOT*** support M1 and M2 Macs.
 
 The ISO images are available for download from the [Ultramarine Linux website](https://ultramarine-linux.org).
 
@@ -78,6 +77,6 @@ Most BIOS has a special key that can be used to select a boot device, or to ente
 
 <alert type='info'>
 
-On Macs, hold down the `Alt` or `Option` key after hearing the boot chime.
+On Macs, press power, then hold down the `Alt` or `Option` key until the Apple Logo appears.
 
 </alert>
