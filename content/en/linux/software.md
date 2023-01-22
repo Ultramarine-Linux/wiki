@@ -86,6 +86,12 @@ AppImages are self-contained binaries that are packaged with their own dependenc
 ./balenaEtcher.AppImage
 ```
 
+If this doesn't work, you may need to make the file executable.
+
+```bash
+chmod +x balenaEtcher.AppImage
+```
+
 ### Install from source
 
 Sometimes, software is not available in a package, and you need to build it from source.

@@ -7,7 +7,6 @@ category: Installation
 
 After installing Ultramarine Linux, There are a few things you should do to make the most out of your new system.
 
-
 ## Install NVIDIA Drivers
 
 If you have an NVIDIA GPU, you can install the latest drivers for it by running the following commands:

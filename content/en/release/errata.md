@@ -15,8 +15,17 @@ An erratum (or corrigendum) is a correction of a published release. It is usuall
 
 ### Some installer scripts not supporting Ultramarine, even though it is a Fedora-based OS
 
-This is related to [DNF Tells the user there are no repositories available for a Copr project](/release/errata#dnf-tells-the-user-there-are-no-repositories-available-for-a-copr-project), This bug may only be addressed upstream, or until there is mainstream recognition of Ultramarine Linux itself.
+This is related to [DNF Tells the user there are no repositories available for a Copr project](#dnf-tells-the-user-there-are-no-repositories-available-for-a-copr-project), This bug may only be addressed upstream, or until there is mainstream recognition of Ultramarine Linux itself.
 
+# Ultramarine 37 (Initial Release)
+
+## Pantheon
+
+### Blank wallpaper
+
+Due to a configuration error, the wallpaper is not set correctly. This will be fixed in the next release.
+
+The simple workaround is to set your own wallpaper.
 
 # Ultramarine 36 (Build 1.1)
 
@@ -44,6 +53,13 @@ sudo dnf copr enable cappyishihara/fedorajam-plus fedora-36-x86_64
 This will be addressed in a `dnf-plugins-core` patch, either upstream or locally with Ultramarine.
 
 
+
+<alert type=info>
+
+This issue has been addressed upstream in the [following pull request](https://github.com/rpm-software-management/dnf-plugins-core/pull/463).
+
+It will be included in the next release of `dnf-plugins-core` after 4.3.1.
+</alert>
 
 ## GNOME
 

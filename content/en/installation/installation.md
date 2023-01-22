@@ -57,7 +57,6 @@ By default, the time is set from your IP address geolocation. If you're using a 
 
 On this screen, you have to choose where you would like to install Ultramarine Linux. You can choose a drive to install to, then have Anaconda automatically partition your drive, or you can pick the 2 custom partitioning options.
 
-
 <alert>
 
 By default, Ultramarine uses the [Btrfs](https://en.wikipedia.org/wiki/Btrfs) filesystem, which supports allocating the drive into multiple subvolumes. This is the recommended option for most users as this will allow you to back up your system as atomic snapshots, which take less space than a full data clone.
@@ -85,7 +84,6 @@ In this mode, Anaconda uses a tool called blivet-gui for you to manually partiti
 You can set up your custom partitioning scheme, along with your own custom mount points and file system types.
 
 You can also set up disk encryption using LUKS2 for extra security, but you will have to manually type in your password everytime your system boots.
-
 
 ### Networking
 
@@ -119,7 +117,6 @@ If you type in a password that Anaconda deems insecure, it will have you confirm
 
 </alert>
 
-
 -------
 
 After completing your system configuration, press the `Begin Installation` button to continue. The installation process will start and may take a few minutes.
@@ -131,7 +128,6 @@ This process **IRREVERSIBLE**. If you manage to close down the installer before 
 To fix this, you will have to reinstall Ultramarine Linux or your preferred operating system, causing data loss.
 
 </alert>
-
 
 After the installation process is complete, Anaconda will prompt you to reboot your system. Simply reboot your system to complete the installation.
 
