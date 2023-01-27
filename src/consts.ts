@@ -31,16 +31,12 @@ export const SIDEBAR: Sidebar = {
 	en: {
 		'Introduction': [
 			{ text: 'Welcome', link: 'en/welcome' },
-			{ text: 'Page 2', link: 'en/page-2' },
-			{ text: 'Page 3', link: 'en/page-3' },
 		],
-		'Installation': [{ text: 'Page 4', link: 'en/page-4' }],
+		'Installation': [{ text: 'Getting started', link: 'en/installation/getting-started' }],
 	},
 	de: {
 		'Einführung': [
 			{ text: 'Willkommen', link: 'de/welcome' },
-			{ text: 'Page 2', link: 'en/page-2' },
-			{ text: 'Page 3', link: 'en/page-3' },
 		],
 		'Installation': [{ text: 'Page 4', link: 'en/page-4' }],
 	}
