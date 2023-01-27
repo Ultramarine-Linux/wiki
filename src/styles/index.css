@@ -409,3 +409,32 @@ h2.heading {
 .current-header-link a {
 	color: var(--theme-text);
 }
+
+pre.astro-code {
+	position: relative;
+	margin: 5px 0;
+	padding: 1.75rem 0 1.75rem 1rem;
+}
+
+pre.astro-code button {
+	position: absolute;
+	top: 5px;
+	right: 5px;
+	display: none;
+	border-radius: 8px;
+}
+
+pre.astro-code button:hover {
+	position: absolute;
+	top: 5px;
+	right: 5px;
+	display: none;
+	background-color: var(--theme-bg-hover);
+}
+
+pre.astro-code:hover button {
+	position: absolute;
+	top: 5px;
+	right: 5px;
+	display: block;
+}
