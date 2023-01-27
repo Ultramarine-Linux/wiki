@@ -429,6 +429,7 @@ pre.astro-code button:hover {
 	right: 5px;
 	display: none;
 	background-color: var(--theme-bg-hover);
+	cursor: pointer;
 }
 
 pre.astro-code:hover button {
