@@ -1,0 +1,65 @@
+---
+const { type } = Astro.props;
+console.log(type);
+
+const getIconName = (type: string) => {
+    switch(type) {
+        case "info":
+            return "lucide:info";
+
+        case "warning":
+            return "lucide:alert-circle";
+
+        case "danger":
+            return "lucide:x-circle";
+
+        default:
+            return "lucide:info";
+    }
+}
+
+import Icon from "astro-icon"
+---
+
+<div class:list={[ "alert-base", { "blue-bg": type === "info", "orange-bg": type === "warning", "red-bg": type === "danger" }]}>
+    <div class="icon-layout">
+        <Icon name="lucide:info" class="icon" />
+        <slot></slot>
+    </div>
+</div>
+
+<style>
+    .alert-base {
+        padding: 20px;
+        border-radius: 8px;
+        background-color: #506480;
+    }
+
+    .icon-layout {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        flex-shrink: 0;
+        flex-grow: 0;
+    }
+
+    .icon {
+        width: 24px;
+        height: 24px;
+        flex-shrink: 0;
+        flex-grow: 0;
+        margin-right: 0.5em;
+    }
+
+    .alert-base.blue-bg {
+        background-color: #1d365a;
+    }
+
+    .alert-base.orange-bg {
+        background-color: orange;
+    }
+
+    .alert-base.red-bg {
+        background-color: red;
+    }
+</style>
