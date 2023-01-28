@@ -54,9 +54,28 @@ export const SIDEBAR: Sidebar = {
 		]
 	},
 	de: {
-		'Einführung': [
-			{ text: 'Willkommen', link: 'de/welcome' },
+		'Introduction': [
+			{ text: 'Welcome', link: 'de/welcome' },
 		],
-		'Installation': [{ text: 'Page 4', link: 'en/page-4' }],
+		'Installation': [
+			{ text: 'Getting started', link: 'de/installation/getting-started' },
+			{ text: 'Installation', link: 'de/installation/installation' },
+			{ text: 'Post-Installation', link: 'de/installation/postinstall' }
+		],
+		'Linux Concepts': [
+			{ text: 'Concepts overview', link: 'de/linux/overview' },
+			{ text: 'The File System', link: 'de/linux/filesystem' },
+			{ text: 'Permissions', link: 'de/linux/permissions' },
+			{ text: 'Software and package management', link: 'de/linux/software' },
+			{ text: 'The Shell', link: 'de/linux/shell' }
+		],
+		'Development': [
+			{ text: 'Developing for Ultramarine', link: 'de/development/developing-for-ultramarine' },
+			{ text: 'Using Andaman', link: 'de/development/anda' },
+			{ text: 'UX Guidelines', link: 'de/development/ux-guide' }
+		],
+		'Release Notes': [
+			{ text: 'Developing for Ultramarine', link: 'de/release/errata' }
+		]
 	}
 };
