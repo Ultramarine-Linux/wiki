@@ -438,3 +438,7 @@ pre.astro-code:hover button {
 	right: 5px;
 	display: block;
 }
+
+.full-width {
+	width: 100%;
+}
