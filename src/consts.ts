@@ -6,7 +6,7 @@ export const SITE = {
 
 export const OPEN_GRAPH = {
 	image: {
-		src: '/og-image.png',
+		src: 'https://i.imgur.com/thZm6Qc.png',
 		alt: 'Ultramarine Linux Wiki Text with an abstract background with two blue circles'
 	},
 	twitter: 'UltramarineProj',
