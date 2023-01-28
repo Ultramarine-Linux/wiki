@@ -1,6 +1,5 @@
 ---
 const { type } = Astro.props;
-console.log(type);
 
 const getIconName = (type: string) => {
     switch(type) {
@@ -23,7 +22,7 @@ import Icon from "astro-icon"
 
 <div class:list={[ "alert-base", { "blue-bg": type === "info", "orange-bg": type === "warning", "red-bg": type === "danger" }]}>
     <div class="icon-layout">
-        <Icon name="lucide:info" class="icon" />
+        <Icon name={getIconName(type)} class="icon" />
         <slot></slot>
     </div>
 </div>
@@ -56,10 +55,10 @@ import Icon from "astro-icon"
     }
 
     .alert-base.orange-bg {
-        background-color: orange;
+        background-color: #5a3f1d;
     }
 
     .alert-base.red-bg {
-        background-color: red;
+        background-color: #5a1d1d;
     }
 </style>
