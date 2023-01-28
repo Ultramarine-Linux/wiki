@@ -32,7 +32,26 @@ export const SIDEBAR: Sidebar = {
 		'Introduction': [
 			{ text: 'Welcome', link: 'en/welcome' },
 		],
-		'Installation': [{ text: 'Getting started', link: 'en/installation/getting-started' }],
+		'Installation': [
+			{ text: 'Getting started', link: 'en/installation/getting-started' },
+			{ text: 'Installation', link: 'en/installation/installation' },
+			{ text: 'Post-Installation', link: 'en/installation/postinstall' }
+		],
+		'Linux Concepts': [
+			{ text: 'Concepts overview', link: 'en/linux/overview' },
+			{ text: 'The File System', link: 'en/linux/filesystem' },
+			{ text: 'Permissions', link: 'en/linux/permissions' },
+			{ text: 'Software and package management', link: 'en/linux/software' },
+			{ text: 'The Shell', link: 'en/linux/shell' }
+		],
+		'Development': [
+			{ text: 'Developing for Ultramarine', link: 'en/development/developing-for-ultramarine' },
+			{ text: 'Using Andaman', link: 'en/development/anda' },
+			{ text: 'UX Guidelines', link: 'en/development/ux-guide' }
+		],
+		'Release Notes': [
+			{ text: 'Developing for Ultramarine', link: 'en/release/errata' }
+		]
 	},
 	de: {
 		'Einführung': [
