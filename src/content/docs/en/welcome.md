@@ -1,6 +1,6 @@
 ---
 title: "Welcome"
-description: "Lorem ipsum dolor sit amet - 4"
+description: "This wiki is meant to be the extended documentation for both end users and developers, so it is separated in those two categories."
 ---
 
 Welcome to the Ultramarine Wiki! This wiki is meant to be the extended documentation for both end users and developers, so it is separated in those two categories.
