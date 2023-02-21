@@ -26,7 +26,7 @@ sudo cp -p /usr/share/X11/xorg.conf.d/nvidia.conf /etc/X11/xorg.conf.d/nvidia.co
 sudo sed -i '10i\        Option "PrimaryGPU" "yes"' /etc/X11/xorg.conf.d/nvidia.conf # Add PrimaryGPU = yes to the 10th line of the file.
 ```
 
-Then reboot your system.
+Then reboot your system. 
 
 Make sure you're using the Xorg version of your desktop environment.
 
