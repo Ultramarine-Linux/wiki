@@ -13,6 +13,7 @@ If you have an NVIDIA GPU, you can install the latest drivers for it by running 
 sudo dnf update # Update the system first, because NVIDIA drivers will build using the latest kernel.
 sudo dnf install akmod-nvidia # Install the NVIDIA kernel module.
 ```
+WARNING: You MUST wait until the akamods process to be finished before rebooting! Doing so may result in improper installation!
 
 Then, reboot your system.
 
