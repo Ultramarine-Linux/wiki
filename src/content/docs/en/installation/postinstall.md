@@ -13,6 +13,7 @@ If you have an NVIDIA GPU, you can install the latest drivers for it by running 
 sudo dnf update # Update the system first, because NVIDIA drivers will build using the latest kernel.
 sudo dnf install akmod-nvidia # Install the NVIDIA kernel module.
 ```
+WARNING: You MUST wait until the akamods process to be finished before rebooting! Doing so may result in improper installation!
 
 Then, reboot your system.
 
@@ -25,7 +26,7 @@ sudo cp -p /usr/share/X11/xorg.conf.d/nvidia.conf /etc/X11/xorg.conf.d/nvidia.co
 sudo sed -i '10i\        Option "PrimaryGPU" "yes"' /etc/X11/xorg.conf.d/nvidia.conf # Add PrimaryGPU = yes to the 10th line of the file.
 ```
 
-Then reboot your system.
+Then reboot your system. 
 
 Make sure you're using the Xorg version of your desktop environment.
 
