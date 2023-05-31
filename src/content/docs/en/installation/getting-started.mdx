@@ -5,9 +5,8 @@ description: "Getting started with installing Ultramarine Linux"
 
 import Alert from "../../../../components/Docs/Alert.astro";
 
-Ultramarine Linux comes in a form of an ISO image, which can be used to make a bootable DVD, or be flashed onto a USB stick.
-
-This guide will help you get the correct ISO image, create your boot image and install Ultramarine Linux on your computer.
+Thank you for choosing Ultramarine Linux!
+This guide will have you up and running in no time at all!
 
 ## Downloading
 
@@ -15,20 +14,30 @@ This guide will help you get the correct ISO image, create your boot image and i
 
 Ultramarine Linux comes in 4 variants:
 
-- The **Flagship Edition**, which is the default and most popular variant, powered by the Budgie desktop environment and is made to stay out of your way. This is probably the version you want to use, and its desktop layout is similar to Windows or Chrome OS.
-- The **GNOME Edition**, with the GNOME desktop environment designed to be elegant and modern. This is the variant you want if you would like a simple, unique experience.
-- The **Pantheon Edition**, featuring elementary OS' Pantheon Desktop, made to be familiar to users coming from macOS.
-- The **KDE Edition**, a new variant for Ultramatine 37, with a fresh look and feel inspired by Pop!\_OS.
+- **Flagship Edition**: Our default and most popular variant. Choose Flagship is you'd like a familiar and stylish experience.
+- **GNOME Edition**: Elegant and Modern. Choose GNOME if you'd like a simple, unique experience.
+- **Pantheon Edition**: Our second most popular variant. Choose Pantheon if you'd like a thoughtful and capable experience.
+- **KDE Edition**: Our newest variant. Choose KDE id you'd like a simply customisable experience.
 
-Ultramarine Linux supports Intel and AMD (amd64/x86_64) and ARM computers. Despite supporting ARM computers, Ultramarine Linux **_DOES NOT_** support M1 and M2 Macs.
+Ultramarine Linux supports 64bit Intel, AMD, and ARM computers.
 
-The ISO images are available for download from the [Ultramarine Linux website](https://ultramarine-linux.org).
+<Alert type="warning">
+  
+Despite supporting ARM computers, Ultramarine Linux **_DOES NOT_** support M1 and M2 Macs.
+  
+ </Alert>
 
-### Checking the integrity of the ISO image (Recommended)
+Ultramarine Linux is distributed with a file called an ISO, these are available for download from [our website](https://ultramarine-linux.org).
 
-If you would like to make sure the ISO image is valid, Ultramarine ISO images all come with a `CHECKSUM` file that can be checked against the image itself.
+### Verifying the Safety of an Ultramarine ISO (Recommended)
 
-The checksum file is a SHA256 checksum of the ISO image, you can use the following command to check the integrity of the ISO image (if you're using another Linux distribution)
+Ultramarine ISO images have a matching `CHECKSUM` file that can be checked against the image itself.
+
+They can be downloaded by clicking the `View Checksum` button on the [download page](https://ultramarine-linux.org/download/).
+
+You can use the following commands to check the integrity of the ISO image:
+
+### Verifying the checksum on Linux
 
 ```bash
 sha256sum -b /path/to/ultramarine.iso # Generate the checksum for the ISO image
@@ -44,27 +53,24 @@ CertUtil -hashfile PATH\TO\ULTRAMARINE.ISO SHA256
 # Open the CHECKSUM file with Nodepad and compare the checksum
 ```
 
-## Creating the bootable media
+## Creating the Installer
 
-### With Ultramarine Linux
+### On other operating systems (Windows, macOS, other Linux distributions)
+
+Use [balenaEtcher](https://www.balena.io/etcher/) to create a bootable media from the ISO image.
+
+![](/assets/balenaetcher.png)
+
+Simply select the ISO file, a USB device, and click flash.
+
+### On Ultramarine Linux
 
 You can use the Fedora Media Writer to create a bootable media from the ISO image.
 
 ![](/assets/fedoramediawriter.png)
 
-### With other operating systems (Windows, macOS, other Linux distributions)
 
-You can use [balenaEtcher](https://www.balena.io/etcher/) to create a bootable media from the ISO image.
-
-![](/assets/balenaetcher.png)
-
-### With Windows (alternative)
-
-You can use [Rufus](https://rufus.ie/) to create the bootable image.
-
-![](/assets/rufus_en.png)
-
-## Booting to Ultramarine Linux
+## Booting the Installer
 
 After flashing the image to your USB drive, you can boot to Ultramarine Linux by plugging in the drive and restarting your computer.
 
@@ -72,12 +78,11 @@ Before your computer boots to your current OS, please refer to your computer's d
 
 <Alert type='info'>
 
-Most BIOS has a special key that can be used to select a boot device, or to enter the BIOS setup screen. This varies from brand to brand. These keys may be `Esc`, `F1`, `F2`, `F8`, `F11`, `F12`, or even `Del`. The BIOS will usually display a message on the screen briefly on startup. If you're not sure which key to press, look up the BIOS setup instructions on the internet or ask your computer manufacturer.
-
+Most computers have a special key that can be used to select a boot device, or to enter the setup screen. This varies from brand to brand. These keys may be `Esc`, one of the function keys,, or even `Delete`. The BIOS will usually display a message on the screen briefly on startup. If you're not sure which key to press, look up the key for your computer manufacturer.
 </Alert>
 
 <Alert type="info">
 
-On Macs, press power, then hold down the `Alt` or `Option` key until the Apple Logo appears.
+On Intel Macs, press power, then hold down the `Alt` or `Option` key until disk icons appear.
 
 </Alert>

@@ -8,23 +8,23 @@ After installing Ultramarine Linux, There are a few things you should do to make
 
 ## Install NVIDIA Drivers
 
-If you have an NVIDIA GPU, you can install the latest drivers for it by running the following commands:
+If you have an NVIDIA Graphics Card, you must install the latest drivers for it by running the following commands:
 
 ```bash
-sudo dnf update # Update the system first, because NVIDIA drivers will build using the latest kernel.
+sudo dnf update # Update the system first, the drivers may not work right if you don't.
 sudo dnf install akmod-nvidia # Install the NVIDIA kernel module.
 ```
 Then, reboot your system.
 
 <Alert type="warning">
   
-You MUST wait until the akmods process is finished before rebooting. Rebooting too early might result in an improper installation!
+You MUST wait until the process is finished before rebooting. Rebooting too early might result in a broken installation!
   
  </Alert>
 
-### (Optimus Laptops) use the NVIDIA GPU as the primary GPU
+### Use NVIDIA Graphics Card as the primary card on Optimus Laptops
 
-Execute the following scripts to make your NVIDIA GPU the primary GPU:
+Run the following commands to make your NVIDIA Graphics Card the primary Graphics Card:
 
 ```bash
 sudo cp -p /usr/share/X11/xorg.conf.d/nvidia.conf /etc/X11/xorg.conf.d/nvidia.conf
@@ -37,7 +37,7 @@ Make sure you're using the Xorg version of your desktop environment.
 
 ## Install Codecs
 
-Ultramarine Linux already includes the necessary codecs for the majority of the popular multimedia formats. You do not need to install any additional codecs.
+Ultramarine Linux includes codecs for most of the media you'll come across. You shouldn't need to install any additional codecs.
 
 ## Set up Snapper (Btrfs Snapshots)
 Currently, RPM's architecture does not handle snapper properly. You might experience broken RPM transactions when doing rollbacks. This is a known issue and must be addressed upstream.
