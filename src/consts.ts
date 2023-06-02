@@ -51,6 +51,9 @@ export const SIDEBAR: Sidebar = {
 		],
 		'Release Notes': [
 			{ text: 'Developing for Ultramarine', link: 'en/release/errata' }
+		],
+		'Usage' : [
+			{ text: 'Gaming on Ultramarine', link: 'en/usage/gaming' },
 		]
 	},
 	de: {

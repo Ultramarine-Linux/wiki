@@ -1,0 +1,65 @@
+---
+title: Gaming on Ultramarine
+description: 'Extra instructions for gaming on Ultramarine Linux.'
+---
+import Alert from "../../../../components/Docs/Alert.astro";
+
+
+Sometimes, you may want some downtime from work and have fun. While Ultramarine Linux is not primarily optimized for gaming, it is still a great platform for gaming, as it already has some performance optimizations applied out of the box, and can be further optimized with some tweaks.
+
+
+# Performance
+
+
+# Gaming Platforms
+
+## Steam
+
+[Steam](https://steampowered.com) is a great PC gaming platform, and it has native support for Linux. Many game publishers publish their games on Steam, and some even natively support Linux. Steam offers discounts for games published on their platform, and also has a built-in overlay for chatting with friends, taking screenshots, and more.
+
+Steam runs on the Chromium Embedded Framework (CEF), which essentially means that most of the UI is created using web technologies.
+
+You can install Steam in 2 ways:
+
+1. Install the `steam` package from the RPM Fusion repository. (system-wide)
+2. Install the Steam flatpak from Flathub. (user-only)
+
+The first option is recommended, as it has better system integration. However, the second option is also available if you are running Ultramarine OSTree/Kanopy/CoreOS, or if you want to keep Steam isolated from the rest of the system.
+
+### Proton
+
+If your game does not support Linux, or the Linux version happens to be inferior to the Windows version, you can use Steam's Proton compatibility layer to run Windows games on Linux. Proton is based on Wine, and it is developed by Valve.
+
+## Heroic Games Launcher
+
+The Heroic Games Launcher is a native Linux client for the Epic Games Store and GOG Galaxy. It supports downloading and installing native Linux games from GOG, and running Windows-only games from both GOG and Epic Games Store using Wine/Proton.
+
+## Lutris
+
+Lutris is a game launcher for Linux. It supports installing and managing your game library from various sources, including Steam, GOG, EA Origin, and its own community-provided installers. It also supports running Windows-only games using Wine/Proton.
+
+## Bottles
+
+Bottles is a tool for managing Wine prefixes. It is similar to Lutris, but is more focused on creating and managing Wine prefixes for multiple applications rather than creating each prefix for a single game or application.
+
+Installing Bottles is only supported as a flatpak, for stability reasons.
+
+## *Anime Company* games
+
+If you're more of a gambler and want to play games from *an Anime Company* (name redacted for legal reasons), their games are not officially supported on Linux due to their anti-cheat software. However, there are current efforts to circumvent these restrictions. You can find more information on the [Launcher.moe Wiki](https://docs.launcher.moe/).
+
+
+<Alert type="warning">
+
+The Ultramarine Linux team, Fyra Labs, and Launcher.moe are not responsible for any bans or other punishments you may receive from the *Anime Company or their Singaporean subsidiary* for cheating, being falsely-flagged as a cheater, or any other reason due to use of these tools to remove the DRM from their games. **You have been warned**.
+
+</Alert>
+
+This is a current table of the status of their games on Linux, with generic names to avoid legal issues:
+
+| Game               | Status                           |
+| ------------------ | -------------------------------- |
+| Honkers Impact 3rd | Playable                         |
+| Anime Game         | Playable                         |
+| Honkers Railway    | Unplayable, instant ban on login |
+| ZZZ                | Unreleased                       |
