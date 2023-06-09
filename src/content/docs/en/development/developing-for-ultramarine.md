@@ -49,7 +49,7 @@ These text editors come with a minimal set of features, so you may want to insta
 
 Our preferred programming languages are Python, Vala and Rust, and our preferred GUI library is Helium.
 
-To build packages for Ultramarine, see [Using Andaman](/development/anda).
+To build packages for Ultramarine, see [Using Andaman](/en/development/anda).
 
 ### UI development
 
