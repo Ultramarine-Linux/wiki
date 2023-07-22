@@ -26,7 +26,7 @@ You can also use the `rustup` installer from the [Rust website](https://www.rust
 
 ## Developing for Ultramarine
 
-Our main IDE is [Visual Studio Code](https://code.visualstudio.com/), which is an open-source (mostly source-available) IDE that is available for both Windows, macOS, and Linux.
+Our team uses [Visual Studio Code](https://code.visualstudio.com/), which is an open-source (mostly source-available) IDE that is available for both Windows, macOS, and Linux.
 
 If you, however, do not prefer to use the official Microsoft distribution of Visual Studio Code, you can also use [VSCodium](https://www.vscodium.com/), which is a free alternative distribution of Visual Studio Code. Or you can also use the [Official open-source build of Visual Studio Code](https://github.com/microsoft/vscode) here.
 
@@ -47,13 +47,13 @@ And other text editors you can use, such as:
 
 These text editors come with a minimal set of features, so you may want to install plugins for them, and configure them to your liking.
 
-Our preferred programming languages are Python, Vala and Rust, and our preferred GUI library is Helium.
+Our preferred programming languages are Python, Vala, and Rust, and our preferred GUI library is Helium.
 
 To build packages for Ultramarine, see [Using Andaman](/en/development/anda).
 
 ### UI development
 
-It is recommended to follow the [Helium Human Interface Guidelines](https://developers.tauos.co/docs/hig) for UI development for Ultramarine apps. However, if you think that the Helium guidelines limit aspects of your app, you can deviate from the Helium guidelines and do your own UI design.
+It is recommended to follow the [Helium Human Interface Guidelines](https://developer.fyralabs.com/helium/hig/introduction) for UI development for Ultramarine apps. These guidelines should not be considered a be-all end-all, it is perfectly acceptable to deviate from the guidelines (or not follow them at all) if it limits aspects of your app.
 
 ### Build systems
 
