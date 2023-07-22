@@ -1,0 +1,121 @@
+---
+title: Device Files
+description: 'Overview of various device files in /dev'
+---
+
+import Alert from "../../../../components/Docs/Alert.astro";
+
+<Alert type="info">
+These files are an actual representation of all your hardware devices according to how your drivers see them.
+Please do not modify or delete these files unless you know what you are doing.
+</Alert>
+
+Device files are special files that exist as an interface for your system to interact with hardware.
+They are located in the `/dev` directory, which is a temporary virtual filesystem that is created by Linux on boot.
+
+## Block Devices
+
+Block devices are devices that store buffered data as [blocks](https://en.wikipedia.org/wiki/Block_(data_storage)).
+
+These files are essentially the low-level interface to your storage devices. They are usually to be mounted to a directory in order to be used,
+similarly to how Windows automatically assigns drive letters to storage devices.
+
+Newer Windows versions also support mounting devices as directories, but they are not commonly used.
+
+There are various types of block devices, but the most common ones are:
+
+- SATA, SCSI or USB disks (`/dev/sd*`)
+- NVMe modules (`/dev/nvme*`)
+- CD/DVD drives (`/dev/sr*`)
+- Floppy drives (`/dev/fd*`)
+- Device mappers (`/dev/mapper/*`) - A special feature of the Linux kernel that allows you to create virtual block devices from other block devices.
+- Loop devices (`/dev/loop*`) - Virtual loopback devices that allow you to mount files as block devices.
+- IDE or ATA disks (`/dev/hd*`) - Older hard disk interfaces that are used by older hardware.
+- MMC devices (`/dev/mmcblk*`) - Devices that use the MultiMediaCard standard, such as SD cards.
+
+## Pseudo-Devices
+
+Pseudo-devices are devices that do not actually exist, but are used by the kernel to provide an interface for various features.
+
+The most common pseudo-devices are:
+
+- `/dev/null` - A special file that discards all data written to it, will always return EOF (end-of-file) when read.
+- `/dev/zero` - A special file that returns an infinite stream of null bytes when read.
+- `/dev/random`, `/dev/urandom` - A random number generator that returns random data when read.
+- `/dev/full` - A special file that always return a "disk full" error when written to, but contains nothing when read.
+- `/dev/ptmx` - A pseudo-terminal master that is used to create virtual terminals.
+- `/dev/tty*` - A virtual terminal that is used to interact with the system. Back in the day, there were also actual [physical terminals](https://en.wikipedia.org/wiki/Computer_terminal) that were connected to the system via a serial port. Nowadays, these files are used to represent virtual terminals, as computer terminals were replaced by actual computers running remote desktop software such as SSH, VNC or RDP.
+- `/dev/pts/*` - A virtual terminal slave that is used to create virtual terminals.
+- `/dev/shm/*` - A shared memory segment that is used by the kernel to share data between processes.
+- `/dev/stdin`, `/dev/stdout`, `/dev/stderr` - Standard input, output and error streams. These are used to redirect input and output from and to other files, similar to how programs output data directly to the terminal. They can be redirected using the [pipeline](/en/linux/shell#the-pipeline).
+
+# Interacting with Devices
+
+You can interact with device files like you would with any other file, but there are also special tools that are used to interact with them.
+
+The `cat` (short for "concatenate") command can be used to read data from a file and output it to `/dev/stdout` (standard output), which is usually the terminal.
+
+```sh
+cat /dev/urandom
+```
+
+This will output an infinite stream of random garbage to the terminal, which will make it unusable until you press `Ctrl+C` to stop the command. You might also need to restart your terminal emulator if it happens to output
+a specific combination of characters that breaks it.
+
+
+## Block devices
+
+To list all block devices, you can use `lsblk` to list them in a tree-like format:
+
+```sh
+$ lsblk
+NAME        MAJ:MIN RM   SIZE RO TYPE MOUNTPOINTS
+sda           8:0    0 931.5G  0 disk 
+├─sda1        8:1    0   600M  0 part /boot/efi
+├─sda2        8:2    0     1G  0 part /boot
+└─sda3        8:3    0 929.9G  0 part 
+zram0       252:0    0     8G  0 disk [SWAP]
+nvme0n1     259:0    0 119.2G  0 disk 
+└─nvme0n1p1 259:1    0 119.2G  0 part /var/lib/docker/btrfs
+                                      /home
+                                      /var
+                                      /
+```
+
+And you can use `fdisk` to do various operations on block devices, such as creating partitions, formatting them and more.
+
+```sh
+fdisk /dev/sda
+```
+
+
+As an example, you can use the following command to do a zero-filled format of a disk called `/dev/sda` by simply using a pipe
+
+```sh
+cat /dev/zero > /dev/sda
+```
+
+...Or shred the entire disk with random data:
+
+```sh
+cat /dev/urandom > /dev/sda
+```
+
+All of these commands will do destructive operations on your disk, so please be careful when using them.
+
+You can also use the [`dd`](https://en.wikipedia.org/wiki/Dd_(Unix)) tool to read and write data to block devices, create disk images and even clone disks directly.
+
+For example, you can create a backup image (ghost image) of your disk by using the following command:
+
+```sh
+dd if=/dev/sda of=/path/to/backup.img
+```
+
+...Or clone your disk to another disk:
+
+```sh
+dd if=/dev/sda of=/dev/sdb
+```
+
+You can find more information about `dd` [here](https://www.gnu.org/software/coreutils/manual/html_node/dd-invocation.html).
+

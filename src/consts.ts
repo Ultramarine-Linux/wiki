@@ -40,6 +40,7 @@ export const SIDEBAR: Sidebar = {
 		'Linux Concepts': [
 			{ text: 'Concepts overview', link: 'en/linux/overview' },
 			{ text: 'The File System', link: 'en/linux/filesystem' },
+			{ text: 'Device Files', link: 'en/linux/devicefiles' },
 			{ text: 'Permissions', link: 'en/linux/permissions' },
 			{ text: 'Software and package management', link: 'en/linux/software' },
 			{ text: 'The Shell', link: 'en/linux/shell' }
