@@ -53,5 +53,69 @@ In Linux, the home folder is usually more extensively used than in Windows, as i
 If an app you don't know asks you for your password or root access, It may be trying to compromise your system. Cases like this are usually uncommon on Linux, but you should be aware of it.
 </Alert>
 
+## Security
 
+In Fedora and Ultramarine Linux specifically, system-critical files usually have an extra layer of protection using SELinux, an RBAC (Role-Based Access Control) system that is used to prevent unauthorized access to system files, invented by the NSA.
 
+Users will usually be required to have root access to modify these files, and even then, SELinux may prevent you from doing so unless you have set the correct contexts for the files.
+
+Ultramarine Linux comes with SELinux set in "Enforcing" mode, which means that it will prevent you from modifying system files unless you have the correct permissions for security reasons. However this may cause issues with some apps, so you can set it to "Permissive" mode by running `sudo setenforce 0` in the terminal.
+
+<Alert type="info">
+    <div>
+        <h3>Learn more about SELinux</h3>
+        <ul>
+            <li><a href="https://en.wikipedia.org/wiki/Security-Enhanced_Linux">Wikipedia</a></li>
+            <li><a href="https://www.redhat.com/en/topics/linux/what-is-selinux">Red Hat</a></li>
+        </ul>
+    </div>
+</Alert>
+
+## Virtual Memory
+
+[Virtual memory](https://en.wikipedia.org/wiki/Virtual_memory) is a feature in Linux and other operating systems that allows the system to use a portion of the hard drive as RAM. This is useful when the system runs out of RAM, and needs to use the hard drive as a temporary storage for data.
+
+On Windows, this is called a "Page file", and on Linux, it is called a "Swap file". The swap file is usually located at `/swapfile` or as a dedicated partition on the hard drive.
+
+On Ultramarine Linux however, the swap file is replaced by a special kernel feature called [zram](https://en.wikipedia.org/wiki/Zram), which works as a compressed RAM disk.
+This is useful for systems with small amounts of RAM, as it essentially allows the system to squeeze more memory out of the existing RAM at the cost of more CPU overhead.
+
+However, zram is not a full replacement for swap, as it is still limited by the amount of RAM available. If you have a system with 4GB of RAM, and you are running a memory-intensive application, you may still need to use a swap file, or consider upgrading your RAM.
+
+And additionally, virtual memory is much slower than physical RAM, as RAM modules are designed to be much faster than hard drives. So you may experience slowdowns when using virtual memory, especially if you are using a hard drive instead of an SSD.
+Or even expect shorter lifespans for your SSD, as SSDs have a limited number of write cycles and may wear out faster if you use virtual memory.
+
+We recommend at least 8GB of RAM for a smooth experience on Ultramarine Linux, especially on GNOME and KDE Plasma editions.
+<Alert type="info">
+    <div>
+        <h3>Learn more about zram</h3>
+        <ul>
+            <li><a href="https://en.wikipedia.org/wiki/Zram">Wikipedia</a></li>
+            <li><a href="https://www.kernel.org/doc/html/latest/admin-guide/blockdev/zram.html">The Linux Kernel Documentation</a></li>
+        </ul>
+    </div>
+</Alert>
+
+## File system formats
+
+Ultramarine Linux supports a wide variety of file systems, and can be configured to use any of them during installation.
+
+It currently supports most file systems that are supported by the Linux kernel, including:
+
+- ext2, ext3, ext4
+- BTRFS
+- XFS
+- NTFS
+- FAT32
+
+And extra file system drivers can be installed, such as:
+
+- exFAT
+- ZFS
+
+The Ultramarine Linux installer will be configured to use the BTRFS file system by default, as it is the most modern file system that is supported by the Linux kernel, and has many features that are useful for desktop users, such as snapshots, virtual volumes, journalling, error correction and compression.
+
+By default, it will use up all the available space on the disk save for a small amount of space for the EFI bootloader partition, and create a BTRFS JBOD array using all the available space on all selected disks.
+And then create 2 subvolumes, one for the root directory `/`, and one for the home directory `/home`, which will share the same space but have different filesystem settings.
+
+So unless specified otherwise, the installer will use all your disks to create a JBOD (spanned) array, which may be undesirable if you do not want to risk losing all your data if one of the disks fail.

@@ -8,6 +8,24 @@ import Alert from "../../../../components/Docs/Alert.astro";
 Thank you for choosing Ultramarine Linux!
 This guide will have you up and running in no time at all!
 
+## System requirements
+
+- 4GB of RAM (8GB or more recommended)
+- 64-bit processor (x86_64/amd64) or an AArch64 processor (ARM64)
+- 10GB of free disk space (20GB or more recommended)
+- Internet connection (for downloading the ISO image, updates, and additional drivers)
+- A computer that supports booting from a USB drive or DVD (most computers made after 2007 should support this feature)
+- A DVD or USB drive (for creating the bootable media)
+- Basic-to-intermediate computer knowledge
+
+### Additional requirements for specific hardware
+
+- For computers with NVIDIA graphics cards, you are strongly recommended to install additional drivers after installation. This can be done by opening the "Software" app and searching for "NVIDIA". You can also install the drivers by running `sudo dnf install nvidia-driver` in the terminal.
+- For computers with AMD or Intel graphics cards, Ultramarine Linux should support your graphics card out of the box, as part of the Linux kernel.
+- Some computers with specific Broadcom or Realtek chipsets may require additional drivers to be installed. You may need to connect to the internet via Ethernet or USB tethering from your phone to install these drivers.
+- For computers with a TPM (Trusted Platform Module), you can enable it in the BIOS settings. However driver and kernel support for TPM may not work as expected. We recommend you disable Secure boot before installing Ultramarine Linux, then experiment with enabling it after installation.
+
+
 ## Downloading
 
 ### Choosing your edition
@@ -25,9 +43,20 @@ Ultramarine Linux supports 64bit Intel, AMD, and ARM computers.
   
 Despite supporting ARM computers, Ultramarine Linux **_DOES NOT_** support M1 and M2 Macs.
   
- </Alert>
+</Alert>
 
-Ultramarine Linux is distributed with a file called an ISO, these are available for download from [our website](https://ultramarine-linux.org).
+Ultramarine Linux is distributed with ISO files available for download from [our website](https://ultramarine-linux.org).
+
+
+#### Other variants
+
+**Lapis Edition** is an OSTree variant of Ultramarine Linux, which works similarly to Fedora Silverblue, CoreOS and other OSTree-based operating systems. This variant is made for users who want a stable, immutable system that is easy to recover from.
+This edition is recommended for users who want a rock-stable system and are willing to sacrifice some flexibility and customizability such as casual users, or users who will be mostly using containerized applications such as Flatpak or Docker.
+
+**Ultramarine Kanopy** is an upcoming variant of Ultramarine Linux, which is made for servers and cloud computing. It is currently in development and does not have a release date yet, but is assumed to be around Q4 2023 to Q2 2024.
+It will be based on Ultramarine OSTree and is designed as a simple and easy-to-use server operating system, with a focus on containerized applications with a simple, easy-to-use web interface as a competitor to TrueNAS SCALE, OpenMediaVault and other similar operating systems.
+
+---
 
 ### Verifying the Safety of an Ultramarine ISO (Recommended)
 
@@ -35,10 +64,10 @@ Ultramarine ISO images have a matching `CHECKSUM` file that can be checked again
 
 They can be downloaded by clicking the `View Checksum` button on the [download page](https://ultramarine-linux.org/download/).
 
-You can use the following commands to check the integrity of the ISO image:
 
 ### Verifying the checksum on Linux
 
+You can use the following commands to check the integrity of the ISO image:
 ```bash
 sha256sum -b /path/to/ultramarine.iso # Generate the checksum for the ISO image
 cat /path/to/CHECKSUM # Check the checksum
@@ -79,6 +108,7 @@ Before your computer boots to your current OS, please refer to your computer's d
 <Alert type='info'>
 
 Most computers have a special key that can be used to select a boot device, or to enter the setup screen. This varies from brand to brand. These keys may be `Esc`, one of the function keys,, or even `Delete`. The BIOS will usually display a message on the screen briefly on startup. If you're not sure which key to press, look up the key for your computer manufacturer.
+
 </Alert>
 
 <Alert type="info">
@@ -86,3 +116,11 @@ Most computers have a special key that can be used to select a boot device, or t
 On Intel Macs, press power, then hold down the `Alt` or `Option` key until disk icons appear.
 
 </Alert>
+
+## Footnotes
+
+- Currently, the NVIDIA drivers are provided from RPM Fusion, but there are plans to re-package these drivers from negativo17's versions for a better general experience with CUDA and other NVIDIA software in the future.
+- The Anaconda installer is very complex and hard to work with, we are working on a new installer that is easier to use and more reliable.
+- Since Fedora 37, Fedora's official support for the Pantheon desktop environment has been dropped due to compatibility issues and the Pantheon port is now maintained by the Ultramarine Linux team. This means that the Pantheon desktop environment is only available through Ultramarine Linux, or Fedora with Terra enabled.
+- Ultramarine's Budgie edition provides a close to stock Budgie experience, with a custom theme. Unlike Fedora's Budgie Spin, which provides a completely custom layout and experience.
+

@@ -50,8 +50,9 @@ Databases are expensive and we can't even afford to store them.
 If you still don't trust us, we're fully open source! You can find all the source code on our [Github](https://github.com/Ultramarine-Linux).
 
 ## Core team
-- 🇹🇭 Cappy Ishihara (Anonymous) - Project lead, Release Engineer
+- 🇹🇭 Pornpipat "Cappy" Popum - Fyra Labs CIO, Project lead, Release Engineer
 - 🇩🇪 Trobonox (Anonymous) - Documentation, Web Developer, UI/UX Designer
-- 🇮🇳 Vihag Chaturvedi - Community Manager, Documentation
-- 🇮🇩 Mo (Anonymous) - Additional Support, Consulting
-- 🇵🇱 Toru Ishikawa (Anonymous) - Infrastructure SIG
+- 🇮🇩 Mo (Anonymous) - Low-level developer
+- 🇵🇱 Toru Ishikawa (Anonymous) - Infrastructure support
+- 🇺🇸 Lleyton Gray - Fyra Labs CEO, Project Manager
+- 🇺🇸 Jaiden Riordan - Fyra Labs COO, Documentation, operations
