@@ -439,6 +439,14 @@ pre.astro-code:hover button {
 	display: block;
 }
 
+.alert-base p {
+	color: #fefefe !important;
+}
+
+.alert-base code {
+	color: var(--theme-text-light);
+}
+
 .full-width {
 	width: 100%;
 }
