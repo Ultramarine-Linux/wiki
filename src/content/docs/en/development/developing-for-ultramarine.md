@@ -64,4 +64,4 @@ For cases where using a native build system does not fit the needs of the applic
 - [Meson](https://mesonbuild.com/)
 - [CMake](https://cmake.org/)
 - [GNU Autotools](https://www.gnu.org/software/automake/manual/html_node/Autotools-Introduction.html)
-- A standard makefile.
+- A written makefile or simple shell script

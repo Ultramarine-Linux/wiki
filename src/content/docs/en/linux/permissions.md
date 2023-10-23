@@ -1,6 +1,6 @@
 ---
 title: Permissions
-description: 'How permissions work on Linux.'
+description: "How permissions work on Linux."
 ---
 
 On Linux, permissions are used to determine who can read, write, and execute files, or do certain actions.
@@ -24,4 +24,3 @@ To execute commands as the root user, use the `sudo` command, followed by the co
 ```bash
 sudo dnf install vim # This will install vim as the root user
 ```
-

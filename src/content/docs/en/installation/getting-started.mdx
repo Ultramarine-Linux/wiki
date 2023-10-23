@@ -25,7 +25,6 @@ This guide will have you up and running in no time at all!
 - Some computers with specific Broadcom or Realtek chipsets may require additional drivers to be installed. You may need to connect to the internet via Ethernet or USB tethering from your phone to install these drivers.
 - For computers with a TPM (Trusted Platform Module), you can enable it in the BIOS settings. However driver and kernel support for TPM may not work as expected. We recommend you disable Secure boot before installing Ultramarine Linux, then experiment with enabling it after installation.
 
-
 ## Downloading
 
 ### Choosing your edition
@@ -40,13 +39,11 @@ Ultramarine Linux comes in 4 variants:
 Ultramarine Linux supports 64bit Intel, AMD, and ARM computers.
 
 <Alert type="warning">
-  
-Despite supporting ARM computers, Ultramarine Linux **_DOES NOT_** support M1 and M2 Macs.
-  
+  Despite supporting ARM computers, Ultramarine Linux **_DOES NOT_** support M1
+  and M2 Macs.
 </Alert>
 
 Ultramarine Linux is distributed with ISO files available for download from [our website](https://ultramarine-linux.org).
-
 
 #### Other variants
 
@@ -64,10 +61,10 @@ Ultramarine ISO images have a matching `CHECKSUM` file that can be checked again
 
 They can be downloaded by clicking the `View Checksum` button on the [download page](https://ultramarine-linux.org/download/).
 
-
 ### Verifying the checksum on Linux
 
 You can use the following commands to check the integrity of the ISO image:
+
 ```bash
 sha256sum -b /path/to/ultramarine.iso # Generate the checksum for the ISO image
 cat /path/to/CHECKSUM # Check the checksum
@@ -98,7 +95,6 @@ You can use the Fedora Media Writer to create a bootable media from the ISO imag
 
 ![](/assets/fedoramediawriter.png)
 
-
 ## Booting the Installer
 
 After flashing the image to your USB drive, you can boot to Ultramarine Linux by plugging in the drive and restarting your computer.
@@ -123,4 +119,3 @@ On Intel Macs, press power, then hold down the `Alt` or `Option` key until disk 
 - The Anaconda installer is very complex and hard to work with, we are working on a new installer that is easier to use and more reliable.
 - Since Fedora 37, Fedora's official support for the Pantheon desktop environment has been dropped due to compatibility issues and the Pantheon port is now maintained by the Ultramarine Linux team. This means that the Pantheon desktop environment is only available through Ultramarine Linux, or Fedora with Terra enabled.
 - Ultramarine's Budgie edition provides a close to stock Budgie experience, with a custom theme. Unlike Fedora's Budgie Spin, which provides a completely custom layout and experience.
-

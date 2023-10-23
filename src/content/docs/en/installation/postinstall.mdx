@@ -1,7 +1,8 @@
 ---
 title: Post-installation
-description: 'Things to do after installing Ultramarine Linux.'
+description: "Things to do after installing Ultramarine Linux."
 ---
+
 import Alert from "../../../../components/Docs/Alert.astro";
 
 After installing Ultramarine Linux, There are a few things you should do to make the most out of your new system.
@@ -14,13 +15,13 @@ If you have an NVIDIA Graphics Card, you must install the latest drivers for it 
 sudo dnf update # Update the system first, the drivers may not work right if you don't.
 sudo dnf install akmod-nvidia # Install the NVIDIA kernel module.
 ```
+
 Then, reboot your system.
 
 <Alert type="warning">
-  
-You MUST wait until the process is finished before rebooting. Rebooting too early might result in a broken installation!
-  
- </Alert>
+  You MUST wait until the process is finished before rebooting. Rebooting too
+  early might result in a broken installation!
+</Alert>
 
 ### Use NVIDIA Graphics Card as the primary card on Optimus Laptops
 
@@ -31,7 +32,7 @@ sudo cp -p /usr/share/X11/xorg.conf.d/nvidia.conf /etc/X11/xorg.conf.d/nvidia.co
 sudo sed -i '10i\        Option "PrimaryGPU" "yes"' /etc/X11/xorg.conf.d/nvidia.conf # Add PrimaryGPU = yes to the 10th line of the file.
 ```
 
-Then reboot your system. 
+Then reboot your system.
 
 Make sure you're using the Xorg version of your desktop environment.
 
@@ -40,4 +41,5 @@ Make sure you're using the Xorg version of your desktop environment.
 Ultramarine Linux includes codecs for most of the media you'll come across. You shouldn't need to install any additional codecs.
 
 ## Set up Snapper (Btrfs Snapshots)
+
 Currently, RPM's architecture does not handle snapper properly. You might experience broken RPM transactions when doing rollbacks. This is a known issue and must be addressed upstream.

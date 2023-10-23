@@ -1,12 +1,11 @@
 ---
 title: Software and package management
-description: 'How to manage software on Linux.'
+description: "How to manage software on Linux."
 ---
 
 There are many different ways to install software on Linux.
 
 ## The system package manager
-
 
 Most software is installed using the system package manager. There are many different package managers, and each one has its own unique features and benefits, such as:
 
@@ -45,7 +44,6 @@ There are many different user-only package managers, such as:
 
 Flatpak is supported out of the box in Ultramarine Linux. To install a Flatpak app, open GNOME Software or AppCenter, or use the `flatpak` command.
 
-
 ### Snap
 
 Snap is a package manager made by Canonical for Ubuntu. It was created to make deploying serverside services easier, and it is also used for GUI applications.
@@ -72,7 +70,6 @@ sudo dnf install steam
 ```
 
 Then, open the Steam store and search for the game you want to install.
-
 
 ## Other installation methods
 
