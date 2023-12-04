@@ -25,6 +25,11 @@ Then, reboot your system.
 
 ### Use NVIDIA Graphics Card as the primary card on Optimus Laptops
 
+<Alert type="info">
+This change is is completely optional. You can skip this step if you don't want to use your NVIDIA Graphics Card as the primary card, or you do not use
+a dual-GPU laptop conntected to an external monitor. It may also cause issues with some applications, such as Steam and Bottles.
+</Alert>
+
 Run the following commands to make your NVIDIA Graphics Card the primary Graphics Card:
 
 ```bash
@@ -40,6 +45,15 @@ Make sure you're using the Xorg version of your desktop environment.
 
 Ultramarine Linux includes codecs for most of the media you'll come across. You shouldn't need to install any additional codecs.
 
-## Set up Snapper (Btrfs Snapshots)
+## Set up backups
+
+You may want to back up your files to an external volume, you can use [Pika Backup] or [Déjà Dup] to do so.
+
+Instructions are available on the [Déjà Dup] and [Pika Backup] websites.
+
+[Déjà Dup]: https://wiki.gnome.org/Apps/DejaDup
+[Pika Backup]: https://apps.gnome.org/PikaBackup/
+
+### Set up Snapper (Btrfs Snapshots)
 
 Currently, RPM's architecture does not handle snapper properly. You might experience broken RPM transactions when doing rollbacks. This is a known issue and must be addressed upstream.

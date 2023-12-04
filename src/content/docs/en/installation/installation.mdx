@@ -5,17 +5,17 @@ description: "A guide on how to install Ultramarine Linux"
 
 import Alert from "../../../../components/Docs/Alert.astro";
 
-After booting into the live system, you will see a dialog box asking you to whether to start the installer, or continue with the live system.
+After booting into the live system, you will see a dialog box asking you whether to start the installer or continue with the live system.
 
 ![The Welcome Dialog box](/assets/welcome-window.png)
 
 You can pick whichever you want, and you'll be able to start the installer later by opening the `Install to Hard Drive` application.
 
-To start the installation, click on the `Install to Hard Drive` button, or open the `Install to Hard Drive` application.
+To start the installation, click on the `Install to Hard Drive` button or open the `Install to Hard Drive` application.
 
 # The Anaconda Installer
 
-Ultramarine currently uses the [Anaconda Installer](<https://en.wikipedia.org/wiki/Anaconda_(installer)>) (not to be confused with [The Python distribution](<https://en.wikipedia.org/wiki/Anaconda_(Python_distribution)>)). This is a system installer similar to the likes of Ubuntu's Ubiquity, or Calamares.
+Ultramarine currently uses the [Anaconda Installer](<https://en.wikipedia.org/wiki/Anaconda_(installer)>) (not to be confused with [The Python distribution](<https://en.wikipedia.org/wiki/Anaconda_(Python_distribution)>)). This is a system installer similar to the likes of Ubuntu's Ubiquity or Calamares.
 
 There has been progress to replace the installer with a custom installer, but it is very experimental and not yet ready for normal use.
 
@@ -41,9 +41,9 @@ Once you have selected the keyboard layout, you can press the `Done` button on t
 
 ![](/assets/anaconda-4.png)
 
-The Time & Date selection screen has a world map in which where you can click on your location on the map to set your timezone.
+The Time & Date selection screen has a world map where you can click on your location on the map to set your timezone.
 
-You can also use custom NTP servers to sync your time with a different server by clicking on the cog icon in the top right, or automatically set your time from your geolocation.
+You can also use custom NTP servers to sync your time with a different server by clicking on the cog icon in the top right or automatically set your time from your geolocation.
 
 <Alert type="info">
 
@@ -83,7 +83,7 @@ In this mode, Anaconda uses a tool called blivet-gui for you to manually partiti
 
 You can set up your custom partitioning scheme, along with your own custom mount points and file system types.
 
-You can also set up disk encryption using LUKS2 for extra security, but you will have to manually type in your password everytime your system boots.
+You can also set up disk encryption using LUKS2 for extra security, but you will have to manually type in your password every time your system boots.
 
 ### Networking
 
@@ -101,13 +101,13 @@ On live installations, you can only configure your hostname. Everything else wil
 
 ![](/assets/anaconda-9.png)
 
-In this screen, you will have to configure your user accounts. Create a system account and enter in your password to continue.
+In this screen, you will have to configure your user accounts. Create a system account and enter your password to continue.
 
 You can also click on the `Advanced` button for a more in-depth configuration of your account, such as your user folder location, account ID, and your system group membership.
 
 <Alert type="warning">
 
-If you do not enter in a password, some apps may not work properly.
+If you do not enter a password, some apps may not work properly.
 
 </Alert>
 
@@ -122,7 +122,7 @@ If you type in a password that Anaconda deems insecure, it will have you confirm
 After completing your system configuration, press the `Begin Installation` button to continue. The installation process will start and may take a few minutes.
 
 <Alert type="danger">
-  This process **IRREVERSIBLE**. If you manage to close down the installer
+  This process is **IRREVERSIBLE**. If you manage to close down the installer
   before it finishes, you will end up with a corrupted system. <br /> To fix
   this, you will have to reinstall Ultramarine Linux or your preferred operating
   system, causing data loss.

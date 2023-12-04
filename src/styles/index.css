@@ -277,6 +277,16 @@ blockquote {
 	line-height: 1.7;
 }
 
+kbd {
+	font-family: var(--font-mono);
+	font-size: 0.85em;
+	color: var(--theme-text-light);
+	background-color: var(--theme-bg-offset);
+	padding: 0.1em 0.4em;
+	border-radius: 3px;
+	border: 1px solid gray;
+}
+
 img {
 	max-width: 100%;
 }
