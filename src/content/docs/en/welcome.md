@@ -3,28 +3,35 @@ title: "Welcome"
 description: "This wiki is meant to be the extended documentation for both end users and developers, so it is separated in those two categories."
 ---
 
-Welcome to the Ultramarine Wiki! This wiki is meant to be the extended documentation for both end users and developers, so it is separated in those two categories.
+Welcome to the Ultramarine Wiki! This wiki is designed to help users get settled into Ultramarine Linux.
+
+Developer Documentation has moved to [Fyra Developer](https://developer.fyralabs.com).
 
 On this page you can read about all the general project information, so if you want to become familiar with important concepts and our philosophy make sure to read this first!
 
 ## General philosophy
 
 Ultramarine Linux is meant to be a spiritual successor to Korora Linux, with the goal of making an operating system that "just works". We are making the base Fedora experience a little more pleasant with tweaks, which improves the experience for new and advanced users equally.
-While most tweaks could be achieved by an install script, such a script defeats the idea of "it just works" out of the box as the user has to apply things manually. Other planned features like a custom installer with better user experience are not possible without a separate ISO.
+
+Some of the things Ultramarine offer, for example; media codecs, may seem trivial to more advanced users, but to someone coming from Windows, or even just someone who hasn't used Fedora before this may take hours or be so difficult that they give up. Ultramarine serves to streamline this experience.
+
+### Pragmatism
+
+### Innovation
+
+### User Experience
 
 ## Planned features
 
 - Welcome app for user onboarding with quick access to common actions
 - System configuration application similar to YaST
 - Custom installer to improve user experience compared to Anaconda which has a possibly overwhelming interface for new users
-- Good unified documentation for both developers and end users
-- Possible but not set in stone: DNF GUI frontend for easy package installation
 
 ## FAQ
 
 ### What does the migration script do?
 
-The migration scripts install RPMFusion, then installs the bare minimum of an Ultramarine Linux installation on top of an existing Fedora installation (Swapping Fedora release packages with the Ultramarine ones).
+The migration scripts install RPMFusion, Terra repository, our signing keys, then installs the bare minimum of an Ultramarine Linux installation on top of an existing Fedora installation (Swapping Fedora release packages with the Ultramarine ones).
 
 The script only installs the bare minimum required for Ultramarine Linux to work because we don't want to add additional bloat to your current system.
 
@@ -47,10 +54,9 @@ No, Ultramarine is not just Fedora with extra desktop environments. We aim to ea
 
 ### Does Ultramarine track or collect my data?
 
-We do not track nor collect any data from you. Ever. We could track your personal data, but we don't even have any means of storing it.
-Databases are expensive and we can't even afford to store them.
+Fyra Labs (the company behind Ultramarine) does not collect data without express consent from the user.
 
-If you still don't trust us, we're fully open source! You can find all the source code on our [Github](https://github.com/Ultramarine-Linux).
+Learn more about our commitment to privacy ->
 
 ## Core team
 
