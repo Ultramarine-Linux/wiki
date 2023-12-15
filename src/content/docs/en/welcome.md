@@ -13,7 +13,7 @@ On this page you can read about all the general project information, so if you w
 
 Ultramarine Linux is meant to be a spiritual successor to Korora Linux, with the goal of making an operating system that "just works". We are making the base Fedora experience a little more pleasant with tweaks, which improves the experience for new and advanced users equally.
 
-Some of the things Ultramarine offer, for example; media codecs, may seem trivial to more advanced users, but to someone coming from Windows, or even just someone who hasn't used Fedora before this may take hours or be so difficult that they give up. Ultramarine serves to streamline this experience.
+Some of the things Ultramarine offers, for example; media codecs, may seem trivial to more advanced users, but to someone coming from Windows, or even just someone who hasn't used Fedora before this may take hours or be so difficult that they give up. Ultramarine serves to streamline this experience.
 
 ### Pragmatism
 
