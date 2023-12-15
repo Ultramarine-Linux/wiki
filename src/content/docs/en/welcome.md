@@ -5,21 +5,27 @@ description: "This wiki is meant to be the extended documentation for both end u
 
 Welcome to the Ultramarine Wiki! This wiki is designed to help users get settled into Ultramarine Linux.
 
-Developer Documentation has moved to [Fyra Developer](https://developer.fyralabs.com).
+Developer and Package Maintainer Documentation has moved to [Fyra Developer](https://developer.fyralabs.com).
 
 On this page you can read about all the general project information, so if you want to become familiar with important concepts and our philosophy make sure to read this first!
 
 ## General philosophy
 
-Ultramarine Linux is meant to be a spiritual successor to Korora Linux, with the goal of making an operating system that "just works". We are making the base Fedora experience a little more pleasant with tweaks, which improves the experience for new and advanced users equally.
+Ultramarine Linux is a spiritual successor to Korora Linux, with the goal of making an operating system that "just works" for people of all levels of experience.
 
-Some of the things Ultramarine offers, for example; media codecs, may seem trivial to more advanced users, but to someone coming from Windows, or even just someone who hasn't used Fedora before this may take hours or be so difficult that they give up. Ultramarine serves to streamline this experience.
+In order to do this, we stick to a set of values:
 
-### Pragmatism
+### Ultramarine is pragmatic.
 
-### Innovation
+Where Fedora tries to adhere to ideology (that’s perfectly fine), by shipping an (almost) entirely free system, Ultramarine works off the model of least resistance. That means we try to make it easy for the user, even if that means we have to ship some proprietary drivers and codecs that Fedora wouldn’t be comfy with out-of-box.
 
-### User Experience
+### Ultramarine is innovative.
+
+We believe that recent innovations in the Linux space serve to greatly improve the user and developer experience. Technologies like Flatpak and xdg-portals allow developers to provide great experiences to our users more consistently. Work done upstream improves the experience for our users, and work done in the Ultramarine ecosystem, like accent colours, and Chromebook support, improves the larger Linux ecosystem. It's a win-win.
+
+### Ultramarine is user-friendly.
+
+While it may seem trivial to more advanced users to tweak a few settings and install some packages from 3rd party repositories, it may take people who are new to Linux (or even just new to Ultramarine) hours to figure out what packages they need, and where to find them. Ultramarine allows users new and old to get up and running quickly.
 
 ## Planned features
 
@@ -42,11 +48,9 @@ packaged in the distribution due to the US patent system.
 
 Ultramarine, on the other hand is based in Thailand, and is not subject to any of the copyright restrictions on what software can be packaged.
 
-The Ultramarine team aims to make Fedora a little more user friendly by allowing users to install or package any software they want as long as someone maintains it in either RPMFusion or the Ultramarine repository.
+The Ultramarine team aims to make Fedora a little more user friendly by allowing users to install or package any software they want as long as someone maintains it in either RPMFusion or Terra.
 
-As the time of this writing, there are currently few Ultramarine packages available, but we are looking to add more software to the distribution.
-
-Ultramarine highly encourages users to contribute to the project by submitting packages to the Ultramarine repository and maintaining them. We provide a Github bot that will automatically bump package versions and build them as new versions are released upstream, so you only have to worry about fixing packaging issues downstream.
+Ultramarine highly encourages users to contribute to the project by submitting packages to the [Terra repository](https://terra.fyralabs.com). We provide a Github bot that will automatically bump package versions and build them as new versions are released upstream, so you only have to worry about fixing packaging issues downstream.
 
 ### Is Ultramarine simply just Fedora with extra desktop environments?
 
@@ -56,13 +60,11 @@ No, Ultramarine is not just Fedora with extra desktop environments. We aim to ea
 
 Fyra Labs (the company behind Ultramarine) does not collect data without express consent from the user.
 
-Learn more about our commitment to privacy ->
-
 ## Core team
 
-- 🇹🇭 Pornpipat "Cappy" Popum - Fyra Labs CIO, Project lead, Release Engineer
+- 🇹🇭 Pornpipat "Cappy" Popum - Fyra Labs CIO, Project Lead, Release Engineer
 - 🇩🇪 Trobonox (Anonymous) - Documentation, Web Developer, UI/UX Designer
 - 🇮🇩 Mo (Anonymous) - Low-level developer
 - 🇵🇱 Toru Ishikawa (Anonymous) - Infrastructure support
 - 🇺🇸 Lleyton Gray - Fyra Labs CEO, Project Manager
-- 🇺🇸 Jaiden Riordan - Fyra Labs COO, Documentation, operations
+- 🇺🇸 Jaiden Riordan - Fyra Labs COO, Documentation, Operations
