@@ -31,7 +31,7 @@ export const SIDEBAR: Sidebar = {
     Introduction: [{ text: "Welcome", link: "en/welcome" }],
     Installation: [
       { text: "Hardware", link: "en/installation/hardware" },
-      { text: "Getting Ultramarine Linux", link: "en/installation/getting" },
+      { text: "Getting Ultramarine", link: "en/installation/getting" },
       { text: "Installation", link: "en/installation/installation" },
       { text: "Post-Installation", link: "en/installation/postinstall" },
     ],
