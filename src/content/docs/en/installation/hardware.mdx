@@ -1,0 +1,57 @@
+---
+title: Hardware
+description: "Minimum Requirements and Hardware Information for Ultramarine Linux"
+---
+
+import Alert from "../../../../components/Docs/Alert.astro";
+
+# Minimum Requirements
+
+## Minimum Requirements for Standard PCs
+
+- 4GB of RAM (8GB or more recommended)
+- 64-bit processor (x86_64/amd64)
+- 10GB of free disk space (20GB or more recommended)
+- Internet connection (for downloading the ISO image, updates, and additional drivers)
+- A computer that supports booting from a USB drive or DVD (most computers made after 2007 should support this feature)
+- A DVD or USB drive (for creating the bootable media)
+- Basic-to-intermediate computer knowledge
+
+## Minimum Requirements for Chromebooks
+
+- A [supported device](wiki.ultramarine-linux.org/chromebook/supported-devices)
+- USB Port **OR** SD Card Reader
+- 8gb of disk space (Total space, not what is usable in ChromeOS)
+- Ability to [enable developer mode](wiki.ultramarine-linux.org/chromebook/enabling-developer-mode)
+
+## Minimum Requirements for Raspberry Pi
+
+- Raspberry Pi 4 or newer
+- 4GB of RAM **OR** 2GB of RAM without a desktop environment
+- 8gb Class 10 MicroSD Card
+
+## Minimum Requirements for ARM Devices Using UEFI
+
+- 64-bit processor (aarch64)
+- 4GB or RAM
+- 10GB of Storage
+
+# Notes on Specific Hardware
+
+## NVIDIA Graphics
+
+For computers with NVIDIA graphics cards, you have two choices for drivers.
+
+### Modern NVIDIA Graphics
+
+For computers with recent Nvidia GPUs, you may either use the built in Noveau driver, or install NVIDIA proprietary drivers (recommended). Proprietary drivers are automatically installed during installation if you are connected to the internet.
+
+If drivers weren't installed, or you switched to a NVIDIA GPU, you can install drivers by opening the "Software" app and searching for "NVIDIA" or by running `sudo dnf install akmod-nvidia` in the terminal.
+
+### Legacy NVIDIA Graphics
+
+Older computers may have stability issues using the proprietary NVIDIA drivers, using the built-in driver is a-okay with these cards.
+
+## Broadcom and Realtek Networking
+
+Some computers with specific Broadcom or Realtek chipsets may require additional drivers to be installed. You may need to connect to the internet via Ethernet or USB tethering from your phone to install these drivers.
