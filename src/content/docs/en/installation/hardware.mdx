@@ -69,7 +69,18 @@ For computers with NVIDIA graphics cards, you have two choices for drivers.
 
 For computers with recent Nvidia GPUs, you may either use the built in Noveau driver, or install NVIDIA proprietary drivers (recommended). Proprietary drivers are automatically installed during installation if you are connected to the internet.
 
-If drivers weren't installed, or you switched to a NVIDIA GPU, you can install drivers by opening the "Software" app and searching for "NVIDIA" or by running `sudo dnf install akmod-nvidia` in the terminal.
+If drivers weren't installed, or you switched to a NVIDIA GPU, you can install drivers by opening the "Software" app and searching for "NVIDIA" or by running the following commands in terminal:
+
+```bash
+sudo dnf update # Update the system first, the drivers may not work right if you don't.
+sudo dnf install akmod-nvidia # Install the NVIDIA kernel module.
+```
+
+<Alert type="warning">
+  You MUST wait until the process is finished before rebooting. Rebooting too
+  early might result in a broken installation! This may take upwards of 15
+  minutes!
+</Alert>
 
 ### Legacy NVIDIA Graphics
 

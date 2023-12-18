@@ -9,7 +9,7 @@ After installing Ultramarine Linux, There are a few things you should do to make
 
 ## Install NVIDIA Drivers
 
-If you have an NVIDIA Graphics Card, you must install the latest drivers for it by running the following commands:
+If you were connected to the internet during installation, NVIDIA drivers were already installed. Otherwise, you can install them with these commands
 
 ```bash
 sudo dnf update # Update the system first, the drivers may not work right if you don't.
@@ -20,15 +20,16 @@ Then, reboot your system.
 
 <Alert type="warning">
   You MUST wait until the process is finished before rebooting. Rebooting too
-  early might result in a broken installation!
+  early might result in a broken installation! This may take upwards of 15
+  minutes!
 </Alert>
 
 ### Use NVIDIA Graphics Card as the primary card on Optimus Laptops
 
-<Alert type="info">
-This change is is completely optional. You can skip this step if you don't want to use your NVIDIA Graphics Card as the primary card, or you do not use
-a dual-GPU laptop conntected to an external monitor. It may also cause issues with some applications, such as Steam and Bottles.
-</Alert>
+This change is is completely optional. You can skip this step if you don't
+want to use your NVIDIA Graphics Card as the primary card, or you do not use a
+dual-GPU laptop conntected to an external monitor. It may also cause issues
+with some applications, such as Steam and Bottles.
 
 Run the following commands to make your NVIDIA Graphics Card the primary Graphics Card:
 
@@ -38,8 +39,6 @@ sudo sed -i '10i\        Option "PrimaryGPU" "yes"' /etc/X11/xorg.conf.d/nvidia.
 ```
 
 Then reboot your system.
-
-Make sure you're using the Xorg version of your desktop environment.
 
 ## Install Codecs
 
