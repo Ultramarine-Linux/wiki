@@ -53,6 +53,7 @@ export const SIDEBAR: Sidebar = {
     ],
     "Release Notes": [{ text: "Errata", link: "en/release/errata" }],
     Usage: [{ text: "Gaming on Ultramarine", link: "en/usage/gaming" }],
+    Chromebook: [{ text: "Getting Started", link: "en/chromebook/chromebook" }],
   },
   de: {
     Introduction: [{ text: "Welcome", link: "de/welcome" }],
