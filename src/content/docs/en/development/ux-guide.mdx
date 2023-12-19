@@ -5,41 +5,8 @@ description: "Guidelines for how the Ultramarine Linux experience should be desi
 
 import Alert from "../../../../components/Docs/Alert.astro";
 
-### This Page Will Be Moving to [Fyra Developer](https://developer.fyralabs.com) Soon!
+### The Helium Human Interface Guidelines Can Be Found on [Fyra Developer](https://developer.fyralabs.com) 
 
-<Alert type="info">
-  We recommend following the [Helium Human Interface
-  Guidelines.](https://developer.fyralabs.com/helium/hig/introduction) This page
-  includes our previous guidelines for posterity.
-</Alert>
+We now recommend the Helium Human Interface Guidelines. They're built in house to provide a modern and friendly experience. Although they are designed for the Helium UI Library, you can apply the principles to any UI library.
 
-Ultramarine Linux is supposed to be a user-friendly desktop operating system, and stay out the way of the user. These guidelines are meant to be a reference for how to implement the UX of Ultramarine Linux.
-
-## Theming
-
-We believe that the user should be able to easily customize the look and feel of Ultramarine Linux. But we want the default experience to be as minimalistic as possible, and not be full of clutter.
-
-Applications should look and feel like they are in the same place as the rest of the desktop. This means consistent theming, and a consistent color scheme.
-
-This also means that applications that use a dedicated styling library (libadwaita, libhelium, Material UI, etc.) are frowned upon for default apps, unless they are made for that exact ecosystem (libadwaita and libhelium apps on GNOME, for example).
-The only exception for this is a case where there are no apps that functionally fit into the intended use case.
-
-## UX
-
-There are a few things that should be kept in mind when creating an application for Ultramarine Linux:
-
-- The application should be designed to be usable on any desktop environment.
-
-- Keep notifications to a minimum.
-
-- Always let the user know what is happening.
-
-- Let the user know what they're doing, and don't try to get in their way if they really want to do something. Which means allowing the user to do risky changes to their system, with a warning.
-
-## DE Choice
-
-Unlike what most people think about Ultramarine Linux, Ultramarine is not just supposed to be Fedora with a bunch of Desktop Environments. One should not expect the team to ship Ultramarine with every single desktop environment that they want to support.
-
-The core Ultramarine team does not want to maintain every single desktop environment. Instead, consider offering to maintain packages yourself.
-
-Ultramarine includes a pragmatic set of tweaks that are designed to get the user started as quickly as possible, not offer as many options as possible.
+These guidelines are not a be-all-end-all and you are free to ignore parts or add your own ideals. It's your app after all :P
