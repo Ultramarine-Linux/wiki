@@ -35,7 +35,7 @@ There are various types of block devices, but the most common ones are:
   - The `hdx` IDE driver is deprecated and is no longer used by modern Linux distributions since Linux 2.6.19. IDE disks will now be shown as `sd*` devices.
 - MMC devices (`/dev/mmcblk*`) - Memory cards that use the MultiMediaCard standard, such as SD cards.
 
-## Pseudo-Devices
+## Pseudo-devices
 
 Pseudo-devices are devices that do not actually exist, but are used by the kernel to provide an interface for various features.
 
@@ -64,7 +64,7 @@ cat /dev/urandom
 This will output an infinite stream of random garbage to the terminal, which will make it unusable until you press `Ctrl+C` to stop the command. You might also need to restart your terminal emulator if it happens to output
 a specific combination of characters that breaks it.
 
-## Block devices
+## Block Devices
 
 To list all block devices, you can use `lsblk` to list them in a tree-like format:
 
@@ -83,7 +83,7 @@ nvme0n1     259:0    0 119.2G  0 disk
                                       /
 ```
 
-## Explaining the output:
+## Explaining the Output:
 
 `sda*` is the main disk of the system, which is a 1TB SATA SSD. It has 3 partitions, `sda1`, `sda2` and `sda3`. `sda1` is the EFI partition, `sda2` is the boot partition and `sda3` is the root partition.
 
@@ -105,7 +105,7 @@ The mountpoints at `/boot` is used for storing Linux kernel images, and `/boot/e
 `/var/lib/docker/btrfs` is the directory where [Docker] stores its data. Docker is a containerization software that allows you to run applications in isolated environments.
 Since we are using Btrfs, Docker will use Btrfs subvolumes to store its data. For other filesystems Docker will use other methods to store its data.
 
-### Manipulating Block devices
+### Manipulating Block Devices
 
 You can use `fdisk` to do various operations on block devices, such as creating partitions, formatting them and more.
 
