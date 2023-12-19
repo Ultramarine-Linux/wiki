@@ -61,45 +61,25 @@ In Linux, the home folder is usually more extensively used than in Windows, as i
 
 ## Security
 
-In Fedora and Ultramarine Linux specifically, system-critical files usually have an extra layer of protection using SELinux, a MAC (Mandatory Access Control) system that is used to prevent unauthorized access to system files, invented by the NSA.
+Ultramarine Linux uses SELinux, software that implements Mandatory Access Control. This prevents applications (and users) from accessing files they shouldn't be able to.
 
-Users will usually be required to have root access to modify these files, and even then, SELinux may prevent you from doing so unless you have set the correct contexts for the files.
+Users will usually be required to have root access to modify system files, and even then, SELinux may prevent you from doing so unless you have set the correct contexts for the files.
 
-Ultramarine Linux comes with SELinux set in "Enforcing" mode, which means that it will prevent you from modifying system files unless you have the correct permissions for security reasons. However this may cause issues with some apps, so you can set it to "Permissive" mode by running `sudo setenforce 0` in the terminal.
+By default, SELinux is in "Enforcing" mode, which means that it will prevent you from modifying system files unless you have the correct permissions. This shouldn't cause any issues. If you would like to disable SELinux you can run`sudo setenforce 0`. We don't recommend this as it makes your system less secure.
 
-<Alert type="info">
-  <div>
-    <h3>Learn more about SELinux</h3>
-    <ul>
-      <li>
-        <a href="https://en.wikipedia.org/wiki/Security-Enhanced_Linux">
-          Wikipedia
-        </a>
-      </li>
-      <li>
-        <a href="https://www.redhat.com/en/topics/linux/what-is-selinux">
-          Red Hat
-        </a>
-      </li>
-    </ul>
-  </div>
-</Alert>
+[Learn more about SELinux ->](https://www.redhat.com/en/topics/linux/what-is-selinux)
 
 ## Virtual Memory
 
-[Virtual memory](https://en.wikipedia.org/wiki/Virtual_memory) is a feature in Linux and other operating systems that allows the system to use a portion of the hard drive as RAM. This is useful when the system runs out of RAM, and needs to use the hard drive as a temporary storage for data.
+[Virtual memory](https://en.wikipedia.org/wiki/Virtual_memory) is a feature in Linux and other operating systems that allows the system to use a portion of the disk as RAM. This is useful when the system runs out of RAM and needs to use the disk as a temporary storage for data.
 
-On Windows, this is called a "Page file", and on Linux, it is called a "Swap file". The swap file is usually located at `/swapfile` or as a dedicated partition on the hard drive.
+On Windows, this is called a "Page file", and on Linux, it is called a "Swap file". The swap file is usually located at `/swapfile` or as a dedicated partition on the disk.
 
-On Ultramarine Linux however, the swap file is replaced by a special kernel feature called [zram](https://en.wikipedia.org/wiki/Zram), which works as a compressed RAM disk.
-This is useful for systems with small amounts of RAM, as it essentially allows the system to squeeze more memory out of the existing RAM at the cost of more CPU overhead.
+Swap comes with many issues, for example, it can reduce the lifespan of lower-cost SSDs, and may be too slow on hard drives. To combat this Ultramarine uuses memory compression [(zram specifically)](https://en.wikipedia.org/wiki/Zram).
 
-However, zram is not a full replacement for swap, as it is still limited by the amount of RAM available. If you have a system with 4GB of RAM, and you are running a memory-intensive application, you may still need to use a swap file, or consider upgrading your RAM.
+By default, we match the amount of physical memory you have. (Which is the maximum)
 
-And additionally, virtual memory is much slower than physical RAM, as RAM modules are designed to be much faster than hard drives. So you may experience slowdowns when using virtual memory, especially if you are using a hard drive instead of an SSD.
-Or even expect shorter lifespans for your SSD, as SSDs have a limited number of write cycles and may wear out faster if you use virtual memory.
-
-We recommend at least 8GB of RAM for a smooth experience on Ultramarine Linux, especially on GNOME and KDE Plasma editions.
+Although this may sound magical, it does come at the cost of your CPU working a little bit harder. Luckily this is not very noticeable on modern computers.
 
 <Alert type="info">
   <div>
