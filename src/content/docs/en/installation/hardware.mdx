@@ -5,7 +5,9 @@ description: "Minimum Requirements and Hardware Information for Ultramarine Linu
 
 import Alert from "../../../../components/Docs/Alert.astro";
 
-## Minimum Requirements
+## System Requirements
+
+### Minimum Requirements
 
 These requirements are the **_bare minimum_** to run Ultramarine Linux. Using a Ultramarine on a computer of this calliber will not be a good time.
 
@@ -13,7 +15,7 @@ These requirements are the **_bare minimum_** to run Ultramarine Linux. Using a 
 - 64-bit processor (x86_64 **OR** aarch64)
 - 8gb of disk space
 
-## Recommended Requirements for Standard PCs
+### Recommended Requirements for Standard PCs
 
 These are our suggestions for the most basic (daily-driveable) system:
 
@@ -24,36 +26,36 @@ These are our suggestions for the most basic (daily-driveable) system:
 - A computer that supports booting from a USB drive or DVD (most computers made after 2007 should support this feature)
 - A DVD or USB drive (for creating the bootable media)
 
-## Minimum Requirements for x86 Chromebooks
+### Minimum Requirements for x86 Chromebooks
 
 - A [supported device](wiki.ultramarine-linux.org/chromebook/supported-devices)
 - USB Port **OR** SD Card Reader
 - 8gb of disk space (Total space, not what is usable in ChromeOS)
 - Ability to [enable developer mode](wiki.ultramarine-linux.org/chromebook/enabling-developer-mode)
 
-## Minimum Requirements for Raspberry Pi
+### Minimum Requirements for Raspberry Pi
 
 - Raspberry Pi 4 or newer
 - 4GB of RAM **OR** 2GB of RAM without a desktop environment
 - 8gb Class 10 MicroSD Card
 
-## Minimum Requirements for ARM Devices Using UEFI
+### Minimum Requirements for ARM Devices Using UEFI
 
 - 64-bit processor (aarch64)
 - 4GB or RAM
 - 10GB of Storage
 
-# Specific Hardware
+## Information on Nonstandard Hardware
 
-## Mac Computers with Apple Silicon
+### Mac Computers with Apple Silicon
 
 Asahi Linux support on Ultramarine Linux is currently in internal-only alpha. Ultramarine Linux will likely use the upstream versions of Asahi packages in the near future.
 
-## ARM Chromebooks
+### ARM Chromebooks
 
 A closed alpha for the Kukui family of ARM Chromebooks will be opening in the near future.
 
-### Devices in the Kukui Alpha Program
+#### Devices in the Kukui Alpha Program
 
 - Kakadu (ASUS Chromebook Detachable CM3 (CM3000))
 - Krane (Lenovo Chromebook Duet/Lenovo IdeaPad Duet Chromebook First Generation)
@@ -61,13 +63,21 @@ A closed alpha for the Kukui family of ARM Chromebooks will be opening in the ne
 
 Contact [Owen Zimmerman](mailto:owen@fyralabs.com) for additional information
 
-## NVIDIA Graphics
+### NVIDIA Graphics
 
 For computers with NVIDIA graphics cards, you have two choices for drivers.
 
-### Modern NVIDIA Graphics
+#### Noveau Driver
 
-For computers with recent Nvidia GPUs, you may either use the built in Noveau driver, or install NVIDIA proprietary drivers (recommended). Proprietary drivers are automatically installed during installation if you are connected to the internet.
+[The Noveau driver](https://nouveau.freedesktop.org/) is a fully open source driver for NVIDIA graphics cards. It's built into Ultramarine so you can use your GPU instantly.
+
+Despite how good this sounds, modern NVIDIA GPUs will suffer performance issues and screen tearing under the Noveau driver.
+
+Older NVIDIA GPUs work well with the Noveau driver (and may only work with Noveau.)
+
+#### Proprietary Driver
+
+This is our recommended solution. Proprietary drivers support all of the features and performance of your GPU. They are automatically installed during installation if you are connected to the internet.
 
 If drivers weren't installed, or you switched to a NVIDIA GPU, you can install drivers by opening the "Software" app and searching for "NVIDIA" or by running the following commands in terminal:
 
@@ -82,10 +92,26 @@ sudo dnf install akmod-nvidia # Install the NVIDIA kernel module.
   minutes!
 </Alert>
 
-### Legacy NVIDIA Graphics
-
-Older computers may have stability issues using the proprietary NVIDIA drivers, using the built-in driver is a-okay with these cards.
-
-## Broadcom and Realtek Networking
+### Broadcom and Realtek Networking
 
 Some computers with specific Broadcom or Realtek chipsets may require additional drivers to be installed. You may need to connect to the internet via Ethernet or USB tethering from your phone to install these drivers.
+
+## BIOS Keys
+
+These are the keys (or combonation of keys) used to enter the boot menu or BIOS settings on different computers.
+
+| Manufacturer | BIOS | Boot Menu |
+|--------------|------|-----------|
+| Acer         | F2 or Del  |           |
+| ASUS         | F2 or Del   |           |
+| Dell         | F12  | F11       |
+| HP           | ESC or F10 |     |
+| ThinkPads    |      | ThinkVantage or Esc |
+| Lenovo Desktops | F1 | |
+| Lenovo Laptops (Except Thinkpad) | F1+Enter | |
+| MSI | Del | |
+| Microsoft (Tablets) | VolUp+Power | |
+| Origin PC | F2 | |
+| Samsung | F2 | |
+| Toshiba |F2 | |
+| Intel Macs | n/a | Hold Option |

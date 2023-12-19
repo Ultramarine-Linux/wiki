@@ -39,7 +39,9 @@ While it may seem trivial to more advanced users to tweak a few settings and ins
 
 The migration scripts install RPMFusion, Terra repository, our signing keys, then installs the bare minimum of an Ultramarine Linux installation on top of an existing Fedora installation (Swapping Fedora release packages with the Ultramarine ones).
 
-The script only installs the bare minimum required for Ultramarine Linux to work because we don't want to add additional bloat to your current system.
+The script only installs the bare minimum required for Ultramarine Linux to work because we don't want to add additional bloat to your current system. 
+
+After you're migrated, you'll get the latest and greatest Ultramarine features as we build them!
 
 ### Why does this distro exist? What difference does it have other than just Fedora with RPMFusion?
 
@@ -48,7 +50,7 @@ packaged in the distribution due to the US patent system.
 
 Ultramarine, on the other hand is based in Thailand, and is not subject to any of the copyright restrictions on what software can be packaged.
 
-The Ultramarine team aims to make Fedora a little more user friendly by allowing users to install or package any software they want as long as someone maintains it in either RPMFusion or Terra.
+The Ultramarine team aims to make Fedora a little more user friendly by allowing users to install or package any software they want as long as someone maintains it in Flathub, RPMFusion or Terra.
 
 Ultramarine highly encourages users to contribute to the project by submitting packages to the [Terra repository](https://terra.fyralabs.com). We provide a Github bot that will automatically bump package versions and build them as new versions are released upstream, so you only have to worry about fixing packaging issues downstream.
 
@@ -58,7 +60,11 @@ No, Ultramarine is not just Fedora with extra desktop environments. We aim to ea
 
 ### Does Ultramarine track or collect my data?
 
-Fyra Labs (the company behind Ultramarine) does not collect data without express consent from the user.
+Ultramarine collects system logs, which may include information on what software you use and disks you utilize. This data contains no personally identifiable information and remains on your system for debugging and support reasons.
+
+As of now, the only data we collect is a count of how many times a package has been downloaded from Terra or the Ultramarine repository using [DNF Counting](https://docs.fedoraproject.org/en-US/infra/sysadmin_guide/dnf-counting/). This information is not tied to you or your computer.
+
+Fyra Labs (the company behind Ultramarine) does not collect any data that can be tied to an individual without express consent from the user. 
 
 ## Core team
 
