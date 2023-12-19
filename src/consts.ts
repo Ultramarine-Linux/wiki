@@ -53,7 +53,7 @@ export const SIDEBAR: Sidebar = {
     ],
     "Release Notes": [{ text: "Errata", link: "en/release/errata" }],
     Usage: [{ text: "Gaming on Ultramarine", link: "en/usage/gaming" }],
-    Chromebook: [{ text: "Getting Started", link: "en/chromebook/chromebook" }],
+    Chromebook: [{ text: "Getting Started", link: "en/chromebook/chromebook" },{ text: "Terminology", link: "en/chromebook/terminology" },{ text: "Getting Chromebook Edition", link: "en/chromebook/getting" },{ text: "Preparing your Chromebook", link: "en/chromebook/preparing" },{ text: "Installation", link: "en/chromebook/installation" },{ text: "Post-Install", link: "en/chromebook/postinstall" }],
   },
   de: {
     Introduction: [{ text: "Welcome", link: "de/welcome" }],
