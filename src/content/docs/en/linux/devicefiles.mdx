@@ -31,7 +31,7 @@ There are various types of block devices, but the most common ones are:
 - Floppy drives (`/dev/fd*`)
 - Device mappers (`/dev/mapper/*`) - A special feature of the Linux kernel that allows you to create virtual block devices from other block devices.
 - Loop devices (`/dev/loop*`) - Virtual loopback devices that allow you to mount files as block devices.
-- IDE or ATA disks (`/dev/hd*`) - Older hard disk interfaces that are used by older hardware.
+- PATA/IDE disks (`/dev/hd*`) - Older drive interface that is used by older PCs.
   - The `hdx` IDE driver is deprecated and is no longer used by modern Linux distributions since Linux 2.6.19. IDE disks will now be shown as `sd*` devices.
 - MMC devices (`/dev/mmcblk*`) - Memory cards that use the MultiMediaCard standard, such as SD cards.
 
