@@ -28,16 +28,18 @@ export type Sidebar = Record<
 >;
 export const SIDEBAR: Sidebar = {
   en: {
-    Introduction: [{ text: "Welcome", link: "en/welcome" }],
+    Introduction: [{ text: "Welcome", link: "en/welcome" },{text: "Join the Community", link: "en/contributing/community" }],
     Installation: [
       { text: "Hardware", link: "en/installation/hardware" },
       { text: "Getting Ultramarine", link: "en/installation/getting" },
       { text: "Installation", link: "en/installation/installation" },
       { text: "Post-Installation", link: "en/installation/postinstall" },
     ],
-    Community: [
-      { text: "Join the Community", link: "en/community/community" },
-      { text: "Contributing", link: "en/community/contributorguide" }
+    Contributing: [
+      { text: "Overview", link: "en/community/contributorguide" },
+      { text: "Development", link: "en/community/hacking" },
+      { text: "Translations", link: "en/community/translating" },
+      { text: "Bug Hunting", link: "en/community/bugreport" },
     ],
     "Linux Concepts": [
       { text: "Concepts Overview", link: "en/linux/overview" },
