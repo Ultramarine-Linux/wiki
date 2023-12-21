@@ -35,6 +35,10 @@ export const SIDEBAR: Sidebar = {
       { text: "Installation", link: "en/installation/installation" },
       { text: "Post-Installation", link: "en/installation/postinstall" },
     ],
+    Community: [
+      { text: "Join the Community", link: "en/community/community" },
+      { text: "Contributing", link: "en/community/contributorguide" }
+    ],
     "Linux Concepts": [
       { text: "Concepts Overview", link: "en/linux/overview" },
       { text: "The File System", link: "en/linux/filesystem" },
@@ -46,7 +50,6 @@ export const SIDEBAR: Sidebar = {
     "Release Notes": [{ text: "Errata", link: "en/release/errata" }],
     Usage: [{ text: "Gaming on Ultramarine", link: "en/usage/gaming" }],
     //  Chromebook: [{ text: "Getting Started", link: "en/chromebook/chromebook" },{ text: "Terminology", link: "en/chromebook/terminology" },{ text: "Getting Chromebook Edition", link: "en/chromebook/getting" },{ text: "Preparing your Chromebook", link: "en/chromebook/preparing" },{ text: "Installation", link: "en/chromebook/installation" },{ text: "Post-Install", link: "en/chromebook/postinstall" }],
-    Community: [{ text: "Join the Community", link: "en/community/community" },{ text: "Contributing", link: "en/community/contributorguide" }],
     Development: [
       {
         text: "Developing for Ultramarine",
