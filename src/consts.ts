@@ -36,10 +36,10 @@ export const SIDEBAR: Sidebar = {
       { text: "Post-Installation", link: "en/installation/postinstall" },
     ],
     Contributing: [
-      { text: "Overview", link: "en/community/contributorguide" },
-      { text: "Development", link: "en/community/hacking" },
-      { text: "Translations", link: "en/community/translating" },
-      { text: "Bug Hunting", link: "en/community/bugreport" },
+      { text: "Overview", link: "en/contributing/contributorguide" },
+      { text: "Development", link: "en/contributing/hacking" },
+      { text: "Translations", link: "en/contributing/translating" },
+      { text: "Bug Hunting", link: "en/contributing/bugreport" },
     ],
     "Linux Concepts": [
       { text: "Concepts Overview", link: "en/linux/overview" },
@@ -51,7 +51,7 @@ export const SIDEBAR: Sidebar = {
     ],
     "Release Notes": [{ text: "Errata", link: "en/release/errata" }],
     Usage: [{ text: "Gaming on Ultramarine", link: "en/usage/gaming" }],
-    //  Chromebook: [{ text: "Getting Started", link: "en/chromebook/chromebook" },{ text: "Terminology", link: "en/chromebook/terminology" },{ text: "Getting Chromebook Edition", link: "en/chromebook/getting" },{ text: "Preparing your Chromebook", link: "en/chromebook/preparing" },{ text: "Installation", link: "en/chromebook/installation" },{ text: "Post-Install", link: "en/chromebook/postinstall" }],
+    Chromebook: [{ text: "Getting Started", link: "en/chromebook/chromebook" },{ text: "Terminology", link: "en/chromebook/terminology" },{ text: "Getting Chromebook Edition", link: "en/chromebook/getting" },{ text: "Preparing your Chromebook", link: "en/chromebook/preparing" },{ text: "Installation", link: "en/chromebook/installation" },{ text: "Post-Install", link: "en/chromebook/postinstall" }],
     Development: [
       {
         text: "Developing for Ultramarine",
