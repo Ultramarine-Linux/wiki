@@ -60,6 +60,7 @@ cat /path/to/CHECKSUM # Check the checksum
 
 ### Verifying the Checksum on Windows
 
+In Powershell, run this command:
 ```powershell
 CertUtil -hashfile PATH\TO\ULTRAMARINE.ISO SHA256
 # Open the CHECKSUM file with Nodepad and compare the checksum
@@ -73,7 +74,7 @@ Use [balenaEtcher](https://www.balena.io/etcher/) to create a bootable media fro
 
 ![](/assets/balenaetcher.png)
 
-Simply select the ISO file, a USB device, and click flash.
+Simply select the ISO file, a device to use for the installer, and click flash.
 
 ### On Ultramarine Linux
 
@@ -83,7 +84,7 @@ You can use the Fedora Media Writer to create a bootable media from the ISO imag
 
 ## Booting the Installer
 
-After flashing the image to your USB drive, you can boot to Ultramarine Linux by plugging in the drive and restarting your computer.
+After flashing the image to your installer, you can boot to Ultramarine Linux by plugging in the installer and restarting your computer.
 
 Before your computer boots to your current OS, please refer to your computer's documentation on which key to press to select a custom boot option.
 
