@@ -8,9 +8,9 @@ One of the most noticeable contributions you can make is code contributions. Whe
 
 This page serves as a step-by-step guide to hacking on Ultramarine Linux components.
 
-## Think of a Problem
+## Find Something to Work On 
 
-Try to think of an issue you face will Ultramarine (or computing at large) wether this is a tiny typo to a a new 
+There's no shortage of things to work on in Ultramarine Linux. From a feature you think would be cool, to something on our issue tracker.
 
 For example, Nvidia drivers, this is an issue with most Linux distributions that Ultramarine solves.
 
@@ -22,17 +22,14 @@ What's the cause? Do other people see this as a problem?
 
 A great place to ask this question is the Ultramarine Discord, simply ask and see what people think.
 
-## Decide How You're Going to Solve It
 
-This is the best part, come up with a couple ideas on how to solve the problem.
-
-## Build the Solution
-
-### Getting the Ultramarine Toolchain
+## Getting the Ultramarine Toolchain
 
 If you're contributing to an existing component, simply get the tools needed for it (we're slowly adding a list to our repositories.)
 
-If you're building a completley new feature, there's a few more steps
+If you're building a completely new feature, we recommend Rust or Go for features without a GUI. 
+
+If you're building with a GUI, we recommend using [libhelium](https://github.com/tau-os/libhelium), you can find more information here.
 
 Get to work! Make a fork of a project and tinker away!
 
@@ -51,6 +48,12 @@ Test the solution on your machine, if it works move on, if it doesn't keep tinke
 ## Getting into Ultramarine
 
 After you've tested, it's time to contribute. Simply open a pull request and we'll review it. There's three possible outcomes
-- Approval - We approve your solution, be proud as very few PRs get merged without changes.
-- Request for Changes - Something needs to change! Fix a problem or two and you're golden!
-- Denial - This doesn't happen very often, sometimes a feature just doesn't align with our plan. It's more likely that we'll simply ask you for changes.
+- **Approval**
+
+We approve your solution, be proud as very few PRs get merged without changes.
+- **Request for Changes** 
+
+Something needs to change! Fix a problem or two and you're golden!
+- **Denial**
+
+This doesn't happen very often, sometimes a feature just doesn't align with our plan. It's more likely that we'll simply ask you for changes.
