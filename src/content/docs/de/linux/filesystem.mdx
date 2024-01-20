@@ -1,7 +1,8 @@
 ---
 title: The File System
-description: 'An overview of the file system in Linux.'
+description: "An overview of the file system in Linux."
 ---
+
 import Alert from "../../../../components/Docs/Alert.astro";
 
 The Linux (and UNIX) file system is a hierarchical structure of files and directories that make up a Linux operating system.
@@ -9,10 +10,19 @@ The Linux (and UNIX) file system is a hierarchical structure of files and direct
 In Linux, everything is a file. Unlike Windows where there are many other object types that can either be a physical device, and inter-process communication is done by a kernel call.
 
 <Alert type="info">
-<div>
-    If you don't like reading text, you can watch this video below from Linode! (Not sponsored)
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/P0QZnAnsQ4c" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</div>
+  <div>
+    If you don't like reading text, you can watch this video below from Linode!
+    (Not sponsored)
+    <iframe
+      width="560"
+      height="315"
+      src="https://www.youtube.com/embed/P0QZnAnsQ4c"
+      title="YouTube video player"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen
+    ></iframe>
+  </div>
 </Alert>
 
 ## The File System Hierarchy
@@ -39,9 +49,7 @@ The directory structure is as follows:
 | /srv      | Shared service data used by server processes, such as web servers and NAS/File servers.                                                                                                                     |
 | /tmp      | Temporary data                                                                                                                                                                                              |
 | /usr      | Shared application data used by all users.                                                                                                                                                                  |
-| /var      | Variable data used by system processes.                                                                                                                                                               
-
-
+| /var      | Variable data used by system processes.                                                                                                                                                                     |
 
 ## The Home Directory
 
@@ -50,8 +58,7 @@ The home folder is the place where all your personal data is stored. It is a dir
 In Linux, the home folder is usually more extensively used than in Windows, as it stores all user-specific data and app settings. The system folders are only used when one wants to make system-wide changes.
 
 <Alert type="warning">
-If an app you don't know asks you for your password or root access, It may be trying to compromise your system. Cases like this are usually uncommon on Linux, but you should be aware of it.
+  If an app you don't know asks you for your password or root access, It may be
+  trying to compromise your system. Cases like this are usually uncommon on
+  Linux, but you should be aware of it.
 </Alert>
-
-
-

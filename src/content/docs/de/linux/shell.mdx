@@ -1,7 +1,8 @@
 ---
 title: The Shell
-description: 'How the shell works in Linux.'
+description: "How the shell works in Linux."
 ---
+
 import Alert from "../../../../components/Docs/Alert.astro";
 
 Sometimes, you may want to interact with the operating system in a more direct way. A traditional way to do this is to do it through the shell.
@@ -18,18 +19,27 @@ There are many various shells that are available on Linux, such as:
 
 Ultramarine Linux uses the [Z Shell](https://en.wikipedia.org/wiki/Z_shell) as its default shell, combined with the [Starship Prompt](https://starship.rs/) for a more clean interface.
 
-
 <Alert type="info">
-<div>
-    To learn more about shell scripting, you can watch this Bash introduction video by Fireship here:
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/I4EWvMFj37g" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    NOTE: The Z shell is mostly compatible with Bash, so most of the knowledge you will learn will be mostly applicable in Ultramarine Linux.
-</div>
+  <div>
+    To learn more about shell scripting, you can watch this Bash introduction
+    video by Fireship here:
+    <iframe
+      width="560"
+      height="315"
+      src="https://www.youtube.com/embed/I4EWvMFj37g"
+      title="YouTube video player"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen
+    ></iframe>
+    NOTE: The Z shell is mostly compatible with Bash, so most of the knowledge you
+    will learn will be mostly applicable in Ultramarine Linux.
+  </div>
 </Alert>
 
-
 <Alert type="info">
-The Z shell is also used Kali Linux and newer versions of macOS (Catalina and newer).
+  The Z shell is also used Kali Linux and newer versions of macOS (Catalina and
+  newer).
 </Alert>
 
 ## Interacting with the shell
@@ -67,7 +77,8 @@ rm -r /home/user/Documents
 ```
 
 <Alert type="info">
-Most users will usually execute `rm -rf` instead of `rm -r`. The `-f` flag is used to force the deletion of a file or directory.
+  Most users will usually execute `rm -rf` instead of `rm -r`. The `-f` flag is
+  used to force the deletion of a file or directory.
 </Alert>
 
 To create a new file, type `touch` followed by the path to the file.
@@ -119,7 +130,6 @@ echo "Hello World" > pipe.txt
 ```
 
 This pipes the output of `echo` to the named pipe `pipe.txt`, which is now a file.
-
 
 ## Executing a file
 

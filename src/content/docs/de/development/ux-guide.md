@@ -1,6 +1,6 @@
 ---
 title: UX Guidelines
-description: 'Guidelines for how the Ultramarine Linux experience should be designed.'
+description: "Guidelines for how the Ultramarine Linux experience should be designed."
 ---
 
 Ultramarine Linux is supposed to be a user-friendly desktop operating system, and stay out the way of the user. These guidelines are meant to be a reference for how to implement the UX of Ultramarine Linux.
@@ -25,7 +25,6 @@ There are a few things that should be kept in mind when creating an application 
 - Always let the user know what is happening.
 
 - Let the user know what they're doing, and don't try to get in their way if they really want to do something. Which means allowing the user to do risky changes to their system, with a warning.
-
 
 ## DE Choice
 

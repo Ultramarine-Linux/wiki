@@ -1,6 +1,6 @@
 ---
 title: Post-installation
-description: 'Things to do after installing Ultramarine Linux.'
+description: "Things to do after installing Ultramarine Linux."
 ---
 
 After installing Ultramarine Linux, There are a few things you should do to make the most out of your new system.
@@ -34,4 +34,5 @@ Make sure you're using the Xorg version of your desktop environment.
 Ultramarine Linux already includes the necessary codecs for the majority of the popular multimedia formats. You do not need to install any additional codecs.
 
 ## Set up Snapper (Btrfs Snapshots)
+
 Currently, RPM's architecture does not handle snapper properly. You might experience broken RPM transactions when doing rollbacks. This is a known issue and must be addressed upstream.
