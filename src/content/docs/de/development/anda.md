@@ -1,12 +1,11 @@
 ---
 title: Using Andaman
-description: 'Build and push packages with the Andaman toolchain.'
+description: "Build and push packages with the Andaman toolchain."
 ---
 
 To make package management easier for everyone, Ultramarine Linux developers and Fyra Labs have created the Andaman Toolchain, aka. [`anda`](https://github.com/FyraLabs/anda).
 
 The latest version as of writing is `0.1.6`.
-
 
 ## Getting Started
 

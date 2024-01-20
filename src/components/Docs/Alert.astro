@@ -2,64 +2,73 @@
 const { type } = Astro.props;
 
 const getIconName = (type: string) => {
-    switch(type) {
-        case "info":
-            return "lucide:info";
+  switch (type) {
+    case "info":
+      return "lucide:info";
 
-        case "warning":
-            return "lucide:alert-circle";
+    case "warning":
+      return "lucide:alert-circle";
 
-        case "danger":
-            return "lucide:x-circle";
+    case "danger":
+      return "lucide:x-circle";
 
-        default:
-            return "lucide:info";
-    }
-}
+    default:
+      return "lucide:info";
+  }
+};
 
-import Icon from "astro-icon"
+import { Icon } from "astro-icon/components";
 ---
 
-<div class:list={[ "alert-base", { "blue-bg": type === "info", "orange-bg": type === "warning", "red-bg": type === "danger" }]}>
-    <div class="icon-layout">
-        <Icon name={getIconName(type)} class="icon" />
-        <slot></slot>
-    </div>
+<div
+  class:list={[
+    "alert-base",
+    {
+      "blue-bg": type === "info",
+      "orange-bg": type === "warning",
+      "red-bg": type === "danger",
+    },
+  ]}
+>
+  <div class="icon-layout">
+    <Icon name={getIconName(type)} class="icon" />
+    <slot />
+  </div>
 </div>
 
 <style>
-    .alert-base {
-        padding: 20px;
-        border-radius: 8px;
-        background-color: #506480;
-        color: #fefefe !important;
-    }
+  .alert-base {
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #506480;
+    color: #fefefe !important;
+  }
 
-    .icon-layout {
-        display: flex;
-        flex-direction: row;
-        align-items: flex-start;
-        flex-shrink: 0;
-        flex-grow: 0;
-    }
+  .icon-layout {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    flex-shrink: 0;
+    flex-grow: 0;
+  }
 
-    .icon {
-        width: 24px;
-        height: 24px;
-        flex-shrink: 0;
-        flex-grow: 0;
-        margin-right: 0.5em;
-    }
+  .icon {
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+    flex-grow: 0;
+    margin-right: 0.5em;
+  }
 
-    .alert-base.blue-bg {
-        background-color: #1d365a;
-    }
+  .alert-base.blue-bg {
+    background-color: #1d365a;
+  }
 
-    .alert-base.orange-bg {
-        background-color: #5a3f1d;
-    }
+  .alert-base.orange-bg {
+    background-color: #5a3f1d;
+  }
 
-    .alert-base.red-bg {
-        background-color: #5a1d1d;
-    }
+  .alert-base.red-bg {
+    background-color: #5a1d1d;
+  }
 </style>
