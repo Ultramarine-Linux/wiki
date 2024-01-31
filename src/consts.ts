@@ -28,7 +28,10 @@ export type Sidebar = Record<
 >;
 export const SIDEBAR: Sidebar = {
   en: {
-    Introduction: [{ text: "Welcome", link: "en/welcome" },{text: "Join the Community", link: "en/contributing/community" }],
+    Introduction: [
+      { text: "Welcome", link: "en/welcome" },
+      { text: "Join the Community", link: "en/contributing/community" },
+    ],
     Installation: [
       { text: "Hardware", link: "en/installation/hardware" },
       { text: "Getting Ultramarine", link: "en/installation/getting" },
@@ -36,7 +39,7 @@ export const SIDEBAR: Sidebar = {
       { text: "Post-Installation", link: "en/installation/postinstall" },
     ],
     Contributing: [
-      { text: "Code of Conduct", link: "en/contributing/codeofconduct"},
+      { text: "Code of Conduct", link: "en/contributing/codeofconduct" },
       { text: "Overview", link: "en/contributing/contributorguide" },
       { text: "Development", link: "en/contributing/hacking" },
       { text: "Translations", link: "en/contributing/translating" },
@@ -52,7 +55,14 @@ export const SIDEBAR: Sidebar = {
     ],
     "Release Notes": [{ text: "Errata", link: "en/release/errata" }],
     Usage: [{ text: "Gaming on Ultramarine", link: "en/usage/gaming" }],
-    Chromebook: [{ text: "Getting Started", link: "en/chromebook/chromebook" },{ text: "Terminology", link: "en/chromebook/terminology" },{ text: "Getting Chromebook Edition", link: "en/chromebook/getting" },{ text: "Preparing your Chromebook", link: "en/chromebook/preparing" },{ text: "Installation", link: "en/chromebook/installation" },{ text: "Post-Install", link: "en/chromebook/postinstall" },{ text: "ARM Chromebooks (Beta)", link: "en/chromebook/armbeta" }],
+    Chromebook: [
+      { text: "Getting Started", link: "en/chromebook/chromebook" },
+      { text: "Terminology", link: "en/chromebook/terminology" },
+      { text: "Getting Chromebook Edition", link: "en/chromebook/getting" },
+      { text: "Installing to a Chromebook", link: "en/chromebook/preparing" },
+      { text: "Post-Install", link: "en/chromebook/postinstall" },
+      { text: "ARM Chromebooks (Beta)", link: "en/chromebook/armbeta" },
+    ],
     Development: [
       {
         text: "Developing for Ultramarine",

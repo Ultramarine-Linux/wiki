@@ -82,18 +82,19 @@ Some computers with specific Broadcom or Realtek chipsets may require additional
 Microsoft Surfaces require a special kernel to work properly under Ultramarine.
 
 These are currently provided by the Surface Linux team, start by adding their repository
+
 ```shell
 sudo dnf config-manager \
     --add-repo=https://pkg.surfacelinux.com/fedora/linux-surface.repo
 ```
 
 Then, install the kernel and it's dependencies
+
 ```shell
 sudo dnf install --allowerasing kernel-surface iptsd libwacom-surface
 ```
 
 If you want to use secure boot, you need to install `surface-secureboot`, enable 3rd party keys in the EFI settings, and enroll the key in cert manager. This does not work well on some devices, so we reccomend disabling secure boot.
-
 
 Some Surface models may not boot with a stock copy of Ultramarine Linux. If this is the case for your device, you have to install the kernel before leaving the live environment.
 
@@ -102,35 +103,46 @@ Some Surface models may not boot with a stock copy of Ultramarine Linux. If this
 2. Check the root partition, it should be mounted as `/mnt/sysroot`
 
 3. Chroot into the installed systen
+
 ```
 sudo chroot /mnt/sysroot
 ```
+
 4. Follow the above instructions
 
 5. Run `dracut -f` to make sure the new kernel is installed as the initramfs.
 
 6. Exit the chroot and reboot!
-<Alert type="info">
-  We're currently working on including this in Ultramarine by default, excpect this to be simplified in UM 40 :3
-</Alert>
+   <Alert type="info">
+     We're currently working on including this in Ultramarine by default,
+     excpect this to be simplified in UM 40 :3
+   </Alert>
 
+## UEFI/BIOS Keys
 
-## BIOS Keys
+These are the keys (or combonation of keys) used to enter the boot menu or UEFI/BIOS settings on different computers.
 
-These are the keys (or combonation of keys) used to enter the boot menu or BIOS settings on different computers.
-
-| Manufacturer | BIOS | Boot Menu |
-|--------------|------|-----------|
-| Acer         | F2 or Del  |           |
-| ASUS         | F2 or Del   |           |
-| Dell         | F12  | F11       |
-| HP           | ESC or F10 |     |
-| ThinkPads    |      | ThinkVantage or Esc |
-| Lenovo Desktops | F1 | |
-| Lenovo Laptops (Except Thinkpad) | F1+Enter | |
-| MSI | Del | |
-| Microsoft (Tablets) | VolUp+Power | |
-| Origin PC | F2 | |
-| Samsung | F2 | |
-| Toshiba |F2 | |
-| Intel Macs | n/a | Hold Option |
+| Manufacturer                     | UEFI/BIOS               | Boot Menu                        |
+| -------------------------------- | ----------------------- | -------------------------------- |
+| Acer                             | F2 or Del               | Esc, F9, F12                     |
+| Aorus (Gigabyte)                 | Del, F2                 | F12                              |
+| ASRock                           | Del, F2                 | F11                              |
+| ASUS                             | F2 or Del               | Esc, F8                          |
+| Compaq                           | F10                     | F9                               |
+| Dell                             | F12                     | F11                              |
+| Dell Tablets                     | Hold Volume down        | Hold Volume up                   |
+| ECS                              | Del                     | F7                               |
+| EVGA                             | Del                     | F7                               |
+| Gateway                          | Del, F1, F2             | F12                              |
+| HP                               | ESC, F10                | Esc, F9                          |
+| Intel                            | F2                      | F10                              |
+| Lenovo (ThinkPad)                | F2, Fn+F2, ThinkVantage | F12, Fn+F12, Enter, ThinkVantage |
+| Lenovo Desktops                  | F1                      | F12, Fn+F12                      |
+| Lenovo Laptops (Except Thinkpad) | F1+Enter, Novo Button   | F12, Fn+F12, Novo button,        |
+| MSI                              | Del                     | F11                              |
+| Microsoft (Tablets)              | VolUp+Power             | N/A                              |
+| Origin PC                        | F2                      | F2                               |
+| Samsung                          | F2                      | F10                              |
+| Toshiba                          | F2                      | F12                              |
+| Intel Macs                       | n/a                     | Hold Option                      |
+| Zotac                            | Del                     | F8                               |
