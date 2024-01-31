@@ -42,8 +42,6 @@ export const SIDEBAR: Sidebar = {
       { text: "Code of Conduct", link: "en/contributing/codeofconduct" },
       { text: "Overview", link: "en/contributing/contributorguide" },
       { text: "Development", link: "en/contributing/hacking" },
-      { text: "Translations", link: "en/contributing/translating" },
-      { text: "Bug Hunting", link: "en/contributing/bugreport" },
     ],
     "Linux Concepts": [
       { text: "Concepts Overview", link: "en/linux/overview" },
