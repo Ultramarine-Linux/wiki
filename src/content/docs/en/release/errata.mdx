@@ -1,7 +1,8 @@
 ---
 title: Errata
-description: 'Various known bugs and other issues in Ultramarine Linux.'
+description: "Various known bugs and other issues in Ultramarine Linux."
 ---
+
 import Alert from "../../../../components/Docs/Alert.astro";
 
 This page contains erratum for Ultramarine Linux releases.
@@ -56,6 +57,7 @@ This is caused by Anaconda not finding the patched `/.buildinfo` file (or Produc
 This is due to the fact that the DNF Copr plugin detects the OS ID `/etc/os-release` file, and Ultramarine uses a custom code instead of `fedora`.
 
 A workaround is to also specify the Fedora buildroot when trying to add a Copr repository, like this:
+
 ```bash
 sudo dnf copr enable cappyishihara/fedorajam-plus fedora-36-x86_64
 ```
@@ -63,16 +65,20 @@ sudo dnf copr enable cappyishihara/fedorajam-plus fedora-36-x86_64
 This will be addressed in a `dnf-plugins-core` patch, either upstream or locally with Ultramarine.
 
 <Alert type="info">
-This issue has been addressed upstream in the <a href="https://github.com/rpm-software-management/dnf-plugins-core/pull/463">following pull request</a> <br /> It will be included in the next release of dnf-plugins-core after 4.3.1.
-The proper configurations will be included in Ultramarine Linux 38 and later.
+  This issue has been addressed upstream in the{" "}
+  <a href="https://github.com/rpm-software-management/dnf-plugins-core/pull/463">
+    following pull request
+  </a>{" "}
+  <br /> It will be included in the next release of dnf-plugins-core after
+  4.3.1. The proper configurations will be included in Ultramarine Linux 38 and
+  later.
 </Alert>
-
 
 ### GNOME
 
-#### Pop!_Shell launcher
-The Pop!_Shell launcher is broken. This can be fixed by installing the `pop-launcher` package, as the package was not included in the original release.
+#### Pop!\_Shell launcher
 
+The Pop!\_Shell launcher is broken. This can be fixed by installing the `pop-launcher` package, as the package was not included in the original release.
 
 ### Cutefish
 
@@ -87,7 +93,6 @@ SDDM may display a black screen when starting up. This is a known issue, but the
 This was caused by missing Pantheon Switchboard modules, which are not included in Ultramarine Linux due to time constraints.
 
 You can help us fix this issue by offering to maintain these packages ourselves, or by [contributing to help submit them to upstream Fedora.](https://fedoraproject.org/wiki/SIGs/Pantheon)
-
 
 ### OSTree Edition
 
