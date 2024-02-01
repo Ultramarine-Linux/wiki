@@ -30,7 +30,10 @@ export const SIDEBAR: Sidebar = {
   en: {
     Introduction: [
       { text: "Welcome", link: "en/welcome" },
-      { text: "Join the Community", link: "en/contributing/community" },
+    ],    
+    Community: [
+      { text: "Join the Community", link: "en/community/community" },
+      { text: "Code of Conduct", link: "en/contributing/codeofconduct" },
     ],
     Installation: [
       { text: "Hardware", link: "en/installation/hardware" },
@@ -39,7 +42,6 @@ export const SIDEBAR: Sidebar = {
       { text: "Post-Installation", link: "en/installation/postinstall" },
     ],
     Contributing: [
-      { text: "Code of Conduct", link: "en/contributing/codeofconduct" },
       { text: "Overview", link: "en/contributing/contributorguide" },
       { text: "Development", link: "en/contributing/hacking" },
     ],
