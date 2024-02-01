@@ -33,7 +33,7 @@ export const SIDEBAR: Sidebar = {
     ],    
     Community: [
       { text: "Join the Community", link: "en/community/community" },
-      { text: "Code of Conduct", link: "en/contributing/codeofconduct" },
+      { text: "Code of Conduct", link: "en/community/codeofconduct" },
     ],
     Installation: [
       { text: "Hardware", link: "en/installation/hardware" },
