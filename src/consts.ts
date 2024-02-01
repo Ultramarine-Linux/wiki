@@ -28,9 +28,7 @@ export type Sidebar = Record<
 >;
 export const SIDEBAR: Sidebar = {
   en: {
-    Introduction: [
-      { text: "Welcome", link: "en/welcome" },
-    ],    
+    Introduction: [{ text: "Welcome", link: "en/welcome" }],
     Community: [
       { text: "Join the Community", link: "en/community/community" },
       { text: "Code of Conduct", link: "en/community/codeofconduct" },
@@ -45,6 +43,16 @@ export const SIDEBAR: Sidebar = {
       { text: "Overview", link: "en/contributing/contributorguide" },
       { text: "Development", link: "en/contributing/hacking" },
     ],
+    Hardware: [
+      { text: "Ultramarine Everywhere", link: "en/hardware/everywhere" },
+      { text: "System Requirements", link: "en/hardware/requirements" },
+      { text: "NVIDIA", link: "en/hardware/nvidia" },
+      { text: "Microsoft Surface", link: "en/hardware/surface" },
+      {
+        text: "Broadcom and Realtek Networking",
+        link: "en/hardware/broadcom-realtek",
+      },
+    ],
     "Linux Concepts": [
       { text: "Concepts Overview", link: "en/linux/overview" },
       { text: "The File System", link: "en/linux/filesystem" },
@@ -54,6 +62,7 @@ export const SIDEBAR: Sidebar = {
       { text: "The Shell", link: "en/linux/shell" },
     ],
     "Release Notes": [{ text: "Errata", link: "en/release/errata" }],
+
     Usage: [{ text: "Gaming on Ultramarine", link: "en/usage/gaming" }],
     Chromebook: [
       { text: "Getting Started", link: "en/chromebook/chromebook" },
