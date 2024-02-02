@@ -2,7 +2,7 @@
 title: Developing for Ultramarine
 description: "Things to get started on developing in Ultramarine."
 ---
-### This Page Will Be Moving to [Fyra Developer](https://developer.fyralabs.com) Soon!
+### This Page Will Be Moving to [**Fyra Developer**](https://developer.fyralabs.com) Soon!
 
 Ultramarine Linux aims to be a developer-friendly environment for all kinds of developers. In this article, we will cover the basics of how to get started developing in Ultramarine.
 
@@ -12,7 +12,7 @@ If you would like to develop **for** Ultramarine, you can get started with the [
 
 ## Getting Started
 
-Ultramarine comes with the [Python programming language](https://www.python.org/) out of the box, which is also required for most Fedora and Ultramarine
+Ultramarine comes with the [Python programming language](https://www.python.org/) out of the box, which is also required for most Fedora
 software, including the DNF package manager itself.
 
 ### Setting up Rust

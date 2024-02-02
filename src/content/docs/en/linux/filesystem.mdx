@@ -5,9 +5,9 @@ description: "An overview of the file system in Linux."
 
 import Alert from "../../../../components/Docs/Alert.astro";
 
-The Linux (and UNIX) file system is a hierarchical structure of files and directories that make up a Linux operating system.
+The Linux (and UNIX) file system is a hierarchical structure of files and directories (i.e. folders) that make up a Linux operating system.
 
-In Linux, everything is a file. Unlike Windows where many other object types can either be a physical device, and inter-process communication is done by a kernel call.
+In Linux, everything is a file, unlike Microsoft Windows where many other object types can either be a physical device, and inter-process communications are done by kernel calls.
 
 <Alert type="info">
   <div class="full-width">
@@ -30,25 +30,25 @@ The file system hierarchy is a set of directories that appear under the root dir
 
 The directory structure is as follows:
 
-| Directory | Description                                                                                                                                                                                                 |
-| :-------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| /         | The root directory, contains the all the other directories and files.                                                                                                                                       |
-| /bin      | Contains executables and command binares that are required for the system to function.                                                                                                                      |
-| /boot     | The Boot loader, this may usually be in a seperate partition.                                                                                                                                               |
-| /dev      | Contains special device files that can be used for special purposes (`/dev/sda` for a SATA drive, `/dev/null` for blank data, `/dev/random` for pseudo-random data, `/dev/tty` for terminal sessions, etc). |
-| /etc      | Contains system-wide settings and configuration files.                                                                                                                                                      |
-| /home     | User data                                                                                                                                                                                                   |
-| /lib      | Libraries required for executables in `/bin` to function. May be also named `/lib<arch>` for multi-architecture support.                                                                                    |
-| /media    | Mount points for removable media, such as USB drives, SD cards, etc.                                                                                                                                        |
-| /mnt      | Temporary mount points for mounting devices.                                                                                                                                                                |
-| /opt      | Optional packages that may be installed by the user.                                                                                                                                                        |
-| /proc     | Process data and kernel information for inter-process communication managed by the kernel.                                                                                                                  |
-| /root     | User data for the root user.                                                                                                                                                                                |
-| /sbin     | Executables for system tasks                                                                                                                                                                                |
-| /srv      | Shared service data used by server processes, such as web servers and NAS/File servers.                                                                                                                     |
-| /tmp      | Temporary data                                                                                                                                                                                              |
-| /usr      | Shared application data used by all users.                                                                                                                                                                  |
-| /var      | Variable data used by system processes.                                                                                                                                                                     |
+| Directory | Description                                                                                                                                                                       |
+| :-------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| /         | The root directory with the all the other directories and files.                                                                                                                  |
+| /bin      | Executables and command binares required for a functioning system.                                                                                                                |
+| /boot     | The bootloader and files used during early boot process. May usually be in a seperate partition.                                                                                  |
+| /dev      | Special device files for various purposes (`/dev/sda` for a SATA drive, `/dev/null` for blank data, `/dev/random` for pseudo-random data, `/dev/tty` for terminal sessions, etc). |
+| /etc      | System-wide settings and configuration files.                                                                                                                                     |
+| /home     | User data.                                                                                                                                                                        |
+| /lib      | Libraries required for executables in `/bin` to function. May be also named `/lib<arch>` for multi-architecture support.                                                          |
+| /media    | Mount points for removable media, such as USB drives, SD cards, etc.                                                                                                              |
+| /mnt      | Temporary mount points for mounting devices.                                                                                                                                      |
+| /opt      | Optional packages that may be installed by the user.                                                                                                                              |
+| /proc     | Process data and kernel information for inter-process communication managed by the kernel.                                                                                        |
+| /root     | User data for the root user.                                                                                                                                                      |
+| /sbin     | Executables for system tasks.                                                                                                                                                     |
+| /srv      | Shared service data used by server processes, such as web servers and NAS/File servers.                                                                                           |
+| /tmp      | Temporary data.                                                                                                                                                                    |
+| /usr      | Shared application data used by all users.                                                                                                                                        |
+| /var      | Variable data used by system processes.                                                                                                                                           |
 
 ## The Home Directory
 
@@ -64,7 +64,7 @@ In Linux, the home folder is usually more extensively used than in Windows, as i
 
 ## Security
 
-Ultramarine Linux uses SELinux, software that implements Mandatory Access Control. This prevents applications (and users) from accessing files they shouldn't be able to.
+Ultramarine Linux uses SELinux, a software that implements Mandatory Access Control. This prevents applications (and users) from accessing files they shouldn't be able to.
 
 Users will usually be required to have root access to modify system files, and even then, SELinux may prevent you from doing so unless you have set the correct contexts for the files.
 
@@ -107,8 +107,8 @@ And extra file system drivers can be installed, such as:
 
 The Ultramarine Linux installer will be configured to use the BTRFS file system by default, as it is the most modern file system that is supported by the Linux kernel, and has many features that are useful for desktop users, such as snapshots, virtual volumes, journalling, error correction and compression.
 
-By default, it will use up all the available space on the disk save for a small amount of space for the EFI bootloader partition, and create a BTRFS JBOD array using all the available space on all selected disks.
-And then create 2 subvolumes, one for the root directory `/`, and one for the home directory `/home`, which will share the same space but have different filesystem settings.
+By default, it will use up all the available space on the disk. It uses a small portion of the spaces for the EFI bootloader partition, and create a BTRFS JBOD array using the rest of all the available space on all selected disks.
+It then creates 2 subvolumes, one for the root directory `/`, and one for the home directory `/home`, which will share the same space but have different filesystem settings.
 
 So unless specified otherwise, the installer will use all your disks to create a JBOD (spanned) array, which may be undesirable if you do not want to risk losing all your data if one of the disks fail.
 
@@ -118,6 +118,6 @@ Most server installations will use XFS or ZFS, as they have better performance a
 
 Ultramarine Linux can also mount remote file systems from a remote server or NAS, using the NFS, (S)FTP, SMB, and WebDAV protocols.
 
-#### [← Back To: Concepts](overview)
+#### [← Back To: Concepts](../overview)
 
-#### [Next Up: Device Files →](devicefiles)
+#### [Next Up: Device Files →](../devicefiles)
