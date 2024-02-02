@@ -47,7 +47,7 @@ These builds are currently in beta. If you are planning to test them, please joi
 
 Ultramarine images have a matching checksum file that can be checked against the image itself.
 
-They can be downloaded by clicking the `View Checksum` button on the [download page](https://ultramarine-linux.org/download/).
+They can be downloaded by clicking the `View checksum` button on the [download page](https://ultramarine-linux.org/download/).
 
 ### Verifying the Checksum on Linux and macOS
 
@@ -55,7 +55,7 @@ You can use the following commands to check the integrity of the image:
 
 ```bash
 sha256sum -b /path/to/ultramarine.iso # Generate the checksum for the image
-cat /path/to/CHECKSUM # Check the checksum
+cat /path/to/checksum # Check the checksum
 
 # Now you can compare the checksum
 ```
@@ -66,7 +66,7 @@ In Powershell, run this command:
 
 ```powershell
 CertUtil -hashfile PATH\TO\ULTRAMARINE.ISO SHA256
-# Open the CHECKSUM file with Nodepad and compare the checksum
+# Open the checksum file with Nodepad and compare the checksum
 ```
 
 ## Creating the Installer
