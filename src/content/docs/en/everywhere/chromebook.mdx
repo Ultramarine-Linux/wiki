@@ -1,0 +1,99 @@
+---
+title: "Chromebook (Everywhere)"
+description: "Chromebooks in the Ultramarine Everywhere Initiative"
+---
+
+import Alert from "../../../../components/Docs/Alert.astro";
+
+Chromebooks were an obvious target for Ultramarine Everywhere, despite being mostly standard hardware, they have custom EC and strange firmware. We begun development in Ultramarine 39, and are preparing to launch midcycle.
+
+Chromebook support in Ultramarine Linux is provided in partnership with the [Chrultrabook Project](https://chrultrabook.com).
+
+# x86
+
+All x86 Chromebooks that use Depthcharge are supported by Ultramarine Chromebook Edition.
+
+## Userland Changes
+
+Devices in Ultramarine Everywhere try to stick very closely to the standard Ultramarine userland, sometimes we have to deviate from this to make the experience better.
+
+### Audio Support
+
+We use WeirdTreeThing's [audio script](https://github.com/WeirdTreeThing/chromebook-linux-audio) to make audio work properly.
+
+### Chrultrabook Controller
+
+We ship the [Chrultrabook Controller app](https://github.com/death7654/Chrultrabook-Tools) to provide some missing features, like fan and backlight control.
+
+### Default Partitions
+
+On Chromebooks, we use ext4 in lieu of Btrfs, and disable swap to extend the life of the EMMC found in many Chromebooks. We also create one 16MiB partition containing [Submarine](https://developer.fyralabs.com/submarine) at the start of the disk instead of `/boot/EFI` and `/boot`
+
+### Keyboard Mapping
+
+We use [keyd](https://github.com/rvaiya/keyd) to map keys on Chromebooks.
+
+## Feature Matrix
+
+| Feature     | Functionality | Notes                                                                                                                     |
+| ----------- | ------------- | ------------------------------------------------------------------------------------------------------------------------- |
+| Booting     | Working       | With [Submarine](https://developer.fyralabs.com/submarine) or [UEFI](https://docs.chrultrabook.com/docs/firmware/)        |
+| WiFi        | Working       |                                                                                                                           |
+| Ethernet    | Working       |                                                                                                                           |
+| Bluetooth   | Working       |                                                                                                                           |
+| Display     | Working       |                                                                                                                           |
+| Graphics    | Working       |                                                                                                                           |
+| Storage     | Working       |                                                                                                                           |
+| USB         |               |                                                                                                                           |
+| SD          | Working       |                                                                                                                           |
+| Ports       |               |                                                                                                                           |
+| Power       | Working       |                                                                                                                           |
+| Touch       | Working       |                                                                                                                           |
+| Pen         | Partial       | USI and Wacom Pens work, others may not                                                                                   |
+| Audio       | Partial       | May require [additional setup](https://github.com/WeirdTreeThing/chromebook-linux-audio). Works in Ultramarine by default |
+| Keyboard    | Working       | Some models may have issues on older kernels                                                                              |
+| Touchpad    | Working       |                                                                                                                           |
+| Webcam      | Working       |                                                                                                                           |
+| Lid Switch  | Partial       | Some models may have issues                                                                                               |
+| Tablet Mode | Partial       | Same reason as lid switch                                                                                                 |
+
+## Unsupported Devices
+
+| Device    | Reason               |
+| --------- | -------------------- |
+| Mario     | Firmware Limitations |
+| Alex      | Firmware Limitations |
+| ZGB       | Firmware Limitations |
+| Stumpy    | Firmware Limitations |
+| Lumpy     | Firmware Limitations |
+| Parrot    | Firmware Limitations |
+| Butterfly | Firmware Limitations |
+| Link      | Firmware Limitations |
+| Stout     | Firmware Limitations |
+
+## Installation
+
+Prebuilt images with userland tweaks will be available in the near future
+
+## Manual Installation - NOT RECOMMENDED
+
+<Alert type="warning">
+  This method is **NOT RECOMMENDED**. Only do this if you know what you're doing
+  and need to test.
+</Alert>
+
+This guide assumes you have Developer Mode and USB Booting Enabled
+
+1. Flash an Ultramarine ISO to a USB Drive
+2. Delete the first two partitions on the disk
+3. Create a 16mb ext4 partition
+4. Flash the submarine.kpart file to the partition
+5. Boot the image on the Chromebook
+6. On the internal disk, create a 16mib ext4 partition BEFORE the standard partitions
+7. Install Ultramarine normally
+8. After the installation is complete, flash the submarine.kpart file to the 16mib partition you created
+9. Done!
+
+## ARM
+
+ARM Chromebooks are in heavy development. If you'd like to help test, check out the [ARM Beta Program](/en/chromebook/armbeta)

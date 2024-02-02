@@ -5,4 +5,20 @@ description: "Information about Broadcom and Realtek Networking on Ultramarine L
 
 import Alert from "../../../../components/Docs/Alert.astro";
 
-Some computers with specific Broadcom or Realtek chipsets may require additional drivers to be installed. You may need to connect to the internet via Ethernet or USB tethering from your phone to install these drivers.
+Some computers with specific Broadcom or Realtek chipsets may require additional drivers to be installed.
+
+You'll need to connect to the internet, you can do this via Ethernet or USB tethering from your phone. iPhones will automatically tether over USB when connected, Android phones may require you to switch the USB mode.
+
+On Broadcom, install `broadcom-wl` and `kmod-wl`
+
+```shell
+sudo dnf install kmod-wl broadcom-wl
+```
+
+On Realtek, install `kmod-wl` only
+
+```shell
+sudo dnf install kmod-wl
+```
+
+Then reboot!
