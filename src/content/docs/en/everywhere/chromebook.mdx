@@ -10,8 +10,9 @@ import Alert from "../../../../components/Docs/Alert.astro";
   this page is subject to change. Do not follow any instructions unless you know
   what you're doing.
 </Alert>
+
 Chromebooks were an obvious target for Ultramarine Everywhere, despite being mostly
-standard hardware, they have custom EC and strange firmware. We begun development
+standard hardware, they have custom EC and strange firmware. We began development
 in Ultramarine 39, and are preparing to launch midcycle.
 
 Chromebook support in Ultramarine Linux is provided in partnership with the [Chrultrabook Project](https://chrultrabook.com).
@@ -42,27 +43,27 @@ We use [keyd](https://github.com/rvaiya/keyd) to map keys on Chromebooks.
 
 ## Feature Matrix
 
-| Feature     | Functionality | Notes                                                                                                                     |
-| ----------- | ------------- | ------------------------------------------------------------------------------------------------------------------------- |
-| Booting     | Working       | With [Submarine](https://developer.fyralabs.com/submarine) or [UEFI](https://docs.chrultrabook.com/docs/firmware/)        |
-| WiFi        | Working       |                                                                                                                           |
-| Ethernet    | Working       |                                                                                                                           |
-| Bluetooth   | Working       |                                                                                                                           |
-| Display     | Working       |                                                                                                                           |
-| Graphics    | Working       |                                                                                                                           |
-| Storage     | Working       |                                                                                                                           |
-| USB         |               |                                                                                                                           |
-| SD          | Working       |                                                                                                                           |
-| Ports       |               |                                                                                                                           |
-| Power       | Working       |                                                                                                                           |
-| Touch       | Working       |                                                                                                                           |
-| Pen         | Partial       | USI and Wacom Pens work, others may not                                                                                   |
-| Audio       | Partial       | May require [additional setup](https://github.com/WeirdTreeThing/chromebook-linux-audio). Works in Ultramarine by default |
-| Keyboard    | Working       | Some models may have issues on older kernels                                                                              |
-| Touchpad    | Working       |                                                                                                                           |
-| Webcam      | Working       |                                                                                                                           |
-| Lid Switch  | Partial       | Some models may have issues                                                                                               |
-| Tablet Mode | Partial       | Same reason as lid switch                                                                                                 |
+| Feature     | Functionality | Notes                                                                                                                                            |
+| ----------- | ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Booting     | Working       | With [Submarine](https://developer.fyralabs.com/submarine) or [UEFI](https://docs.chrultrabook.com/docs/firmware/)                               |
+| WiFi        | Working       |                                                                                                                                                  |
+| Ethernet    | Working       |                                                                                                                                                  |
+| Bluetooth   | Working       |                                                                                                                                                  |
+| Display     | Working       |                                                                                                                                                  |
+| Graphics    | Working       |                                                                                                                                                  |
+| Storage     | Working       |                                                                                                                                                  |
+| USB         | Working       |                                                                                                                                                  |
+| SD          | Working       |                                                                                                                                                  |
+| Ports       | Working       |                                                                                                                                                  |
+| Power       | Working       |                                                                                                                                                  |
+| Touch       | Working       |                                                                                                                                                  |
+| Pen         | Partial       | USI and Wacom Pens work, others may not                                                                                                          |
+| Audio       | Partial       | May require [additional setup](https://github.com/WeirdTreeThing/chromebook-linux-audio). Some Chromebooks may not work due to controller issues |
+| Keyboard    | Working       | Some models may have issues on older kernels                                                                                                     |
+| Touchpad    | Working       |                                                                                                                                                  |
+| Webcam      | Working       |                                                                                                                                                  |
+| Lid Switch  | Partial       | Some models may have issues                                                                                                                      |
+| Tablet Mode | Partial       | Same reason as lid switch                                                                                                                        |
 
 ## Unsupported Devices
 
@@ -77,6 +78,8 @@ We use [keyd](https://github.com/rvaiya/keyd) to map keys on Chromebooks.
 | Butterfly | Firmware Limitations |
 | Link      | Firmware Limitations |
 | Stout     | Firmware Limitations |
+
+These computers are from the first generation of Chromebooks, and use a different firmware than modern ones.
 
 ## Installation
 
@@ -94,12 +97,12 @@ This guide assumes you have Developer Mode and USB Booting Enabled
 
 1. Flash an Ultramarine ISO to a USB Drive
 2. Delete the first two partitions on the disk
-3. Create a 16mb ext4 partition
+3. Create a 16MB ext4 partition
 4. Flash the submarine.kpart file to the partition
 5. Boot the image on the Chromebook
-6. On the internal disk, create a 16mib ext4 partition BEFORE the standard partitions
+6. On the internal disk, create a 16MiB ext4 partition BEFORE the standard partitions
 7. Install Ultramarine normally
-8. After the installation is complete, flash the submarine.kpart file to the 16mib partition you created
+8. After the installation is complete, flash the submarine.kpart file to the 16MiB partition you created
 9. Done!
 
 ## ARM
