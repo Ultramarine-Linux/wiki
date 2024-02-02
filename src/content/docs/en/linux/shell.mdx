@@ -5,19 +5,9 @@ description: "How the shell works in Linux."
 
 import Alert from "../../../../components/Docs/Alert.astro";
 
-Sometimes, you may want to interact with the operating system in a more direct way. A traditional way to do this is to do it through the shell.
+The shell is a command line interface to the operating system. It is a program that allows you to directly execute commands and interact on deeper level.
 
-The shell is a command line interface to the operating system. It is a program that wraps around the operating system kernel, and allows you to directly execute system calls and commands to interact with the operating system.
-
-There are many various shells that are available on Linux, such as:
-
-- The Bourne shell (sh)
-- The Bourne-again shell (bash)
-- The Korn shell (ksh)
-- The Z shell (zsh)
-- The Friendly Interactive Shell (fish)
-
-Ultramarine Linux uses the [Z Shell](https://en.wikipedia.org/wiki/Z_shell) as its default shell, combined with the [Starship Prompt](https://starship.rs/) for a more clean interface.
+You may be familar with Bash from other Linux distributions. Ultramarine uses the [zsh](https://en.wikipedia.org/wiki/Z_shell) instead of bash. We also use [Starship Prompt](https://starship.rs/) to provide additional convenience features like displaying the current git branch.
 
 <Alert type="info">
   <div>
@@ -35,11 +25,6 @@ Ultramarine Linux uses the [Z Shell](https://en.wikipedia.org/wiki/Z_shell) as i
     NOTE: The Z shell is mostly compatible with Bash, so most of the knowledge you
     will learn will be mostly applicable in Ultramarine Linux.
   </div>
-</Alert>
-
-<Alert type="info">
-  The Z shell is also used Kali Linux and newer versions of macOS (Catalina and
-  newer).
 </Alert>
 
 ## Interacting with the Shell
