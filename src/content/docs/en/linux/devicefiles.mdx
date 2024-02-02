@@ -25,19 +25,15 @@ Newer Windows versions also support mounting devices as directories, but they ar
 
 There are various types of block devices, but the most common ones are:
 
-- SATA, SCSI or USB disks (`/dev/sd*`)
-- NVMe modules (`/dev/nvme*`)
-- CD/DVD drives (`/dev/sr*`)
-- Floppy drives (`/dev/fd*`)
+- SATA, PATA/IDE, SAS, SCSI or USB disks (`/dev/sd*`)
+- NVMe Drives (`/dev/nvme*`)
 - Device mappers (`/dev/mapper/*`) - A special feature of the Linux kernel that allows you to create virtual block devices from other block devices.
 - Loop devices (`/dev/loop*`) - Virtual loopback devices that allow you to mount files as block devices.
-- PATA/IDE disks (`/dev/hd*`) - Older drive interface that is used by older PCs.
-  - The `hdx` IDE driver is deprecated and is no longer used by modern Linux distributions since Linux 2.6.19. IDE disks will now be shown as `sd*` devices.
 - MMC devices (`/dev/mmcblk*`) - Memory cards that use the MultiMediaCard standard, such as SD cards.
 
 ## Pseudo-devices
 
-Pseudo-devices are devices that do not actually exist, but are used by the kernel to provide an interface for various features.
+Pseudo-devices are devices that do not actually exist but are used by the kernel to provide an interface for various features.
 
 The most common pseudo-devices are:
 
@@ -55,7 +51,7 @@ The most common pseudo-devices are:
 
 You can interact with device files like you would with any other file, but there are also special tools that are used to interact with them.
 
-The `cat` (short for "concatenate") command can be used to read data from a file and output it to `/dev/stdout` (standard output), which is usually the terminal.
+The `cat` command can be used to read data from a file and output it to `/dev/stdout` (standard output), which is usually the terminal.
 
 ```sh
 cat /dev/urandom
