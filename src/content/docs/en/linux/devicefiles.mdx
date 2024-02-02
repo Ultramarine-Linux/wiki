@@ -37,15 +37,15 @@ Pseudo-devices are devices that do not actually exist but are used by the kernel
 
 The most common pseudo-devices are:
 
-- `/dev/null` - A special file that discards all data written to it, will always return EOF (end-of-file) when read.
+- `/dev/null` - A special empty file that discards all data written to it.
 - `/dev/zero` - A special file that returns an infinite stream of null bytes when read.
-- `/dev/random`, `/dev/urandom` - A random number generator that returns random data when read.
-- `/dev/full` - A special file that always return a "disk full" error when written to, but contains nothing when read.
-- `/dev/ptmx` - A pseudo-terminal master that is used to create virtual terminals.
+- `/dev/random`, `/dev/urandom` - Special files that return an infinite stream of random data.
+- `/dev/full` - A special empty file that always returns a "disk full" error when written to.
+- `/dev/ptmx` - A pseudo-terminal master used to create virtual terminals.
 - `/dev/tty*` - A virtual terminal that is used to interact with the system. Back in the day, there were also actual [physical terminals](https://en.wikipedia.org/wiki/Computer_terminal) that were connected to the system via a serial port. Nowadays, these files are used to represent virtual terminals, as computer terminals were replaced by actual computers running remote desktop software such as SSH, VNC or RDP.
-- `/dev/pts/*` - A virtual terminal slave that is used to create virtual terminals.
-- `/dev/shm/*` - A shared memory segment that is used by the kernel to share data between processes.
-- `/dev/stdin`, `/dev/stdout`, `/dev/stderr` - Standard input, output and error streams. These are used to redirect input and output from and to other files, similar to how programs output data directly to the terminal. They can be redirected using the [pipeline](/en/linux/shell#the-pipeline).
+- `/dev/pts/*` - A virtual terminal slave used to create virtual terminals.
+- `/dev/shm/*` - A shared memory segment used by the kernel to share data between processes.
+- `/dev/stdin`, `/dev/stdout`, `/dev/stderr` - Standard input, output and error streams. Used to redirect input and output from and to other files, similar to how programs output data directly to the terminal. Can be redirected using [pipelines](/en/linux/shell#the-pipeline).
 
 # Interacting with Devices
 
@@ -99,7 +99,7 @@ The mountpoints at `/boot` is used for storing Linux kernel images, and `/boot/e
 `/var` stores extra variable data, `/home` is a dedicated partition for storing user data and `/` is the root partition, which can be compared to the `C:\` drive on Windows.
 
 `/var/lib/docker/btrfs` is the directory where [Docker] stores its data. Docker is a containerization software that allows you to run applications in isolated environments.
-Since we are using Btrfs, Docker will use Btrfs subvolumes to store its data. For other filesystems Docker will use other methods to store its data.
+Since we are using Btrfs, Docker will use Btrfs subvolumes to store its data. For other filesystems, Docker will use other methods to store its data.
 
 ### Manipulating Block Devices
 
@@ -109,7 +109,14 @@ You can use `fdisk` to do various operations on block devices, such as creating 
 fdisk /dev/sda
 ```
 
-As an example, you can use the following command to do a zero-filled format of a disk called `/dev/sda` by simply using a pipe
+<Alert type="warning">
+  **NEVER** run the following commands on any actual systems! These commands **ANNIHILATE your system WITHOUT CONFIRMATION**,
+  causing **IRREVERSIBLE DAMAGES** to your system!
+
+  If you want to test out these commands for whatever reason, please *make sure (and double check) you are ONLY doing this in a virtual environment.*
+</Alert>
+
+As an example, you can use the following command to do a zero-filled format of a disk called `/dev/sda` by simply using a pipe:
 
 ```sh
 cat /dev/zero > /dev/sda
@@ -139,8 +146,8 @@ dd if=/dev/sda of=/dev/sdb
 
 You can find more information about `dd` [here](https://www.gnu.org/software/coreutils/manual/html_node/dd-invocation.html).
 
-#### [← Back To: The Filesystem](filesystem)
+#### [← Back To: The Filesystem](../filesystem)
 
-#### [Next Up: Permissions →](permissions)
+#### [Next Up: Permissions →](../permissions)
 
-[docker](<https://en.wikipedia.org/wiki/Docker_(software)>)
+[Docker]: https://en.wikipedia.org/wiki/Docker_(software)
