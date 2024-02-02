@@ -35,7 +35,7 @@ Allows people with cr50 to disable WP without opening the device. This requires 
 
 ### Verified Boot
 
-Tamper protection, it’s signing essentially. [3]
+Tamper protection, it's signing essentially. [3]
 
 ### Developer Mode
 
@@ -43,11 +43,31 @@ Loosens verified boot and gives you the ability to enable USB/SD boot and elevat
 
 ### ChromeEC
 
-EC Refers to a lot of things, and it’s honestly better to read the [official docs](https://chromium.googlesource.com/chromiumos/platform/ec/+/HEAD/README.md#Terminology) on this one.
+EC Refers to a lot of things, and it's honestly better to read the [official docs](https://chromium.googlesource.com/chromiumos/platform/ec/+/HEAD/README.md#Terminology) on this one.
 
-### Depthcharge Manipulation
+### Depthcharge
+
+Depthcharge is the stock firmware on your Chromebook. Unless you somehow have an original Chromebook
+
+#### Depthcharge Manipulation
 
 A method to run Linux on Chromebooks without modifying the stock firmware by tricking said firmware (Depthcharge) into booting a Linux kernel. This is what we are using.
+
+### altFW/Custom Firmware [5]
+
+altFW is the Chrultrabook Project's name for custom firmware.
+
+#### Coreboot/Full ROM
+
+Coreboot replaces the original firmware on your Chromebook with full UEFI.
+
+#### RW_Legacy
+
+RW_Legacy allows you to use the included BIOS on your Chromebook.
+
+#### Firmware Utility Script/MrChromebox's Script
+
+A popular tool used to manage and install custom firmware
 
 ### Auto Update Expiration
 
@@ -65,17 +85,13 @@ Refers to the motherboard, these may be shared across Chromebooks (For example: 
 
 Exactly what it sounds like, a board that acts as the base for others (For example: Caroline, Chell, and Cave are all based on Glados, see the reference)
 
-### Firmware Utility Script/MrChromebox’s Script
-
-A popular tool used to manage and install custom firmware
-
 ### Chrultrabook
 
 Our partners in crime. Chrultrabook builds drivers and other tools for Chrome hardware. The name is a portmanteau from "*Chr*omebook to *Ultra*book"
 
 ### Chromebook Plus
 
-Google’s branding for Chromebooks at what would be the entry level for standard laptops [4]
+Google's branding for Chromebooks at what would be the entry level for standard laptops [4]
 
 ### Premium Chromebook
 
@@ -84,6 +100,8 @@ Kinda official term to refer to higher spec Chromebooks. The Pixelbooks, Framewo
 ### Gaming Chromebook
 
 No real definition besides an RGB keyboard, specs and price are all over the place
+
+#### [← Back To: ARM Chromebooks (Beta)](armbeta)
 
 ### Footnotes
 
@@ -94,3 +112,5 @@ No real definition besides an RGB keyboard, specs and price are all over the pla
 [3: Design Documents > Verified Boot](https://www.chromium.org/chromium-os/chromiumos-design-docs/verified-boot/)
 
 [4: Chromebook Plus: more performance and AI capabilities](https://blog.google/products/chromebooks/chromebook-plus/)
+
+[5: Chrultrabook Docs > Firmware > Types of Firmware](https://docs.chrultrabook.com/docs/firmware/about.html)

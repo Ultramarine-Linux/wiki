@@ -64,14 +64,14 @@ export const SIDEBAR: Sidebar = {
     "Release Notes": [{ text: "Errata", link: "en/release/errata" }],
 
     Usage: [{ text: "Gaming on Ultramarine", link: "en/usage/gaming" }],
-    //Chromebook: [
-    //{ text: "Getting Started", link: "en/chromebook/chromebook" },
-    //{ text: "Terminology", link: "en/chromebook/terminology" },
-    //{ text: "Getting Chromebook Edition", link: "en/chromebook/getting" },
-    //{ text: "Installing to a Chromebook", link: "en/chromebook/preparing" },
-    //{ text: "Post-Install", link: "en/chromebook/postinstall" },
-    //{ text: "ARM Chromebooks (Beta)", link: "en/chromebook/armbeta" },
-    //],
+    Chromebook: [
+      { text: "Getting Started", link: "en/chromebook/chromebook" },
+      { text: "Getting Chromebook Edition", link: "en/chromebook/getting" },
+      { text: "Installing to a Chromebook", link: "en/chromebook/preparing" },
+      { text: "Post-Install", link: "en/chromebook/postinstall" },
+      { text: "ARM Chromebooks (Beta)", link: "en/chromebook/armbeta" },
+      { text: "Terminology", link: "en/chromebook/terminology" },
+    ],
 
     Development: [
       {
