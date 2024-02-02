@@ -29,19 +29,51 @@ export type Sidebar = Record<
 export const SIDEBAR: Sidebar = {
   en: {
     Introduction: [{ text: "Welcome", link: "en/welcome" }],
+    Community: [
+      { text: "Join the Community", link: "en/community/community" },
+      { text: "Code of Conduct", link: "en/community/codeofconduct" },
+    ],
     Installation: [
-      { text: "Getting started", link: "en/installation/getting-started" },
+      { text: "Getting Ultramarine", link: "en/installation/getting" },
       { text: "Installation", link: "en/installation/installation" },
       { text: "Post-Installation", link: "en/installation/postinstall" },
     ],
+    Contributing: [
+      { text: "Overview", link: "en/contributing/contributorguide" },
+      { text: "Development", link: "en/contributing/hacking" },
+    ],
+    Hardware: [
+      { text: "System Requirements", link: "en/hardware/requirements" },
+      { text: "Ultramarine Everywhere", link: "en/hardware/everywhere" },
+      { text: "NVIDIA", link: "en/hardware/nvidia" },
+      { text: "Microsoft Surface", link: "en/hardware/surface" },
+      {
+        text: "Broadcom and Realtek Networking",
+        link: "en/hardware/broadcom-realtek",
+      },
+      { text: "BIOS Keys", link: "en/hardware/bioskeys" },
+    ],
     "Linux Concepts": [
-      { text: "Concepts overview", link: "en/linux/overview" },
+      { text: "Concepts Overview", link: "en/linux/overview" },
       { text: "The File System", link: "en/linux/filesystem" },
       { text: "Device Files", link: "en/linux/devicefiles" },
       { text: "Permissions", link: "en/linux/permissions" },
-      { text: "Software and package management", link: "en/linux/software" },
+      { text: "Software and Package Management", link: "en/linux/software" },
       { text: "The Shell", link: "en/linux/shell" },
     ],
+
+    Usage: [{ text: "Gaming on Ultramarine", link: "en/usage/gaming" }],
+
+    "Release Notes": [{ text: "Errata", link: "en/release/errata" }],
+    // Chromebook: [
+    //   { text: "Getting Started", link: "en/chromebook/chromebook" },
+    //   { text: "Getting Chromebook Edition", link: "en/chromebook/getting" },
+    //   { text: "Installing to a Chromebook", link: "en/chromebook/preparing" },
+    //   { text: "Post-Install", link: "en/chromebook/postinstall" },
+    //   { text: "ARM Chromebooks (Beta)", link: "en/chromebook/armbeta" },
+    //   { text: "Terminology", link: "en/chromebook/terminology" },
+    // ],
+
     Development: [
       {
         text: "Developing for Ultramarine",
@@ -50,10 +82,6 @@ export const SIDEBAR: Sidebar = {
       { text: "Using Andaman", link: "en/development/anda" },
       { text: "UX Guidelines", link: "en/development/ux-guide" },
     ],
-    "Release Notes": [
-      { text: "Developing for Ultramarine", link: "en/release/errata" },
-    ],
-    Usage: [{ text: "Gaming on Ultramarine", link: "en/usage/gaming" }],
   },
   de: {
     Introduction: [{ text: "Welcome", link: "de/welcome" }],

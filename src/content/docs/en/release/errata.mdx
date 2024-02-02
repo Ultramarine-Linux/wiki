@@ -17,7 +17,16 @@ Erratum (or Errata) refers to minor issues we discover after launch, or can't fi
 
 This is related to [DNF Tells the user there are no repositories available for a Copr project](#dnf-tells-the-user-there-are-no-repositories-available-for-a-copr-project), This bug may only be addressed upstream, or until there is mainstream recognition of Ultramarine Linux itself.
 
-## Ultramarine Linux 38
+## Ultramarine Linux 39
+
+### Pre-release Images
+We accidentally released pre-release versions of Ultramarine. A small handful of users and reviewers got their hands on these images. These images do not reflect the final release, if you used one and it was buggy, we invite you to try the final release, as many of the bugs were fixed.
+
+# Budgie Edition
+Budgie wallpapers may be installed instead of Ultramarine wallpapers.
+
+# Package Groups
+We misspelled "environment" as "enviroment". This is now fixed in Ultramarine 39 and has been backported to 38.
 
 ## Ultramarine Linux 37 (At Launch)
 
@@ -33,15 +42,17 @@ The simple workaround is to set your own wallpaper.
 
 ### Applications
 
-#### Firefox still includes Fedora bookmarks
+#### Firefox Still Includes Fedora Bookmarks
 
 This is caused by the inclusion of the `fedora-bookmarks` package, which is a weak dependency of Firefox in Fedora. Uninstalling this package may not fix the issue on an already configured account. Simply remove the bookmarks yourself.
 
-#### Anaconda shows a warning about the system being pre-release
+
+#### Anaconda Shows a Warning about the System Being Pre-Release
 
 This is caused by Anaconda not finding the patched `/.buildinfo` file (or ProductMD information about Ultramarine). We do not know how Fedora is doing this, but in Budgie and Cutefish versions there is a script inserting a custom `/.buildinfo` file in the root of the filesystem.
 
-#### DNF Tells the user there are no repositories available for a Copr project
+
+#### DNF Tells the User There Are No Repositories Available for a COPR Project
 
 This is due to the fact that the DNF Copr plugin detects the OS ID `/etc/os-release` file, and Ultramarine uses a custom code instead of `fedora`.
 
@@ -71,7 +82,7 @@ The Pop!\_Shell launcher is broken. This can be fixed by installing the `pop-lau
 
 ### Cutefish
 
-#### SDDM displaying black screen
+#### SDDM Displaying Black Screen
 
 SDDM may display a black screen when starting up. This is a known issue, but there is no known fix as of yet. (Possibly an upstream bug, help needed.)
 
@@ -85,7 +96,7 @@ You can help us fix this issue by offering to maintain these packages ourselves,
 
 ### OSTree Edition
 
-#### Missing tweaks from the standard releases
+#### Missing Tweaks from the Standard Releases
 
 As the standard release includes a script to modify the system, due to the nature of OSTree, we are unable to include these tweaks unless we rebuild all major packages with our custom patches.
 

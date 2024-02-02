@@ -2,6 +2,7 @@
 title: Developing for Ultramarine
 description: "Things to get started on developing in Ultramarine."
 ---
+### This Page Will Be Moving to [Fyra Developer](https://developer.fyralabs.com) Soon!
 
 Ultramarine Linux aims to be a developer-friendly environment for all kinds of developers. In this article, we will cover the basics of how to get started developing in Ultramarine.
 

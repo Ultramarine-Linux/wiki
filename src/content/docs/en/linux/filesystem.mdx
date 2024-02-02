@@ -7,18 +7,21 @@ import Alert from "../../../../components/Docs/Alert.astro";
 
 The Linux (and UNIX) file system is a hierarchical structure of files and directories that make up a Linux operating system.
 
-In Linux, everything is a file. Unlike Windows where there are many other object types that can either be a physical device, and inter-process communication is done by a kernel call.
+In Linux, everything is a file. Unlike Windows where many other object types can either be a physical device, and inter-process communication is done by a kernel call.
 
 <Alert type="info">
-  <iframe
-    width="560"
-    height="315"
-    src="https://www.youtube-nocookie.com/embed/42iQKuQodW4?si=YYFew-wjeF6IHXa0"
-    title="YouTube video player"
-    frameborder="0"
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-    allowfullscreen
-  ></iframe>
+  <div class="full-width">
+    If you prefer a video, this one is a good crash course.
+    <iframe
+      width="560"
+      height="315"
+      src="https://www.youtube-nocookie.com/embed/42iQKuQodW4?si=YYFew-wjeF6IHXa0"
+      title="YouTube video player"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      allowfullscreen
+    ></iframe>
+  </div>
 </Alert>
 
 ## The File System Hierarchy
@@ -61,61 +64,29 @@ In Linux, the home folder is usually more extensively used than in Windows, as i
 
 ## Security
 
-In Fedora and Ultramarine Linux specifically, system-critical files usually have an extra layer of protection using SELinux, a MAC (Mandatory Access Control) system that is used to prevent unauthorized access to system files, invented by the NSA.
+Ultramarine Linux uses SELinux, software that implements Mandatory Access Control. This prevents applications (and users) from accessing files they shouldn't be able to.
 
-Users will usually be required to have root access to modify these files, and even then, SELinux may prevent you from doing so unless you have set the correct contexts for the files.
+Users will usually be required to have root access to modify system files, and even then, SELinux may prevent you from doing so unless you have set the correct contexts for the files.
 
-Ultramarine Linux comes with SELinux set in "Enforcing" mode, which means that it will prevent you from modifying system files unless you have the correct permissions for security reasons. However this may cause issues with some apps, so you can set it to "Permissive" mode by running `sudo setenforce 0` in the terminal.
+By default, SELinux is in "Enforcing" mode, which means that it will prevent you from modifying system files unless you have the correct permissions. This shouldn't cause any issues. If you would like to disable SELinux you can run`sudo setenforce 0`. We don't recommend this as it makes your system less secure.
 
-<Alert type="info">
-  <div>
-    <h3>Learn more about SELinux</h3>
-    <ul>
-      <li>
-        <a href="https://en.wikipedia.org/wiki/Security-Enhanced_Linux">
-          Wikipedia
-        </a>
-      </li>
-      <li>
-        <a href="https://www.redhat.com/en/topics/linux/what-is-selinux">
-          Red Hat
-        </a>
-      </li>
-    </ul>
-  </div>
-</Alert>
+[Learn more about SELinux →](https://www.redhat.com/en/topics/linux/what-is-selinux)
+
+[Learn more about Permissions →](/en/linux/permissions)
 
 ## Virtual Memory
 
-[Virtual memory](https://en.wikipedia.org/wiki/Virtual_memory) is a feature in Linux and other operating systems that allows the system to use a portion of the hard drive as RAM. This is useful when the system runs out of RAM, and needs to use the hard drive as a temporary storage for data.
+[Virtual memory](https://en.wikipedia.org/wiki/Virtual_memory) is a feature in Linux and other operating systems that allows the system to use a portion of the disk as RAM. This is useful when the system runs out of RAM and needs to use the disk as a temporary storage for data.
 
-On Windows, this is called a "Page file", and on Linux, it is called a "Swap file". The swap file is usually located at `/swapfile` or as a dedicated partition on the hard drive.
+On Windows, this is called a "Page file", and on Linux, it is called a "Swap file". The swap file is usually located at `/swapfile` or as a dedicated partition on the disk.
 
-On Ultramarine Linux however, the swap file is replaced by a special kernel feature called [zram](https://en.wikipedia.org/wiki/Zram), which works as a compressed RAM disk.
-This is useful for systems with small amounts of RAM, as it essentially allows the system to squeeze more memory out of the existing RAM at the cost of more CPU overhead.
+Swap comes with many issues, for example, it can reduce the lifespan of lower-cost SSDs, and may be too slow on hard drives. To combat this Ultramarine uses memory compression [(zram specifically)](https://en.wikipedia.org/wiki/Zram).
 
-However, zram is not a full replacement for swap, as it is still limited by the amount of RAM available. If you have a system with 4GB of RAM, and you are running a memory-intensive application, you may still need to use a swap file, or consider upgrading your RAM.
+By default, we match the amount of physical memory you have. (Which is the maximum)
 
-And additionally, virtual memory is much slower than physical RAM, as RAM modules are designed to be much faster than hard drives. So you may experience slowdowns when using virtual memory, especially if you are using a hard drive instead of an SSD.
-Or even expect shorter lifespans for your SSD, as SSDs have a limited number of write cycles and may wear out faster if you use virtual memory.
+Although this may sound magical, it does come at the cost of your CPU working a little bit harder. Luckily this is not very noticeable on modern computers.
 
-We recommend at least 8GB of RAM for a smooth experience on Ultramarine Linux, especially on GNOME and KDE Plasma editions.
-
-<Alert type="info">
-  <div>
-    <h3>Learn more about zram</h3>
-    <ul>
-      <li>
-        <a href="https://en.wikipedia.org/wiki/Zram">Wikipedia</a>
-      </li>
-      <li>
-        <a href="https://www.kernel.org/doc/html/latest/admin-guide/blockdev/zram.html">
-          The Linux Kernel Documentation
-        </a>
-      </li>
-    </ul>
-  </div>
-</Alert>
+[Learn more about zram →](https://en.wikipedia.org/wiki/Zram)
 
 ## File system formats
 
@@ -124,7 +95,7 @@ Ultramarine Linux supports a wide variety of file systems, and can be configured
 It currently supports most file systems that are supported by the Linux kernel, including:
 
 - ext2, ext3, ext4
-- BTRFS
+- Btrfs
 - XFS
 - NTFS
 - FAT32
@@ -143,6 +114,10 @@ So unless specified otherwise, the installer will use all your disks to create a
 
 Most server installations will use XFS or ZFS, as they have better performance and reliability for servers, and are more suitable for RAID arrays.
 
-### Remote file systems
+### Remote Filesystems
 
 Ultramarine Linux can also mount remote file systems from a remote server or NAS, using the NFS, (S)FTP, SMB, and WebDAV protocols.
+
+#### [← Back To: Concepts](overview)
+
+#### [Next Up: Device Files →](devicefiles)
