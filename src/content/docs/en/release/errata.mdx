@@ -20,12 +20,15 @@ This is related to [DNF Tells the user there are no repositories available for a
 ## Ultramarine Linux 39
 
 ### Pre-release Images
+
 We accidentally released pre-release versions of Ultramarine. A small handful of users and reviewers got their hands on these images. These images do not reflect the final release, if you used one and it was buggy, we invite you to try the final release, as many of the bugs were fixed.
 
 # Budgie Edition
+
 Budgie wallpapers may be installed instead of Ultramarine wallpapers.
 
 # Package Groups
+
 We misspelled "environment" as "enviroment". This is now fixed in Ultramarine 39 and has been backported to 38.
 
 ## Ultramarine Linux 37 (At Launch)
@@ -46,11 +49,9 @@ The simple workaround is to set your own wallpaper.
 
 This is caused by the inclusion of the `fedora-bookmarks` package, which is a weak dependency of Firefox in Fedora. Uninstalling this package may not fix the issue on an already configured account. Simply remove the bookmarks yourself.
 
-
 #### Anaconda Shows a Warning about the System Being Pre-Release
 
 This is caused by Anaconda not finding the patched `/.buildinfo` file (or ProductMD information about Ultramarine). We do not know how Fedora is doing this, but in Budgie and Cutefish versions there is a script inserting a custom `/.buildinfo` file in the root of the filesystem.
-
 
 #### DNF Tells the User There Are No Repositories Available for a COPR Project
 
@@ -67,6 +68,7 @@ This will be addressed in a `dnf-plugins-core` patch, either upstream or locally
 <Alert type="info">
   This issue has been addressed upstream in the
   <a href="https://github.com/rpm-software-management/dnf-plugins-core/pull/463">
+    {" "}
     following pull request
   </a>.
   <br /> It will be included in the next release of dnf-plugins-core after
