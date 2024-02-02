@@ -93,17 +93,32 @@ Prebuilt images with userland tweaks will be available in the near future
   death of a pet, etc.
 </Alert>
 
-This guide assumes you have Developer Mode and USB Booting Enabled
+This guide assumes you have [Developer Mode](https://chromium.googlesource.com/chromiumos/docs/+/main/developer_mode.md#dev-mode) and [USB Booting Enabled](https://chromium.googlesource.com/chromiumos/docs/+/main/developer_guide.md#boot-from-your-usb-disk)
 
-1. Flash an Ultramarine ISO to a USB Drive
-2. Delete the first two partitions on the disk
+1. Flash an [Ultramarine Raw Image](https://images.fyralabs.com/images/ultramarine/39/) to a USB Drive
+2. Delete the first partition on the disk
 3. Create a 16MB ext4 partition
 4. Flash the submarine.kpart file to the partition
-5. Boot the image on the Chromebook
-6. On the internal disk, create a 16MiB ext4 partition BEFORE the standard partitions
-7. Install Ultramarine normally
-8. After the installation is complete, flash the submarine.kpart file to the 16MiB partition you created
-9. Done!
+5. Set the partition flags with cgpt
+
+```
+cgpt add -i <partition number> -t kernel -P 15 -T 1 -S 1 /dev/sdX
+```
+
+6. Boot the image on the Chromebook
+
+You're now inside a minimal Ultramarine system, from here you can install a desktop (also `NetworkManager-wifi`) and use Ultramarine from the external disk. If you'd like to install, you'll need to install and configure Anaconda. [Our Kickstarts can be found on Github.](https://github.com/Ultramarine-Linux/build-scripts/tree/main/kickstarts)
+
+7. On the internal disk, create a 16MiB ext4 partition BEFORE the standard partitions
+8. Install Ultramarine normally
+9. After the installation is complete, flash the submarine.kpart file to the 16MiB partition you created
+10. Set the partition flags with cgpt
+
+```
+cgpt add -i <partition number> -t kernel -P 15 -T 1 -S 1 /dev/sdX
+```
+
+11. Done!
 
 ## ARM
 
