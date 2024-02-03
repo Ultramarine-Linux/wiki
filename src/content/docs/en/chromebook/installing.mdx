@@ -1,0 +1,78 @@
+---
+title: Installing to a Chromebook
+description: "Steps to be done on the Chromebook"
+---
+
+import Alert from "../../../../components/Docs/Alert.astro";
+
+Before we insert the installer, we will need to do a few things with your ChromeOS device.
+
+### 1. Back up Your Data (Optional)
+
+Step 2 will wipe all local data from your device. If you have any files you want to save or move to Ultramarine Chromebook, you will need to store them on an external device or in the cloud. For a small number of files, we recommend backing up to Google Drive, or another cloud storage provider. For a larger number of files, we recommend backing up to an external storage medium, such as a USB flash drive or other external drive.
+
+Now that your backup is complete, or you simply want to install, you are now ready for step 2.
+
+### 2. Enable Developer Mode
+
+<Alert type="warning">Enabling Developer Mode will wipe your data.</Alert>
+
+#### Developer Mode on Chromebooks (Laptops):
+
+1. Shut down the device, then hold <kbd>Esc</kbd> + <kbd>⟳</kbd> + <kbd>⏻ [Power]</kbd> to enter Recovery mode.
+2. When you see a screen that says 'ChromeOS is missing or damaged,' press <kbd>Ctrl</kbd>+<kbd>D</kbd>.
+3. When you see 'To turn OS verification off, press enter,' press <kbd>Enter</kbd>.
+4. A screen saying 'OS verification is off, press space to re-enable' should appear, press <kbd>Ctrl</kbd>+<kbd>D</kbd>.
+   Your system is now transitioning into Developer Mode! (This may take a few minutes)
+5. After it has transitioned, press <kbd>Control</kbd>+<kbd>D</kbd> to boot back into ChromeOS as a developer. You are now ready for Step 3.
+
+#### Developer Mode on Chromeboxes and Chromebases (Desktops and All-In-Ones):
+
+<Alert type="warning">
+  Not all monitors will work with the ChromeOS Verification screens. This
+  usually happens if the monitor has a resolution greater then 1080p. If your
+  Chromebox appeared to boot (lights on) but does not output anything, you can
+  attempt to continue without a display, or find a different one.
+</Alert>
+
+1.  Shut down the device, then insert a paper clip (a SIM ejector tool works great too!) into the recovery button (a small hole usually near the I/O, see your hardware documentation for exact location) and reboot. You will then be greeted with the "OS Verification is turned off" screen.
+2.  Plug in a keybaord and press <kbd>Ctrl</kbd>+<kbd>D</kbd>. You may be prompted with 'To turn OS verification off, press recovery button,' press recovery button.
+3.  A screen saying 'OS verification is off, press space to re-enable' should appear, press <kbd>Ctrl</kbd>+<kbd>D</kbd>.
+    Your system is now transitioning into Developer Mode! (This may take a few minutes).
+4.  After it has transitioned, press <kbd>Control</kbd>+<kbd>D</kbd> to boot back into ChromeOS as a developer. You are now ready for step 3.
+
+#### Developer Mode on ChromeOS Tablets:
+
+<Alert type="info">
+  This only supports x86 Chrome Tablets. Make sure your tablet is x86, or take a
+  peek at the [ARM Beta Program](armbeta).
+</Alert>
+
+1.  Shut down the device, then press and hold <kbd>Power</kbd>+<kbd>Volume-Up</kbd>+<kbd>Volume-Down</kbd> for 3-5 seconds, then release to invoke recovery mode. This is a bit finicky, and may take a few tries, but the screen will turn white and display a screen saying "Please insert a recovery USB stick." soon after you release the button.
+2.  To boot to Developer Mode, simultaneously press <kbd>Volume-Up</kbd>+<kbd>Volume-Down</kbd>, or navigate to 'Developer Options' with the volume buttons, and select it with the power button. Then select 'Boot From Internal Disk' using the volume buttons to navigate and power button to select.
+    Your system is now transitioning into Developer Mode! (This may take a few minutes).
+3.  After it has transitioned, again navigate to 'Developer Options,' then 'Boot From Internal Disk.' Plug in a keyboard, and you are now ready for step 3.
+
+##### If you have any problems with these steps, refer to [this guide](https://chromium.googlesource.com/chromiumos/docs/+/main/debug_buttons.md#Firmware-Keyboard-Interface) or request support in our [discord](https://discord.com/invite/5fdPuxTg5Q).
+
+### 3. Enable USB booting
+
+1. In ChromeOS Developer Mode, press <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>F2 [right arrow key]</kbd>.
+2. Type in 'Chronos' for the login (there is no password).
+3. Enter this command:
+
+```
+enable_dev_usb_boot
+```
+
+4. It should display `SUCCESS: Booting and self-assigned kernel from SSD/USB/SDCard slot in enabled` You are now ready for step 4.
+
+### 4. Boot from USB/SD
+
+1. Plug in your Ultramarine Chromebook installer and restart the device. If needed, press <kbd>Ctrl</kbd>+<kbd>alt</kbd>+<kbd>F1 [Left arrow key]</kbd> to leave the terminal.
+2. The device will boot to the recovery screen. Upon reaching it, press <kbd>ctrl</kbd>+<kbd>U</kbd>> to boot from USB/SD.
+3. After this, you will be greeted with the Ultramarine Chromebook Live Image (running off your installer). Just follow our regular install guide [here](https://wiki.ultramarine-linux.org/en/installation/installation/) or follow the on screen prompts, and that's it!
+
+#### [Next Up: Post-Install →](postinstall)
+
+#### [← Back To: Getting Chromebook Edition](getting)
