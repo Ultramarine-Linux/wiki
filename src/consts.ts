@@ -44,7 +44,7 @@ export const SIDEBAR: Sidebar = {
     ],
     Hardware: [
       { text: "System Requirements", link: "en/hardware/requirements" },
-      { text: "Ultramarine Everywhere", link: "en/hardware/everywhere" },
+      { text: "Ultramarine Anywhere", link: "en/hardware/anywhere" },
       { text: "NVIDIA", link: "en/hardware/nvidia" },
       { text: "Microsoft Surface", link: "en/hardware/surface" },
       {
