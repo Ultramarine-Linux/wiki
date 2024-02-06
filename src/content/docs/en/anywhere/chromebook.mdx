@@ -31,6 +31,8 @@ Now for the big question, how do we do this without modifying the firmware? We t
 
 By default, Depthcharge will only boot code with Google's signing keys, we get around this by enabling the built-in developer mode.
 
+To summarise, we boot a tiny Linux distribution (Submarine) and use it to launch Ultramarine's vmlinuz and initramfs using kexec.
+
 ## Userland Changes
 
 Devices in Ultramarine Anywhere try to stick very closely to the standard Ultramarine userland, sometimes we have to deviate from this to make the experience better.
