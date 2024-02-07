@@ -21,6 +21,18 @@ Chromebook support in Ultramarine Linux is provided in partnership with the [Chr
 
 All x86 Chromebooks that use Depthcharge are supported by Ultramarine Chromebook Edition.
 
+## How it Works
+
+Ultramarine Chromebook Edition uses a special bootloader called [Submarine](https://developer.fyralabs.com/submarine) to load the kernel.
+
+Under the hood, Submarine is an incredibly minimal Linux OS based on [u-root](https://github.com/u-root/u-root), it's only really usable for debug and booting a full distribution. Once Submarine is loaded, we use [LinuxBoot](https://www.linuxboot.org/) to boot a full copy of Ultramarine (and hopefully more distros in the future).
+
+Now for the big question, how do we do this without modifying the firmware? We take advantage of the way Depthcharge (the ChromeOS firmware) works. We store Submarine in a 16MB partition on disk, this is normally used by ChromeOS to store a full ChromeOS Kernel and initramfs. Depthcharge doesn't actually check if the contents of the partition are a valid kernel, it just checks for a GPT Header and runs whatever code is found in the partition, in our case, Submarine.
+
+By default, Depthcharge will only boot code with Google's signing keys, we get around this by enabling the built-in developer mode.
+
+To summarise, we boot a tiny Linux distribution (Submarine) and use it to launch Ultramarine's vmlinuz and initramfs using kexec.
+
 ## Userland Changes
 
 Devices in Ultramarine Anywhere try to stick very closely to the standard Ultramarine userland, sometimes we have to deviate from this to make the experience better.
@@ -29,13 +41,9 @@ Devices in Ultramarine Anywhere try to stick very closely to the standard Ultram
 
 We use WeirdTreeThing's [audio script](https://github.com/WeirdTreeThing/chromebook-linux-audio) to make audio work properly.
 
-### Chrultrabook Controller
-
-We ship the [Chrultrabook Controller app](https://github.com/death7654/Chrultrabook-Tools) to provide some missing features, like fan and backlight control.
-
 ### Default Partitions
 
-On Chromebooks, we use ext4 in lieu of Btrfs, and disable swap to extend the life of the EMMC found in many Chromebooks. We also create one 16MiB partition containing [Submarine](https://developer.fyralabs.com/submarine) at the start of the disk instead of `/boot/EFI` and `/boot`
+On Chromebooks, we use f2fs (in lieu of Btrfs) and disable swap to extend the life of the EMMC found in many Chromebooks. We also create one 16MiB partition containing [Submarine](https://developer.fyralabs.com/submarine) at the start of the disk instead of `/boot/EFI`.
 
 ### Keyboard Mapping
 
@@ -122,4 +130,4 @@ cgpt add -i <partition number> -t kernel -P 15 -T 1 -S 1 /dev/sdX
 
 ## ARM
 
-ARM Chromebooks are in heavy development. If you'd like to help test, check out the [ARM Beta Program](/en/chromebook/armbeta)
+ARM Chromebooks are in heavy development. If you'd like to help test, check out the [ARM Beta Program](/en/chromebook/armbeta).
