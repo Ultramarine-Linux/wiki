@@ -30,6 +30,16 @@ If your game does not support Linux, or the Linux version happens to be inferior
 
 If the game you're trying to play doesn't work on Proton, check back in a week, it's quite possible that it will work after Proton updates or active work from Valve.
 
+### Slow Download Speeds
+
+There have been recent reports of slow download speeds on Steam due to issues with the Steam client and HTTP/2, see the relevant [Steam for Linux issue](https://github.com/ValveSoftware/steam-for-linux/issues/10248) for more information.
+
+If you are experiencing slow download speeds and aren't sure why, you can try disabling HTTP/2 in Steam by adding the following lines to the `~/.steam/steam/steam_dev.cfg` file and restarting steam:
+
+```
+@nClientDownloadEnableHTTP2PlatformLinux 0
+@fDownloadRatelmprovement ToAddAnother Connection 1.0
+```
 
 ### Apex Legends
 
