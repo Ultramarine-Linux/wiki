@@ -80,24 +80,24 @@ Fyra Labs (the company behind Ultramarine) does not collect any data that can be
 
 **No**. Ultramarine and Fedora are not semi-rolling or rolling. Instead, they use a stable release scheme.
 Updates with breaking changes are rolled out only for every release version.
-Normal updates usually include bug fixes and some new features, but they should not break backwards compatibility.
+System software components in Ultramarine are updated if and only if they are backwards-compatible.
 
 However, Ultramarine Linux includes Terra, RPM Fusion and Flathub.
-- Terra is an RPM repository provided by Fyra Labs (the team behind Ultramarine Project), and it mainly uses a rolling release scheme.
+- Terra is an RPM repository provided by Fyra Labs, and it mainly uses a rolling release scheme.
 - RPM Fusion is another (very popular) third party repository for Fedora. It uses a stable release scheme.
-- Flathub is a cross-distro Flatpak repository. Updates in this repository has nothing to do with Fedora/Ultramarine's release cycles. Strictly speaking, packages in Flathub are rolling because they are updated once upstream releases a version.
+- Flathub is a cross-distro Flatpak repository. Updates in this repository have nothing to do with Fedora/Ultramarine's release cycles. Strictly speaking, packages in Flathub are rolling because they are updated once upstream releases a version.
 
 ### If some packages are updated mid-release, doesn't that mean Ultramarine is unstable/insecure compared to, e.g. Debian?
 
 **No**. That's an incorrect approach to view if a distribution is secure/stable or not.
 - Packages in Fedora/Ultramarine are updated mid-release, but those updates **only include non-breaking changes**. Your computer has virtually a near-zero chance of breaking mid-release due to an update.
-- Undeniably, Ultramarine and Fedora has much more frequent updates compared to distros like Debian, and to some extent, they might be more unstable. However, Fedora/Ultramarine's release cycles make it so that the operating system is still stable enough for most normal uses. Millions of Fedora devices across the world run fine without breaking, which shows Fedora's high stability. Debian's release cycle is also arguably unnecessarily too slow and can cause more hassles than necessary.
-- Debian does not provide updates that are already available on Fedora for months. Users on Debian might miss out a lot, including new features, bug fixes, security patches, etc. This means Debian could be even more insecure than Fedora/Ultramarine.
+- Undeniably, Ultramarine and Fedora has much more frequent updates compared to distros like Debian, and to some extent, they might be more unstable. However, Fedora/Ultramarine's release cycle makes it so that the operating system is still stable enough for normal use. Millions of Fedora devices across the world run fine without breaking, which demonstrate Fedora's high stability. Debian's release cycle is also arguably too slow and can cause more hassles than necessary.
+- Some distros choose to take stable release cycles to an extreme. These distros are designed for servers that will stay up for years by delaying updates for months or even a few years. PC users might miss out a lot by using these distros, including new features, bug fixes, security patches, etc. Without the proper knowledge and management, these systems could be even more insecure than Fedora/Ultramarine.
 
 ### Why Ultramarine (instead of other distros like Ubuntu)
 
 - Performance
-  - Fedora (the distro Ultramarine is based on) has one of the best IO performance over other distros like Ubuntu.
+  - Fedora (the distro Ultramarine is based on) has some of the best IO performance over other distros.
   - BTRFS is the default file system, a relatively high-performant file system with features like snapshots. You can backup your files in less than a second (unlike other file systems like ext4).
   - We include lightweight desktop environments like Budgie (Flagship Edition) and XFCE. They look great, work well and are snappy.
 - Privacy
