@@ -59,6 +59,7 @@ export const SIDEBAR: Sidebar = {
       { text: "Device Files", link: "en/linux/devicefiles" },
       { text: "Permissions", link: "en/linux/permissions" },
       { text: "Software and Package Management", link: "en/linux/software" },
+      { text: "Security and Privacy", link: "en/linux/security-privacy" },
       { text: "The Shell", link: "en/linux/shell" },
     ],
 
