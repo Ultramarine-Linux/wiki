@@ -1,6 +1,6 @@
 ---
 title: Security and Privacy
-description: "An overview of security and privacy in Linux."
+description: "How Ultramarine keeps you safe"
 ---
 
 import Alert from "../../../../components/Docs/Alert.astro";
@@ -28,3 +28,15 @@ Use the `pkexec` command instead of `sudo` to give polkit a try.
 </Alert>
 
 polkit also manages communication between privileged and non privileged applications.
+
+## Disk Encryption
+
+Ultramarine Linux offers the option to encrypt your entire disk at install time. This protects your data from physical attacks and theft.
+
+## Sandboxing
+
+When you install an app as a Flatpak, it's contained within a sandbox, meaning it can't see what other apps are doing, and can't see files it isn't allowed to.
+
+## Restricted Memory Access
+
+Ultramarine Linux and Fedora restrict access to physical memory. This should prevent most memory injection attacks.
