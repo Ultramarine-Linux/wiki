@@ -1,0 +1,42 @@
+---
+title: Security and Privacy
+description: "How Ultramarine keeps you safe"
+---
+
+import Alert from "../../../../components/Docs/Alert.astro";
+
+## Mandatory Access Controls
+
+Ultramarine Linux uses SELinux, a software that implements Mandatory Access Control. This prevents applications (and users) from accessing files they shouldn't be able to.
+
+Users will usually be required to have root access to modify system files, and even then, SELinux may prevent you from doing so unless you have set the correct contexts for the files.
+
+By default, SELinux is in "Enforcing" mode, which means that it will prevent you from modifying system files unless you have the correct permissions. This shouldn't cause any issues. If you would like to disable SELinux you can run`sudo setenforce 0`. We don't recommend this as it makes your system less secure.
+
+[Learn more about SELinux →](https://www.redhat.com/en/topics/linux/what-is-selinux)
+
+[Learn more about Permissions →](/en/linux/permissions)
+
+## Privilege Control
+
+Ultramarine Linux includes polkit, a tool used to manage privilege elevation. If you've ever gotten a graphical password prompt on your system, you've interacted with polkit.
+
+<Alert type="info">
+
+Use the `pkexec` command instead of `sudo` to give polkit a try.
+
+</Alert>
+
+polkit also manages communication between privileged and non privileged applications.
+
+## Disk Encryption
+
+Ultramarine Linux offers the option to encrypt your entire disk at install time. This protects your data from physical attacks and theft.
+
+## Sandboxing
+
+When you install an app as a Flatpak, it's contained within a sandbox, meaning it can't see what other apps are doing, and can't see files it isn't allowed to.
+
+## Restricted Memory Access
+
+Ultramarine Linux and Fedora restrict access to physical memory. This should prevent most memory injection attacks.
