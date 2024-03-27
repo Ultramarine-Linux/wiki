@@ -69,7 +69,7 @@ drwxr-xr-x    2 bob bob      4096 Jan 1 13:00 dir
 
 Symbolic links (symlinks) are, as the name would imply, links between files. Changes to files are synced between symlinks. To create a symlink between two files, type `ln`, followed by the `-s` flag and two arguments: one being the original file, and the other being the path to the new symlink.
 
-```
+```sh
 ln -s file newfile
 ```
 From now on, when `file` is changed, the change will also be applied to the linked `newfile`.
