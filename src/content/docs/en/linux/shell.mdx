@@ -51,13 +51,13 @@ The directory path is an optional agrument. Running `ls` on its will print the c
 
 The `ls` command, especially, has a lot of useful flags (i.e. execute  `ls -a`, `-a` being the flag). Below is a table of the most important flags for `ls`.
 
-| Flag | Modification                                                                                                                                                                        |
-| :--- | :----------------------------------------------------------------------------- |
-| `-a` | List all files in the directory, including hidden files which begin with a `.` |
-| `-d` | List specified directory without listing it's contents, (try `ls -d /`).       |
-| `-t` | Sort the output in the order of modification time; latest first.               |
-| `-r` | Sort output in reverse order.                                                  |
-| `-l` | List one file per line. Also displays information about the files liseted.     |
+| Flag | Modification                                                                    |
+| :--- | :-----------------------------------------------------------------------------  |
+| `-a` | List all files in the directory, including hidden files which begin with a `.`. |
+| `-d` | List specified directory without listing it's contents, (try `ls -d /`).        |
+| `-t` | Sort the output in the order of modification time; latest first.                |
+| `-r` | Sort output in reverse order.                                                   |
+| `-l` | List one file per line. Also displays information about the files listed.       |
 
 The output of `ls -l` includes information on the file type, target, read-only (boolean), permissions, number of symlinks, number of inodes, and the owner of the file, in that order.
 ```
@@ -67,7 +67,7 @@ drwxr-xr-x    2 bob bob      4096 Jan 1 13:00 dir
 -rwxrwxrwx    1 ann ann      1337 Jan 1 11:00 file2
 ```
 
-Symlinks are, as the name would imply, links between files. Were a symlink occurs, changes are synced between files. To create a symlink bewtween two files, type `ln`, followed by the `-s` flag, and two arguments: one being the first file, and the other being the new linked file.
+Symlinks are, as the name would imply, links between files. Where a symlink occurs, changes are synced between files. To create a symlink bewtween two files, type `ln`, followed by the `-s` flag, and two arguments: one being the first file, and the other being the new linked file.
 
 ```
 ln -s file newfile
