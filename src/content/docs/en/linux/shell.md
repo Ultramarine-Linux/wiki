@@ -119,6 +119,23 @@ To move or rename a file or directory, type `mv` followed by the path to the fil
 mv /home/user/Documents/newfile.txt /home/user/Documents/newfile2.txt
 ```
 
+To copy a file and optionally rename the copy, type `cp` followed by the path of the file, and then the path to the new file.
+
+```zsh
+cp file newfile
+``
+
+<Alert type="info">
+  To copy a directory, type `cp` with the `-r` (recursive) flag.
+</Alert>
+
+For both the `cp` and `mv` commands, you may move multiple files into a directory at once. The target directory must exist.
+
+```zsh
+mv file file2 dir dir2 /path/to/target/dir/
+cp -r file file2 dir dir2 /path/to/target/dir/
+```
+
 To know more about each command, open the manual by typing `man` followed by what you want to learn about
 
 ```
