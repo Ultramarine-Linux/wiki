@@ -41,7 +41,38 @@ To change directories, type `cd` followed by the path you want to change to.
 cd /home/user/Documents
 ```
 
-To list the contents of a directory, type `ls`.
+To list the contents of a directory, type `ls` followed by the path of the directory of which you want to list the contents of.
+
+```zsh
+ls /home/user/documents
+```
+
+The directory path is an optional argument. Running `ls` with no arguments will print the contents of the current working directory (the folder you `cd`ed into).
+
+The `ls` command, especially, has a lot of useful flags (i.e. execute  `ls -a`, `-a` being the flag). Below is a table of the most important flags for `ls`.
+
+| Flag | Modification                                                                    |
+| :--- | :------------------------------------------------------------------------------ |
+| `-a` | List all files in the directory, including hidden files which begin with a `.`. |
+| `-d` | List specified director(y\|ies) without listing it's contents, (try `ls -d /`). |
+| `-t` | Sort the output in the order of modification time; latest first.                |
+| `-r` | Sort output in reverse order.                                                   |
+| `-l` | List one file per line. Also displays information about the files listed.       |
+
+The output of `ls -l` includes information on the file type, target, read-only (boolean), permissions, number of symlinks, number of inodes, and states the owner of the file, in that order.
+```
+total 4
+drwxr-xr-x    2 bob bob      4096 Jan 1 13:00 dir
+-rw-r--r--    1 bob bob         0 Jan 1 12:00 file
+-rwxrwxrwx    1 ann ann      1337 Jan 1 11:00 file2
+```
+
+Symbolic links (symlinks) are, as the name would imply, links between files. Changes to files are synced between symlinks. To create a symlink between two files, type `ln`, followed by the `-s` flag and two arguments: one being the original file, and the other being the path to the new symlink.
+
+```zsh
+ln -s file newfile
+```
+From now on, when `file` is changed, the change will also be applied to the linked `newfile`.
 
 To read a file to the terminal, type `cat` followed by the path to the file.
 
@@ -86,6 +117,23 @@ To move or rename a file or directory, type `mv` followed by the path to the fil
 
 ```zsh
 mv /home/user/Documents/newfile.txt /home/user/Documents/newfile2.txt
+```
+
+To copy a file and optionally rename the copy, type `cp` followed by the path of the file, and then the path to the new file.
+
+```zsh
+cp file newfile
+``
+
+<Alert type="info">
+  To copy a directory, type `cp` with the `-r` (recursive) flag.
+</Alert>
+
+For both the `cp` and `mv` commands, you may move multiple files into a directory at once. The target directory must exist.
+
+```zsh
+mv file file2 dir dir2 /path/to/target/dir/
+cp -r file file2 dir dir2 /path/to/target/dir/
 ```
 
 To know more about each command, open the manual by typing `man` followed by what you want to learn about
