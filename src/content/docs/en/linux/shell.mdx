@@ -44,7 +44,7 @@ cd /home/user/Documents
 To list the contents of a directory, type `ls` followed by the path of the directory of which you want to list the contents of.
 
 ```zsh
-ls /home/user/documents
+ls /home/user/Documents
 ```
 
 The directory path is an optional argument. Running `ls` with no arguments will print the contents of the current working directory (the folder you `cd`ed into).
@@ -53,13 +53,13 @@ The `ls` command, especially, has a lot of useful flags (i.e. execute  `ls -a`, 
 
 | Flag | Modification                                                                    |
 | :--- | :------------------------------------------------------------------------------ |
-| `-a` | List all files in the directory, including hidden files which begin with a `.`. |
-| `-d` | List specified director(y\|ies) without listing it's contents, (try `ls -d /`). |
+| `-a` | List all files in a directory, including hidden files which begin with a `.`.   |
+| `-d` | List specified directories without listing their content (try `ls -d /`).       |
 | `-t` | Sort the output in the order of modification time; latest first.                |
 | `-r` | Sort output in reverse order.                                                   |
-| `-l` | List one file per line. Also displays information about the files listed.       |
+| `-l` | List one file per line. Also display information about the files listed.        |
 
-The output of `ls -l` includes information on the file type, target, read-only (boolean), permissions, number of symlinks, number of inodes, and states the owner of the file, in that order.
+The output of `ls -l` includes information for (in the following order): file type, target, read-only (boolean), permissions, number of symlinks, number of inodes, and file owner.
 ```
 total 4
 drwxr-xr-x    2 bob bob      4096 Jan 1 13:00 dir
