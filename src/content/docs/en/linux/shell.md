@@ -123,7 +123,7 @@ To copy a file and optionally rename the copy, type `cp` followed by the path of
 
 ```zsh
 cp file newfile
-``
+```
 
 <Alert type="info">
   To copy a directory, type `cp` with the `-r` (recursive) flag.
