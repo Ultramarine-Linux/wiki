@@ -7,7 +7,7 @@ import Alert from "../../../../components/Docs/Alert.astro";
 
 The shell is a command line interface to the operating system. It is a program that allows you to directly execute commands and interact on deeper level.
 
-You may be familar with Bash from other Linux distributions. Ultramarine uses the [zsh](https://en.wikipedia.org/wiki/Z_shell) instead of bash. We also use [Starship Prompt](https://starship.rs/) to provide additional convenience features like displaying the current git branch.
+You may be familiar with Bash from other Linux distributions. Ultramarine uses the [zsh](https://en.wikipedia.org/wiki/Z_shell) instead of bash. We also use [Starship Prompt](https://starship.rs/) to provide additional convenience features like displaying the current git branch.
 
 <Alert type="info">
   <div>
@@ -49,17 +49,18 @@ ls /home/user/Documents
 
 The directory path is an optional argument. Running `ls` with no arguments will print the contents of the current working directory (the folder you `cd`ed into).
 
-The `ls` command, especially, has a lot of useful flags (i.e. execute  `ls -a`, `-a` being the flag). Below is a table of the most important flags for `ls`.
+The `ls` command, especially, has a lot of useful flags (i.e. execute `ls -a`, `-a` being the flag). Below is a table of the most important flags for `ls`.
 
-| Flag | Modification                                                                    |
-| :--- | :------------------------------------------------------------------------------ |
-| `-a` | List all files in a directory, including hidden files which begin with a `.`.   |
-| `-d` | List specified directories without listing their content (try `ls -d /`).       |
-| `-t` | Sort the output in the order of modification time; latest first.                |
-| `-r` | Sort output in reverse order.                                                   |
-| `-l` | List one file per line. Also display information about the files listed.        |
+| Flag | Modification                                                                  |
+| :--- | :---------------------------------------------------------------------------- |
+| `-a` | List all files in a directory, including hidden files which begin with a `.`. |
+| `-d` | List specified directories without listing their content (try `ls -d /`).     |
+| `-t` | Sort the output in the order of modification time; latest first.              |
+| `-r` | Sort output in reverse order.                                                 |
+| `-l` | List one file per line. Also display information about the files listed.      |
 
 The output of `ls -l` includes columns of information about each file in the following order: file type, permissions, number of symlinks, file owner, file size, date of last modification, and file name.
+
 ```
 total 4
 drwxr-xr-x    2 bob bob      4096 Jan 1 13:00 dir
@@ -72,6 +73,7 @@ Symbolic links (symlinks) are, as the name would imply, links between files. Cha
 ```zsh
 ln -s file newfile
 ```
+
 From now on, when `file` is changed, the change will also be applied to the linked `newfile`.
 
 To read a file to the terminal, type `cat` followed by the path to the file.
@@ -110,7 +112,8 @@ mkdir /home/user/Documents/newdir
 ```
 
 <Alert type="info">
-  To create a new directory inside of another new directory (i.e. `.../newdir/newdir2`), execute `mkdir` with the `-p` flag.
+  To create a new directory inside of another new directory (i.e.
+  `.../newdir/newdir2`), execute `mkdir` with the `-p` flag.
 </Alert>
 
 To move or rename a file or directory, type `mv` followed by the path to the file or directory, and then the new path.
@@ -189,7 +192,9 @@ For files in your current folder, you must use `./` before the file name.
 ```
 
 <Alert type="info">
-  Executables are often moved into a directories listed in the `$PATH` variable (run `echo $PATH`). The filenames of executables in `$PATH` can be executed as commands (i.e. `custom-command` will run `/usr/local/bin/custom-command`)
+  Executables are often moved into a directories listed in the `$PATH` variable
+  (run `echo $PATH`). The filenames of executables in `$PATH` can be executed as
+  commands (i.e. `custom-command` will run `/usr/local/bin/custom-command`)
 </Alert>
 
-#### [← Back To: Software and Package Management](../software)
+#### [← Back To: Software and Package Management](/en/linux/software)
