@@ -60,6 +60,7 @@ export const SIDEBAR: Sidebar = {
       { text: "Permissions", link: "en/linux/permissions" },
       { text: "Software and Package Management", link: "en/linux/software" },
       { text: "The Shell", link: "en/linux/shell" },
+      { text: "SSH", link: "en/linux/ssh"}
     ],
 
     Usage: [{ text: "Gaming on Ultramarine", link: "en/usage/gaming" }],
