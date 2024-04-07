@@ -1,0 +1,43 @@
+---
+title: SSH Secure Shell
+description: "An overview of the SSH utility."
+---
+
+import Alert from "../../../../components/Docs/Alert.astro";
+
+Secure Shell ("SSH") is one of the most common utilities when access to a remote device is needed. It's encrypted, powerful, and simple to understand.
+
+## SSH overview
+SSH uses a client/server model where one computer acts as an SSH server[^1] and allows other computers to connect.
+
+![Example SSH Client and Server](/assets/ssh.png)
+
+## Connecting to an SSH Server
+To access a device remotely, the `ssh` command is run from [the shell](/en/linux/shell), mostly used with this format:
+
+```zsh
+ssh [username@]<server url>
+```
+If you don't specify a username then SSH will attempt to connect you using the username with which you are logged in. Here are some examples:
+- `ssh myuser@myserver.com`
+    - This will attempt to connect to the server at myserver.com using the username myuser
+- `ssh myuser@192.168.1.2`
+    - This is just like the example above except you can also specify an IP address instead of a hostname
+- `ssh myserver.com`
+    - This will attempt to connect to the SSH server at myserver.com using your current username
+- `ssh 192.168.1.2`
+    - Same as above but using an IP address instead of a hostname
+
+When using any of the above commands, once connected to the remote server you'll be prompted for a password.
+
+#### [← Back To: Software and Package Management](/en/linux/software)
+
+[^1]### A Note about the Word "Server"
+It's common to hear the word "server" used but not understand exactly what is meant. Here are a couple examples of how "server" can be used:
+
+- It can refer to a physical machine somewhere
+    - Ex: Our email server lost power over the weekend.
+- It can refer to a specific *application* running on one machine (or even a number of machines across the world!)
+    - Ex: The SSH server is up so that users can connect.
+
+In this guide we'll try to make it clear to which we're referring.
