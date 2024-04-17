@@ -12,8 +12,7 @@ import Alert from "../../../../components/Docs/Alert.astro";
 </Alert>
 
 Chromebooks were an obvious target for Ultramarine Anywhere, despite being mostly
-standard hardware, they have custom EC and strange firmware. We began development
-in Ultramarine 39, and are preparing to launch midcycle.
+standard hardware, they have custom EC and strange firmware.
 
 Chromebook support in Ultramarine Linux is provided in partnership with the [Chrultrabook Project](https://chrultrabook.com).
 
@@ -27,9 +26,9 @@ Ultramarine Chromebook Edition uses a special bootloader called [Submarine](http
 
 Under the hood, Submarine is an incredibly minimal Linux OS based on [u-root](https://github.com/u-root/u-root), it's only really usable for debug and booting a full distribution. Once Submarine is loaded, we use [LinuxBoot](https://www.linuxboot.org/) to boot a full copy of Ultramarine (and hopefully more distros in the future).
 
-Now for the big question, how do we do this without modifying the firmware? We take advantage of the way Depthcharge (the ChromeOS firmware) works. We store Submarine in a 16MB partition on disk, this is normally used by ChromeOS to store a full ChromeOS Kernel and initramfs. Depthcharge doesn't actually check if the contents of the partition are a valid kernel, it just checks for a GPT Header and runs whatever code is found in the partition, in our case, Submarine.
+Now for the big question, how do we do this without modifying the firmware? We take advantage of the way Depthcharge (the ChromeOS firmware) works. We store Submarine in a 16MiB partition on disk, this is normally used by ChromeOS to store a full ChromeOS Kernel and initramfs. Depthcharge doesn't actually check if the contents of the partition are a valid kernel, it just checks for a GPT Header and runs whatever code is found in the partition, in our case, Submarine.
 
-By default, Depthcharge will only boot code with Google's signing keys, we get around this by enabling the built-in developer mode.
+By default, Depthcharge will only boot code with Google's signing keys, we get around this by enabling the built-in ChromeOS developer mode.
 
 To summarise, we boot a tiny Linux distribution (Submarine) and use it to launch Ultramarine's vmlinuz and initramfs using kexec.
 
@@ -43,7 +42,7 @@ We use WeirdTreeThing's [audio script](https://github.com/WeirdTreeThing/chromeb
 
 ### Default Partitions
 
-On Chromebooks, we use f2fs (in lieu of Btrfs) and disable swap to extend the life of the EMMC found in many Chromebooks. We also create one 16MiB partition containing [Submarine](https://developer.fyralabs.com/submarine) at the start of the disk instead of `/boot/EFI`.
+On Chromebooks, we use F2FS (in lieu of Btrfs) and disable swap to extend the life of the eMMC storage found in many Chromebooks. We also create one 16MiB partition containing [Submarine](https://developer.fyralabs.com/submarine) at the start of the disk instead of `/boot/EFI`.
 
 ### Keyboard Mapping
 
@@ -75,19 +74,19 @@ We use [keyd](https://github.com/rvaiya/keyd) to map keys on Chromebooks.
 
 ## Unsupported Devices
 
-| Device    | Reason               |
-| --------- | -------------------- |
-| Mario     | Firmware Limitations |
-| Alex      | Firmware Limitations |
-| ZGB       | Firmware Limitations |
-| Stumpy    | Firmware Limitations |
-| Lumpy     | Firmware Limitations |
-| Parrot    | Firmware Limitations |
-| Butterfly | Firmware Limitations |
-| Link      | Firmware Limitations |
-| Stout     | Firmware Limitations |
+| Device    | Reason                                                                                    |
+| --------- | ----------------------------------------------------------------------------------------- |
+| Mario     | Firmware Limitations                                                                      |
+| Alex      | Firmware Limitations                                                                      |
+| ZGB       | Firmware Limitations                                                                      |
+| Stumpy    | Boot Partition Size Limitation (This can be [Corebooted](https://docs.chrultrabook.com/)) |
+| Lumpy     | Boot Partition Size Limitation (This can be [Corebooted](https://docs.chrultrabook.com/)) |
+| Parrot    | Boot Partition Size Limitation (This can be [Corebooted](https://docs.chrultrabook.com/)) |
+| Butterfly | Boot Partition Size Limitation (This can be [Corebooted](https://docs.chrultrabook.com/)) |
+| Link      | Boot Partition Size Limitation (This can be [Corebooted](https://docs.chrultrabook.com/)) |
+| Stout     | Boot Partition Size Limitation (This can be [Corebooted](https://docs.chrultrabook.com/)) |
 
-These computers are from the first generation of Chromebooks, and use a different firmware than modern ones.
+These are among the first few generations of Chromebooks, and either use an unsupported proprietary firmware, or have firmware limitations which prevents booting a partition large enough to fit submarine (newer Chromebooks have larger size limitations).
 
 ## Installation
 
