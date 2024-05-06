@@ -1,0 +1,33 @@
+---
+title: Upgrade to Ultramarine 40
+description: "A temporary notice for the 39 to 40 upgrade path."
+---
+
+This page is a temporary notice for upgrading Ultramarine 39 to 40.
+For this release cycle, we've decided to release an upgrade path before the full distrbution release.
+This should let existing users enjoy the new set of packages in 40 sooner.
+A full blog post detailing changes will be published for the full distrbution release.
+
+## Flagship, GNOME, and KDE Editions
+
+You can use the editon's graphical app store to upgrade your system to 40.
+On Flagship and GNOME, this will be GNOME Software, while on KDE, this will be Plasma Discover.
+
+You might need to update your system normally before the upgrade to 40 shows up in the app store.
+
+## Pantheon Edition
+
+TODO
+
+## Command line
+
+In case the above doesn't work, you can always upgrade through the command line, using `dnf system-upgrade`.
+
+Run the following and follow the prompts:
+
+```sh
+sudo dnf upgrade --refresh
+sudo dnf install dnf-plugin-system-upgrade
+sudo dnf system-upgrade download --releasever=40
+sudo dnf system-upgrade reboot
+```
