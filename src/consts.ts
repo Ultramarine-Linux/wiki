@@ -62,7 +62,10 @@ export const SIDEBAR: Sidebar = {
       { text: "The Shell", link: "en/linux/shell" },
     ],
 
-    Usage: [{ text: "Gaming on Ultramarine", link: "en/usage/gaming" }],
+    Usage: [
+      { text: "Gaming on Ultramarine", link: "en/usage/gaming" },
+      { text: "Localization", link: "en/usage/l10n"},
+    ],
 
     "Release Notes": [{ text: "Errata", link: "en/release/errata" }],
     // Chromebook: [
