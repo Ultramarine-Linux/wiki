@@ -68,31 +68,39 @@ and you can also install IBus on a KDE system. Things come down to personal pref
 
 1. Install your chosen IMEs (see the table below) alongside `kcm-fcitx5` and `fcitx5-configtool`.
    <Alert type="info">
-     `kcm-fcitx5` is only available starting from Fedora 40.
+   `kcm-fcitx5` is only available starting from Fedora 40.
    </Alert>
-  - Install `fcitx5-qt` and `fcitx5-gtk` for Qt/GTK support.
+
+- Install `fcitx5-qt` and `fcitx5-gtk` for Qt/GTK support.
+
 2. Enable Fcitx 5:
-  - On Wayland (default), go to *Settings > Input Devices > Virtual Keyboard*, and select *Fcitx 5*.
-    - If Fcitx 5 does not work even after a reboot, try running `im-chooser` and select *Fcitx 5*.
-  - On X11, install `fcitx5-autostart`.
-    - If Fcitx 5 does not work even after a reboot, try setting the following in `/etc/environment`:
-    ```
-    GTK_IM_MODULE=fcitx
-    QT_IM_MODULE=fcitx
-    ```
-3. Head to *Settings > Regional Settings > Input Method*, then start configuring Fcitx 5.
+
+- On Wayland (default), go to _Settings > Input Devices > Virtual Keyboard_, and select _Fcitx 5_.
+  - If Fcitx 5 does not work even after a reboot, try running `im-chooser` and select _Fcitx 5_.
+- On X11, install `fcitx5-autostart`.
+  - If Fcitx 5 does not work even after a reboot, try setting the following in `/etc/environment`:
+  ```
+  GTK_IM_MODULE=fcitx
+  QT_IM_MODULE=fcitx
+  ```
+
+3. Head to _Settings > Regional Settings > Input Method_, then start configuring Fcitx 5.
 
 ## Setting up Fcitx5 on other DEs/WMs
 
 1. Install your chosen IMEs (see the table below) alongside `fcitx5-configtool`, `fcitx5-autostart`.
-  - Install `fcitx5-qt` and `fcitx5-gtk` for Qt/GTK support.
+
+- Install `fcitx5-qt` and `fcitx5-gtk` for Qt/GTK support.
+
 2. Fcitx 5 should be enabled via the autostart package. If not,
-  - try running `im-chooser` and select *Fcitx 5*.
-  - try setting the following in `/etc/environment`:
-    ```
-    GTK_IM_MODULE=fcitx
-    QT_IM_MODULE=fcitx
-    ```
+
+- try running `im-chooser` and select _Fcitx 5_.
+- try setting the following in `/etc/environment`:
+  ```
+  GTK_IM_MODULE=fcitx
+  QT_IM_MODULE=fcitx
+  ```
+
 2. When Fcitx 5 is running, right click on the new "en" icon on the system tray > Settings.
 3. Start configuring Fcitx5.
 
@@ -102,12 +110,13 @@ and you can also install IBus on a KDE system. Things come down to personal pref
 2. On Gnome (or similar DEs), go into Settings > Keyboard.
 3. On other DEs, run `ibus-setup`.
 4. If IBus does not work correctly,
-  - try running `im-chooser` and select *IBus*.
-  - try setting the following in `/etc/environment`:
-    ```
-    GTK_IM_MODULE=ibus
-    QT_IM_MODULE=ibus
-    ```
+
+- try running `im-chooser` and select _IBus_.
+- try setting the following in `/etc/environment`:
+  ```
+  GTK_IM_MODULE=ibus
+  QT_IM_MODULE=ibus
+  ```
 
 ## List of IMEs and IMs
 
@@ -175,7 +184,9 @@ such that it better represents Ultramarine's support on different IMs:
 │  Everything  │     fcitx5-m17n     │      ibus-m17n      │
 └──────────────┴─────────────────────┴─────────────────────┘
 ```
+
 **Notes**:
+
 1. Anthy (the IM, not IME) is unmaintained, Mozc is usually preferred.
 2. https://github.com/ueno/libskk
 3. https://github.com/ueno/libkkc
@@ -244,6 +255,7 @@ configured. Note that Fedora/Ultramrine does not provide `rime-*` packages in ou
 You will need to use [plum](https://github.com/rime/plum) (aka. `rime-install`) to install schemas.
 `rime-install` defaults to `ibus`; append `rime_frontend=fcitx-rime` to the front of the command if
 you are using Fcitx5:
+
 ```
 rime_frontend=fcitx-rime bash rime-install rime-aca/rime-cangjie6
 ```
@@ -273,7 +285,6 @@ by the software. For example, there is no Cantonese language option in Readymade
 library provided by Gnome Desktop does not support it. In this case, you should report this issue
 to the upstream library. If you have a hard time determining where to report, you may join one of
 our communities and reach out.
-
 
 [file a bug report]: https://github.com/Ultramarine-Linux/ultramarine/issues/new?assignees=&labels=bug&projects=&template=bug_report.md&title=%5BBUG%5D+Issue+Report
 [complete list of IMs]: https://wiki.archlinux.org/title/Input_method#List_of_available_input_method_editors

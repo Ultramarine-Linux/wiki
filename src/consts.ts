@@ -64,7 +64,7 @@ export const SIDEBAR: Sidebar = {
 
     Usage: [
       { text: "Gaming on Ultramarine", link: "en/usage/gaming" },
-      { text: "Localization", link: "en/usage/l10n"},
+      { text: "Localization", link: "en/usage/l10n" },
     ],
 
     "Release Notes": [{ text: "Errata", link: "en/release/errata" }],
