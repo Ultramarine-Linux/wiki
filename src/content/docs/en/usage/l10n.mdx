@@ -15,6 +15,35 @@ Ultramarine should come with fonts for most if not all languages by default. Fon
 Indic languages are installed out of the box. If you find any glyphs supported by Unicode not
 rendered correctly, [file a bug report].
 
+## Font Priorities
+
+Chinese users might experience issues where Japanese fonts are preferred over Chinese ones simply
+because the locale code `ja_JP` is before `zh_*` when sorted alphabetically. To solve this issue,
+edit `~/.config/fontconfig/fonts.conf` (or `/etc/fonts/local.conf` for global changes):
+
+```xml
+<?xml version="1.0"?>
+<!DOCTYPE fontconfig SYSTEM "urn:fontconfig:fonts.dtd">
+<fontconfig>
+  <alias>
+    <family>sans-serif</family>
+    <prefer>
+      <family>Noto Sans CJK TW</family>
+      <family>Noto Sans</family>
+      <family>HanaMinA</family>
+    </prefer>
+  </alias>
+  <alias>
+    <family>serif</family>
+    <prefer>
+      <family>Noto Serif CJK TW</family>
+      <family>Noto Serif</family>
+      <family>HanaMinA</family>
+    </prefer>
+  </alias>
+</fontconfig>
+```
+
 # Inputting in another language
 
 You may change your key maps / keyboard layout in the settings applet. Refer to documentations for
@@ -61,7 +90,7 @@ There are no strict rules on which one to choose, you can install Fcitx5 even th
 and you can also install IBus on a KDE system. Things come down to personal preferences.
 
 <Alert type="warning">
-  IBus will not work inside Window Managers.
+    IBus will not work inside Window Managers.
 </Alert>
 
 ## Setting up Fcitx5 on KDE
@@ -75,34 +104,32 @@ and you can also install IBus on a KDE system. Things come down to personal pref
 
 2. Enable Fcitx 5:
 
-- On Wayland (default), go to _Settings > Input Devices > Virtual Keyboard_, and select _Fcitx 5_.
-  - If Fcitx 5 does not work even after a reboot, try running `im-chooser` and select _Fcitx 5_.
-- On X11, install `fcitx5-autostart`.
-  - If Fcitx 5 does not work even after a reboot, try setting the following in `/etc/environment`:
-  ```
-  GTK_IM_MODULE=fcitx
-  QT_IM_MODULE=fcitx
-  ```
+   - On Wayland (default), go to _Settings > Input Devices > Virtual Keyboard_, and select _Fcitx 5_.
+     - If Fcitx 5 does not work even after a reboot, try running `im-chooser` and select _Fcitx 5_.
+   - On X11, install `fcitx5-autostart`.
+     - If Fcitx 5 does not work even after a reboot, try setting the following in `/etc/environment`:
+     ```
+     GTK_IM_MODULE=fcitx
+     QT_IM_MODULE=fcitx
+     ```
 
 3. Head to _Settings > Regional Settings > Input Method_, then start configuring Fcitx 5.
 
 ## Setting up Fcitx5 on other DEs/WMs
 
 1. Install your chosen IMEs (see the table below) alongside `fcitx5-configtool`, `fcitx5-autostart`.
-
-- Install `fcitx5-qt` and `fcitx5-gtk` for Qt/GTK support.
-
+   - Install `fcitx5-qt` and `fcitx5-gtk` for Qt/GTK support.
 2. Fcitx 5 should be enabled via the autostart package. If not,
 
-- try running `im-chooser` and select _Fcitx 5_.
-- try setting the following in `/etc/environment`:
-  ```
-  GTK_IM_MODULE=fcitx
-  QT_IM_MODULE=fcitx
-  ```
+   - try running `im-chooser` and select _Fcitx 5_.
+   - try setting the following in `/etc/environment`:
+     ```
+     GTK_IM_MODULE=fcitx
+     QT_IM_MODULE=fcitx
+     ```
 
-2. When Fcitx 5 is running, right click on the new "en" icon on the system tray > Settings.
-3. Start configuring Fcitx5.
+3. When Fcitx 5 is running, right click on the new "en" icon on the system tray > Settings.
+4. Start configuring Fcitx5.
 
 ## Setting up IBus
 
@@ -110,13 +137,12 @@ and you can also install IBus on a KDE system. Things come down to personal pref
 2. On Gnome (or similar DEs), go into Settings > Keyboard.
 3. On other DEs, run `ibus-setup`.
 4. If IBus does not work correctly,
-
-- try running `im-chooser` and select _IBus_.
-- try setting the following in `/etc/environment`:
-  ```
-  GTK_IM_MODULE=ibus
-  QT_IM_MODULE=ibus
-  ```
+   - try running `im-chooser` and select _IBus_.
+   - try setting the following in `/etc/environment`:
+     ```
+     GTK_IM_MODULE=ibus
+     QT_IM_MODULE=ibus
+     ```
 
 ## List of IMEs and IMs
 
