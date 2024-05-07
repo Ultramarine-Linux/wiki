@@ -6,8 +6,8 @@ description: How to make your Linux system support other languages and even impr
 import Alert from "../../../../components/Docs/Alert.astro";
 
 Localization (l10n) and internationalization (i18n) support in Ultramarine Linux is crucial as
-currently half of the project team speaks something other than English natively. This page
-contains details on how i18n works and how it can be set up on Ultramarine.
+half of the project team speaks something other than English natively. This page contains details on
+how i18n works and how it can be set up on Ultramarine.
 
 # Fonts
 
@@ -68,7 +68,7 @@ As an example, a Japanese KDE user would install `fcitx5-mozc` in order to type 
 case, Fcitx5 is the IMF, Mozc is the IME, and the IM can be Romaji or Kana input depending on the
 user's preference.
 
-A Cantonese Gnome user from Hong Kong learning Korean would install `ibus-rime` with Jyutping and
+A Cantonese GNOME user from Hong Kong learning Korean would install `ibus-rime` with Jyutping and
 Cangjie support alongside `ibus-hangul` for Korean support. Here, IBus is the IMF, Rime IME provides
 support for the Jyutping IM and Cangjie IM, while libhangul IME provides support for the Hangul IM.
 
@@ -78,7 +78,7 @@ to install multiple IMEs so that they can type in multiple languages.
 ## Fcitx5 vs IBus
 
 **IBus** (Intelligent Input Bus) is an IMF usually used in GTK-based desktop environments. If you
-are using Gnome/Budgie, you most likely will choose IBus over Fcitx5 due to Gnome Desktop's tight
+are using GNOME/Budgie, you most likely will choose IBus over Fcitx5 due to GNOME Desktop's tight
 integration with IBus. Even though IBus's initial release was back in August 2008, releases are
 still rather frequent and the project is still being maintained.
 
@@ -86,7 +86,7 @@ still rather frequent and the project is still being maintained.
 slim core extensible with different addons and IMEs. It is the successor to Fcitx. If you are using
 DEs that are not GTK-based (such as KDE Plasma which uses Qt) or any WMs, you should choose Fcitx5.
 
-There are no strict rules on which one to choose, you can install Fcitx5 even though you use Gnome,
+There are no strict rules on which one to choose, you can install Fcitx5 even though you use GNOME,
 and you can also install IBus on a KDE system. Things come down to personal preferences.
 
 <Alert type="warning">
@@ -134,7 +134,7 @@ and you can also install IBus on a KDE system. Things come down to personal pref
 ## Setting up IBus
 
 1. Install your chosen IMEs (see the table below).
-2. On Gnome (or similar DEs), go into Settings > Keyboard.
+2. On GNOME, Budgie/Flagship and similar DEs, go into Settings > Keyboard.
 3. On other DEs, run `ibus-setup`.
 4. If IBus does not work correctly,
    - try running `im-chooser` and select _IBus_.
@@ -308,7 +308,7 @@ in your language, or you would like to improve the translations, please visit
 There are cases where your language is not shown in the list of languages. This might be because no
 one has made efforts on translating the software, or it is not supported by the i18n libraries used
 by the software. For example, there is no Cantonese language option in Readymade because the i18n
-library provided by Gnome Desktop does not support it. In this case, you should report this issue
+library provided by GNOME Desktop does not support it. In this case, you should report this issue
 to the upstream library. If you have a hard time determining where to report, you may join one of
 our communities and reach out.
 
