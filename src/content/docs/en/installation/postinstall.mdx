@@ -42,7 +42,22 @@ Then reboot your system.
 
 ## Install Codecs
 
-Ultramarine Linux includes codecs for most of the media you'll come across. You shouldn't need to install any additional codecs.
+Ultramarine Linux includes codecs for most of the media you'll come across. **You shouldn't need to install any additional codecs.** Most of these packages below should be installed by default, excluding
+the VLC and MPV media players, and the `libdvdcss` library.
+
+However, if you find yourself in the situation where you do not have those codecs, or require additional codecs other than we have provided (i.e obscure formats, or proprietary codecs not included in any repositories), you can look into the following packages:
+- `x264` and `x265` for better H.264 and HEVC video support - Developed by the VideoLAN (VLC) project.
+- [FFmpeg](https://ffmpeg.org/) (`ffmpeg`) - A cross-platform multimedia framework that can manipulate, convert and transcode to and from various media formats.
+- [VLC Media Player](https://www.videolan.org/vlc/) (`vlc`) - A free and open-source media player that can play most multimedia files, can also be used to test out the codecs' functionality.
+- [MPV](https://mpv.io/) (`mpv`) - A free and open-source media player that can also play most multimedia files. Can be used as a lightweight alternative to VLC.
+- [libvpx](https://www.webmproject.org/) (`libvpx`) - A free and open-source codec for VP8 and VP9 video formats.
+- [libdvdcss](https://www.videolan.org/developers/libdvdcss.html) (`libdvdcss`) - A library that can be used to read encrypted DVDs. This is not legal in some countries, so please check your local laws before using it. We also do not provide decryption keys for any encrypted DVDs.
+- [Opus](https://opus-codec.org/) (`opus`) - A free and open-source audio codec that can be used for both speech and music. Should be installed by default.
+- [OpenH264](https://www.openh264.org/) (`openh264`) - A free and open-source codec for H.264 video formats. Should be installed by default, required for WebRTC and partially Firefox.
+- [aptX](https://www.aptx.com/) (`pipewire-codec-aptx`) - A proprietary codec for high-quality audio streaming over Bluetooth. Required for wireless Bluetooth audio devices that support it.
+- `nv-codec-headers` - NVIDIA's codec headers for encoding and decoding video on NVIDIA GPUs. Required for hardware-accelerated video encoding and decoding on NVIDIA GPUs. May not be used by default assuming you do not have an NVIDIA GPU.
+- [LAME](https://lame.sourceforge.io/) (`lame`) - A free and open-source MP3 encoder. Required for encoding MP3 files.
+- `PackageKit-gstreamer-plugin` - PackageKit plugin that helps you install the above codec packages using GNOME Software/KDE Discover.
 
 ## Set up Backups
 
@@ -52,5 +67,7 @@ Instructions are available on the [Pika Backup] and [Déjà Dup] websites.
 
 [Déjà Dup]: https://wiki.gnome.org/Apps/DejaDup
 [Pika Backup]: https://apps.gnome.org/PikaBackup/
+
+#### [Next Up: Advanced Post-installation steps →](/en/installation/post-advanced)
 
 #### [← Back To: Installation](/en/installation/installation)

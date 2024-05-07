@@ -37,6 +37,7 @@ export const SIDEBAR: Sidebar = {
       { text: "Getting Ultramarine", link: "en/installation/getting" },
       { text: "Installation", link: "en/installation/installation" },
       { text: "Post-Installation", link: "en/installation/postinstall" },
+      { text: "Advanced Post-install steps", link: "en/installation/post-advanced" }
     ],
     Contributing: [
       { text: "Overview", link: "en/contributing/contributorguide" },
@@ -62,7 +63,10 @@ export const SIDEBAR: Sidebar = {
       { text: "The Shell", link: "en/linux/shell" },
     ],
 
-    Usage: [{ text: "Gaming on Ultramarine", link: "en/usage/gaming" }],
+    Usage: [
+      { text: "Gaming on Ultramarine", link: "en/usage/gaming" },
+      { text: "Localization", link: "en/usage/l10n" },
+    ],
 
     "Release Notes": [{ text: "Errata", link: "en/release/errata" }],
     // Chromebook: [
