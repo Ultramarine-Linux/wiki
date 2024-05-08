@@ -36,8 +36,19 @@ export const SIDEBAR: Sidebar = {
     Installation: [
       { text: "Getting Ultramarine", link: "en/installation/getting" },
       { text: "Installation", link: "en/installation/installation" },
+      {
+        text: "Installation with Readymade",
+        link: "en/installation/readymade",
+      },
+      {
+        text: "Installation on Raspberry Pi",
+        link: "en/installation/rpi",
+      },
       { text: "Post-Installation", link: "en/installation/postinstall" },
-      { text: "Advanced Post-install steps", link: "en/installation/post-advanced" }
+      {
+        text: "Advanced Post-Install Steps",
+        link: "en/installation/post-advanced",
+      },
     ],
     Contributing: [
       { text: "Overview", link: "en/contributing/contributorguide" },

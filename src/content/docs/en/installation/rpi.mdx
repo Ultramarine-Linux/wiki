@@ -1,0 +1,100 @@
+---
+title: " Installation on Raspberry Pi"
+description: "How to install Ultramarine Linux on the Raspberry Pi"
+---
+
+import Alert from "../../../../components/Docs/Alert.astro";
+
+## System Requirements
+
+Ultramarine Linux supports the Raspberry Pi 3 and 4. Please see the [Anywhere page](/en/anywhere/rpi) for more information.
+
+## Choosing Your Edition
+
+Ultramarine Linux comes in 4 variants:
+
+- **Flagship Edition**: Our default and most popular variant. Choose Flagship if you'd like a familiar and stylish experience.
+- **KDE Edition**: Our second most popular variant. Choose KDE if you'd like a simply customisable experience.
+- **GNOME Edition**: Elegant and Modern. Choose GNOME if you'd like a simple, unique experience.
+- **Xfce Edition**: Lightweight and Configurable. Choose Xfce if you'd like a lighter experience.
+
+Ultramarine Linux for Raspberry Pi is distributed as a raw.xz file available for download from [our website](https://ultramarine-linux.org).
+
+<Alert type="warning">
+  Fyra Labs cannot guarantee the safety or quality of images downloaded from
+  sites other than our website or FOSSTorrents
+</Alert>
+
+{/* ### Kanopy */}
+
+{/* **Ultramarine Kanopy** is an upcoming variant of Ultramarine Linux, which is made for servers and cloud computing. It is currently in development and does not have a release date yet, but we plan to target Q2 '24 */}
+{/* It will be based on Ultramarine OSTree and is designed as a simple and easy-to-use server operating system, with a focus on containerized applications with a simple, easy-to-use web interface as a competitor to TrueNAS SCALE, OpenMediaVault, and other similar operating systems. */}
+
+## Verifying the Safety of an Ultramarine Image (Recommended)
+
+Ultramarine images have a matching checksum file that can be checked against the image itself.
+
+They can be downloaded by clicking the `View checksum` button on the [download page](https://ultramarine-linux.org/download/).
+
+### Verifying the Checksum on Linux and macOS
+
+You can use the following commands to check the integrity of the image:
+
+```bash
+sha256sum -b /path/to/ultramarine.iso # Generate the checksum for the image
+cat /path/to/checksum # Check the checksum
+
+# Now you can compare the checksum
+```
+
+### Verifying the Checksum on Windows
+
+In Powershell, run this command:
+
+```powershell
+CertUtil -hashfile PATH\TO\ULTRAMARINE.ISO SHA256
+# Open the checksum file with Notepad and compare the checksum
+```
+
+## Selecting a Drive
+
+The drive you use deeply affects the experience you will have on Ultramarine.
+
+### Raspberry Pi 3
+
+Raspberry Pi 3 supports only microSD cards. Your microSD card must be 9GB or larger, but we suggest 16GB or more so you'll have some space for software.
+
+You should also look for a class 10 SDHC or SDXC microSD.
+
+### Raspberry Pi 4 and 400
+
+Raspberry Pi 4 supports microSD cards and USB storage. Your storage device must be 9GB or larger, but we suggest 16GB or more so you'll have some space for software.
+
+The best experience will be with a SATA SSD connected over an adapter. A USB 3.0 flash drive will be slightly better to on-par with a nice microSD card. All of the options are good, it's up to your needs.
+
+## Flashing the Image
+
+Use [balenaEtcher](https://www.balena.io/etcher/) to flash to the storage device.
+
+![](/assets/balenaetcher.png)
+
+Simply select the raw.xz file (you don't need to decompress it), a device to use for the installer, and click flash.
+
+## Expanding the Root Filesystem
+
+<Alert type="info">
+  This is not possible on Windows or macOS. We are figuring out a way to do this
+  on first boot.
+</Alert>
+
+Use GParted to expand the last partition on the disk.
+
+Screenshots here
+
+#### [Next Up: Installation →](/en/installation/installation)
+
+## Footnotes
+
+- The Anaconda installer is very complex and hard to work with, we are working on a new installer that is easier to use and more reliable.
+- Since Fedora 37, Fedora's official support for the Pantheon desktop environment has been dropped due to compatibility issues and the Pantheon port is now maintained by the Ultramarine Linux team. This means that the Pantheon desktop environment is only available through Ultramarine Linux, or Fedora with Terra enabled.
+- Ultramarine's Budgie edition provides a close to stock Budgie experience, with a custom theme. Unlike Fedora's Budgie Spin, which provides a completely custom layout and experience.
