@@ -9,7 +9,7 @@ After installing Ultramarine Linux, There are a few things you should do to make
 
 ## Install NVIDIA Drivers
 
-If you were connected to the internet during installation, NVIDIA drivers were already installed. Otherwise, you can install them with these commands
+NVIDIA drivers were installed during the installation process. If this didn't happen or you missed the chance to enable them on first boot, you can install them with these commands
 
 ```bash
 sudo dnf update # Update the system first, the drivers may not work right if you don't.
@@ -45,7 +45,7 @@ Then reboot your system.
 Ultramarine Linux includes codecs for most of the media you'll come across. **You shouldn't need to install any additional codecs.** Most of these packages below should be installed by default, excluding
 the VLC and MPV media players, and the `libdvdcss` library.
 
-However, if you find yourself in the situation where you do not have those codecs, or require additional codecs other than we have provided (i.e obscure formats, or proprietary codecs not included in any repositories), you can look into the following packages:
+However, if you find yourself in the situation where you do not have those codecs (if you converted for example), or require additional codecs other than we have provided (i.e obscure formats, or proprietary codecs not included in any repositories), you can look into the following packages:
 
 - `x264` and `x265` for better H.264 and HEVC video support - Developed by the VideoLAN (VLC) project.
 - [FFmpeg](https://ffmpeg.org/) (`ffmpeg`) - A cross-platform multimedia framework that can manipulate, convert and transcode to and from various media formats.
@@ -68,7 +68,5 @@ Instructions are available on the [Pika Backup] and [Déjà Dup] websites.
 
 [Déjà Dup]: https://wiki.gnome.org/Apps/DejaDup
 [Pika Backup]: https://apps.gnome.org/PikaBackup/
-
-#### [Next Up: Advanced Post-installation steps →](/en/installation/post-advanced)
 
 #### [← Back To: Installation](/en/installation/installation)
