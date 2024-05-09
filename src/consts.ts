@@ -66,12 +66,13 @@ export const SIDEBAR: Sidebar = {
       { text: "BIOS Keys", link: "en/hardware/bioskeys" },
     ],
     "Linux Concepts": [
-      { text: "Concepts Overview", link: "en/linux/overview" },
+      { text: "What is Linux?", link: "en/linux/overview" },
       { text: "The File System", link: "en/linux/filesystem" },
       { text: "Device Files", link: "en/linux/devicefiles" },
       { text: "Permissions", link: "en/linux/permissions" },
       { text: "Software and Package Management", link: "en/linux/software" },
       { text: "The Shell", link: "en/linux/shell" },
+      { text: "Security and Privacy", link: "en/linux/securityprivacy" },
     ],
 
     Usage: [

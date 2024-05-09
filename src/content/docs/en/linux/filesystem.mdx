@@ -5,74 +5,45 @@ description: "An overview of the file system in Linux."
 
 import Alert from "../../../../components/Docs/Alert.astro";
 
-The Linux (and UNIX) file system is a hierarchical structure of files and directories (i.e. folders) that make up a Linux operating system.
+There are a few notable differences in how files work on Linux when compared to Windows or macOS.
 
-In Linux, everything is a file, unlike Microsoft Windows where many other object types can either be a physical device, and inter-process communications are done by kernel calls.
+The most noticeable difference is case sensitivity. Windows and macOS are case-insensitive, meaning that `FOLDER` and `Folder` are the same folder. Linux on the other hand is case-sensitive, so `FOLDER` and `Folder` are two different folders.
 
-<Alert type="info">
-  <div class="full-width">
-    If you prefer a video, this one is a good crash course.
-    <iframe
-      width="560"
-      height="315"
-      src="https://www.youtube-nocookie.com/embed/42iQKuQodW4?si=YYFew-wjeF6IHXa0"
-      title="YouTube video player"
-      frameborder="0"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-      allowfullscreen
-    ></iframe>
-  </div>
-</Alert>
+In Linux, and more widely, UNIX, everything is a file. Unlike Windows which has other object types to represent physical devices.
 
 ## The File System Hierarchy
 
-The file system hierarchy is a set of directories that appear under the root directory `/`. They not only contain normal files, but also physical devices, virtual devices, and various other special files that control the system itself.
+Unlike Windows, Linux has a standardized file system hierarchy (FSH.) The FSH is contained within `/` (often called root.) They not only contain normal files, but also physical devices, virtual devices, and various other special files that control the system itself.
+
+It should also be noted that Linux uses a forward slash (`/`) to represent going deeper in a directory, unlike Windows which uses a backslash (`\`)
 
 The directory structure is as follows:
 
-| Directory | Description                                                                                                                                                                       |
-| :-------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| /         | The root directory with the all the other directories and files.                                                                                                                  |
-| /bin      | Executables and command binares required for a functioning system.                                                                                                                |
-| /boot     | The bootloader and files used during early boot process. May usually be in a separate partition.                                                                                  |
-| /dev      | Special device files for various purposes (`/dev/sda` for a SATA drive, `/dev/null` for blank data, `/dev/random` for pseudo-random data, `/dev/tty` for terminal sessions, etc). |
-| /etc      | System-wide settings and configuration files.                                                                                                                                     |
-| /home     | User data.                                                                                                                                                                        |
-| /lib      | Libraries required for executables in `/bin` to function. May be also named `/lib<arch>` for multi-architecture support.                                                          |
-| /media    | Mount points for removable media, such as USB drives, SD cards, etc.                                                                                                              |
-| /mnt      | Temporary mount points for mounting devices.                                                                                                                                      |
-| /opt      | Optional packages that may be installed by the user.                                                                                                                              |
-| /proc     | Process data and kernel information for inter-process communication managed by the kernel.                                                                                        |
-| /root     | User data for the root user.                                                                                                                                                      |
-| /sbin     | Executables for system tasks.                                                                                                                                                     |
-| /srv      | Shared service data used by server processes, such as web servers and NAS/File servers.                                                                                           |
-| /tmp      | Temporary data.                                                                                                                                                                   |
-| /usr      | Shared application data used by all users.                                                                                                                                        |
-| /var      | Variable data used by system processes.                                                                                                                                           |
+| Directory | Description                                                                                                                                                                  |
+| :-------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| /         | The root directory with the all the other directories and files. This is as far back as you can go                                                                           |
+| /bin      | Executables and command binares required for a functioning system. Most applications installed from RPM end up here.                                                         |
+| /boot     | The bootloader and files used during early boot process. May usually be in a seperate partition.                                                                             |
+| /dev      | Special device files for various purposes (`/dev/sda` for a drive, `/dev/null` for blank data, `/dev/random` for pseudo-random data, `/dev/tty` for terminal sessions, etc). |
+| /etc      | System-wide settings and configuration files.                                                                                                                                |
+| /home     | User files. This is where your stuff lives!                                                                                                                                  |
+| /lib      | Libraries required for executables in `/bin` to function. May be also named `/lib<arch>`.                                                                                    |
+| /media    | Mount points for when the system mounts removable media, such as USB drives, SD cards, etc.                                                                                  |
+| /mnt      | Temporary mount points for media. Usually used when manually mounting a drive.                                                                                               |
+| /opt      | Optional packages that may be installed by the user. Most packages don't actually install here.                                                                              |
+| /proc     | Process data and kernel information for inter-process communication managed by the kernel.                                                                                   |
+| /root     | User data for the root user. Don't confuse this with `/` (root)                                                                                                              |
+| /sbin     | Executables for system tasks.                                                                                                                                                |
+| /srv      | Shared service data used by server processes, such as web servers and NAS/File servers.                                                                                      |
+| /tmp      | Temporary data.                                                                                                                                                              |
+| /usr      | Shared application data used by all users.                                                                                                                                   |
+| /var      | Variable data used by system processes.                                                                                                                                      |
 
 ## The Home Directory
 
-The home folder is the place where all your personal data is stored. It is a directory that is located under the `/home` directory, followed by the username. It is similar to the `Users` folder in Windows.
+The home folder is the place where all your personal data, and most of your apps are stored. It is a directory that is located under the `/home` directory, followed by your username. It is similar to the `Users` folder in Windows.
 
-In Linux, the home folder is usually more extensively used than in Windows, as it stores all user-specific data and app settings. The system folders are only used when one wants to make system-wide changes.
-
-<Alert type="warning">
-  If an app you don't know asks you for your password or root access, It may be
-  trying to compromise your system. Cases like this are usually uncommon on
-  Linux, but you should be aware of it.
-</Alert>
-
-## Security
-
-Ultramarine Linux uses SELinux, a software that implements Mandatory Access Control. This prevents applications (and users) from accessing files they shouldn't be able to.
-
-Users will usually be required to have root access to modify system files, and even then, SELinux may prevent you from doing so unless you have set the correct contexts for the files.
-
-By default, SELinux is in "Enforcing" mode, which means that it will prevent you from modifying system files unless you have the correct permissions. This shouldn't cause any issues. If you would like to disable SELinux you can run`sudo setenforce 0`. We don't recommend this as it makes your system less secure.
-
-[Learn more about SELinux →](https://www.redhat.com/en/topics/linux/what-is-selinux)
-
-[Learn more about Permissions →](/en/linux/permissions)
+In Linux, the home folder is usually more extensively used than in Windows, as it stores all user-specific data, settings, and the majority of your applications (Flatpaks). The system folders are only used when making system-wide changes or installing applications from DNF or an RPM File.
 
 ## Virtual Memory
 
@@ -102,7 +73,6 @@ It currently supports most file systems that are supported by the Linux kernel, 
 
 And extra file system drivers can be installed, such as:
 
-- exFAT
 - ZFS
 
 The Ultramarine Linux installer will be configured to use the BTRFS file system by default, as it is the most modern file system that is supported by the Linux kernel, and has many features that are useful for desktop users, such as snapshots, virtual volumes, journalling, error correction and compression.
@@ -118,6 +88,6 @@ Most server installations will use XFS or ZFS, as they have better performance a
 
 Ultramarine Linux can also mount remote file systems from a remote server or NAS, using the NFS, (S)FTP, SMB, and WebDAV protocols.
 
-#### [← Back To: Concepts](/en/linux/overview)
+#### [← Back To: What is Linux?](../overview)
 
-#### [Next Up: Device Files →](/en/linux/devicefiles)
+#### [Next Up: Device Files →](../devicefiles)
