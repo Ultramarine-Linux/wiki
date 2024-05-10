@@ -36,10 +36,10 @@ export const SIDEBAR: Sidebar = {
     Installation: [
       { text: "Getting Ultramarine", link: "en/installation/getting" },
       { text: "Installation", link: "en/installation/installation" },
-      {
-        text: "Installation with Readymade",
-        link: "en/installation/readymade",
-      },
+      // {
+      // text: "Installation with Readymade",
+      //link: "en/installation/readymade",
+      //},
       {
         text: "Installation on Raspberry Pi",
         link: "en/installation/rpi",

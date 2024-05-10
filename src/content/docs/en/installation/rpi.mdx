@@ -33,7 +33,7 @@ Grab a USB stick! Use a flasher program to create an installer from the image. [
 
 Simply select the raw.xz file (you don't need to decompress it), a device to use for the installer, and click flash.
 
-You can also use [Raspberry Pi Imager](https://flathub.org/apps/org.raspberrypi.rpi-imager), or the Disks application on Flagship, Xfce, and GNOME editions.
+You can also use the Disks application on Flagship, Xfce, and GNOME editions. Raspberry Pi Imager is not compatible with our images.
 
 ## Expanding the Root Filesystem
 
@@ -42,6 +42,37 @@ You can also use [Raspberry Pi Imager](https://flathub.org/apps/org.raspberrypi.
   on first boot.
 </Alert>
 
-Use GParted to expand the last partition on the disk.
+If you haven't already, install GParted as an RPM [from your app store](/en/linux/software).
 
-Screenshots here
+Start by opening GParted, it may prompt you to fix the GPT, you can safely select "Fix"
+![](/assets/gparted/gpt.png)
+
+Now select the device you just flashed.
+![](/assets/gparted/disk.png)
+
+Then, right click the last partition on the disk, and select "Resize/Move."
+![](/assets/gparted/part.png)
+
+You'll be presented with this menu, you can change partition sizes from here.
+![](/assets/gparted/resizemenu.png)
+
+Simply drag the right side of the partition as far right as you can, then click done.
+![](/assets/gparted/fillwhole.png)
+
+Now, check your work, make sure you used the right disk.
+![](/assets/gparted/checkwork.png)
+
+Then click the green check in the top menu and confirm the changes.
+![](/assets/gparted/apply.png)
+
+Sit back and wait, this may take upwards of five minutes.
+![](/assets/gparted/progress.png)
+
+You're done now! You can exit this menu and eject your drive, you're ready to plug it into your Pi!
+![](/assets/gparted/done.png)
+
+## First Boot
+
+On first boot, you'll be prompted with your edition's login screen. The username and password are both `ultramarine`, change this password ASAP.
+
+That's it! You're ready to enjoy Ultramarine on your Raspberry Pi! We're working hard on making the experience better so stay tuned!
