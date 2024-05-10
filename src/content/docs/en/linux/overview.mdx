@@ -1,23 +1,50 @@
 ---
-title: Concepts Overview
+title: What is Linux?
 description: "A general overview of Linux concepts."
 ---
 
 import Alert from "../../../../components/Docs/Alert.astro";
 
-This article and this section outlines the concepts of Linux, GNU, and UNIX concepts.
+Linux refers to a family of operating systems with one common feature: the Linux kernel.
 
-## What is Linux?
+Linux is distributed uniquely compared to Windows or macOS. Multiple (seperate) groups take the Linux kernel and combine it with tons of other software before distrbuting it as a distinct operating system. These compilations are called "distributions" (but we'll shorten that to distro.)
 
-Linux is technically an open-source kernel which provides core functionalities to an operating system and an interface between programs and hardware. Ultramarine itself is built on Linux.
+Ultramarine Linux is based on another disribution of Linux called Fedora. See ["Why does this distro exist?"](/en/welcome#why-does-this-distro-exist-what-difference-does-it-have-other-than-just-fedora-with-rpmfusion) for more on that.
 
-Linux is not a complete operating system by itself. Operating systems that ship the Linux kernel, are usually packaged along with a separate suite of programs known as GNU.
-This kind of operating system is often referred to as GNU/Linux, or Linux for short; a branded operating system shipping the GNU software collection, the Linux kernel and other extra software
-(which are sometimes built and distributed using a custom packaging system), and/or containing specific default configurations/features, is said to be a GNU/Linux distribution, or a distro for short.
+## Why use Linux?
+
+People use Linux on the desktop for all sorts of reasons. For our purposes, we'll split this into four categories: Customization, Freedom, Security, Privacy.
+
+### Customization
+
+Linux is incredibly customizable. You can change anything from the way your desktop icons look to the way apps load and the behavior of the device itself. Ultramarine provides easy ways to do this, like theme support, power management profiles (in most editions) and the upcoming tweak tool.
+
+### Freedom
+
+When we say freedom, we mean it in two ways. This is often described as "free as in beer" V.S. "free as in speech". Linux will cost you no money, and will allow you to do essentially whatever you'd like.
+
+For example: Edge cannot be removed from a Windows computer. Meanwhile on Linux, there is no such limitation. Essential apps like the file manager can be exchanged for one of many alternatives. Complete freedom.
+
+### Security
+
+Linux is more secure by design, with features like Mandatory Access Controls and stricter permissions, you can learn more about those features on the [Permissions](/en/linux/securityprivacy) page.
+
+Linux is also resistant to many common viruses due to these features (and inexperienced developers.) This is becoming less true as Linux marketshare grows, but you are significantly less likely to get an incidental virus on Linux than Windows.
+
+### Privacy
+
+It's no secret that the big three of operating systems are watching what you do in some way. Linux vendors tend not to do this, and even if they do, you can easily switch to a compatible alternative or simply disable the telemetry.
+
+## How is Ultramarine Different?
+
+Ultramarine Linux is designed to get a lot of the configuration out of the way. We include extra components (like media codecs and drivers) that many other distrbutions don't include.
+
+Ultramarine is built on Fedora, the base for Red Hat's Enterprise Linux. This means that the software backing Ultramarine has been built with the stability needed for mission critical systems.
 
 <Alert type="info">
   <div class="full-width">
-    An abridged video of this article can be found here:
+    If you'd like a crash course on the basics, this video should cover a lot of
+    what the following pages will cover
     <iframe
       width="560"
       height="315"
@@ -30,34 +57,4 @@ This kind of operating system is often referred to as GNU/Linux, or Linux for sh
   </div>
 </Alert>
 
-## What is the GNU in GNU/Linux?
-
-Main article: [GNU Core Utilities from Wikipedia](https://en.wikipedia.org/wiki/GNU_Core_Utilities)
-
-GNU (AKA The GNU Core Utilities, or just `coreutils`) is a collection of utilities that make up the GNU operating system.
-
-It is a package of various common apps and utilities like `ls` and `mv`.
-
-Ultramarine is currently experimenting with dropping GNU from the system. It's highly experimental and we may not continue development in the future.
-
-## What are Linux Distributions?
-
-A Linux distribution is an operating system that is built on top of the Linux kernel. It is a collection of packages that are packaged together to make a complete operating system.
-
-A Linux distribution may come in many different forms, and made for different kinds of use cases.
-
-There are many different Linux distributions, and each one has its own unique features and benefits, such as:
-
-- Ubuntu
-- Pop!\_OS
-- Linux Mint
-- Fedora Linux
-- Enterprise Linux (Red Hat, CentOS, Rocky Linux, AlmaLinux, etc.)
-- Arch Linux
-- Android
-- Ultramarine Linux
-- etc.
-
-Ultramarine Linux itself is a Linux distribution that is based on Fedora Linux, and many concepts that apply to Fedora Linux are also applicable to Ultramarine Linux.
-
-#### [Next Up: The Filesystem →](/en/linux/filesystem)
+#### [Next Up: The Filesystem →](../filesystem)

@@ -11,39 +11,46 @@ Ultramarine Linux currently still uses GRUB as the default bootloader for compat
 systemd-boot, which is a more modern bootloader.
 
 <Alert type="warning">
-  This step is optional. You can skip this step if you don't want to use systemd-boot.
-  Make sure to back up your data and have a live USB ready in case something goes wrong.
-  Incorrectly configuring a new bootloader can make your OS unbootable.
+  This step is optional. You can skip this step if you don't want to use
+  systemd-boot. Make sure to back up your data and have a live USB ready in case
+  something goes wrong. Incorrectly configuring a new bootloader can make your
+  OS unbootable.
 </Alert>
 
 1. Make sure you turn off Secure Boot in your UEFI settings for now, You can re-enable it later after [Setting up Secure Boot](#set-up-secure-boot)
 2. Remove GRUB from protected packages:
-  ```bash
-  sudo rm /etc/dnf/protected.d/grub*
-  ```
+
+```bash
+sudo rm /etc/dnf/protected.d/grub*
+```
+
 3. Start uninstalling GRUB:
-  ```bash
-  sudo dnf remove -y grubby grub2\* memtest86\* && sudo rm -rf /boot/grub2 && sudo rm -rf /boot/loader
-  ```
+
+```bash
+sudo dnf remove -y grubby grub2\* memtest86\* && sudo rm -rf /boot/grub2 && sudo rm -rf /boot/loader
+```
+
 4. Install unsigned systemd-boot binaries and the `sdubby` tool:
-  ```bash
-  sudo dnf install systemd-boot-unsigned sdubby
-  ```
+
+```bash
+sudo dnf install systemd-boot-unsigned sdubby
+```
+
 5. Install systemd-boot to the ESP:
-  ```bash
-  # Copy your current cmdline options just in case
-  cat /proc/cmdline | cut -d ' ' -f 2- | sudo tee /etc/kernel/cmdline
-  # Install systemd-boot
-  sudo bootctl install
-  # Now, reinstall and regenerate the current kernel entry
-  sudo kernel-install add $(uname -r) /lib/modules/$(uname -r)/vmlinuz
-  # Reinstall the kernel again, just in case we need to trigger some hooks
-  sudo dnf reinstall -y kernel-core
-  ```
+
+```bash
+# Copy your current cmdline options just in case
+cat /proc/cmdline | cut -d ' ' -f 2- | sudo tee /etc/kernel/cmdline
+# Install systemd-boot
+sudo bootctl install
+# Now, reinstall and regenerate the current kernel entry
+sudo kernel-install add $(uname -r) /lib/modules/$(uname -r)/vmlinuz
+# Reinstall the kernel again, just in case we need to trigger some hooks
+sudo dnf reinstall -y kernel-core
+```
+
 6. Reboot your system and make sure it boots correctly, run `sudo bootctl` to check if the boot process is correct.
 7. (Optional) Proceed to [Set up Secure Boot](#set-up-secure-boot) if you want to re-enable Secure Boot.
-
-
 
 ## Set up Secure Boot
 
@@ -82,8 +89,5 @@ However, once you have installed sbctl, it should've already set up a hook to si
 
 After signing the necessary files and enrolling them in your firmware, you can re-enable Secure Boot in your UEFI settings.
 
-
 [Secure Boot]: https://learn.microsoft.com/en-us/windows-hardware/design/device-experiences/oem-secure-boot
 [sbctl]: https://github.com/Foxboron/sbctl
-
-#### [← Back To: Post-installation](/en/installation/postinstall)

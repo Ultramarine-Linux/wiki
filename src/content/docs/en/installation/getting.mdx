@@ -16,11 +16,11 @@ Ultramarine Linux comes in 4 variants:
 - **Flagship Edition**: Our default and most popular variant. Choose Flagship if you'd like a familiar and stylish experience.
 - **KDE Edition**: Our second most popular variant. Choose KDE if you'd like a simply customisable experience.
 - **GNOME Edition**: Elegant and Modern. Choose GNOME if you'd like a simple, unique experience.
-- **Pantheon Edition**: Thoughtful and Graceful. Choose Pantheon if you'd like a refined experience.
+- **Xfce Edition**: Lightweight and Configurable. Choose Xfce if you'd like a lighter experience.
 
 Check the [System Requirements](/en/hardware/requirements) to make sure your hardware is supported.
 
-Ultramarine Linux is distributed with ISO files available for download from [our website](https://ultramarine-linux.org).
+Ultramarine Linux is distributed in various formats available for download from [our website](https://ultramarine-linux.org).
 
 <Alert type="warning">
   Fyra Labs cannot guarantee the safety or quality of images downloaded from
@@ -37,6 +37,16 @@ These builds are currently in beta. If you are planning to test them, please joi
 [Try Ultramarine Atomic →](https://nightly.link/Ultramarine-Linux/ostree-config/workflows/ci-isos.yaml/main?preview)
 
 (The "Home" and "Base" images are copies of [tauOS](https://tauos.co) - These **ARE NOT READY FOR DAILY USE!!**)
+
+### Raw Images and Raspberry Pi
+
+Ultramarine is also availible as a raw (or preinstalled) image. These images come with a desktop preinstalled and are intended to be flashed directly to the drive your device will boot from (like an SSD or an SD card.)
+
+These can be found in the [Raw Image](https://ultramarine-linux.org/download/raw) sections of the download page.
+
+{/* ### Chromebook Edition */}
+
+{/* Ultramarine is available for most x86 ChromeOS devices. See the [Chromebook Edition section](/en/chromebook/chromebook) for more information. */}
 
 {/* ### Kanopy */}
 
@@ -69,21 +79,22 @@ CertUtil -hashfile PATH\TO\ULTRAMARINE.ISO SHA256
 # Open the checksum file with Notepad and compare the checksum
 ```
 
-## Creating a Bootable Media
+<Alert type="info">
+  If you're using a Raspberry Pi, stop here and go to the [Raspberry Pi
+  instructions](/en/installation/rpi)
+</Alert>
 
-### On Other Operating Systems (Windows, macOS, Other Linux Distributions)
+## Creating the Installer
 
-Use [balenaEtcher](https://www.balena.io/etcher/) to create a bootable media from the ISO image.
+Grab a USB stick! Use a flasher program to create an installer from the image. [balenaEtcher](https://www.balena.io/etcher/) is an easy cross-platform choice.
 
 ![](/assets/balenaetcher.png)
 
-Simply select the ISO file, a device to use for the installer, and click flash.
+You can also use [Fedora Media Writer](https://github.com/FedoraQt/MediaWriter), or the Disks application on Flagship, Xfce, and GNOME editions.
 
-### On Ultramarine Linux
-
-You can use the Fedora Media Writer to create bootable media from the ISO image.
-
-![](/assets/fedoramediawriter.png)
+<Alert type="info">
+  Rufus has been known to cause issues with Ultramarine images.
+</Alert>
 
 ## Booting the Installer
 
@@ -98,7 +109,7 @@ Most computers have a special key that can be used to select a boot device, or t
 
 <Alert type="info">
   If you're currently using Linux, you may be able to enter the BIOS by running
-  `sudo systemctl reboot --firmware-setup`
+  `sudo systemctl reboot --firmware`
 </Alert>
 
 #### [Next Up: Installation →](/en/installation/installation)
@@ -106,5 +117,5 @@ Most computers have a special key that can be used to select a boot device, or t
 ## Footnotes
 
 - The Anaconda installer is very complex and hard to work with, we are working on a new installer that is easier to use and more reliable.
-- Since Fedora 37, Fedora's official support for the Pantheon desktop environment has been dropped due to compatibility issues and the Pantheon port is now maintained by the Ultramarine Linux team. This means that the Pantheon desktop environment is only available through Ultramarine Linux, or Fedora with Terra enabled.
+- Since Fedora 37 the Ultramarine team has maintained Pantheon, in Ultramarine 40 we will be dropping Pantheon due to major issues with the experience.
 - Ultramarine's Budgie edition provides a close to stock Budgie experience, with a custom theme. Unlike Fedora's Budgie Spin, which provides a completely custom layout and experience.
