@@ -27,13 +27,18 @@ The best experience will be with a SATA SSD connected over an adapter. A USB 3.0
 
 ## Flashing the Image
 
-Grab a USB stick! Use a flasher program to create an installer from the image. [balenaEtcher](https://www.balena.io/etcher/) is an easy cross-platform choice.
+Grab a USB stick! Use a flasher program to flash Ultramarine to your storage device. [balenaEtcher](https://www.balena.io/etcher/) is an easy cross-platform choice.
 
 ![](/assets/balenaetcher.png)
 
-Simply select the raw.xz file (you don't need to decompress it), a device to use for the installer, and click flash.
+Simply select the raw.xz file (you don't need to decompress it), the device you're using, and click flash.
 
-You can also use the Disks application on Flagship, Xfce, and GNOME editions. Raspberry Pi Imager is not compatible with our images.
+You can also use the Disks application on Flagship, Xfce, and GNOME editions.
+
+<Alert type="info">
+  Ultramarine will be available in Raspberry Pi Imager and the Network Install
+  feature in the near furure.
+</Alert>
 
 ## Expanding the Root Filesystem
 
@@ -44,7 +49,7 @@ You can also use the Disks application on Flagship, Xfce, and GNOME editions. Ra
 
 If you haven't already, install GParted as an RPM [from your app store](/en/linux/software).
 
-Start by opening GParted, it may prompt you to fix the GPT, you can safely select "Fix"
+Start by opening GParted, it may prompt you to fix the GPT, make sure you select "Fix." If you don't the expand will fail.
 ![](/assets/gparted/gpt.png)
 
 Now select the device you just flashed.
@@ -73,6 +78,6 @@ You're done now! You can exit this menu and eject your drive, you're ready to pl
 
 ## First Boot
 
-On first boot, you'll be prompted with your edition's login screen. The username and password are both `ultramarine`, change this password ASAP.
+On first boot, you'll be prompted with a user creation screen. Create your user and you'll be ready to go!
 
 That's it! You're ready to enjoy Ultramarine on your Raspberry Pi! We're working hard on making the experience better so stay tuned!
