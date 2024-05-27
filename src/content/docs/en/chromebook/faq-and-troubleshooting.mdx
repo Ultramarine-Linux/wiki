@@ -9,15 +9,15 @@ import Alert from "../../../../components/Docs/Alert.astro";
 
 #### Chromebook fails to boot to internal disk
 
-Assuming you are selecting 'Boot to Internal Disk', or pressing <kbd>ctrl</kbd>+<kbd>D</kbd>> does not fully boot, this usually means the device has died. Plug in your Chromebook. If the issue continues to persist, hop into [our chats](/en/community/community) and make a support forum post.
+Assuming you are selecting 'Boot to Internal Disk', or pressing <kbd>Ctrl</kbd>+<kbd>D</kbd>> does not fully boot, this usually means the device has died. Plug in your Chromebook. If the issue continues to persist, hop into [our chats](/en/community/community) and make a support forum post.
 
 #### Keyboard is not properly mapped
 
-Try running Weirdtreething's keyboard [remap script](https://github.com/WeirdTreeThing/cros-keyboard-map) (creates a Keyd config)
+Try re-installing the cros-keyboard-map package from Terra. Simply run ` sudo dnf install cros-keyboard-remap`.
 
 #### Chromebook audio doesn't work
 
-Try running Weirdtreething's [audio script](https://github.com/WeirdTreeThing/chromebook-linux-audio) manually.
+This should not happen unless you have unsupported speakers, but if it does, try running Weirdtreething's [audio script](https://github.com/WeirdTreeThing/chromebook-linux-audio) manually.
 
 You may have a speaker unsupported by the audio script (max98357a speakers). If you would like to enable audio on here, run the script manually and follow the prompts to enable audio.
 
@@ -32,15 +32,15 @@ You may have a speaker unsupported by the audio script (max98357a speakers). If 
 
 #### Is this legal?
 
-Yes, it is perfectly legal. ChromeOS and Chromebooks are backed by the [hromeium Projects' ChromiumOS](https://www.chromium.org/chromium-os/}). All information on how to mod Chromebooks is on this site, and open to anyone to use.
+Yes, it is perfectly legal. ChromeOS and Chromebooks are backed by the [Chromeium Projects' ChromiumOS](https://www.chromium.org/chromium-os/}). All information on how to mod Chromebooks is on this site, and open to anyone to use.
 
 #### Why not just run [mrchromebox's Firmware Utility Script?](https://mrchromebox.tech/#fwscript)
 
-The idea here is to be as easy and safe to use as possible. It is also easier to go back to ChromeOS if you keep the stock firmware. With that being said, we fully support the use of mrchromebox's script, it has many great use cases (This FAQ page is even being written on a full UEFI ROM Chromebook).
+The goal here is to be as easy and safe to use as possible. It is also easier to go back to ChromeOS if you keep the stock firmware. With that being said, we fully support the use of mrchromebox's script, it has many great use cases (This FAQ page is even being written on a full UEFI ROM Chromebook).
 
 #### Will this make my Chromebook faster?
 
-It usually can, as Linux is more light weight, but we do not garuntee preformance gains vs ChromeOS. If you are using an older/slower Chromebook, we reccomend using Xfce or KDE edition.
+It usually can, as Linux is more lightweight, but we do not guarantee a preformance gain vs ChromeOS. If you are using an older/slower Chromebook, we reccomend using Xfce or Flagship edition.
 
 #### [Next Up: Terminology →](terminology)
 
