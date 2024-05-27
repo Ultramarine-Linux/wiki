@@ -69,8 +69,11 @@ export const SIDEBAR: Sidebar = {
       { text: "Getting Started", link: "en/chromebook/chromebook" },
       { text: "Getting Chromebook Edition", link: "en/chromebook/getting" },
       { text: "Installing to a Chromebook", link: "en/chromebook/installing" },
-      { text: "Post-Install", link: "en/chromebook/postinstall" },
       { text: "ARM Chromebooks (Beta)", link: "en/chromebook/armbeta" },
+      {
+        text: "Troubleshooting and FAQs",
+        link: "en/chromebook/faq-and-troubleshooting",
+      },
       { text: "Terminology", link: "en/chromebook/terminology" },
     ],
 
