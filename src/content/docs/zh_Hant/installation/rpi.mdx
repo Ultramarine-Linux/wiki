@@ -1,0 +1,83 @@
+---
+title: Raspberry Pi 安裝過程
+description: "How to install Ultramarine Linux on the Raspberry Pi"
+---
+
+import Alert from "../../../../components/Docs/Alert.astro";
+
+## System Requirements
+
+Ultramarine Linux supports the Raspberry Pi 3 and 4. Please see the [Anywhere page](/en/anywhere/rpi) for more information.
+
+## Selecting a Drive
+
+The drive you use deeply affects the experience you will have on Ultramarine.
+
+### Raspberry Pi 3
+
+Raspberry Pi 3 supports only microSD cards. Your microSD card must be 9GB or larger, but we suggest 16GB or more so you'll have some space for software.
+
+You should also look for a class 10 SDHC or SDXC microSD.
+
+### Raspberry Pi 4 and 400
+
+Raspberry Pi 4 supports microSD cards and USB storage. Your storage device must be 9GB or larger, but we suggest 16GB or more so you'll have some space for software.
+
+The best experience will be with a SATA SSD connected over an adapter. A USB 3.0 flash drive will be slightly better to on-par with a nice microSD card. All of the options are good, it's up to your needs.
+
+## Flashing the Image
+
+Grab a USB stick! Use a flasher program to flash Ultramarine to your storage device. [balenaEtcher](https://www.balena.io/etcher/) is an easy cross-platform choice.
+
+![](/assets/balenaetcher.png)
+
+Simply select the raw.xz file (you don't need to decompress it), the device you're using, and click flash.
+
+You can also use the Disks application on Flagship, Xfce, and GNOME editions.
+
+<Alert type="info">
+  Ultramarine will be available in Raspberry Pi Imager and the Network Install
+  feature in the near furure.
+</Alert>
+
+## Expanding the Root Filesystem
+
+<Alert type="info">
+  This is not possible on Windows or macOS. We are figuring out a way to do this
+  on first boot.
+</Alert>
+
+If you haven't already, install GParted as an RPM [from your app store](/en/linux/software).
+
+Start by opening GParted, it may prompt you to fix the GPT, make sure you select "Fix." If you don't the expand will fail.
+![](/assets/gparted/gpt.png)
+
+Now select the device you just flashed.
+![](/assets/gparted/disk.png)
+
+Then, right click the last partition on the disk, and select "Resize/Move."
+![](/assets/gparted/part.png)
+
+You'll be presented with this menu, you can change partition sizes from here.
+![](/assets/gparted/resizemenu.png)
+
+Simply drag the right side of the partition as far right as you can, then click done.
+![](/assets/gparted/fillwhole.png)
+
+Now, check your work, make sure you used the right disk.
+![](/assets/gparted/checkwork.png)
+
+Then click the green check in the top menu and confirm the changes.
+![](/assets/gparted/apply.png)
+
+Sit back and wait, this may take upwards of five minutes.
+![](/assets/gparted/progress.png)
+
+You're done now! You can exit this menu and eject your drive, you're ready to plug it into your Pi!
+![](/assets/gparted/done.png)
+
+## First Boot
+
+On first boot, you'll be prompted with a user creation screen. Create your user and you'll be ready to go!
+
+That's it! You're ready to enjoy Ultramarine on your Raspberry Pi! We're working hard on making the experience better so stay tuned!

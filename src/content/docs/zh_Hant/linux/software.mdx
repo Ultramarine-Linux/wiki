@@ -1,0 +1,99 @@
+---
+title: Software and Package Management
+description: "How to manage software on Linux."
+---
+
+import Alert from "../../../../components/Docs/Alert.astro";
+
+There are many different ways to install software on Linux.
+
+## The Package Manager
+
+Unlike Windows, most software for Ultramarine Linux is stored in online collections of software called repositories. You can browse and install software (packages) from these repositories using something called a package manager.
+
+### Flatpaks
+
+Flatpak is the primary package manager for regular apps. It installs applications in a sandbox, keeping them separate from anything they don't need to access.
+
+Flatpaks can be installed from **Software** on Budgie and GNOME, **AppCenter** on Pantheon, and **Discover** on KDE.
+
+You can browse the available software in one of these app stores, or on the [Flathub website](https://flathub.org/).
+
+Despite most applications being installed from Flatpak, some apps may not work properly, or may not be available at all. The following sections will help with software in other formats.
+
+### Software Downloaded from the Internet
+
+Sometimes, the software you need may come as a package file downloaded from the internet.
+
+#### RPM Packages
+
+To install RPMs on Flagship, GNOME, or KDE, simply double-click it.
+
+To install an RPM on Pantheon, open a Terminal and run
+
+```
+sudo dnf localinstall /path/to/package.rpm
+```
+
+(Replacing `/path/to/package.rpm` with the real path, it's usually `~/Downloads/package.rpm`)
+
+#### AppImages
+
+1. Install AppImage Launcher from **Software** or **Discover**. On Pantheon Edition, run
+
+```
+sudo dnf install appimagelauncher
+```
+
+2. Double-click the file and you're done!
+
+We recommend avoiding AppImages as they are not automatically updated and may have compatibility issues.
+
+### Snap
+
+Snap is a package manager made by Canonical for Ubuntu. It contains a large amount of proprietary applications that you may not be able to find elsewhere.
+
+<Alert type="warning">
+
+Snap may cause your system to run noticeably slower.
+
+</Alert>
+
+To get started, install Snap.
+
+```bash
+sudo dnf install snapd
+```
+
+Then, verify snap is working
+
+```bash
+sudo snap install helloworld
+helloworld
+```
+
+<Alert type="info">
+
+Snap packages load slowly and may not work at all on editions other than GNOME. We recommend avoiding Snaps.
+
+</Alert>
+
+### DNF
+
+Ultramarine Linux uses the DNF package manager. While this package manager primarily handles system software (like the kernel, and your desktop environment) it can install user apps as well.
+
+```bash
+sudo dnf install steam # Install Steam
+```
+
+You can also install groups of packages, like full desktop environments or a suite of tools for music production, using the `dnf groupinstall` command.
+
+```bash
+sudo dnf groupinstall "Audio Production" # installs multiple packages at once, in this case a suite of music/audio production tools
+```
+
+For a full list of available groups, run `sudo dnf group list`
+
+#### [← Back To: Permissions](/en/linux/permissions)
+
+#### [Next Up: The Shell →](/en/linux/shell)

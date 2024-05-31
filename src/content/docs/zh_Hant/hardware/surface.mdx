@@ -1,0 +1,43 @@
+---
+title: Microsoft Surface
+description: "Information about Ultramarine Linux on Microsoft Surfaces"
+---
+
+import Alert from "../../../../components/Docs/Alert.astro";
+
+Surfaces require a special kernel to work properly under Ultramarine.
+
+These are currently provided by the Surface Linux team, start by adding their repository
+
+```shell
+sudo dnf config-manager \
+    --add-repo=https://pkg.surfacelinux.com/fedora/linux-surface.repo
+```
+
+Then, install the kernel and it's dependencies
+
+```shell
+sudo dnf install --allowerasing kernel-surface iptsd libwacom-surface
+```
+
+If you want to use secure boot, you need to install `surface-secureboot`, enable 3rd party keys in the EFI settings, and enroll the key in cert-manager. This does not work well on some devices, so we recommend disabling secure boot.
+
+<Alert type="info">We intend to make this easier in future releases.</Alert>
+
+Some Surface models may not boot with a stock copy of Ultramarine Linux. If this is the case for your device, you have to install the kernel before leaving the live environment.
+
+1. Ensure your internal storage is mounted, Anaconda should leave it mounted by default.
+
+2. Check the root partition, it should be mounted as `/mnt/sysroot`
+
+3. Chroot into the installed system
+
+```
+sudo chroot /mnt/sysroot
+```
+
+4. Follow the above instructions
+
+5. Run `dracut -f` to make sure the new kernel is installed as the initramfs.
+
+6. Exit the chroot and reboot!

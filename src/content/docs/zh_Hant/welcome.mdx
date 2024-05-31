@@ -1,0 +1,160 @@
+---
+title: 歡迎
+description: "This wiki is meant to be the extended documentation for both end users and developers, so it is separated in those two categories."
+---
+
+歡迎來臨 Ultramarine Wiki！這裏可以令使用者更快有效地使用 Ultramarine Linux。
+
+本 Wiki 現正翻譯至中文。若果有興趣成為我們的一份子，請至[本 Wiki 的 GitHub 原碼庫](https://github.com/Ultramarine-Linux/wiki)。
+
+開發者及安裝包製作者的檔案位於 [Fyra Developer](https://developer.fyralabs.com) （英）。
+若想開始為 Ultramarine Linux 社羣貢獻，請移玉步至[貢獻部分](/zh_Hant/contributing/contributorguide)。
+
+若想安裝 Ultramarine Linux，請閱讀：[取得 Ultramarine](/zh_Hant/installation/getting)。
+
+## 主要總準則
+
+Ultramarine Linux 由 Korora Linux 啟發而成，目標是成為一個對不同的技術經驗的人也「總之行 (just works)」的作業系統。
+
+為了達成這個目標，我們會遵循下列價值觀：
+
+### 實用
+
+Fedora 比較遵循意識形態 (ideology) ——他們提供一個基本上沒有專利軟件的作業系統。
+相比之下，我們遵循「最少阻力」的運作模式——只要能夠改善使用者體驗，不論是否專利軟件，我們都會願意提供它們，讓使用者一開箱就可以享用。
+
+### 創新
+
+我們相信 Linux 近期的發展能夠大大改善使用者及開發者體驗：Flatpak、xdg-portals 等科技能讓開發者更容易並更快地提供更好的使用者體驗。
+上流的發展能改善使用者體驗的同時，下流我們的發展，包括主題顏色、Chromebook 支援等，能改善整體 Linux 的生態——這不正是雙贏嘛！
+
+### 使用者體驗
+
+雖然對高階使用者來說，改幾個設定和安裝幾個第三者軟件庫的程式可能易如反掌；
+但是對 Linux 甚至 Fedora 的新手來說可能就需要好幾個小時才能找到怎麼做。
+Ultramarine 能讓新和舊的使用者快速地準備一個新系統。
+
+## 計劃功能
+
+- 歡迎程式 (OOBE)
+- 像 YaST 的系統設定程式
+
+## 常見問題
+
+### 遷徙腳本 (migration script) 具體做甚麼？
+
+它安裝 RPMFusion、Terra、我們的 PGP 證明鍵、並安裝 Ultramarine Linux 的系統基本組件，取代 Fedora 本身的 `release` 軟件包。
+
+為了避免令使用者的系統多了不會用到的軟件，它並不會安裝 Ultramarine Linux 基本組件以外的軟件包。
+
+遷徙後，您將會得到我們最新的功能！
+
+### 這不就是 Fedora 加上了 RPMFusion 嘛，又有甚麼存在價值！
+
+Ultramarine Linux 是對 Fedora 的法律限制下的沮喪，所衍生出來的產物。
+由於 Fedora (以及 Red Hat) 是一個美國實實，在美國的專利權制度下他們並不能提供一些軟件。
+相比之下，基於泰國的 Ultramarine 並沒有這些版權問題。
+
+本團隊旨在令 Fedora 有更好的體驗：使用者可以在 FlatHub、RPMFusion 或 Terra 裏維護任何軟件。
+
+我們建議使用者貢獻至本計劃，想了解更多請參考[貢獻指南](/zh_Hant/contributing/contributorguide)。
+
+### 這不就是 Fedora 加上了幾個新桌面環境嘛！
+
+No, Ultramarine is not just Fedora with extra desktop environments. We aim to improve the user experience by making the system "just work" for new and advanced users.
+
+### Does Ultramarine track or collect my data?
+
+As of now, the only data we collect is a count of how many times a package has been downloaded from Terra or the Ultramarine repository using [DNF Counting](https://docs.fedoraproject.org/en-US/infra/sysadmin_guide/dnf-counting/). This information is not tied to you or your computer.
+
+Fyra Labs (the company behind Ultramarine) does not collect any data that can be tied to an individual without express consent from the user.
+
+### Is Ultramarine semi-rolling?
+
+**No**. Ultramarine and Fedora are not semi-rolling or rolling. Instead, they use a stable release scheme.
+Updates with breaking changes are rolled out only for every stable release version. Minor updates / point updates are guaranteed to be backwards-compatible, i.e. system components in Ultramarine are updated if and only if they do not break compatibility.
+
+However, Ultramarine Linux includes Terra, RPM Fusion and Flathub.
+
+- Terra is an RPM repository provided by Fyra Labs, and it mainly uses a rolling release scheme.
+- RPM Fusion is another (very popular) third party repository for Fedora. It uses a stable release scheme.
+- Flathub is a cross-distro Flatpak repository. Updates in this repository have nothing to do with Fedora/Ultramarine's release cycles. Strictly speaking, packages in Flathub are rolling because they are updated once upstream releases a version.
+
+### If some packages are updated mid-release, doesn't that mean Ultramarine is unstable/insecure compared to, e.g. Debian?
+
+**No**. That's an incorrect approach to view if a distribution is secure/stable or not.
+
+- Packages in Fedora/Ultramarine are updated mid-release, but those updates **only include non-breaking changes**. Your computer has virtually a near-zero chance of breaking mid-release due to an update.
+- Undeniably, Ultramarine and Fedora has much more frequent updates compared to distros like Debian, and to some extent, they might be more unstable. However, Fedora/Ultramarine's release cycle makes it so that the operating system is still stable enough for normal use. Millions of Fedora devices across the world run fine without breaking, which demonstrate Fedora's high stability. Debian's release cycle is also arguably too slow and can cause more hassles than necessary.
+- Some distros choose to take stable release cycles to an extreme. These distros are designed for servers that will stay up for years by delaying updates for months or even a few years. PC users might miss out a lot by using these distros, including new features, bug fixes, security patches, etc. Without the proper knowledge and management, these systems could be even more insecure than Fedora/Ultramarine.
+
+### Why Ultramarine (instead of other distros)
+
+- Performance
+  - Fedora (the distro Ultramarine is based on) has some of the best IO performance over other distros.
+  - BTRFS is the default file system, a relatively performant file system with features like snapshots. You can backup your files in less than a second (unlike other file systems like ext4).
+  - We include lightweight desktop environments such as Budgie (Flagship Edition) and XFCE. They look great, work well and are snappy.
+- Privacy
+  - We don't track/collect your private/personal data.
+  - We don't even know how many Ultramarine devices there are (unlike some companies).
+- Security
+  - Security updates are provided quickly (unlike some other distros).
+  - SELinux is active by default.
+- Customisations
+  - There are multiple desktop environments for you to choose from.
+  - We have applets installed out of the box that help you with further desktop customizations.
+- Usability
+  - You never need to touch the command line.
+    - If there are cases that require the command line, and those situations might arise to other normal users too, you should [report this bug](https://github.com/Ultramarine-Linux/ultramarine).
+  - Ultramarine has sane defaults.
+    - Popular programs that you probably need are installed by default, including LibreOffice, Firefox, drivers, etc.
+    - We include repositories that provide popular software.
+  - There are many more apps you can installed from an app store. They are verified carefully by dedicated teams.
+    - The Fedora and RPM Fusion repositories are used and trusted by millions.
+    - Terra is reviewed by Fyra Labs and the Ultramarine Project. You can also [take a look at our security policy](https://github.com/terrapkg/packages/blob/f39/SECURITY.md).
+    - Flathub is used by users across the entire Linux/BSD ecosystem. If you install apps from an app store, you are most likely installing apps from Flathub, which are isolated from your system environment when run, making attacks less likely to succeed.
+
+### Why Ultramarine (instead of Windows)
+
+- Performance
+  - Windows bloats your computer with many different potentially unwanted programs that slow down your computer. Ultramarine does not.
+  - Ultramarine provides a few lightweight desktop environments (namely Budgie/Flagship and XFCE), which run faster and provide a snappier experience.
+  - Ultramarine uses newer technologies that are not available on Windows because of backwards compatibility. These technologies brings better performance.
+    - For example, task schedulers, file systems, shells, etc.
+    - Most modern servers (including giant web servers) use Linux simply because it's much faster.
+- Privacy
+  - We do not collect/track your private data ever because that's a waste of storage.
+  - We don't even know how many Ultramarine devices there are (unlike some companies).
+  - When you setup Windows, you need to accept a very long license. Well, we don't even have a license agreement page in our installer.
+  - Ultramarine is open source. Anyone can check if we track/collect your data by reviewing the source code. We don't.
+- Security
+  - Security updates are much quicker than Windows.
+    - Updates don't require reboots.
+  - It's much more unlikely for malware, viruses, etc. to target Linux due to its current low popularity.
+  - Our open source model makes it very easy for anyone to spot bugs/vulnerabilities and fix them quicker.
+- Stability
+  - Ultramarine uses a stable release cycle. Updates will not break your computer.
+  - When there is a chance a system upgrade could break your computer, we warn you about it.
+    - We advise people to contact support to check if the upgrade could actually break the system.
+    - Our support team can help you solve any potential issues while performing a system upgrade.
+    - And most importantly, you could just choose not to upgrade at all! The choice is yours.
+  - Millions of IoT devices use Linux. If something breaks, the entire Internet collapses. If the Internet trusts Linux's stability, you should too.
+- Customizations and Usability
+  - There are multiple desktop environments for you to choose from. Some of them are lightweight, some of them are fancy.
+  - Ultramarine provides many ways over how you can customize your entire desktop experience. You have full control over your computer.
+    - We never hide choices from you — in fact, we make it easier for you.
+    - If you find some specific customizations hard to perform on Ultramarine, it's a design flaw and you should send your feedback to us (e.g. via [GitHub](https://github.com/Ultramarine-Linux/ultramarine)).
+  - We support reasonably old and new hardware, and we provide many tools for you to setup a performant, personalized system on your computer.
+  - Default settings on Ultramarine makes it so that you can start using your computer as soon as possible.
+  - Ultramarine comes with an app store. You can install programs reviewed by dedicated teams very easily.
+    - If you want some programs to be included in the app stores, you should send us feedback.
+
+## Core Team
+
+- 🇹🇭 Pornpipat "Cappy" Popum - Chief Information Officer, Project Lead, Release Engineer
+- 🇩🇪 Trobonox - Documentation, Web Developer, UI/UX Designer
+- 🇮🇩 Mo - Low-level developer
+- 🇵🇱 Toru Ishikawa - Infrastructure support
+- 🇭🇰 Mado - VP of DevOps, Package Maintainer
+
+[Meet the team →](https://fyralabs.com/about/#Meet:~:text=benefit%20of%20all.-,Meet%20the%20Team)
