@@ -151,10 +151,10 @@ export const SIDEBAR: Sidebar = {
     ],
     貢獻: [
       { text: "貢獻指南", link: "zh_Hant/contributing/contributorguide" },
-      { text: "Development", link: "zh_Hant/contributing/hacking" },
+      { text: "開發過程", link: "zh_Hant/contributing/hacking" },
     ],
     硬件: [
-      { text: "System Requirements", link: "zh_Hant/hardware/requirements" },
+      { text: "系統要求", link: "zh_Hant/hardware/requirements" },
       { text: "Ultramarine Anywhere", link: "zh_Hant/hardware/anywhere" },
       { text: "NVIDIA", link: "zh_Hant/hardware/nvidia" },
       { text: "Microsoft Surface", link: "zh_Hant/hardware/surface" },
@@ -165,32 +165,27 @@ export const SIDEBAR: Sidebar = {
       { text: "BIOS Keys", link: "zh_Hant/hardware/bioskeys" },
     ],
     "關於 Linux": [
-      { text: "What is Linux?", link: "zh_Hant/linux/overview" },
-      { text: "The File System", link: "zh_Hant/linux/filesystem" },
-      { text: "Device Files", link: "zh_Hant/linux/devicefiles" },
-      { text: "Permissions", link: "zh_Hant/linux/permissions" },
-      {
-        text: "Software and Package Management",
-        link: "zh_Hant/linux/software",
-      },
+      { text: "何謂 Linux？", link: "zh_Hant/linux/overview" },
+      { text: "檔案系統", link: "zh_Hant/linux/filesystem" },
+      { text: "裝置檔案", link: "zh_Hant/linux/devicefiles" },
+      { text: "權限", link: "zh_Hant/linux/permissions" },
+      { text: "軟件及安裝包管理", link: "zh_Hant/linux/software" },
       { text: "The Shell", link: "zh_Hant/linux/shell" },
-      { text: "Security and Privacy", link: "zh_Hant/linux/securityprivacy" },
+      { text: "安全及私隱", link: "zh_Hant/linux/securityprivacy" },
     ],
 
-    Usage: [
-      { text: "Gaming on Ultramarine", link: "zh_Hant/usage/gaming" },
-      { text: "Localization", link: "zh_Hant/usage/l10n" },
+    用途: [
+      { text: "電子遊戲", link: "zh_Hant/usage/gaming" },
+      { text: "本地化", link: "zh_Hant/usage/l10n" },
     ],
 
-    "Release Notes": [{ text: "Errata", link: "zh_Hant/release/errata" }],
+    發佈版本通知: [{ text: "勘誤表", link: "zh_Hant/release/errata" }],
 
-    Development: [
+    開發: [
       {
-        text: "Developing for Ultramarine",
+        text: "為 Ultramarine 開發",
         link: "zh_Hant/development/developing-for-ultramarine",
       },
-      { text: "Using Andaman", link: "zh_Hant/development/anda" },
-      { text: "UX Guidelines", link: "zh_Hant/development/ux-guide" },
     ],
   },
 };
