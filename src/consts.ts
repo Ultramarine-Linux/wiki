@@ -151,7 +151,7 @@ export const SIDEBAR: Sidebar = {
     ],
     貢獻: [
       { text: "貢獻指南", link: "zh_Hant/contributing/contributorguide" },
-      { text: "開發過程", link: "zh_Hant/contributing/hacking" },
+      { text: "原碼貢獻", link: "zh_Hant/contributing/hacking" },
     ],
     硬件: [
       { text: "系統要求", link: "zh_Hant/hardware/requirements" },
