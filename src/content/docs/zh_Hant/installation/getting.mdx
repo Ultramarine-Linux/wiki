@@ -23,10 +23,10 @@ Ultramarine Linux 有 4 個版本︰
 [我們的網站](https://ultramarine-linux.org)裏提供不同格式及不同版本的 Ultramarine Linux。
 
 <Alert type="warning">
-  Fyra Labs 並不能確保上述網站及 FOSSTorrents 以外所提供的映像的安全性。
+  Fyra Labs 並不能確保上述網站及 FOSSTorrents 以外所提供的映射的安全性。
 </Alert>
 
-### Atomic
+{/* ### Atomic
 
 Ultramarine Linux also comes in Atomic versions. Ultramarine Atomic works similarly to Fedora Silverblue, CoreOS, and other OSTree-based operating systems. This variant is made for users who want a stable, immutable system that is easy to recover from.
 We see immutability as the future of Linux systems. Ideally, this will become the standard edition in the future.
@@ -41,7 +41,7 @@ These builds are currently in beta. If you are planning to test them, please joi
 
 Ultramarine is also availible as a raw (or preinstalled) image. These images come with a desktop preinstalled and are intended to be flashed directly to the drive your device will boot from (like an SSD or an SD card.)
 
-These can be found in the [Raw Image](https://images.fyralabs.com/images/ultramarine/40/) sections of the download page.
+These can be found in the [Raw Image](https://images.fyralabs.com/images/ultramarine/40/) sections of the download page. */}
 
 {/* ### Chromebook Edition */}
 
@@ -52,15 +52,15 @@ These can be found in the [Raw Image](https://images.fyralabs.com/images/ultrama
 {/* **Ultramarine Kanopy** is an upcoming variant of Ultramarine Linux, which is made for servers and cloud computing. It is currently in development and does not have a release date yet, but we plan to target Qx '2x */}
 {/* It will be based on Ultramarine OSTree and is designed as a simple and easy-to-use server operating system, with a focus on containerized applications with a simple, easy-to-use web interface as a competitor to TrueNAS SCALE, OpenMediaVault, and other similar operating systems. */}
 
-## 確認映像安全性（建議）
+## 確認映射安全性（建議）
 
-每一個映像都各自有一個*核對和*（checksum），供下載後可作映像核對之用。
+每一個映像都各自有一個*核對和*（checksum），供下載後可作映射核對之用。
 
 在[下載頁](https://ultramarine-linux.org/download/)按下`View checksum`後即可下載核對和。
 
 ### 在 Linux 和 MacOS 核對
 
-以下的指令能夠檢查映像是否完整無誤：
+以下的指令能夠檢查映射是否完整無誤：
 
 ```bash
 sha256sum -b /path/to/ultramarine.iso
@@ -80,35 +80,34 @@ CertUtil -hashfile PATH\TO\ULTRAMARINE.ISO SHA256
   Raspberry Pi 的使用者請至：[Raspberry Pi 安裝過程](/zh_Hant/installation/rpi)
 </Alert>
 
-## Creating the Installer
+## 製造安裝介質
 
-Grab a USB stick! Use a flasher program to create an installer from the image. [balenaEtcher](https://www.balena.io/etcher/) is an easy cross-platform choice.
+利用一個映射寫入工具，將已下載的映射寫入一個 USB 記憶棒（或其他方便的媒體），以製造安裝介質。建議使用適合不同平台的 [balenaEtcher](https://www.balena.io/etcher/)。
 
 ![](/assets/balenaetcher.png)
 
-You can also use [Fedora Media Writer](https://github.com/FedoraQt/MediaWriter), or the Disks application on Flagship, Xfce, and GNOME editions.
+您亦可以使用 [Fedora Media Writer](https://github.com/FedoraQt/MediaWriter)，或在 Flagship、Xfce 及 GNOME 版本上的硬盤工具。
 
 <Alert type="info">
-  Rufus has been known to cause issues with Ultramarine images.
+  已知 Rufus 並不能寫入 Ultramarine 的映射。
 </Alert>
 
-## Booting the Installer
+## 啟動安裝介質
 
-After flashing the image to your installer, you can boot to Ultramarine Linux by plugging in the installer and restarting your computer.
+寫入映射後，您可以插入媒體並重啟電腦，以啟動安裝介質。
 
-Most computers have a special key that can be used to select a boot device, or to enter the setup screen. This varies from brand to brand, check the [BIOS Keys Page](/en/hardware/bioskeys) for how to enter the boot menu on your machine.
+大部分電腦有特別的按鍵，以讓使用者選取作啟動用的媒體或進入初始化介面。不同牌子會有不同的按鍵，詳請請至：[BIOS 按鍵](/zh_Hant/hardware/bioskeys)以了解如何進入上述畫面。
 
 <Alert type="info">
-  If you're currently using Windows 10 (or newer) head to the recovery section
-  of settings and select "Advanced Restart". Once there, select "Use a Device".
+  如果您正在使用 Windows 10 或更加新的版本，請進入設定中的復原畫面並選擇「進階重啟」。重啟後，請選擇「使用其他媒體」。
 </Alert>
 
 <Alert type="info">
-  If you're currently using Linux, you may be able to enter the BIOS by running
+  Linux 的使用者可能可以執行以下指令進入 BIOS︰
   `sudo systemctl reboot --firmware`
 </Alert>
 
-#### [Next Up: Installation →](/en/installation/installation)
+#### [下一頁：安裝過程 →](/zh_Hant/installation/installation)
 
 ## Footnotes
 
