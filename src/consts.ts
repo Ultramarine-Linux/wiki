@@ -15,6 +15,7 @@ export const OPEN_GRAPH = {
 export const KNOWN_LANGUAGES = {
   English: "en",
   Deutsch: "de",
+  正體中文: "zh_Hant",
 } as const;
 export const KNOWN_LANGUAGE_CODES = Object.values(KNOWN_LANGUAGES);
 
@@ -123,6 +124,68 @@ export const SIDEBAR: Sidebar = {
     ],
     "Release Notes": [
       { text: "Developing for Ultramarine", link: "de/release/errata" },
+    ],
+  },
+  zh_Hant: {
+    介紹: [{ text: "歡迎", link: "zh_Hant/welcome" }],
+    社羣: [
+      { text: "參與社羣", link: "zh_Hant/community/community" },
+      { text: "行為準則", link: "zh_Hant/community/codeofconduct" },
+    ],
+    安裝: [
+      { text: "取得 Ultramarine", link: "zh_Hant/installation/getting" },
+      { text: "安裝過程", link: "zh_Hant/installation/installation" },
+      // {
+      // text: "Installation with Readymade",
+      //link: "zh_Hant/installation/readymade",
+      //},
+      {
+        text: "Raspberry Pi 安裝過程",
+        link: "zh_Hant/installation/rpi",
+      },
+      { text: "安裝之後…", link: "zh_Hant/installation/postinstall" },
+      {
+        text: "進階安裝後步驟",
+        link: "zh_Hant/installation/post-advanced",
+      },
+    ],
+    貢獻: [
+      { text: "貢獻指南", link: "zh_Hant/contributing/contributorguide" },
+      { text: "原碼貢獻", link: "zh_Hant/contributing/hacking" },
+    ],
+    硬件: [
+      { text: "系統要求", link: "zh_Hant/hardware/requirements" },
+      { text: "Ultramarine Anywhere", link: "zh_Hant/hardware/anywhere" },
+      { text: "NVIDIA", link: "zh_Hant/hardware/nvidia" },
+      { text: "Microsoft Surface", link: "zh_Hant/hardware/surface" },
+      {
+        text: "Broadcom and Realtek Networking",
+        link: "zh_Hant/hardware/broadcom-realtek",
+      },
+      { text: "BIOS Keys", link: "zh_Hant/hardware/bioskeys" },
+    ],
+    "關於 Linux": [
+      { text: "何謂 Linux？", link: "zh_Hant/linux/overview" },
+      { text: "檔案系統", link: "zh_Hant/linux/filesystem" },
+      { text: "裝置檔案", link: "zh_Hant/linux/devicefiles" },
+      { text: "權限", link: "zh_Hant/linux/permissions" },
+      { text: "軟件及安裝包管理", link: "zh_Hant/linux/software" },
+      { text: "The Shell", link: "zh_Hant/linux/shell" },
+      { text: "安全及私隱", link: "zh_Hant/linux/securityprivacy" },
+    ],
+
+    用途: [
+      { text: "電子遊戲", link: "zh_Hant/usage/gaming" },
+      { text: "本地化", link: "zh_Hant/usage/l10n" },
+    ],
+
+    發佈版本通知: [{ text: "勘誤表", link: "zh_Hant/release/errata" }],
+
+    開發: [
+      {
+        text: "為 Ultramarine 開發",
+        link: "zh_Hant/development/developing-for-ultramarine",
+      },
     ],
   },
 };

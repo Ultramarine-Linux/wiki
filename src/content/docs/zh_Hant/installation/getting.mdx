@@ -1,0 +1,116 @@
+---
+title: 取得 Ultramarine Linux
+description: "Getting started with installing Ultramarine Linux"
+---
+
+import Alert from "../../../../components/Docs/Alert.astro";
+
+## 系統要求
+
+若果您的電腦能夠運行微軟的 Windows 7，它很大可能亦能運行 Ultramarine Linux。您可以檢查電腦是否符合[硬件要求](/zh_Hant/hardware/requirements)。
+
+## 版本
+
+Ultramarine Linux 有 4 個版本︰
+
+- **Flagship**（即 Budgie）︰我們最受歡迎的版本，適合追求一個熟悉及酷的系統的使用者。
+- **KDE**︰我們第二最受歡迎的版本，適合追求一個容易改製的體驗的使用者。
+- **GNOME**︰優雅而新淨，適合追求一個簡單而獨特的體驗的使用者。
+- **Xfce**︰輕便而容易改製，適合追求一個輕快的體驗的使用者。
+
+您可以檢查[系統要求](/zh_Hant/hardware/requirements)以確認您的裝置是否被支持。
+
+[我們的網站](https://ultramarine-linux.org)裏提供不同格式及不同版本的 Ultramarine Linux。
+
+<Alert type="warning">
+  Fyra Labs 並不能確保上述網站及 FOSSTorrents 以外所提供的映射的安全性。
+</Alert>
+
+{/* ### Atomic
+
+Ultramarine Linux also comes in Atomic versions. Ultramarine Atomic works similarly to Fedora Silverblue, CoreOS, and other OSTree-based operating systems. This variant is made for users who want a stable, immutable system that is easy to recover from.
+We see immutability as the future of Linux systems. Ideally, this will become the standard edition in the future.
+
+These builds are currently in beta. If you are planning to test them, please join our [Discord](https://discord.gg/5fdPuxTg5Q) or [Matrix](https://matrix.to/#/#hub:fyralabs.com) community first and let us know. We'll be happy to receive feedback and assist you.
+
+[Try Ultramarine Atomic →](https://nightly.link/Ultramarine-Linux/ostree-config/workflows/ci-isos.yaml/main?preview)
+
+(The "Home" and "Base" images are copies of [tauOS](https://tauos.co) - These **ARE NOT READY FOR DAILY USE!!**)
+
+### Raw Images and Raspberry Pi
+
+Ultramarine is also availible as a raw (or preinstalled) image. These images come with a desktop preinstalled and are intended to be flashed directly to the drive your device will boot from (like an SSD or an SD card.)
+
+These can be found in the [Raw Image](https://images.fyralabs.com/images/ultramarine/40/) sections of the download page. */}
+
+{/* ### Chromebook Edition */}
+
+{/* Ultramarine is available for most x86 ChromeOS devices. See the [Chromebook Edition section](/en/chromebook/chromebook) for more information. */}
+
+{/* ### Kanopy */}
+
+{/* **Ultramarine Kanopy** is an upcoming variant of Ultramarine Linux, which is made for servers and cloud computing. It is currently in development and does not have a release date yet, but we plan to target Qx '2x */}
+{/* It will be based on Ultramarine OSTree and is designed as a simple and easy-to-use server operating system, with a focus on containerized applications with a simple, easy-to-use web interface as a competitor to TrueNAS SCALE, OpenMediaVault, and other similar operating systems. */}
+
+## 確認映射安全性（建議）
+
+每一個映像都各自有一個*核對和*（checksum），供下載後可作映射核對之用。
+
+在[下載頁](https://ultramarine-linux.org/download/)按下`View checksum`後即可下載核對和。
+
+### 在 Linux 和 MacOS 核對
+
+以下的指令能夠檢查映射是否完整無誤：
+
+```bash
+sha256sum -b /path/to/ultramarine.iso
+cat /path/to/checksum
+```
+
+### 在 Windows 核對
+
+以 Powershell 執行下列指令：
+
+```powershell
+CertUtil -hashfile PATH\TO\ULTRAMARINE.ISO SHA256
+```
+再利用 Notepad 打開核對和的檔案進行比較。
+
+<Alert type="info">
+  Raspberry Pi 的使用者請至：[Raspberry Pi 安裝過程](/zh_Hant/installation/rpi)
+</Alert>
+
+## 製造安裝介質
+
+利用一個映射寫入工具，將已下載的映射寫入一個 USB 記憶棒（或其他方便的媒體），以製造安裝介質。建議使用適合不同平台的 [balenaEtcher](https://www.balena.io/etcher/)。
+
+![](/assets/balenaetcher.png)
+
+您亦可以使用 [Fedora Media Writer](https://github.com/FedoraQt/MediaWriter)，或在 Flagship、Xfce 及 GNOME 版本上的硬盤工具。
+
+<Alert type="info">
+  已知 Rufus 並不能寫入 Ultramarine 的映射。
+</Alert>
+
+## 啟動安裝介質
+
+寫入映射後，您可以插入媒體並重啟電腦，以啟動安裝介質。
+
+大部分電腦有特別的按鍵，以讓使用者選取作啟動用的媒體或進入初始化介面。不同牌子會有不同的按鍵，詳請請至：[BIOS 按鍵](/zh_Hant/hardware/bioskeys)以了解如何進入上述畫面。
+
+<Alert type="info">
+  如果您正在使用 Windows 10 或更加新的版本，請進入設定中的復原畫面並選擇「進階重啟」。重啟後，請選擇「使用其他媒體」。
+</Alert>
+
+<Alert type="info">
+  Linux 的使用者可能可以執行以下指令進入 BIOS︰
+  `sudo systemctl reboot --firmware`
+</Alert>
+
+#### [下一頁：安裝過程 →](/zh_Hant/installation/installation)
+
+## Footnotes
+
+- The Anaconda installer is very complex and hard to work with, we are working on a new installer that is easier to use and more reliable.
+- Since Fedora 37 the Ultramarine team has maintained Pantheon, in Ultramarine 40 we will be dropping Pantheon due to major issues with the experience.
+- Ultramarine's Budgie edition provides a close to stock Budgie experience, with a custom theme. Unlike Fedora's Budgie Spin, which provides a completely custom layout and experience.
