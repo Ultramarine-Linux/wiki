@@ -29,6 +29,38 @@ This is solved by distributors including Ultramarine as a synonym to Fedora.
 
   We are still debating Pantheon's fate, but as of now Pantheon is not included in Ultramarine 40 and probably will stay that way.
 
+### All Editions
+
+- Flathub not included in new installs
+
+  Our builder had dnf weakdeps disabled, causing `ultramarine-repos-extras` to not be installed. This was fixed in UM40.1.
+
+- Raw images don't have a Plymouth theme
+
+  Fixed in UM40.1.
+
+- Manpages not included
+
+  Our builder follows the dnf config of the host system. Fedora container images have a dnf flag enabled that removes manpages, this was inherited by Ultramarine images. This was fixed in UM40.2.
+
+- Translation and Localization issues
+
+  Similarly to the last issue, Fedora containers only include English locale data, this was inherited by UM images and fixed in UM40.2.
+
+- Fedora bookmarks still included
+
+  We removed the Fedora bookmarks and replaced them with `ultramarine-phony-bookmarks`. As the name implies, there are no bookmarks.
+
+- dnf5 not set as default
+
+  We intended to switch to dnf5 with UM40, but something went wrong and the change wasn't shipped. This was fixed in UM40.2
+
+- Firmware missing on GNOME Edition
+
+  A team member erroneously pushed a flag that disabled the installation of weak dependencies, and forgot to remove the flag later.
+
+[Instructions for getting 40.1 and 40.2 fixes ->](https://blog.fyralabs.com/ultramarine-linux-40-hotfixes/)
+
 ## Ultramarine Linux 39
 
 ### Pre-release Images
