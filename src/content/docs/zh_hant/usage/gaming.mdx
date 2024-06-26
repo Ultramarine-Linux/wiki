@@ -1,0 +1,84 @@
+---
+title: Gaming on Ultramarine
+description: "Extra instructions for gaming on Ultramarine Linux."
+---
+
+import Alert from "../../../../components/Docs/Alert.astro";
+
+Sometimes, you may want some downtime from work and have fun. While Ultramarine Linux is not primarily optimized for gaming, it is still a great platform for gaming, as it already has some performance optimizations applied out of the box, and can be further optimized with some tweaks.
+
+# Performance
+
+# Gaming Platforms
+
+## Steam
+
+[Steam](https://steampowered.com) is a great PC gaming platform, and it has native support for Linux. Many game publishers publish their games on Steam, and some even natively support Linux. Steam offers discounts for games published on their platform, and also has a built-in overlay for chatting with friends, taking screenshots, and more.
+
+Steam runs on the Chromium Embedded Framework (CEF), which essentially means that most of the UI is created using web technologies.
+
+You can install Steam in 2 ways:
+
+1. Install the `steam` package from the RPM Fusion repository. (system-wide)
+2. Install the Steam flatpak from Flathub. (user-only)
+
+The first option is recommended, as it has better system integration. However, the second option is also available if you are running Ultramarine OSTree/Kanopy/CoreOS, or if you want to keep Steam isolated from the rest of the system.
+
+### Proton
+
+If your game does not support Linux, or the Linux version happens to be inferior to the Windows version, you can use Steam's Proton compatibility layer to run Windows games on Linux. Proton is based on Wine, and it is developed by Valve.
+
+If the game you're trying to play doesn't work on Proton, check back in a week, it's quite possible that it will work after Proton updates or active work from Valve.
+
+### Slow Download Speeds
+
+There have been recent reports of slow download speeds on Steam due to issues with the Steam client and HTTP/2, see the relevant [Steam for Linux issue](https://github.com/ValveSoftware/steam-for-linux/issues/10248) for more information.
+
+If you are experiencing slow download speeds and aren't sure why, you can try disabling HTTP/2 in Steam by adding the following lines to the `~/.steam/steam/steam_dev.cfg` file and restarting steam:
+
+```
+@nClientDownloadEnableHTTP2PlatformLinux 0
+@fDownloadRatelmprovement ToAddAnother Connection 1.0
+```
+
+### Apex Legends
+
+Apex Legends can run on Linux using Steam's Proton compatibility layer, plus the Easy Anti-Cheat runtime. The game has Linux support for anti-cheat, but the game binaries are Windows only.
+
+## Heroic Games Launcher
+
+The Heroic Games Launcher is a native Linux client for the Epic Games Store and GOG Galaxy. It supports downloading and installing native Linux games from GOG, and running Windows-only games from both GOG and Epic Games Store using Wine/Proton.
+
+## Lutris
+
+Lutris is a game launcher for Linux. It supports installing and managing your game library from various sources, including Steam, GOG, EA Origin, and its own community-provided installers. It also supports running Windows-only games using Wine/Proton.
+
+### League of Legends
+
+League of Legends is a popular MOBA game developed by Riot Games. It is available on Windows, macOS, and Android. It is not officially supported on Linux, but it can be run using a special build of Wine by GloriousEggroll.
+
+### EA Desktop
+
+Games that use EA's Origin platform or EA Desktop can be run using Lutris. You can install the EA Desktop client using the Lutris installer, and then install your games from there.
+
+### Epic Games Store
+
+Please refer to the [Heroic Games Launcher](#heroic-games-launcher) section.
+
+## Bottles
+
+Bottles is a tool for managing Wine prefixes. It is similar to Lutris, but is more focused on creating and managing Wine prefixes for multiple applications rather than creating each prefix for a single game or application.
+
+Installing Bottles is only supported as a Flatpak. Any other version of bottles is not supported by the Ultramarine Linux Team.
+
+### Overwatch
+
+Overwatch is a popular team-based FPS game developed by Blizzard Entertainment. It is available on Windows, macOS, PlayStation 4, Xbox One, and Nintendo Switch. It is not officially supported on Linux, but it can be run using Wine/Proton.
+
+Overwatch 2 can be run in a Bottles prefix, simply install the game using the Blizzard Battle.net app and run it from the Bottles launcher.
+
+Overwatch 2 is now also on Steam, and can be run using Proton.
+
+### Valorant
+
+Valorant is a popular FPS game developed by Riot Games. It is available on Windows. It will not run on Linux, as it uses a kernel-level anti-cheat software that is not compatible with Wine/Proton.

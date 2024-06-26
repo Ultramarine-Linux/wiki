@@ -1,0 +1,48 @@
+---
+title: " Installation on Raspberry Pi"
+description: "How to install Ultramarine Linux on the Raspberry Pi"
+---
+
+import Alert from "../../../../components/Docs/Alert.astro";
+
+## System Requirements
+
+Ultramarine Linux supports the Raspberry Pi 3 and 4. Please see the [Anywhere page](/en/anywhere/rpi) for more information.
+
+## Selecting a Drive
+
+The drive you use deeply affects the experience you will have on Ultramarine.
+
+### Raspberry Pi 3
+
+Raspberry Pi 3 supports only microSD cards. Your microSD card must be 9GB or larger, but we suggest 16GB or more so you'll have some space for software.
+
+You should also look for a class 10 SDHC or SDXC microSD.
+
+### Raspberry Pi 4 and 400
+
+Raspberry Pi 4 supports microSD cards and USB storage. Your storage device must be 9GB or larger, but we suggest 16GB or more so you'll have some space for software.
+
+The best experience will be with a SATA SSD connected over an adapter. A USB 3.0 flash drive will be slightly better to on-par with a nice microSD card. All of the options are good, it's up to your needs.
+
+## Flashing the Image
+
+<Alert type="info">
+  If you're using a Raspberry Pi 4, you can skip these steps and use Raspberry
+  Pi Imager! Either insert an empty microSD and press shfit at startup, or use
+  it on another device.
+</Alert>
+
+Grab a USB stick! Use a flasher program to flash Ultramarine to your storage device. [balenaEtcher](https://www.balena.io/etcher/) is an easy cross-platform choice.
+
+![](/assets/balenaetcher.png)
+
+Simply select the raw.xz file (you don't need to decompress it), the device you're using, and click flash.
+
+You can also use the Disks application on Flagship, Xfce, and GNOME editions.
+
+## First Boot
+
+On first boot, the root file system will automatically be expanded, you’ll be prompted with a user creation screen. Create your user and you’ll be ready to go!
+
+That’s it! You’re ready to enjoy Ultramarine on your Raspberry Pi! We’re working hard on making the experience better so stay tuned!

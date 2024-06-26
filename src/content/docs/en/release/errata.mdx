@@ -5,85 +5,123 @@ description: "Various known bugs and other issues in Ultramarine Linux."
 
 import Alert from "../../../../components/Docs/Alert.astro";
 
-This page contains erratum for Ultramarine Linux releases.
+This page contains bugs that we can't solve or that are easily solvable by users. We remove them as they are resolved.
 
-Erratum (or Errata) refers to minor issues we discover after launch, or can't fix. They're usually simple for users to fix themselves (Like the wallpaper not being set)
+Releases older than 37 will not have their eratta modified as we do not have records of fixing the issues.
 
-## All versions affected
+## All Versions
 
-### Applications
+- Installer scripts may not work
 
-#### Some installer scripts not supporting Ultramarine, even though it is a Fedora-based OS
+This is solved by distributors including Ultramarine as a synonym to Fedora.
 
-This is related to [DNF Tells the user there are no repositories available for a Copr project](#dnf-tells-the-user-there-are-no-repositories-available-for-a-copr-project), This bug may only be addressed upstream, or until there is mainstream recognition of Ultramarine Linux itself.
+### Ultramarine Linux 40
+
+### Xfce Edition
+
+- Login screen wallpaper is Fedora's
+
+  This is a small issue with our tweaks not being applied. We should have this fixed in an update soon.
+
+### Pantheon Edition
+
+- Pantheon is upgraded but login does not work
+
+  We are still debating Pantheon's fate, but as of now Pantheon is not included in Ultramarine 40 and probably will stay that way.
+
+### All Editions
+
+- Flathub not included in new installs
+
+  Our builder had dnf weakdeps disabled, causing `ultramarine-repos-extras` to not be installed. This was fixed in UM40.1.
+
+- Raw images don't have a Plymouth theme
+
+  Fixed in UM40.1.
+
+- Manpages not included
+
+  Our builder follows the dnf config of the host system. Fedora container images have a dnf flag enabled that removes manpages, this was inherited by Ultramarine images. This was fixed in UM40.2.
+
+- Translation and Localization issues
+
+  Similarly to the last issue, Fedora containers only include English locale data, this was inherited by UM images and fixed in UM40.2.
+
+- Fedora bookmarks still included
+
+  We removed the Fedora bookmarks and replaced them with `ultramarine-phony-bookmarks`. As the name implies, there are no bookmarks.
+
+- dnf5 not set as default
+
+  We intended to switch to dnf5 with UM40, but something went wrong and the change wasn't shipped. This was fixed in UM40.2
+
+- Firmware missing on GNOME Edition
+
+  A team member erroneously pushed a flag that disabled the installation of weak dependencies, and forgot to remove the flag later.
+
+[Instructions for getting 40.1 and 40.2 fixes ->](https://blog.fyralabs.com/ultramarine-linux-40-hotfixes/)
 
 ## Ultramarine Linux 39
 
 ### Pre-release Images
 
-We accidentally released pre-release versions of Ultramarine. A small handful of users and reviewers got their hands on these images. These images do not reflect the final release, if you used one and it was buggy, we invite you to try the final release, as many of the bugs were fixed.
+- We accidentally released pre-release versions of Ultramarine.
 
-# Budgie Edition
+  A small handful of users and reviewers got their hands on these images. These images do not reflect the final release, if you used one and it was buggy, we invite you to try the final release, as many of the bugs were fixed.
 
-Budgie wallpapers may be installed instead of Ultramarine wallpapers.
+### Budgie Edition
 
-# Package Groups
+- Budgie wallpapers may be installed instead of Ultramarine wallpapers.
 
-We misspelled "environment" as "enviroment". This is now fixed in Ultramarine 39 and has been backported to 38.
+### Package Groups
 
-## Ultramarine Linux 37 (At Launch)
+- Misspelled "environment" as "enviroment".
+
+This is now fixed in Ultramarine 39 and has been backported to 38.
+
+## Ultramarine Linux 37 (EOL)
 
 ### Pantheon
 
-#### Blank wallpaper
+- The wallpaper is not set by default. Please set your own wallpaper.
 
-Due to a configuration error, the wallpaper is not set correctly. This will be fixed in the next release.
-
-The simple workaround is to set your own wallpaper.
-
-## Ultramarine 36 (Build 1.1)
+## Ultramarine 36 (EOL)
 
 ### Applications
 
-#### Firefox Still Includes Fedora Bookmarks
+- Firefox Still Includes Fedora Bookmarks
 
-This is caused by the inclusion of the `fedora-bookmarks` package, which is a weak dependency of Firefox in Fedora. Uninstalling this package may not fix the issue on an already configured account. Simply remove the bookmarks yourself.
+  Firefox depends on fedora-bookmarks. You can simply remove the bookmarks yourself
 
-#### Anaconda Shows a Warning about the System Being Pre-Release
+### Installer
 
-This is caused by Anaconda not finding the patched `/.buildinfo` file (or ProductMD information about Ultramarine). We do not know how Fedora is doing this, but in Budgie and Cutefish versions there is a script inserting a custom `/.buildinfo` file in the root of the filesystem.
+- Anaconda Shows a Warning about the System Being Pre-Release
 
-#### DNF Tells the User There Are No Repositories Available for a COPR Project
+Anaconda can't find product information about Ultramarine and assumes it's a pre-release version of Fedora or RHEL.
+
+### Package Management
+
+- DNF Tells the User There Are No Repositories Available for a COPR Project
 
 This is due to the fact that the DNF Copr plugin detects the OS ID `/etc/os-release` file, and Ultramarine uses a custom code instead of `fedora`.
 
-A workaround is to also specify the Fedora buildroot when trying to add a Copr repository, like this:
+A workaround is to also specify the Fedora buildroot when trying to add a Copr repository.
 
-```bash
-sudo dnf copr enable cappyishihara/fedorajam-plus fedora-36-x86_64
-```
+### GNOME Edition
 
-This will be addressed in a `dnf-plugins-core` patch, either upstream or locally with Ultramarine.
+- Pop!\_Shell launcher
 
-This issue has been addressed upstream in the [following pull request](https://github.com/rpm-software-management/dnf-plugins-core/pull/463)
+The Pop!\_Shell launcher is not included. This can be fixed by installing the `pop-launcher` package.
 
-It will be included in the next release of dnf-plugins-core after 4.3.1.
+### Cutefish Edition
 
-### GNOME
-
-#### Pop!\_Shell launcher
-
-The Pop!\_Shell launcher is broken. This can be fixed by installing the `pop-launcher` package, as the package was not included in the original release.
-
-### Cutefish
-
-#### SDDM Displaying Black Screen
+- SDDM Displaying Black Screen
 
 SDDM may display a black screen when starting up. This is a known issue, but there is no known fix as of yet. (Possibly an upstream bug, help needed.)
 
-### Pantheon
+### Pantheon Edition
 
-#### Missing Switchboard (Settings) menus
+- Missing Switchboard (Settings) menus
 
 This was caused by missing Pantheon Switchboard modules, which are not included in Ultramarine Linux due to time constraints.
 
@@ -91,7 +129,7 @@ You can help us fix this issue by offering to maintain these packages ourselves,
 
 ### OSTree Edition
 
-#### Missing Tweaks from the Standard Releases
+- Missing Tweaks from the Standard Releases
 
 As the standard release includes a script to modify the system, due to the nature of OSTree, we are unable to include these tweaks unless we rebuild all major packages with our custom patches.
 
