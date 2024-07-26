@@ -7,28 +7,37 @@ import Alert from "../../../../components/Docs/Alert.astro";
 
 ## Troubleshooting
 
+<Alert type="warning">
+  If your issue still persists after reading this page, hop into [our
+  chats](/en/community/community) and make a support forum post.
+</Alert>
+
 ### Chromebook fails to boot to internal disk
 
-Assuming you are selecting 'Boot to Internal Disk', or pressing <kbd>Ctrl</kbd>+<kbd>D</kbd>> does not fully boot, this usually means the device has died. Plug in your Chromebook. If the issue continues to persist, hop into [our chats](/en/community/community) and make a support forum post.
+Assuming you are selecting 'Boot to Internal Disk', or pressing <kbd>Ctrl</kbd>+<kbd>D</kbd> does not fully boot (only to Submarine, the boot entries screen before Ultramarine boots), this usually means the device has died. Plug in your Chromebook.
 
 ### Keyboard is not properly mapped
 
-Try re-installing the cros-keyboard-map package from Terra. Simply run ` sudo dnf install cros-keyboard-remap`.
+Try re-installing the cros-keyboard-map package from Terra. Simply run ` sudo dnf install cros-keyboard-remap`. If this does not work, try running Weirdtreething's [keyd script](https://github.com/WeirdTreeThing/cros-keyboard-map).
 
 ### Chromebook audio doesn't work
 
 This should not happen unless you have unsupported speakers, but if it does, try running Weirdtreething's [audio script](https://github.com/WeirdTreeThing/chromebook-linux-audio) manually.
 
-You may have a speaker unsupported by the audio script (max98357a speakers). If you would like to enable audio on here, run the script manually and follow the prompts to enable audio.
+You may have a speaker unsupported by the audio script by default (max98357a speakers). If you would like to enable audio on here, run the script manually and follow the prompts to enable audio.
 
 <Alert type="warning">
   max98357a, and any other audio devices requiring ```--force-avs-install``` is
   not recommended to enable, and support will not be given to damaged speakers.
-  If you really want to proceed, do not raise your speakers volume to high or
-  they will get damaged.
+  If you really want to proceed, do not raise your speakers volume high or they
+  will get damaged.
 </Alert>
 
 ## FAQs
+
+### Why doesn't XYZ hardware feature work?
+
+All hardware should work on almost every supported Chromebook model, but some specific Chromebooks may have some missing features (ex. Drallion, Sarien, and Arcada have a Wilco (Dell Enterprise) EC, and may have missing features).
 
 ### Is this legal?
 
@@ -42,6 +51,14 @@ The goal here is to be as easy and safe to use as possible. It is also easier to
 
 It usually can, as Linux is more lightweight, but we do not guarantee a preformance gain vs ChromeOS. If you are using an older/slower Chromebook, we reccomend using Xfce or Flagship edition.
 
-#### [Next Up: Terminology →](terminology)
+#### Ultramarine Chromebook Edition known issues
 
-#### [← Back To: ARM Chromebooks (Beta)](armbeta)
+Found an issue? [Let us know](/en/community/community)
+
+| Model name/number             | Codename | Issue                                          | Cause                                                                                   | Fix?    |
+| ----------------------------- | -------- | ---------------------------------------------- | --------------------------------------------------------------------------------------- | ------- |
+| Dell Latitude 7410 Chromebook | Drallion | Touchscreen and keyboard backlight do not work | Linux support under Wilco EC (Closer to Dell Latitude EC then Google Chrome EC) devices | Not yet |
+
+#### [Next Up: ARM Chromebooks (Beta) →](armbeta)
+
+#### [← Back To: Installing to a Chromebook](installing)
