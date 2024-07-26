@@ -58,7 +58,7 @@ Generally, it is reccomended not to, however you can get really good Chromebook 
 
 ### I Thought Ultramarine Used Btrfs?
 
-Ultramarine proper does, but due to Btrfs's advanced features, it is not very good on eMMC storage (used by most Chromebooks). We planned to use F2Fs, but we were unable to implement it in current systemd-repart. We plan on fixing this upstream in the near future and enabling other file system options. We now use EXT4 as the file system, which is a very common, good all-around Linux file system, it's even what ChromeOS uses.
+Ultramarine proper does, but due to Btrfs's advanced features, it is not very good on eMMC storage (used by most Chromebooks). We use F2Fs (Flash-Friendly file system) to prolong the life of eMMC as much as we can. We plan on adding more file system options in the near future.
 
 ### This Installer Looks Different, What Is It?
 
