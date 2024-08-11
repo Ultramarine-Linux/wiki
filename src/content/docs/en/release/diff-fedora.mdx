@@ -1,0 +1,46 @@
+---
+title: Differences with Fedora
+description: "Known differences and changes compared to/with Fedora"
+---
+
+import Alert from "../../../../components/Docs/Alert.astro";
+
+This page documents Ultramarine Linux's significant changes and differences with a typical Fedora workstation setup.
+
+Changes listed below are nonexhaustive and cumulative, meaning each section contains changes from all the section below it.
+
+### Emoji meanings
+
+- 📦 This is packaged in Terra
+- 🛳️ This ships existing Fedora packages
+- 🔥 This is a significant breaking change
+
+## Ultramarine 40
+
+- 🔥 [Change default package manager to `dnf5`](/en/usage/um40-dnf5) (`dnf5-default-package-manager`)
+- Remove Fedora bookmarks in Firefox (`ultramarine-phony-bookmarks`)
+- Remove Pantheon Edition
+- `ultramarine-fun`
+- 🛳️ `git`
+- 🛳️ XFCE Edition
+- Improve key bindings for `zsh`
+
+## Before Ultramarine 40
+
+- Out of box repositories: [Terra](https://terra.fyralabs.com), full set of [RPM Fusion](https://rpmfusion.org/)
+- IP MTU probing enabled (which fixes ubiconnect games)
+- [Custom wallpapers](https://github.com/Ultramarine-Linux/backgrounds) 🌇 by Aikoyori
+- 📦 [System76 Scheduler](https://github.com/pop-os/system76-scheduler) preinstalled (significantly better scheduling for low-end devices)
+    - 📦 [KWin Script for system76-scheduler Integration](https://github.com/maxiberta/kwin-system76-scheduler-integration)
+- Numerous popular GNOME extensions
+    - 🛳️ [AppIndicator/KStatusNotifierItem support](https://github.com/ubuntu/gnome-shell-extension-appindicator) (`gnome-shell-extension-appindicator`)
+    - 🛳️ [Pop shell extension](https://github.com/pop-os/shell) (`gnome-shell-extension-pop-shell`)
+    - 🛳️ Support for keyboard selection of windows and workspaces in GNOME Shell (`gnome-shell-extension-windowsNavigator`)
+    - 🛳️ [Bringing back the app menu](https://github.com/fthx/appmenu-is-back) (`gnome-shell-extension-appmenu-is-back`)
+    - 📦 [Pop Launcher](https://github.com/pop-os/launcher/)
+- 🛳️ Most drivers and codecs
+- 🛳️ Guest Desktop Agents (`@guest-desktop-agents`)
+- 📦 `sipa-fonts` (Thai National Fonts)
+- 🛳️ Mozc (Japanese Input Method Editor)
+- 📦 Pantheon Edition (`@pantheon-desktop`)
+- 📦 [Starship](https://starship.rs/)
