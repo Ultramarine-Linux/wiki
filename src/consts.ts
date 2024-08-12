@@ -83,7 +83,10 @@ export const SIDEBAR: Sidebar = {
       { text: "Keyboard Configuration", link: "en/usage/keyboard-cfg" }
     ],
 
-    "Release Notes": [{ text: "Errata", link: "en/release/errata" }],
+    "Release Notes": [
+      { text: "Errata", link: "en/release/errata" },
+      { text: "Differences with Fedora", link: "en/release/diff-fedora" }
+    ],
     // Chromebook: [
     //   { text: "Getting Started", link: "en/chromebook/chromebook" },
     //   { text: "Getting Chromebook Edition", link: "en/chromebook/getting" },
