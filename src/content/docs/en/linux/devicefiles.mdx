@@ -25,11 +25,11 @@ Newer Windows versions also support mounting devices as directories, but they ar
 
 There are various types of block devices, but the most common ones are:
 
-- SATA, PATA/IDE, SAS, SCSI or USB disks (`/dev/sd*`)
+- SATA, PATA/IDE, SAS, SCSI, UFS, or USB devices (`/dev/sd*`)
 - NVMe Drives (`/dev/nvme*`)
+- MMC devices (`/dev/mmcblk*`) - Memory cards that use the MultiMediaCard standard, such as SD cards or eMMC.
 - Device mappers (`/dev/mapper/*`) - A special feature of the Linux kernel that allows you to create virtual block devices from other block devices.
 - Loop devices (`/dev/loop*`) - Virtual loopback devices that allow you to mount files as block devices.
-- MMC devices (`/dev/mmcblk*`) - Memory cards that use the MultiMediaCard standard, such as SD cards.
 
 ## Pseudo-devices
 
