@@ -1,48 +1,31 @@
 ---
-title: "Chromebook (Anywhere)"
-description: "Chromebooks in the Ultramarine Anywhere Initiative"
+title: "Chromebook (Everywhere)"
+description: "Chromebooks in the Ultramarine Everywhere Initiative"
 ---
 
 import Alert from "../../../../components/Docs/Alert.astro";
 
-<Alert type="info">
-  This device type is still in the **In Progress Phase**. All information on
-  this page is subject to change. Do not follow any instructions unless you know
-  what you're doing.
-</Alert>
-
-Chromebooks were an obvious target for Ultramarine Anywhere, despite being mostly
-standard hardware, they have custom EC and strange firmware.
+Chromebooks were an obvious target for Ultramarine Everywhere, despite being mostly
+standard hardware, they have custom EC and strange firmware. We began development
+in Ultramarine 39, and are preparing to launch midcycle.
 
 Chromebook support in Ultramarine Linux is provided in partnership with the [Chrultrabook Project](https://chrultrabook.com).
 
 # x86
 
-All x86 Chromebooks that use Depthcharge are supported by Ultramarine Chromebook Edition.
-
-## How it Works
-
-Ultramarine Chromebook Edition uses a special bootloader called [Submarine](https://developer.fyralabs.com/submarine) to load the kernel.
-
-Under the hood, Submarine is an incredibly minimal Linux OS based on [u-root](https://github.com/u-root/u-root), it's only really usable for debug and booting a full distribution. Once Submarine is loaded, we use [LinuxBoot](https://www.linuxboot.org/) to boot a full copy of Ultramarine (and hopefully more distros in the future).
-
-Now for the big question, how do we do this without modifying the firmware? We take advantage of the way Depthcharge (the ChromeOS firmware) works. We store Submarine in a 16MiB partition on disk, this is normally used by ChromeOS to store a full ChromeOS Kernel and initramfs. Depthcharge doesn't actually check if the contents of the partition are a valid kernel, it just checks for a GPT Header and runs whatever code is found in the partition, in our case, Submarine.
-
-By default, Depthcharge will only boot code with Google's signing keys, we get around this by enabling the built-in ChromeOS developer mode.
-
-To summarise, we boot a tiny Linux distribution (Submarine) and use it to launch Ultramarine's vmlinuz and initramfs using kexec.
+All x86 Chromebooks that use Depthcharge with a 16MiB or larger boot partition are supported by Ultramarine Chromebook Edition.
 
 ## Userland Changes
 
-Devices in Ultramarine Anywhere try to stick very closely to the standard Ultramarine userland, sometimes we have to deviate from this to make the experience better.
+Devices in Ultramarine Everywhere try to stick very closely to the standard Ultramarine userland, sometimes we have to deviate from this to make the experience better.
 
 ### Audio Support
 
-We use WeirdTreeThing's [audio script](https://github.com/WeirdTreeThing/chromebook-linux-audio) to make audio work properly.
+We use WeirdTreeThing's [audio script](https://github.com/WeirdTreeThing/chromebook-linux-audio) and kernel patch to make audio work properly.
 
 ### Default Partitions
 
-On Chromebooks, we use F2FS (in lieu of Btrfs) and disable swap to extend the life of the eMMC storage found in many Chromebooks. We also create one 16MiB partition containing [Submarine](https://developer.fyralabs.com/submarine) at the start of the disk instead of `/boot/EFI`.
+On Chromebooks, we use F2Fs in lieu of Btrfs, and disable swap to extend the life of the eMMC found in most Chromebooks. We create a 16MiB partition containing [Submarine](https://developer.fyralabs.com/submarine) at the start of the disk instead of `/boot/EFI` and `/boot`
 
 ### Keyboard Mapping
 
@@ -74,58 +57,85 @@ We use [keyd](https://github.com/rvaiya/keyd) to map keys on Chromebooks.
 
 ## Unsupported Devices
 
-| Device    | Reason                                                                                    |
-| --------- | ----------------------------------------------------------------------------------------- |
-| Mario     | Firmware Limitations                                                                      |
-| Alex      | Firmware Limitations                                                                      |
-| ZGB       | Firmware Limitations                                                                      |
-| Stumpy    | Boot Partition Size Limitation (This can be [Corebooted](https://docs.chrultrabook.com/)) |
-| Lumpy     | Boot Partition Size Limitation (This can be [Corebooted](https://docs.chrultrabook.com/)) |
-| Parrot    | Boot Partition Size Limitation (This can be [Corebooted](https://docs.chrultrabook.com/)) |
-| Butterfly | Boot Partition Size Limitation (This can be [Corebooted](https://docs.chrultrabook.com/)) |
-| Link      | Boot Partition Size Limitation (This can be [Corebooted](https://docs.chrultrabook.com/)) |
-| Stout     | Boot Partition Size Limitation (This can be [Corebooted](https://docs.chrultrabook.com/)) |
+| Device    | Reason                                                                                                 |
+| --------- | ------------------------------------------------------------------------------------------------------ |
+| Mario     | Firmware Limitations                                                                                   |
+| Alex      | Firmware Limitations                                                                                   |
+| ZGB       | Firmware Limitations                                                                                   |
+| Stumpy    | Boot parttion size Limitation (this can be [corebooted](https://docs.chrultrabook.com/docs/firmware/)) |
+| Lumpy     | Boot parttion size Limitation (this can be [corebooted](https://docs.chrultrabook.com/docs/firmware/)) |
+| Parrot    | Boot parttion size Limitation (this can be [corebooted](https://docs.chrultrabook.com/docs/firmware/)) |
+| Butterfly | Boot parttion size Limitation (this can be [corebooted](https://docs.chrultrabook.com/docs/firmware/)) |
+| Link      | Boot parttion size Limitation (this can be [corebooted](https://docs.chrultrabook.com/docs/firmware/)) |
+| Stout     | Boot parttion size Limitation (this can be [corebooted](https://docs.chrultrabook.com/docs/firmware/)) |
 
-These are among the first few generations of Chromebooks, and either use an unsupported proprietary firmware, or have firmware limitations which prevents booting a partition large enough to fit submarine (newer Chromebooks have larger size limitations).
+These are among the first few generations of Chromebooks, and either use an unsupported firmware, or have limitations preventing us from booting a partition large enough to fit Submarine.
 
 ## Installation
 
-Prebuilt images with userland tweaks will be available in the near future
+Chromebook Edition installation guide can be found in the Chromebook menu of this wiki. If you know what you're doing, you are welcome to attempt a manual installation.
 
-## Manual Installation - NOT RECOMMENDED
+## Manual Installation - PROCEED AT YOUR OWN RISK, Ultramarine Chromebook Edition will be a much easier experience once released
 
 <Alert type="warning">
-  This method is **NOT RECOMMENDED**. Only do this if you know what you're doing
-  and need to test. We are not responsible for brickage, thermonuclear war, the
-  death of a pet, etc.
+  This method is **NOT RECOMMENDED**. Only do this if you know what you're
+  doing. We are not responsible for brickage, thermonuclear war, the death of a
+  pet, etc.
 </Alert>
 
-This guide assumes you have [Developer Mode](https://chromium.googlesource.com/chromiumos/docs/+/main/developer_mode.md#dev-mode) and [USB Booting Enabled](https://chromium.googlesource.com/chromiumos/docs/+/main/developer_guide.md#boot-from-your-usb-disk)
+This guide assumes you are on x86 and have [Developer Mode](https://chromium.googlesource.com/chromiumos/docs/+/main/developer_mode.md#dev-mode) and [USB Booting Enabled](https://chromium.googlesource.com/chromiumos/docs/+/main/developer_guide.md#boot-from-your-usb-disk). There are alterations to these instructions you could make and still get the same end result, this is just what we find to be the easiest way.
 
-1. Flash an [Ultramarine Raw Image](https://images.fyralabs.com/images/ultramarine/39/) to a USB Drive
-2. Delete the first partition on the disk
-3. Create a 16MB ext4 partition
-4. Flash the submarine.kpart file to the partition
-5. Set the partition flags with cgpt
+### Raw (.img) images:
+
+1. Flash an [Ultramarine Raw Image](https://images.fyralabs.com/images/ultramarine/) with a desktop to a USB Drive or SD Card smaller then the internal disk of your Chromebook.
+2. Delete the first partition on the disk.
+3. Create a 16MB ext4 partition.
+4. Flash the [submarine.kpart](https://nightly.link/FyraLabs/submarine/workflows/build/main/submarine-x86_64.zip) file to the partition.
+5. Set the partition flags with cgpt (may have to install `vboot-utils`).
 
 ```
 cgpt add -i <partition number> -t kernel -P 15 -T 1 -S 1 /dev/sdX
 ```
 
-6. Boot the image on the Chromebook
+6. Boot the image on the Chromebook.
 
-You're now inside a minimal Ultramarine system, from here you can install a desktop (also `NetworkManager-wifi`) and use Ultramarine from the external disk. If you'd like to install, you'll need to install and configure Anaconda. [Our Kickstarts can be found on Github.](https://github.com/Ultramarine-Linux/build-scripts/tree/main/kickstarts)
+You're now inside the Ultramarine install on your USB/SD card.
 
-7. On the internal disk, create a 16MiB ext4 partition BEFORE the standard partitions
-8. Install Ultramarine normally
-9. After the installation is complete, flash the submarine.kpart file to the 16MiB partition you created
-10. Set the partition flags with cgpt
+7. `dd` the USB/SD card to the internal disk of the Chromebook. (Note, you do NOT need to resize the root filesystem, it should do this automatically upon first boot).
+
+If you need help with `dd` syntax, here are some pointers -
+
+You're most likely using a USB stick to install to an eMMC Chromebook, which is the command listed below. If you would like to see what devices you have, run `lsblk` in the terminal. If both show as the same device type, remember the USB/SD Card should be the smaller one. To see what different devices present as, go [here](/en/linux/devicefiles/#block-devices).
+
+```
+dd if=/dev/sda of=/dev/mmcblk0 bs=4M status=progress
+```
+
+'if' is the input file. '/dev/sda' is the USB stick. 'of' is the output file. '/dev/mmcblk0' is the Chromebook's internal eMMC storage. 'bs=4M' changes the block size from the default 512Bs to 4MBs (makes it transfer faster). 'status=progress' shows the transfer progress in real time.
+
+If you're using other devices, adjust accordingly. If your're using an SD card to install to eMMC, or a USB stick to install to UFS, both devices will show as 'mmcblkX' (mmcblk 0/1/2), and 'sdX' (sd a/b/c). Adjust the numbers/letters accordingly.
+
+8. Once the `dd` is done, verify the Submarine partition shows 'ChromeOS Kernel' as a flag on the internal disk. We reccomend using GParted for this (dnf install gparted).
+
+### ISO Images:
+
+1. Flash an [Ultramarine ISO Image](https://ultramarine-linux.org/download/) to a USB Drive or SD Card.
+2. Flash submarine.bin to another USB Drive or SD Card.
+3. Plug in both drives you just flashed to the Chromebook (a USB hub works!).
+4. Boot to the installer's live emvironment by pressing <kbd>Ctrl</kbd>+<kbd>U</kbd> (You shouldn't boot to a boot option that lists a kernel version (ex ultramarine-linux-6.10.0-X-X-X), just boot to 'Ultramarine Linux _EDITION_.' If you still have ChromeOS on the internel disk, it is likely that this will be the 14th entry, if not, it may be the 3rd). If it does not boot, restart and try a different Ultramarine Linux entry.
+5. In the live enviornment of the ISO, install as normal.
+6. Once the install is done, return to the live environment desktop. Delete `/boot/efi` (the one with boot flags), make a new 16MiB EXT4 partition.
+7. flash [submarine.kpart](https://nightly.link/FyraLabs/submarine/workflows/build/main/submarine-x86_64.zip) to the new EXT4 partition, and set flags with cgpt (may have to install `vboot-utils`).
 
 ```
 cgpt add -i <partition number> -t kernel -P 15 -T 1 -S 1 /dev/sdX
 ```
 
 11. Done!
+
+<Alert type="warning">
+  Once Ultramarine has been sucessfully installed onto your Chromebook's internal disk, rebooting will take you back to the ChromeOS recovery screen. To boot to Ultramarine, select 'Boot to Internal Disk' or press <kbd>Ctrl</kbd>+<kbd>D</kbd>
+</Alert>
 
 ## ARM
 
