@@ -18,7 +18,17 @@ Chromebook support in Ultramarine Linux is provided in partnership with the [Chr
 
 # x86
 
-All x86 Chromebooks that use Depthcharge with a 16MiB or larger boot partition are supported by Ultramarine Chromebook Edition.
+## How it Works
+
+Ultramarine Chromebook Edition uses a special bootloader called [Submarine](https://developer.fyralabs.com/submarine) to load the kernel.
+
+Under the hood, Submarine is an incredibly minimal Linux OS based on [u-root](https://github.com/u-root/u-root), it's only really usable for debug and booting a full distribution. Once Submarine is loaded, we use [LinuxBoot](https://www.linuxboot.org/) to boot a full copy of Ultramarine (and hopefully more distros in the future).
+
+Now for the big question, how do we do this without modifying the firmware? We take advantage of the way Depthcharge (the ChromeOS firmware) works. We store Submarine in a 16MiB partition on disk, this is normally used by ChromeOS to store a full ChromeOS Kernel and initramfs. Depthcharge doesn't actually check if the contents of the partition are a valid kernel, it just checks for a GPT Header and runs whatever code is found in the partition, in our case, Submarine.
+
+By default, Depthcharge will only boot code with Google's signing keys, we get around this by enabling the built-in ChromeOS developer mode.
+
+To summarise, we boot a tiny Linux distribution (Submarine) and use it to launch Ultramarine's vmlinuz and initramfs using kexec.
 
 ## Userland Changes
 
