@@ -139,7 +139,7 @@ If you're using other devices, adjust accordingly. If your're using an SD card t
 4. Boot to the installer's live emvironment by pressing <kbd>Ctrl</kbd>+<kbd>U</kbd> (You shouldn't boot to a boot option that lists a kernel version (ex ultramarine-linux-6.10.0-X-X-X), just boot to 'Ultramarine Linux _EDITION_.' If you still have ChromeOS on the internel disk, it is likely that this will be the 14th entry, if not, it may be the 3rd). If it does not boot, restart and try a different Ultramarine Linux entry.
 5. In the live enviornment of the ISO, install as normal.
 6. Once the install is done, return to the live environment desktop. Make a new 16MiB ext4 partition, this can be done by resizing the 'root' partition (the largest one).
-7. flash [submarine.kpart](https://nightly.link/FyraLabs/submarine/workflows/build/main/submarine-x86_64.zip) to the new ext4 partition, and set flags with cgpt (may have to install `vboot-utils`).
+7. flash [submarine.kpart](https://nightly.link/FyraLabs/submarine/workflows/build/main/submarine-x86_64.zip) to the new partition, and set flags with cgpt (may have to install `vboot-utils`).
 
 ```
 cgpt add -i <partition number> -t kernel -P 15 -T 1 -S 1 /dev/sdX
