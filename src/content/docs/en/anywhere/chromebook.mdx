@@ -98,25 +98,24 @@ Chromebook Edition will be released soon, installation guide for that will be fo
   pet, etc.
 </Alert>
 
-This guide assumes you are on x86 and have [Developer Mode](https://chromium.googlesource.com/chromiumos/docs/+/main/developer_mode.md#dev-mode) and [USB Booting Enabled](https://chromium.googlesource.com/chromiumos/docs/+/main/developer_guide.md#boot-from-your-usb-disk). There are alterations to these instructions you could make and still get the same end result, this is just what we find to be the easiest way.
+This guide assumes you are on x86 and have [Developer Mode](https://chromium.googlesource.com/chromiumos/docs/+/main/developer_mode.md#dev-mode) and [USB Booting Enabled](https://chromium.googlesource.com/chromiumos/docs/+/main/developer_guide.md#boot-from-your-usb-disk). We also assume you are using gparted for the partitioning tasks, but other tools will work too. There are alterations to these instructions you could make and still get the same end result, this is just what we find to be the easiest way.
 
 ### Raw (.img) images:
 
 1. Download, decompress, and flash an [Ultramarine Raw Image](https://images.fyralabs.com/images/ultramarine/) with a desktop environment (for example, flagship-base-disk-x86_64.img), to a USB Drive or SD Card smaller then the internal disk of your Chromebook.
-2. Delete the first partition on the disk.
-3. Create a 16MB ext4 partition.
-4. Flash the [submarine.kpart](https://nightly.link/FyraLabs/submarine/workflows/build/main/submarine-x86_64.zip) file to the partition.
-5. Set the partition flags with cgpt (may have to install `vboot-utils`).
+2. Create a 16 MB ext4 partition at the END of the disk (for proper resizing after installation). In gparted, accomplish this by making a new partition in the unallocated space, then drag it all the way to the right. 
+3. Flash the [submarine-x86.kpart](https://nightly.link/FyraLabs/submarine/workflows/build/main/submarine-x86_64.zip) file to the partition.
+4. Set the partition flags with cgpt (may have to install `vboot-utils`).
 
 ```
-cgpt add -i <partition number> -t kernel -P 15 -T 1 -S 1 /dev/sdX
+cgpt add -i <Submarine partition number> -t kernel -P 15 -T 1 -S 1 /dev/sdX
 ```
 
-6. Boot the image on the Chromebook.
+5. Boot the image on the Chromebook.
 
-You're now inside the Ultramarine install on your USB/SD card.
+You're now inside the Ultramarine install on your USB/SD card. Running slowly is standard behavior and is not reflective of the preformance once running off internal storage.
 
-7. `dd` the USB/SD card to the internal disk of the Chromebook. (Note, you do NOT need to resize the root filesystem, it should do this automatically upon first boot).
+6. `dd` the USB/SD card to the internal disk of the Chromebook. (Note, you do NOT need to resize the root filesystem, it should do this automatically upon first boot).
 
 If you need help with `dd` syntax, here are some pointers -
 
@@ -130,7 +129,7 @@ dd if=/dev/sda of=/dev/mmcblk0 bs=4M status=progress
 
 If you're using other devices, adjust accordingly. If your're using an SD card to install to eMMC, or a USB stick to install to UFS, both devices will show as 'mmcblkX' (mmcblk 0/1/2), and 'sdX' (sd a/b/c). Adjust the numbers/letters accordingly.
 
-8. Once the `dd` is done, verify the Submarine partition shows 'ChromeOS Kernel' as a flag on the internal disk. We recommend using GParted for this (dnf install gparted).
+7. Once the `dd` is done, verify the Submarine partition shows 'ChromeOS Kernel' as a flag on the internal disk. We recommend using GParted for this (dnf install gparted if needed).
 
 ### ISO Images:
 
