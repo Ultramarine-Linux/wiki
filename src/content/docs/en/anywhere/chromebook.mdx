@@ -103,8 +103,8 @@ This guide assumes you are on x86 and have [Developer Mode](https://chromium.goo
 ### Raw (.img) images:
 
 1. Download, decompress, and flash an [Ultramarine Raw Image](https://images.fyralabs.com/images/ultramarine/) with a desktop environment (for example, flagship-base-disk-x86_64.img), to a USB Drive or SD Card smaller then the internal disk of your Chromebook.
-2. Create a 16 MB ext4 partition at the END of the disk (for proper resizing after installation). In gparted, accomplish this by making a new partition in the unallocated space, then drag it all the way to the right. 
-3. Flash the [submarine-x86.kpart](https://nightly.link/FyraLabs/submarine/workflows/build/main/submarine-x86_64.zip) file to the partition.
+2. Create a 16 MB ext4 partition at the END of the disk (for proper resizing after installation). In gparted, accomplish this by making a new partition in the unallocated space, and dragging it all the way to the right while still in the 'Create new Partition' menu. If gparted gives you a 'Libparted Warning,' select 'Fix.'
+3. Flash the [submarine-x86.kpart](https://nightly.link/FyraLabs/submarine/workflows/build/main/submarine-x86_64.zip) file to the new partition.
 4. Set the partition flags with cgpt (may have to install `vboot-utils`).
 
 ```
