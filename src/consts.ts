@@ -54,6 +54,7 @@ export const SIDEBAR: Sidebar = {
     Contributing: [
       { text: "Overview", link: "en/contributing/contributorguide" },
       { text: "Development", link: "en/contributing/hacking" },
+      { text: "Mirroring", link: "en/contributing/mirroring" },
     ],
     Hardware: [
       { text: "System Requirements", link: "en/hardware/requirements" },
@@ -73,19 +74,19 @@ export const SIDEBAR: Sidebar = {
       { text: "Permissions", link: "en/linux/permissions" },
       { text: "Software and Package Management", link: "en/linux/software" },
       { text: "The Shell", link: "en/linux/shell" },
-      { text: "SSH", link: "en/linux/ssh"},
+      { text: "SSH", link: "en/linux/ssh" },
       { text: "Security and Privacy", link: "en/linux/securityprivacy" },
     ],
 
     Usage: [
       { text: "Gaming on Ultramarine", link: "en/usage/gaming" },
       { text: "Localization", link: "en/usage/l10n" },
-      { text: "Keyboard Configuration", link: "en/usage/keyboard-cfg" }
+      { text: "Keyboard Configuration", link: "en/usage/keyboard-cfg" },
     ],
 
     "Release Notes": [
       { text: "Errata", link: "en/release/errata" },
-      { text: "Differences with Fedora", link: "en/release/diff-fedora" }
+      { text: "Differences with Fedora", link: "en/release/diff-fedora" },
     ],
     // Chromebook: [
     //   { text: "Getting Started", link: "en/chromebook/chromebook" },
