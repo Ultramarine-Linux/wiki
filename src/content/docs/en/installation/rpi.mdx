@@ -33,11 +33,18 @@ The best experience will be with a SATA SSD connected over an adapter. A USB 3.0
   it on another device.
 </Alert>
 
+First, you will need to uncompress it.
+
+- On Linux, run `unzstd *FILENAME.img.zst*`, you may need to install the `zstd` package
+- On Windows 11 or ChromeOS, zstd is natively supported. Decompress like you would a .zip
+- On Windows 10, use 7zip
+- On macOS, install `zstd` from homebrew, then run the above command for Linux
+
 Grab a USB stick! Use a flasher program to flash Ultramarine to your storage device. [balenaEtcher](https://www.balena.io/etcher/) is an easy cross-platform choice.
 
 ![](/assets/balenaetcher.png)
 
-Simply select the raw.xz file (you don't need to decompress it), the device you're using, and click flash.
+Simply select the .img file, the device you're using, and click flash.
 
 You can also use the Disks application on Flagship, Xfce, and GNOME editions.
 
