@@ -9,7 +9,15 @@ Sometimes, you may want some downtime from work and have fun. While Ultramarine 
 
 # Performance
 
+Gaming performance on Linux will usually be similar (or sometimes even faster) than on Windows, as the Linux kernel is more lightweight and has better memory management. However, some games may not run as well on Linux due to poor optimization or lack of support for Linux.
+
+Running games under Wine/Proton may help in some cases, but it may also causes issues. Your mileage may vary depending on the game.
+
+You can refer to [ProtonDB](https://www.protondb.com) to check if your game is compatible with Proton, and to see what tweaks are needed to make it work.
+
 # Gaming Platforms
+
+There are several gaming platforms available on Linux. But the most supported one is Steam, which comes with a native Linux client and has a large library of games that support Linux, as well as Proton for running some Windows-only games.
 
 ## Steam
 
@@ -23,6 +31,20 @@ You can install Steam in 2 ways:
 2. Install the Steam flatpak from Flathub. (user-only)
 
 The first option is recommended, as it has better system integration. However, the second option is also available if you are running Ultramarine OSTree/Kanopy/CoreOS, or if you want to keep Steam isolated from the rest of the system.
+
+## itch.io
+
+[itch.io](https://itch.io) is a platform for indie games, and it has a native Linux client. It has a large library of indie games, and some of them are available for free. You can install the itch.io client as a Flatpak from [Flathub](https://flathub.org/apps/io.itch.itch).
+
+## Epic Games Store, GOG, and Amazon Games
+
+The Epic Games Store, GOG, and Amazon Games do not have native Linux clients, but you can use the [Heroic Games Launcher](#heroic-games-launcher) to install and run games from these platforms on Linux.
+
+## EA Desktop/Origin
+
+EA Desktop (formerly known as Origin) does not have a native Linux client, but you can either use the [Lutris](#lutris) client to install and run games from EA Desktop, or manually install the EA Desktop client using Wine/Proton.
+
+Using a [Bottles](#bottles) prefix is recommended for EA Desktop, as it allows you to manage a dedicated prefix for all your EA games.
 
 ### Proton
 
@@ -71,9 +93,9 @@ Bottles is a tool for managing Wine prefixes. It is similar to Lutris, but is mo
 
 Installing Bottles is only supported as a Flatpak. Any other version of bottles is not supported by the Ultramarine Linux Team.
 
-### Overwatch
+### Overwatch 2
 
-Overwatch is a popular team-based FPS game developed by Blizzard Entertainment. It is available on Windows, macOS, PlayStation 4, Xbox One, and Nintendo Switch. It is not officially supported on Linux, but it can be run using Wine/Proton.
+Overwatch 2 is a popular team-based FPS game developed by Blizzard Entertainment. It is available on Windows, macOS, PlayStation 4, Xbox One, and Nintendo Switch. It is not officially supported on Linux, but it can be run using Wine/Proton.
 
 Overwatch 2 can be run in a Bottles prefix, simply install the game using the Blizzard Battle.net app and run it from the Bottles launcher.
 
