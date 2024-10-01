@@ -1,0 +1,27 @@
+---
+title: Early Upgrades for Ultramarine 41
+description: "A temporary notice for the 39 to 40 upgrade path."
+---
+
+Like with Ultramarine 40, we're offering early upgrades from Ultramarine 40 to 41 ahead of image release.
+
+Fedora 41 is out, and Ultramarine 41's features are largely focused around the installation experience. Features outside of these are stable enough for most people to upgrade
+
+## Upgrading
+
+Open your Edition's app store, on Flagship, GNOME, and Xfce, this is Software, on Plasma this is Discover. The upgrade should be in the updates section, simply press upgrade, wait for the packages to download, and reboot from the app store.
+
+You may need to update your copy of Ultramarine 40 before the upgrade will become available.
+
+## Command line
+
+In case the above doesn't work, you can always upgrade through the command line, using `dnf system-upgrade`.
+
+Run the following and follow the prompts:
+
+```sh
+sudo dnf upgrade --refresh
+sudo dnf install dnf-plugin-system-upgrade
+sudo dnf system-upgrade download --releasever=41
+sudo dnf system-upgrade reboot
+```

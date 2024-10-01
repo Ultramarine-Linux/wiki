@@ -5,6 +5,8 @@ description: "Things to do after installing Ultramarine Linux."
 
 import Alert from "../../../../components/Docs/Alert.astro";
 
+# This page will likely go away with OOBE
+
 After installing Ultramarine Linux, There are a few things you should do to make the most out of your new system.
 
 ## Install NVIDIA Drivers
@@ -20,17 +22,17 @@ sudo dnf install akmod-nvidia # Install the NVIDIA kernel module.
 
 Then, reboot your system.
 
-
 <Alert type="info">
-  The automatic installation of extra drivers does **not** cover all hardware and may not work on some systems, and is only included
-  in the live environment. If you are having trouble with the drivers, you can install them manually
-  using the commands above. 
+  The automatic installation of extra drivers does **not** cover all hardware
+  and may not work on some systems, and is only included in the live
+  environment. If you are having trouble with the drivers, you can install them
+  manually using the commands above.
 </Alert>
 
 <Alert type="warning">
   You MUST wait until the process is finished before rebooting. Rebooting too
-  early might result in a broken driver installation! This may take upwards of 15
-  minutes! You can check the progress by running `sudo akmods`
+  early might result in a broken driver installation! This may take upwards of
+  15 minutes! You can check the progress by running `sudo akmods`
 </Alert>
 
 ### Use NVIDIA Graphics Card as the primary card on Optimus Laptops
