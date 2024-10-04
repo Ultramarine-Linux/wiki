@@ -54,7 +54,6 @@ export const SIDEBAR: Sidebar = {
     Contributing: [
       { text: "Overview", link: "en/contributing/contributorguide" },
       { text: "Development", link: "en/contributing/hacking" },
-      { text: "Mirroring", link: "en/contributing/mirroring" },
     ],
     Hardware: [
       { text: "System Requirements", link: "en/hardware/requirements" },
@@ -88,14 +87,17 @@ export const SIDEBAR: Sidebar = {
       { text: "Errata", link: "en/release/errata" },
       { text: "Differences with Fedora", link: "en/release/diff-fedora" },
     ],
-    // Chromebook: [
-    //   { text: "Getting Started", link: "en/chromebook/chromebook" },
-    //   { text: "Getting Chromebook Edition", link: "en/chromebook/getting" },
-    //   { text: "Installing to a Chromebook", link: "en/chromebook/preparing" },
-    //   { text: "Post-Install", link: "en/chromebook/postinstall" },
-    //   { text: "ARM Chromebooks (Beta)", link: "en/chromebook/armbeta" },
-    //   { text: "Terminology", link: "en/chromebook/terminology" },
-    // ],
+    Chromebook: [
+      { text: "Getting Started", link: "en/chromebook/chromebook" },
+      { text: "Getting Chromebook Edition", link: "en/chromebook/getting" },
+      { text: "Installing", link: "en/chromebook/installing" },
+      {
+        text: "Troubleshooting and FAQ",
+        link: "en/chromebook/faq-and-troubleshooting",
+      },
+      { text: "ARM Chromebooks (Beta)", link: "en/chromebook/armbeta" },
+      { text: "Terminology", link: "en/chromebook/terminology" },
+    ],
 
     Development: [
       {
