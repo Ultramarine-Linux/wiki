@@ -13,24 +13,34 @@ Ultramarine Linux supports the Raspberry Pi 3 and 4. Please see the [Anywhere pa
 
 The drive you use deeply affects the experience you will have on Ultramarine.
 
-### Raspberry Pi 3
+### Raspberry Pi 3 and Zero 2
 
-Raspberry Pi 3 supports only microSD cards. Your storage device must be 16GB or larger.
+These models support only microSD cards. Your storage device must be 16GB or larger.
 
 You should also look for a class 10 SDHC or SDXC microSD.
 
-### Raspberry Pi 4 and 400
+### Raspberry Pi 4, 400
 
 Raspberry Pi 4 supports microSD cards and USB storage. Your storage device must be 16GB or larger.
 
 The best experience will be with a SATA SSD connected over an adapter. A USB 3.0 flash drive will be slightly better to on-par with a nice microSD card. All of the options are good, it's up to your needs.
 
+If you opt to use a USB device, make sure it's USB 3, USB 2 will be unusable for most usecases.
+
+### Raspberry Pi 5
+
+Raspberry Pi 5 supports microSD cards, USB storage, and m.2 drives (SATA and NVMe.) Your storage device must be 16GB or larger.
+
+The best experience will be with a m.2 SSD, there's many HATs and boards that will allow you to do this, but when in doubt the [official HAT](https://www.raspberrypi.com/products/m2-hat-plus/) is a good choice. All of the options are good, it's up to your needs.
+
+If you opt to use a USB device, make sure it's USB 3, USB 2 will be unusable for most usecases.
+
 ## Flashing the Image
 
 <Alert type="info">
-  If you're using a Raspberry Pi 4, you can skip these steps and use Raspberry
-  Pi Imager! Either insert an empty microSD and press shfit at startup, or use
-  it on another device.
+  If you're using a Raspberry Pi 4 or 5, you can skip these steps and use
+  Raspberry Pi Imager! Either insert an empty microSD and press shfit at
+  startup, or use it on another device.
 </Alert>
 
 First, you will need to decompress it.

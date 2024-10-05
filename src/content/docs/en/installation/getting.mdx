@@ -7,7 +7,7 @@ import Alert from "../../../../components/Docs/Alert.astro";
 
 ## System Requirements
 
-If your computer could run Windows 7 well, chances are it'll run Ultramarine Linux. You should check the [System Requirements](/en/hardware/requirements) to make sure
+If your computer could run Windows 8.1, chances are it'll run Ultramarine Linux. You should check the [System Requirements](/en/hardware/requirements) to make sure
 
 ## Choosing Your Edition
 
@@ -18,11 +18,6 @@ Ultramarine Linux comes in 4 variants:
 - **GNOME Edition**: Elegant and Modern. Choose GNOME if you'd like a simple, unique experience.
 - **Xfce Edition**: Lightweight and Configurable. Choose Xfce if you'd like a lighter experience.
 
-<Alert type="info">
-  Pantheon Edition was dropped in UM40 due to a growing maintenance burden and
-  shrinking userbase.
-</Alert>
-
 Check the [System Requirements](/en/hardware/requirements) to make sure your hardware is supported.
 
 Ultramarine Linux is distributed in various formats available for download from [our website](https://ultramarine-linux.org).
@@ -32,16 +27,16 @@ Ultramarine Linux is distributed in various formats available for download from 
   sites other than our website or FOSSTorrents
 </Alert>
 
-### Atomic
+### Atomic Preview
 
-Ultramarine Linux also comes in Atomic versions. Ultramarine Atomic works similarly to Fedora Silverblue, CoreOS, and other OSTree-based operating systems. This variant is made for users who want a stable, immutable system that is easy to recover from.
-We see immutability as the future of Linux systems. Ideally, this will become the standard edition in the future.
+With Ultramarine 41 we are now providing a formal preview of our atomic variant. Ultramarine Atomic is based on Fedora bootc, but we intend to switch to our own base container (based on Fedora packages) in the future.
+Bootc, and atomicity generally still has some papercuts, but things move fast. We see this as the future of Linux systems. Ideally, this will become our standard edition in the future.
 
-These builds are currently in beta. If you are planning to test them, please join our [Discord](https://discord.gg/5fdPuxTg5Q) or [Matrix](https://matrix.to/#/#hub:fyralabs.com) community first and let us know. We'll be happy to receive feedback and assist you.
+These builds are currently in beta. If you are planning to test them, please join [one of our chats](/en/community/community) first and let us know. We'll be happy to receive feedback and assist you.
 
-[Try Ultramarine Atomic →](https://nightly.link/Ultramarine-Linux/ostree-config/workflows/ci-isos.yaml/main?preview)
+[Try Ultramarine Atomic →](https://ultramarine-linux.org/download/atomic-preview)
 
-(The "Home" and "Base" images are copies of [tauOS](https://tauos.co) - These **ARE NOT READY FOR DAILY USE!!**)
+We previously offered OSTree based builds of Ultramarine Atomic, these are no longer maintained.
 
 ### Raw Images and Raspberry Pi
 
@@ -55,9 +50,9 @@ These can be found in the [Raw Image](https://images.fyralabs.com/images/ultrama
   it on another device.
 </Alert>
 
-{/* ### Chromebook Edition */}
+### Chromebook Edition
 
-{/* Ultramarine is available for most x86 ChromeOS devices. See the [Chromebook Edition section](/en/chromebook/chromebook) for more information. */}
+Ultramarine is available for most x86 ChromeOS devices. See the [Chromebook Edition section](/en/chromebook/chromebook) for more information.
 
 {/* ### Kanopy */}
 
@@ -119,7 +114,7 @@ Most computers have a special key that can be used to select a boot device, or t
 </Alert>
 
 <Alert type="info">
-  If you're currently using Linux, you may be able to enter the BIOS by running
+  If you're currently using Linux, you may be able to enter setup by running
   `sudo systemctl reboot --firmware`
 </Alert>
 
