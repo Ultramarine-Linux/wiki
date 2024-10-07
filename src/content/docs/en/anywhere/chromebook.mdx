@@ -111,11 +111,11 @@ This guide assumes you are on x86 and have [Developer Mode](https://chromium.goo
 cgpt add -i <Submarine partition number> -t kernel -P 15 -T 1 -S 1 /dev/sdX
 ```
 
-6. Boot the image on the Chromebook.
+5. Boot the image on the Chromebook.
 
 You're now inside the Ultramarine install on your USB/SD card.
 
-7. `dd` the USB/SD card to the internal disk of the Chromebook. (Note, you do NOT need to resize the root filesystem, it should do this automatically upon first boot).
+6. `dd` the USB/SD card to the internal disk of the Chromebook. (Note, you do NOT need to resize the root filesystem, it should do this automatically upon first boot).
 
 If you need help with `dd` syntax, here are some pointers -
 
@@ -129,7 +129,7 @@ dd if=/dev/sda of=/dev/mmcblk0 bs=4M status=progress
 
 If you're using other devices, adjust accordingly. If your're using an SD card to install to eMMC, or a USB stick to install to UFS, both devices will show as 'mmcblkX' (mmcblk 0/1/2), and 'sdX' (sd a/b/c). Adjust the numbers/letters accordingly.
 
-8. Once the `dd` is done, verify the Submarine partition shows 'ChromeOS Kernel' as a flag on the internal disk. We recommend using GParted for this (dnf install gparted).
+7. Once the `dd` is done, verify the Submarine partition shows 'ChromeOS Kernel' as a flag on the internal disk. We recommend using GParted for this (dnf install gparted).
 
 ### ISO Images:
 
