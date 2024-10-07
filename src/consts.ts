@@ -54,6 +54,7 @@ export const SIDEBAR: Sidebar = {
     Contributing: [
       { text: "Overview", link: "en/contributing/contributorguide" },
       { text: "Development", link: "en/contributing/hacking" },
+      { text: "Mirroring", link: "en/contributing/mirroring" },
     ],
     Hardware: [
       { text: "System Requirements", link: "en/hardware/requirements" },
