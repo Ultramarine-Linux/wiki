@@ -115,7 +115,11 @@ cgpt add -i <Submarine partition number> -t kernel -P 15 -T 1 -S 1 /dev/sdX
 
 You're now inside the Ultramarine install on your USB/SD card. Slowness and lag is expected behavior and does not reflect how Ultramarine will run from internal storage.
 
-6. `dd` the USB/SD card to the internal disk of the Chromebook. (Note, you do NOT need to resize the root filesystem, it should do this automatically upon first boot).
+6. Use `dd` to copy the contents of the USB/SD card to the internal storage of the Chromebook.
+
+<Alert type="info">
+  You do NOT need to resize the root filesystem, it should do this automatically upon first boot. Depending on the size of your Chromebook's internal storage, you may need to move the Submarine partiiton to the end of the disk again, after it is copied to internal.
+</Alert>
 
 If you need help with `dd` syntax, here are some pointers -
 
