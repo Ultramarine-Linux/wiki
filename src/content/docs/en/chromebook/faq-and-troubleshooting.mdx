@@ -18,7 +18,13 @@ Assuming 'Boot to Internal Disk', or pressing <kbd>Ctrl</kbd>+<kbd>D</kbd> does 
 
 ### Keyboard is not properly mapped
 
-Try re-installing the cros-keyboard-map package. Simply run ` sudo dnf install cros-keyboard-remap`. If this does not work, try running WeirdTreeThing's [keyd script](https://github.com/WeirdTreeThing/cros-keyboard-map).
+Try re-installing the cros-keyboard-map package. Simply run ` sudo dnf install cros-keyboard-remap`. If this does not work, try running this command:
+
+```
+sudo systemctl enable cros-keyboard-map
+```
+
+If this does not work, try running WeirdTreeThing's [keyd script](https://github.com/WeirdTreeThing/cros-keyboard-map).
 
 ### Chromebook Audio Doesn't Work
 
