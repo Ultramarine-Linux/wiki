@@ -19,28 +19,30 @@ Ultramarine Linux's primary goal is to create a instantly useable experience whi
 
 ### Ultramarine is Pragmatic.
 
-Where Fedora tries to adhere to ideology (that’s perfectly fine), by shipping an (almost) entirely free system, Ultramarine works off the model of least resistance. That means we try to make it easy for the user, even if we have to ship some proprietary drivers and codecs that Fedora wouldn’t be comfy with out-of-box.
+Unlike many distributions, trying to adhere to ideology (that’s perfectly fine), by shipping an (almost) entirely free system, Ultramarine works off the model of least resistance. That means we try to make it easy for the user, even if we have to ship some proprietary drivers and codecs that some distros wouldn’t be comfy with out-of-box.
 
 ### Ultramarine is Progressive.
 
 We believe that recent innovations in the Linux space serve to greatly improve the user and developer experience. Technologies like Flatpak and xdg-portals allow developers to provide great experiences to our users more consistently. Work done upstream improves the experience for our users, and work done in the Ultramarine ecosystem; like accent colours, and Chromebook support, improves the larger Linux ecosystem. It's a win-win.
 
-### Ultramarine is User-friendly.
+### Ultramarine is Friendly.
 
 While it may seem trivial to more advanced users to tweak a few settings and install some packages from 3rd party repositories, it may take people who are new to Linux (or even just new to Fedora) hours to figure out what packages they need, and where to find them. Ultramarine allows users new and old to get up and running quickly.
 
-### Ultramarine is Accesible
+### Ultramarine is Accesible.
+
+We believe that software should meet you where you are. Ultramarine acomplishes this by making the experience better, localizing our software, and running on the hardware you already have.
 
 ## Planned Features
 
-- Welcome app for user onboarding with quick access to common actions
 - System configuration application similar to YaST
+- Tooling to make bootstrapping development environments easier
 
 ## FAQ
 
 ### What does the migration script do?
 
-The migration scripts install RPMFusion, Terra repository, and our signing keys, then installs the bare minimum of an Ultramarine Linux installation on top of an existing Fedora installation (Swapping Fedora release packages with the Ultramarine ones).
+The migration scripts install RPMFusion, Terra repository, and our signing keys, then installs the bare minimum of an Ultramarine Linux installation.
 
 The script only installs the bare minimum required for Ultramarine Linux to work because we don't want to add additional bloat to your current system.
 
@@ -51,13 +53,7 @@ After you're migrated, you'll get the latest and greatest Ultramarine features a
 Ultramarine Linux was created out of frustration with the legal limits of Fedora. As Fedora (and Red Hat) is an American entity, there are legal restrictions on what software can be
 packaged in the distribution due to the US patent system.
 
-Ultramarine, on the other hand, is based in Thailand and is not subject to any of the copyright restrictions on what software can be packaged.
-
-The Ultramarine team aims to make Fedora a little more user-friendly by allowing users to install or package any software they want as long as someone maintains it in Flathub, RPMFusion, or Terra.
-
-In addition to this, we provide various UX improvements around the system, and in the future, custom apps.
-
-Ultramarine highly encourages users to contribute to the project, check out the [Contributor Guide](/en/contributing/contributorguide) to get started!
+Ultramarine, on the other hand, is based in Thailand and is not subject to any of the patent restrictions on what software can be packaged.
 
 ### Is Ultramarine simply just Fedora with extra desktop environments?
 
@@ -71,6 +67,24 @@ Cutefish is no longer maintained upstream. We decided to stop supporting Cutefis
 
 We do not intend to include revivals of Cutefish as they tend to be very short-lived.
 
+### What happened to Pantheon?
+
+We dropped our Pantheon Edition in Ultramarine 40. Downloads had been steadily declining for some time and Pantheon simply wouldn't work in 40, we decided to drop it for these reasons.
+
+### Can you add a (insert desktop here) edition?
+
+Put simply, maybe. We require any new desktop being added to Ultramarine to fit a small set of requirements:
+
+- Be actively maintained (Release in the last year, plans for another release, reccent commits)
+- Be capable of displaying libhelium apps (The installer and out-of-box experience are both Helium apps)
+- A working Wayland session **OR** a reasonable plan to implement one
+
+Ideally, any new edition will also have the following:
+
+- Accessibility toolings
+- A native app store with support for distribution upgrades
+- Support for the accent colours and colour schemes setting portals
+
 ### Does Ultramarine track or collect my data?
 
 As of now, the only data we collect is a count of how many times a package has been downloaded from Terra or the Ultramarine repository using [DNF Counting](https://docs.fedoraproject.org/en-US/infra/sysadmin_guide/dnf-counting/). This information is not tied to you or your computer.
@@ -79,22 +93,16 @@ Fyra Labs (the company behind Ultramarine) does not collect any data that can be
 
 ### Is Ultramarine semi-rolling?
 
-**No**. Ultramarine and Fedora are not semi-rolling or rolling. Instead, they use a stable release scheme.
-Updates with breaking changes are rolled out only for every stable release version. Minor updates / point updates are guaranteed to be backwards-compatible, i.e. system components in Ultramarine are updated if and only if they do not break compatibility.
+No. Ultramarine and Fedora are not semi-rolling or rolling. Instead, they use a stable release scheme.
+Updates with breaking changes are rolled out for major releases. Minor updates / point updates are backwards-compatible. Put simply, system components in Ultramarine are updated if and only if they do not break compatibility.
 
-However, Ultramarine Linux includes Terra, RPM Fusion and Flathub.
-
-- Terra is an RPM repository provided by Fyra Labs, and it mainly uses a rolling release scheme.
-- RPM Fusion is another (very popular) third party repository for Fedora. It uses a stable release scheme.
-- Flathub is a cross-distro Flatpak repository. Updates in this repository have nothing to do with Fedora/Ultramarine's release cycles. Strictly speaking, packages in Flathub are rolling because they are updated once upstream releases a version.
+However, Ultramarine Linux includes the Terra and Flathub repositories, these are the only things that could potentially be considered rolling.
 
 ### If some packages are updated mid-release, doesn't that mean Ultramarine is unstable/insecure compared to, e.g. Debian?
 
-**No**. That's an incorrect approach to view if a distribution is secure/stable or not.
+No. Packages in Ultramarine are updated mid-release, but those updates **only include non-breaking changes**. Your computer has virtually a near-zero chance of breaking mid-release due to an update.
 
-- Packages in Fedora/Ultramarine are updated mid-release, but those updates **only include non-breaking changes**. Your computer has virtually a near-zero chance of breaking mid-release due to an update.
-- Undeniably, Ultramarine and Fedora has much more frequent updates compared to distros like Debian, and to some extent, they might be more unstable. However, Fedora/Ultramarine's release cycle makes it so that the operating system is still stable enough for normal use. Millions of Fedora devices across the world run fine without breaking, which demonstrate Fedora's high stability. Debian's release cycle is also arguably too slow and can cause more hassles than necessary.
-- Some distros choose to take stable release cycles to an extreme. These distros are designed for servers that will stay up for years by delaying updates for months or even a few years. PC users might miss out a lot by using these distros, including new features, bug fixes, security patches, etc. Without the proper knowledge and management, these systems could be even more insecure than Fedora/Ultramarine.
+Some distros choose to take stable release cycles to an extreme. These distros are designed for servers that will stay up for years by delaying updates for months or even a few years. PC users might miss out a lot by using these distros, including new features, bug fixes, security patches, etc. Without the proper knowledge and management, these systems could be even more insecure than Ultramarine.
 
 ### Why Ultramarine (instead of other distros)
 
@@ -146,7 +154,7 @@ However, Ultramarine Linux includes Terra, RPM Fusion and Flathub.
     - We advise people to contact support to check if the upgrade could actually break the system.
     - Our support team can help you solve any potential issues while performing a system upgrade.
     - And most importantly, you could just choose not to upgrade at all! The choice is yours.
-  - Millions of IoT devices use Linux. If something breaks, the entire Internet collapses. If the Internet trusts Linux's stability, you should too.
+  - Millions of iOT devices use Linux. If something breaks, the entire Internet collapses. The internet trusts Linux's stability, you should too.
 - Customizations and Usability
   - There are multiple desktop environments for you to choose from. Some of them are lightweight, some of them are fancy.
   - Ultramarine provides many ways over how you can customize your entire desktop experience. You have full control over your computer.
@@ -159,10 +167,15 @@ However, Ultramarine Linux includes Terra, RPM Fusion and Flathub.
 
 ## Core Team
 
-- 🇹🇭 Pornpipat "Cappy" Popum - Chief Information Officer, Project Lead, Release Engineer
-- 🇩🇪 Trobonox - Documentation, Web Developer, UI/UX Designer
-- 🇮🇩 Mo - Low-level developer
-- 🇵🇱 Toru Ishikawa - Infrastructure support
-- 🇭🇰 Mado - VP of DevOps, Package Maintainer
+- 🇹🇭 [Pornpipat "Cappy" Popum](https://cappuchino.xyz/) - Project Lead, Release Engineer, Developer
+- 🇭🇰 [Mado](https://github.com/madonuko) - Package Maintainer, Release Engineer, Developer
+- 🇩🇪 [Trobonox]() - Documentation, Web Developer
+- 🇺🇸 [Lea Gray](https://ultraviolet.sh) - Developer, Release Engineer, Sysadmin, Package Maintainer
+- 🇺🇸 [Jaiden Riordan](https://jaiden.sh) - Release Engineer, Documentation, Public Relations
+- 🇺🇸 [Owen Zimmerman](https://owenzimmerman.com) - Beta Programs, Release Engineer, Documentation, Package Maintainer, Public Relations
+- 🐟 [June Fish](https://june.fish) - Developer, Release Engineer
+- 🇮🇩 Mo - Low-level Developer
+- 🇵🇱 Toru Ishikawa - Infrastructure Support
+- 🇧🇷 Paulo "Lains" Galardi - UI/UX Design
 
-[Meet the team →](https://fyralabs.com/about/#Meet:~:text=benefit%20of%20all.-,Meet%20the%20Team)
+[Meet the team →](https://fyralabs.com/about/#Meet:~:text=Meet%20the%20Team)
