@@ -1,0 +1,47 @@
+---
+title: Early Upgrades for Ultramarine 41
+description: "A temporary notice for the 40 to 41 upgrade path."
+---
+
+import Alert from "../../../../components/Docs/Alert.astro";
+
+We're proud to announce that upgrades to Ultramarine 41 are ready right now in your edition's app store!
+
+<Alert type="danger">
+  In Ultramarine 40, the `dnf` command uses dnf5, which may break certain
+  release upgrades. Upgrade graphically, or use `dnf4`.
+</Alert>
+
+<Alert type="info">
+  Raspberry Pi users should wait to upgrade, we will have more information for
+  you soon.
+</Alert>
+
+Ultramarine 41 comes with the usual desktop and under-the-hood changes for our existing users. In addition, Flagship and Xfce Edition are switching to Slick greeter from LightDM-GTK, this will happen automatically when you upgrade.
+
+This release also comes with umcli, more information to come!
+
+We know this seems lackluster, but a lot of our changes are for new installs and hardware enablement this time around, so stay tuned!
+
+## Upgrading
+
+Unlike previous releases, everything is now handled in your edition's app store. If you're on Flagship, GNOME, or Xfce, it's called Software. On Plasma, it's called Discover.
+
+You may need to update your copy of Ultramarine 40 before the upgrade will become available.
+
+## Command Line
+
+In case the above doesn't work, you can always upgrade through the command line, using `dnf4 system-upgrade`.
+
+Run the following and follow the prompts:
+
+```sh
+sudo dnf4 upgrade --refresh
+sudo dnf4 install dnf-plugin-system-upgrade
+sudo dnf4 system-upgrade download --releasever=41
+sudo dnf4 system-upgrade reboot
+```
+
+## Getting Support
+
+If you need any help please reach out in [one of our chats.](/en/community/community/)
