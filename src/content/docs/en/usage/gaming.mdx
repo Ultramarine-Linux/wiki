@@ -46,6 +46,14 @@ EA Desktop (formerly known as Origin) does not have a native Linux client, but y
 
 Using a [Bottles](#bottles) prefix is recommended for EA Desktop, as it allows you to manage a dedicated prefix for all your EA games.
 
+## Ubisoft Connect/Uplay
+
+If you still own games on Ubisoft Connect (formerly known as Uplay), you may be able to run some of them on Linux using Wine/Proton. However, some games may not work due to Ubisoft's anti-cheat software.
+
+See the [Lutris](#lutris) or [Bottles](#bottles) sections for more information on running Ubisoft Connect games on Linux.
+
+Simply download the Ubisoft Connect client from the official website, and try running it using Wine/Proton.
+
 ### Proton
 
 If your game does not support Linux, or the Linux version happens to be inferior to the Windows version, you can use Steam's Proton compatibility layer to run Windows games on Linux. Proton is based on Wine, and it is developed by Valve.
@@ -58,14 +66,10 @@ There have been recent reports of slow download speeds on Steam due to issues wi
 
 If you are experiencing slow download speeds and aren't sure why, you can try disabling HTTP/2 in Steam by adding the following lines to the `~/.steam/steam/steam_dev.cfg` file and restarting steam:
 
-```
+```plaintext
 @nClientDownloadEnableHTTP2PlatformLinux 0
 @fDownloadRatelmprovement ToAddAnother Connection 1.0
 ```
-
-### Apex Legends
-
-Apex Legends can run on Linux using Steam's Proton compatibility layer, plus the Easy Anti-Cheat runtime. The game has Linux support for anti-cheat, but the game binaries are Windows only.
 
 ## Heroic Games Launcher
 
@@ -74,10 +78,6 @@ The Heroic Games Launcher is a native Linux client for the Epic Games Store and 
 ## Lutris
 
 Lutris is a game launcher for Linux. It supports installing and managing your game library from various sources, including Steam, GOG, EA Origin, and its own community-provided installers. It also supports running Windows-only games using Wine/Proton.
-
-### League of Legends
-
-League of Legends is a popular MOBA game developed by Riot Games. It is available on Windows and macOS. It will not run on Linux, as it uses a kernel-level anti-cheat software that is not compatible with Wine/Proton.
 
 ### EA Desktop
 
@@ -93,14 +93,39 @@ Bottles is a tool for managing Wine prefixes. It is similar to Lutris, but is mo
 
 Installing Bottles is only supported as a Flatpak. Any other version of bottles is not supported by the Ultramarine Linux Team.
 
-### Overwatch 2
+## Known Incompatible Games
 
-Overwatch 2 is a popular team-based FPS game developed by Blizzard Entertainment. It is available on Windows, macOS, PlayStation 4, Xbox One, and Nintendo Switch. It is not officially supported on Linux, but it can be run using Wine/Proton.
+These games are known to not work on Ultramarine due to various reasons, such as anti-cheat software, DRM, or API incompatibilities:
 
-Overwatch 2 can be run in a Bottles prefix, simply install the game using the Blizzard Battle.net app and run it from the Bottles launcher.
+| Game                                                | Anti-Cheat implementation | Reason (if applicable)          | Notes                                          |
+| --------------------------------------------------- | ------------------------- | ------------------------------- | ---------------------------------------------- |
+| _Apex Legends_                                      | Easy Anti-Cheat           | -                               | Support for Proton recently removed            |
+| _Fortnite_                                          | Easy Anti-Cheat, BattlEye | -                               | Officially unsupported according to Epic Games |
+| _Honkai Impact 3rd_                                 | Tencent Anti-Cheat Expert | -                               | [^1]                                           |
+| _Honkai: Star Rail_                                 | HoYoProtect               | -                               | [^1]                                           |
+| _Infinity Nikki_                                    | Tencent Anti-Cheat Expert | -                               | [^1] [^2]                                      |
+| _Strinova_                                          | Tencent Anti-Cheat Expert | -                               | [^1] [^2]                                      |
+| _Phantasy Star Online 2: New Genesis_ (Japan)       | Easy Anti-Cheat           | -                               | [^2]                                           |
+| _Tom Clancy's Rainbow Six Siege_                    | BattlEye, MouseTrap       | -                               | -                                              |
+| _The Crew 2_                                        | Easy Anti-Cheat           | -                               | -                                              |
+| _Watch_Dogs_                                        | Easy Anti-Cheat           | -                               | Single-Player only                             |
+| _Watch_Dogs 2_                                      | Easy Anti-Cheat           | -                               | Single-Player only                             |
+| _Watch_Dogs: Legion_                                | Easy Anti-Cheat           | -                               | Single-Player only                             |
+| _Valorant_                                          | Vanguard                  | -                               | -                                              |
+| _League of Legends_                                 | Vanguard                  | -                               | -                                              |
+| _Battlefield V_                                     | EA Anti-Cheat             | -                               | -                                              |
+| _Battlefield 2042_                                  | EA Anti-Cheat             | -                               | -                                              |
+| _Need for Speed Unbound_                            | EA Anti-Cheat             | -                               | -                                              |
+| _Command & Conquer Red Alert 3 & Uprising_          | -                         | SAGE 2 Path resolver is broken  | [^3]                                           |
+| _Command & Conquer 3: Tiberium Wars & Kane's Wrath_ | -                         | SAGE 2 Path resolver is broken  | [^3]                                           |
+| _Command & Conquer_ games up to _Yuri's Revenge_    | -                         | DirectDraw compatibility issues | [^4]                                           |
 
-Overwatch 2 is now also on Steam, and can be run using Proton.
+For more information on other games, you can refer to the [ProtonDB](https://www.protondb.com) website for compatibility reports.
 
-### Valorant
+[^1]: There may be workarounds for these games, but they are not officially supported and you may risk getting banned for its use. The recommended way to play these games is to play on a mobile device or a Windows machine.
 
-Valorant is a popular FPS game developed by Riot Games. It is available on Windows. It will not run on Linux, as it uses a kernel-level anti-cheat software that is not compatible with Wine/Proton.
+[^2]: These games have a known whitelist for the Steam Deck specifically, but does not guarantee that it will work on other Linux systems.
+
+[^3]: You may run this game if you install the game in a path that does not contain periods (e.g. `~/Games/` instead of `~/.local/share/Steam/`).
+
+[^4]: You may need to install DDrawCompat or CnC-DDraw to run this game properly, as it has compatibility issues even with Windows systems. You may also use CnCNet to apply the aforementioned fixes and enable multiplayer.
