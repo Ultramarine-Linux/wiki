@@ -3,6 +3,8 @@ title: "Welcome"
 description: "This wiki is meant to be the extended documentation for both end users and developers, so it is separated in those two categories."
 ---
 
+import Alert from "../../../components/Docs/Alert.astro";
+
 Welcome to the Ultramarine Wiki! This wiki is designed to help users get settled into Ultramarine Linux.
 
 Developer and Package Maintainer Documentation has moved to [Fyra Developer](https://developer.fyralabs.com). If you want to get started with contributing, head to the [Contributing Section](/en/contributing/contributorguide).
@@ -23,7 +25,7 @@ Where Fedora tries to adhere to ideology (that’s perfectly fine), by shipping 
 
 ### Ultramarine is Innovative.
 
-We believe that recent innovations in the Linux space serve to greatly improve the user and developer experience. Technologies like Flatpak and xdg-portals allow developers to provide great experiences to our users more consistently. Work done upstream improves the experience for our users, and work done in the Ultramarine ecosystem; like accent colours, and Chromebook support, improves the larger Linux ecosystem. It's a win-win.
+We believe that recent innovations in the Linux space serve to greatly improve the user and developer experience. Technologies like Flatpak and XDG Portals allow developers to provide great experiences to our users more consistently. Work done upstream improves the experience for our users, and work done in the Ultramarine ecosystem; like accent colours, and Chromebook support, improves the larger Linux ecosystem. It's a win-win.
 
 ### Ultramarine is User-friendly.
 
@@ -93,6 +95,29 @@ However, Ultramarine Linux includes Terra, RPM Fusion and Flathub.
 - Packages in Fedora/Ultramarine are updated mid-release, but those updates **only include non-breaking changes**. Your computer has virtually a near-zero chance of breaking mid-release due to an update.
 - Undeniably, Ultramarine and Fedora has much more frequent updates compared to distros like Debian, and to some extent, they might be more unstable. However, Fedora/Ultramarine's release cycle makes it so that the operating system is still stable enough for normal use. Millions of Fedora devices across the world run fine without breaking, which demonstrate Fedora's high stability. Debian's release cycle is also arguably too slow and can cause more hassles than necessary.
 - Some distros choose to take stable release cycles to an extreme. These distros are designed for servers that will stay up for years by delaying updates for months or even a few years. PC users might miss out a lot by using these distros, including new features, bug fixes, security patches, etc. Without the proper knowledge and management, these systems could be even more insecure than Fedora/Ultramarine.
+
+### Why Does Ultramarine Require Me to Reboot to Apply Updates?
+
+Ultramarine does not actually require you to reboot to apply updates. You may actually apply most system updates without rebooting by simply running:
+
+```bash
+sudo dnf upgrade
+```
+
+However, some updates may require a reboot to take effect. These updates are usually critical path updates that may affect major
+system components, such as the kernel, the standard library, the graphical shell, or essential system services.
+
+By default, Ultramarine will automatically update using *PackageKit*, which will apply updates using the *Offline Updates* feature,
+which requires a reboot to apply updates. Ultramarine may prompt you to reboot your system after applying updates to ensure that all updates are applied correctly,
+but you can choose to reboot at any later time.
+
+<Alert type="info">
+
+It is still recommended to reboot your system after applying updates to ensure that all updates are applied correctly,
+especially if you have not rebooted your system in a while.
+
+</Alert>
+
 
 ### Why Ultramarine (instead of other distros)
 
