@@ -10,4 +10,28 @@ import Alert from "../../../../components/Docs/Alert.astro";
   page is subject to change.
 </Alert>
 
-Would use [StardustXR](https://stardustxr.org/). Our packaging effort can be found [here.](https://github.com/Ultramarine-Linux/stardustxr)
+We will use [Stardust XR](https://stardustxr.org/). 
+
+All core Stardust XR components are packaged in Terra:
+
+- stardust-xr-armillary
+- stardust-xr-atmosphere
+- stardust-xr-black-hole
+- stardust-xr-comet
+- stardust-xr-flatland
+- stardust-xr-gravity
+- stardust-xr-magnetar
+- stardust-xr-non-spatial-input
+- stardust-xr-protostar
+- stardust-xr-server
+- stardust-xr-telescope
+
+To install all of these packages:
+
+```
+dnf group install stardust-xr
+```
+
+Then, run `telescope` in your terminal. 
+
+From here, check out [this guide](https://stardustxr.org/docs/dive-deeper/brief-overview).
