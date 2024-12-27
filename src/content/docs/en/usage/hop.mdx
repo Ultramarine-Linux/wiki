@@ -1,0 +1,43 @@
+---
+title: Switching Desktop Environments / Edition
+description: "Add/remove the DE/edition with Ultramarine Hop."
+---
+
+import Alert from "../../../../components/Docs/Alert.astro";
+
+# Ultramarine Hop
+
+Ultramarine Hop (previously codenamed `umswitch`) is a graphical application
+that enables users of Ultramarine to switch between editions or install
+multiple desktop environments on their system.
+
+The source code is available on [GitHub].
+
+## Installation
+
+The package name is `ultramarine-hop` but it is also aliased as `hop`. This
+package is available directly in Ultramarine repositories.
+
+```sh
+sudo dnf install hop
+```
+
+## Running the program
+
+1. Open the launcher (usually by pressing `winkey`/`Meta`/`Super`).
+2. Type `hop`. `Ultramarine Hop` should pop up as the first option.
+3. Select the option. A dialog asking for privileges will pop out. Type in your
+password to continue.
+4. Select the corresponding action you would like to perform.
+    - if you would like to add a new desktop environment to your system, click
+      the first option. This will download and install an extra desktop
+      environment onto your system.
+    - if you would like to remove an existing desktop environment on your
+      system, click the middle option. This will remove the selected desktop
+      environment from your system. You may only select this option if you have
+      more than 2 desktop environments installed, otherwise this option would be
+      greyed out.
+    - if you would like to switch to another edition, select the last option.
+5. Select the corresponding desktop environment / edition.
+
+[GitHub]: https://github.com/Ultramarine-Linux/hop
