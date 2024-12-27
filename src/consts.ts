@@ -82,6 +82,7 @@ export const SIDEBAR: Sidebar = {
       { text: "Gaming on Ultramarine", link: "en/usage/gaming" },
       { text: "Localization", link: "en/usage/l10n" },
       { text: "Keyboard Configuration", link: "en/usage/keyboard-cfg" },
+      { text: "Switching Desktop Environments / Edition", link: "en/usage/hop" },
     ],
 
     "Release Notes": [
