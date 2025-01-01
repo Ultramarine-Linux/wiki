@@ -34,38 +34,44 @@ export const SIDEBAR: Sidebar = {
       { text: "Join the Community", link: "en/community/community" },
       { text: "Code of Conduct", link: "en/community/codeofconduct" },
     ],
-    Installation: [
-      { text: "Getting Ultramarine", link: "en/installation/getting" },
-      { text: "Installation", link: "en/installation/installation" },
+    Setup: [
+      { text: "System Requirements", link: "en/setup/requirements" },
+      { text: "Getting Ultramarine", link: "en/setup/getting" },
+      { text: "BIOS Keys", link: "en/setup/bioskeys" },
+      { text: "Installation", link: "en/setup/installation" },
       // {
       // text: "Installation with Readymade",
       //link: "en/installation/readymade",
       //},
-      {
-        text: "Installation on Raspberry Pi",
-        link: "en/installation/rpi",
-      },
-      { text: "Post-Installation", link: "en/installation/postinstall" },
+      { text: "Post-Installation", link: "en/setup/postinstall" },
       {
         text: "Advanced Post-Install Steps",
-        link: "en/installation/post-advanced",
+        link: "en/setup/post-advanced",
       },
+      {
+        text: "Broadcom and Realtek Networking",
+        link: "en/setup/broadcom-realtek",
+      },
+      { text: "NVIDIA", link: "en/setup/nvidia" },
     ],
     Contributing: [
       { text: "Overview", link: "en/contributing/contributorguide" },
       { text: "Development", link: "en/contributing/hacking" },
       { text: "Mirroring", link: "en/contributing/mirroring" },
     ],
-    Hardware: [
-      { text: "System Requirements", link: "en/hardware/requirements" },
-      { text: "Ultramarine Anywhere", link: "en/hardware/anywhere" },
-      { text: "NVIDIA", link: "en/hardware/nvidia" },
-      { text: "Microsoft Surface", link: "en/hardware/surface" },
-      {
-        text: "Broadcom and Realtek Networking",
-        link: "en/hardware/broadcom-realtek",
-      },
-      { text: "BIOS Keys", link: "en/hardware/bioskeys" },
+    //Hardware: [
+    //{ text: "Ultramarine Anywhere", link: "en/hardware/anywhere" },
+    //{ text: "Microsoft Surface", link: "en/hardware/surface" },
+    //{
+    //  text: "Broadcom and Realtek Networking",
+    //  link: "en/hardware/broadcom-realtek",
+    //},
+    //],
+    Anywhere: [
+      { text: "Ultramarine Anywhere", link: "en/anywhere/anywhere" },
+      { text: "Microsoft Surface", link: "en/anywhere/surface" },
+      { text: "Raspberry Pi", link: "en/anywhere/rpi" },
+      //{ text: "WSL", link: "en/anywhere/wsl" },
     ],
     "Linux Concepts": [
       { text: "What is Linux?", link: "en/linux/overview" },
@@ -82,7 +88,10 @@ export const SIDEBAR: Sidebar = {
       { text: "Gaming on Ultramarine", link: "en/usage/gaming" },
       { text: "Localization", link: "en/usage/l10n" },
       { text: "Keyboard Configuration", link: "en/usage/keyboard-cfg" },
-      { text: "Switching Desktop Environments / Edition", link: "en/usage/hop" },
+      {
+        text: "Switching Desktop Environments / Edition",
+        link: "en/usage/hop",
+      },
     ],
 
     "Release Notes": [
@@ -97,15 +106,6 @@ export const SIDEBAR: Sidebar = {
     //   { text: "ARM Chromebooks (Beta)", link: "en/chromebook/armbeta" },
     //   { text: "Terminology", link: "en/chromebook/terminology" },
     // ],
-
-    Development: [
-      {
-        text: "Developing for Ultramarine",
-        link: "en/development/developing-for-ultramarine",
-      },
-      { text: "Using Andaman", link: "en/development/anda" },
-      { text: "UX Guidelines", link: "en/development/ux-guide" },
-    ],
   },
   de: {
     Introduction: [{ text: "Welcome", link: "de/welcome" }],
@@ -120,17 +120,6 @@ export const SIDEBAR: Sidebar = {
       { text: "Permissions", link: "de/linux/permissions" },
       { text: "Software and package management", link: "de/linux/software" },
       { text: "The Shell", link: "de/linux/shell" },
-    ],
-    Development: [
-      {
-        text: "Developing for Ultramarine",
-        link: "de/development/developing-for-ultramarine",
-      },
-      { text: "Using Andaman", link: "de/development/anda" },
-      { text: "UX Guidelines", link: "de/development/ux-guide" },
-    ],
-    "Release Notes": [
-      { text: "Developing for Ultramarine", link: "de/release/errata" },
     ],
   },
   zh_hant: {
