@@ -7,14 +7,16 @@ import Alert from "../../../../components/Docs/Alert.astro";
 
 Surfaces require a special kernel to work properly under Ultramarine.
 
-These are currently provided by the Surface Linux team, start by adding their repository
+These are currently provided by the Surface Linux team, for more information (including camera and other hardware support, package info, etc.) please visit their [wiki](https://github.com/linux-surface/linux-surface/wiki).
+
+Start by adding their repository:
 
 ```shell
 sudo dnf config-manager \
     --add-repo=https://pkg.surfacelinux.com/fedora/linux-surface.repo
 ```
 
-Then, install the kernel and it's dependencies
+Then, install the kernel and it's dependencies:
 
 ```shell
 sudo dnf install --allowerasing kernel-surface iptsd libwacom-surface

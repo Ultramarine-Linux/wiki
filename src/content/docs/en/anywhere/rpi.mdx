@@ -5,66 +5,98 @@ description: "Raspberry Pi in the Ultramarine Anywhere Initiative"
 
 import Alert from "../../../../components/Docs/Alert.astro";
 
+### Ultramarine Linux currently supports the Raspberry Pi 3 and 4/400. For information on other Pis, see [below](/en/anywhere/rpi#raspberry-pi-5).
+
+## Selecting a Drive
+
+The drive you use deeply affects the experience you will have on Ultramarine.
+
+### Raspberry Pi 3 Series
+
+Raspberry Pi 3 Series support only microSD cards. Your storage device must be 16GB or larger.
+
+You should also look for a class 10 SDHC or SDXC microSD.
+
+### Raspberry Pi 4 Series
+
+Raspberry Pi 4 Series support microSD cards and USB storage. Your storage device must be 16GB or larger.
+
+The best experience will be with an SSD connected over an adapter. A USB 3.0 flash drive will be on-par to slightly better then a microSD card. All of the options are good, it's up to your needs.
+
+## Flashing the Image
+
+If you're using a Raspberry Pi 4/400, you can skip these steps and use
+[Raspberry Pi Imager instead](/en/anywhere/rpi#raspberry-pi-imager).
+First, you will need to decompress it.
+
+- On Linux, run `unzstd *FILENAME.img.zst*`, you may need to install the `zstd` package
+- On Windows 11 or ChromeOS, zstd is natively supported. Decompress like you would a Zip file.
+- On Windows 10, use 7zip or WinRaR
+- On macOS, install `zstd` from [Homebrew](https://brew.sh/) (`brew install zstd`), then `unzstd *FILENAME.img.zst*`.
+
+Grab a USB stick or SD Card! Use a flasher program to flash Ultramarine to your storage device. [balenaEtcher](https://www.balena.io/etcher/) is an easy cross-platform choice.
+
+![](/assets/balenaetcher.png)
+
+Simply select the .img file, the device you're using, and click flash.
+
+You can also use the Disks application on Flagship, Xfce, and GNOME editions.
+
+## Raspberry Pi Imager
+
+- Install [Raspberry Pi Imager](https://www.raspberrypi.com/software/). Note that this should be packaged in your distibution, and it also available on other opperating systems, and the Raspberry Pi firmware. We also do not reccomend using the flatpak, since it can have permissions trouble when flashing the disk.
+- Open Raspberry Pi Imager, select 'Choose Device,' then select 'Raspberry Pi 4.'
+- Select 'Choose OS' then scroll down to 'Other General-Purpose OS,' select 'Ultramarine Linux,' then select your edition of choice.
+- Select 'Choose Storage,' and select your storage device you would like to flash to. Double check you have the correct device selected, as this is a destructive opperation.
+- Select 'Next,' then select 'Yes.'
+- Once the flash and validation is complete, remove your disk, and insert it into your Raspberry Pi 4.
+
+![](/assets/rpi-imager.png)
+
+Your Imager app should look something like this when ready to flash.
+
+## First Boot
+
+On first boot, the root file system will automatically be expanded, and you’ll be prompted with a user creation screen. Create your user and you’ll be ready to go!
+
+That’s it! You’re ready to enjoy Ultramarine on your Raspberry Pi! We’re working hard on making the experience better so stay tuned!
+
 Raspberry Pi is a very popular series of SBCs. They are cheap, easy to get, run Linux well, and have a large ecosystem of expansion cards (Hats and Bonnets) and accessories.
 
 Fedora has upstream support for the Pi 4, 400, and 3. Ultramarine Anywhere intends to extend support to the Zero 2 and 5.
 
-## Raspberry Pi 5
+## Packages
 
-<Alert type="info">
-  This device type is still in the **Planning Phase**. All information on this
-  page is subject to change.
-</Alert>
+We have Raspberry Pi packages packages in [Terra](https://terra.fyralabs.com/). We are working on packaging as many as we can, currently included packages:
 
-The Raspberry Pi 5 is not currently supported in Fedora. We intend to package the official Raspberry Pi kernel (which should also provide a better experience on the other Pi models.)
+- [rpi-utils](https://github.com/raspberrypi/utils), a collection of miscellaneous tools for Raspberry Pis. You may install these individually, or all together as `rpi-urils`
+- [rpi-update](https://github.com/raspberrypi/rpi-update), a script to update Raspierry Pi firmware.
+- [Picotool](https://github.com/raspberrypi/picotool), a tool for working with RP2040/RP2350 devices.
 
-## Raspberry Pi 4 and 400
+To install any of these:
 
-The Raspberry Pi 4 and 400 have had support in Ultramarine Linux since UM39, and desktop images since UM40. We use the Fedora kernels and boot proccess.
+```
+dnf install PACKAGENAME
+```
 
 ### Notes
 
 - RPi4B has a 1GB and 2GB model, we suggest against running a desktop environment on these (Xfce may be alright.)
 - RPi400 does not have support for WiFi in Ultramarine, this is an upstream issue.
 - The Pi 4 series has native USB boot support. Your experience may be better with a fast USB Drive or SSD connected through an adapter. See [this article](https://www.raspberrypi.com/documentation/computers/raspberry-pi.html#usb-mass-storage-boot) for more info.
+- RPi3B has only 1GB of RAM, and the 3A only has 512MB, we suggest against running a desktop environment (Xfce may be alright.)
 - If using a microSD card, we reccomend using a Class 10 microSD card, your experience will be signifcantly better than lower classes.
 - If using a USB drive, ensure it's USB 3.0 or newer, 2.0 will be a signifcantly worse experience than a microSD.
 - Your storage device will need to be larger than 9GB (the image is 8.59GB) We suggest 16GB so you have space for software.
 
-### Installing
+# (Currently) Unsupported Raspberry Pi Devices
 
-1. Install [Raspberry Pi Imager](https://flathub.org/apps/org.raspberrypi.rpi-imager).
-2. Simply select "Other General Purpose OS" then your Ultramarine Edition of choice.
-3. Insert the storage device into your Pi and boot up! The root filesystem will automatically be expanded.
-4. You will be prompted to set up a user, do this and you're done!.
+## Raspberry Pi 5
 
-## Raspberry Pi 3
+The Raspberry Pi 5 is not currently supported in Fedora. We are packaging the official Raspberry Pi kernel (which should also provide a better experience on the other Pi models).
 
-The Raspberry Pi 3 has had support in Ultramarine Linux since UM39, and desktop images since UM40. We use the Fedora kernels and boot proccess.
-
-### Notes
-
-- RPi3B has only 1GB of RAM, and the 3A only has 512MB, we suggest against running a desktop environment (Xfce may be alright.)
-- Your microSD card will need to be larger than 9GB (the image is 8.59GB) We suggest 16GB so you have space for software.
-- We reccomend using a Class 10 microSD card, your experience will be signifcantly better than lower classes.
-
-### Installing
-
-1. Grab any aarch64 [Raw Image](https://images.fyralabs.com/images/ultramarine/40/) from our downloads page.
-2. Flash it to your microSD card with [balenaEtcher](https://etcher.io) or [Raspberry Pi Imager](https://flathub.org/apps/org.raspberrypi.rpi-imager)
-3. Insert the storage device into your Pi and boot up! The root filesystem will automatically be expanded.
-4. You will be prompted to set up a user, do this and you're done!.
-
-## Raspberry Pi Zero 2
+## Raspberry Pi Zero, 1, and 2
 
 <Alert type="info">
-  This device type is still in the **Planning Phase**. All information on this
-  page is subject to change.
-</Alert>
-
-## Raspberry Pi 1, 2, and Zero
-
-<Alert type="info">
-  These devices are **Not Supported** due to 32bit CPUs. We include them in this
-  page to avoid questions.
+  These devices are **Not Supported** due to 32bit CPUs.
 </Alert>
