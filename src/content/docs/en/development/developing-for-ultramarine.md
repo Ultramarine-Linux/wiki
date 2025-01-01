@@ -2,6 +2,7 @@
 title: Developing for Ultramarine
 description: "Things to get started on developing in Ultramarine."
 ---
+
 ### This Page Will Be Moving to [**Fyra Developer**](https://developer.fyralabs.com) Soon!
 
 Ultramarine Linux aims to be a developer-friendly environment for all kinds of developers. In this article, we will cover the basics of how to get started developing in Ultramarine.
@@ -66,3 +67,7 @@ For cases where using a native build system does not fit the needs of the applic
 - [CMake](https://cmake.org/)
 - [GNU Autotools](https://www.gnu.org/software/automake/manual/html_node/Autotools-Introduction.html)
 - A written makefile or simple shell script
+
+#### [Next Up: Using Andaman →](/en/development/anda)
+
+#### [← Back To: Differences with Fedora](/en/release/diff-fedora)
