@@ -28,10 +28,6 @@ You can also use the `rustup` installer from the [Rust website](https://www.rust
 
 ## Developing for Ultramarine
 
-Our team uses [Visual Studio Code](https://code.visualstudio.com/), which is an open-source (mostly source-available) IDE that is available for both Windows, macOS, and Linux.
-
-If you, however, do not prefer to use the official Microsoft distribution of Visual Studio Code, you can also use [VSCodium](https://www.vscodium.com/), which is a free alternative distribution of Visual Studio Code. Or you can also use the [Official open-source build of Visual Studio Code](https://github.com/microsoft/vscode) here.
-
 There are also other supported IDEs and software we recommend using for development, such as:
 
 - [JetBrains CLion](https://www.jetbrains.com/clion/) (Native applications with C/C++, or Rust)

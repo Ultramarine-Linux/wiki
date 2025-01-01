@@ -106,15 +106,6 @@ export const SIDEBAR: Sidebar = {
     //   { text: "ARM Chromebooks (Beta)", link: "en/chromebook/armbeta" },
     //   { text: "Terminology", link: "en/chromebook/terminology" },
     // ],
-
-    Development: [
-      {
-        text: "Developing for Ultramarine",
-        link: "en/development/developing-for-ultramarine",
-      },
-      { text: "Using Andaman", link: "en/development/anda" },
-      { text: "UX Guidelines", link: "en/development/ux-guide" },
-    ],
   },
   de: {
     Introduction: [{ text: "Welcome", link: "de/welcome" }],
@@ -129,17 +120,6 @@ export const SIDEBAR: Sidebar = {
       { text: "Permissions", link: "de/linux/permissions" },
       { text: "Software and package management", link: "de/linux/software" },
       { text: "The Shell", link: "de/linux/shell" },
-    ],
-    Development: [
-      {
-        text: "Developing for Ultramarine",
-        link: "de/development/developing-for-ultramarine",
-      },
-      { text: "Using Andaman", link: "de/development/anda" },
-      { text: "UX Guidelines", link: "de/development/ux-guide" },
-    ],
-    "Release Notes": [
-      { text: "Developing for Ultramarine", link: "de/release/errata" },
     ],
   },
   zh_hant: {
