@@ -73,6 +73,15 @@ export const SIDEBAR: Sidebar = {
       { text: "Raspberry Pi", link: "en/anywhere/rpi" },
       //{ text: "WSL", link: "en/anywhere/wsl" },
     ],
+    Usage: [
+      { text: "Gaming on Ultramarine", link: "en/usage/gaming" },
+      { text: "Localization", link: "en/usage/l10n" },
+      { text: "Keyboard Configuration", link: "en/usage/keyboard-cfg" },
+      {
+        text: "Switching Desktop Environments / Edition",
+        link: "en/usage/hop",
+      },
+    ],
     "Linux Concepts": [
       { text: "What is Linux?", link: "en/linux/overview" },
       { text: "The File System", link: "en/linux/filesystem" },
@@ -83,17 +92,6 @@ export const SIDEBAR: Sidebar = {
       { text: "SSH", link: "en/linux/ssh" },
       { text: "Security and Privacy", link: "en/linux/securityprivacy" },
     ],
-
-    Usage: [
-      { text: "Gaming on Ultramarine", link: "en/usage/gaming" },
-      { text: "Localization", link: "en/usage/l10n" },
-      { text: "Keyboard Configuration", link: "en/usage/keyboard-cfg" },
-      {
-        text: "Switching Desktop Environments / Edition",
-        link: "en/usage/hop",
-      },
-    ],
-
     "Release Notes": [
       { text: "Errata", link: "en/release/errata" },
       { text: "Differences with Fedora", link: "en/release/diff-fedora" },
