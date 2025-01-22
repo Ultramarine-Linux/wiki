@@ -32,6 +32,20 @@ You can install Steam in 2 ways:
 
 The first option is recommended, as it has better system integration. However, the second option is also available if you are running Ultramarine OSTree/Kanopy/CoreOS, or if you want to keep Steam isolated from the rest of the system.
 
+If you install the Steam RPM, you may get this error when trying to open Steam:
+
+```
+You are missing the following 32-bit libraries, and Steam may not run:
+libGL.so.1
+libnsl.so.1
+```
+
+You can fix this by installing the needed packages:
+
+```shell
+sudo dnf install libglvnd-glx.i686 libnsl.i686
+```
+
 ## itch.io
 
 [itch.io](https://itch.io) is a platform for indie games, and it has a native Linux client. It has a large library of indie games, and some of them are available for free. You can install the itch.io client as a Flatpak from [Flathub](https://flathub.org/apps/io.itch.itch).
