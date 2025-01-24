@@ -11,17 +11,23 @@ import Alert from "../../../../components/Docs/Alert.astro";
 
 The drive you use deeply affects the experience you will have on Ultramarine.
 
-### Raspberry Pi 3 Series
+## Raspberry Pi 5
 
-Raspberry Pi 3 Series support only microSD cards. Your storage device must be 16GB or larger.
+Raspberry Pi 5 Series support microSD cards and USB storage. It also supports NVMe SSDs, more information can be found [here](https://www.raspberrypi.com/documentation/accessories/m2-hat-plus.html#m2-hat-plus). Your storage device must be 16GB or larger.
 
-You should also look for a class 10 SDHC or SDXC microSD.
+The best experience will be with an SSD connected over an adapter, or the Pi M.2 HAT. A USB 3.0 flash drive will be on-par to slightly better then a microSD card. All of the options are good, it's up to your needs.
 
 ### Raspberry Pi 4 Series
 
 Raspberry Pi 4 Series support microSD cards and USB storage. Your storage device must be 16GB or larger.
 
 The best experience will be with an SSD connected over an adapter. A USB 3.0 flash drive will be on-par to slightly better then a microSD card. All of the options are good, it's up to your needs.
+
+### Raspberry Pi 3 Series
+
+Raspberry Pi 3 Series support only microSD cards. Your storage device must be 16GB or larger.
+
+You should also look for a class 10 SDHC or SDXC microSD.
 
 ## Flashing the Image
 
@@ -89,10 +95,6 @@ dnf install PACKAGENAME
 - Your storage device will need to be larger than 9GB (the image is 8.59GB). We suggest 16GB so you have space for software.
 
 # (Currently) Unsupported Raspberry Pi Devices
-
-## Raspberry Pi 5
-
-The Raspberry Pi 5 is not currently supported in Fedora. We are packaging the official Raspberry Pi kernel (which will also provide a better experience on the other Pi models).
 
 ## Raspberry Pi Zero, 1, and 2
 
