@@ -22,26 +22,26 @@ We'll be mostly documenting the process for the Switch, but the same principles 
 
 ## Nintendo Switch
 
-The Switch loads from a 32GB (or 64GB if you have an OLED version) eMMC storage, which is a detachable module.
+The Switch loads from a 32GB (or 64GB on the OLED model) eMMC, which is a detachable module.
 
 Older revisions of the Switch with the X1 SoC (the original 2017 launch model, AKA the "White Box" or "Erista" SoC)
-are the most compatible with Linux, since the hardware support for the X1 itself has been mainlined in the Linux kernel
-and are vulnerable to [CVE-2018-6242 (Fusée Gelée)](https://nvd.nist.gov/vuln/detail/cve-2018-6242) which allows for arbitrary code execution in the boot ROM.
+are the most compatible with Linux, since the hardware support for the X1 itself has been mainlined in the Linux kernel.
+This model is vulnerable to [CVE-2018-6242 (Fusée Gelée)](https://nvd.nist.gov/vuln/detail/cve-2018-6242) which allows for arbitrary code execution in the boot ROM.
 
-Newer revisions of the Switch with the X1+ SoC (the 2019 revision, AKA the "Red Box" or "Mariko" SoC) and later models
-(i.e the Switch Lite and OLED models, also codenamed "Aula"), are not vulnerable to Fusée Gelée, and require a different exploit which is a combination
-of eMMC interception and a reset glitch to load into a custom bootloader. This requires hardware modifications and is not as straightforward as the original exploit.
+Newer revisions of the Switch with the X1+ SoC (the 2019 revision, AKA "Red Box" or "Mariko" SoC) and later models
+like the Lite and OLED models (also codenamed "Aula") are not vulnerable to Fusée Gelée, and require a different exploit which is a combination
+of eMMC interception and a reset glitch to load a custom bootloader. This requires hardware modifications and is not as straightforward as the original exploit.
 
 "Mariko" SoCs are also not yet supported by the mainline Linux kernel, and require a custom kernel to boot.
 
 The most common bootloader payload used to run arbitrary code on the Switch is [hekate](https://github.com/ctcaer/hekate),
-which is a custom bootloader that provides a graphical boot menu and a partition manager. It can also be used to dump the eMMC storage data and
-create what's called an "emuMMC" which is a virtualized eMMC partition that can be used to run a backup image of [Horizon OS]
-without modifying the actual eMMC data.
+a custom bootloader that provides a graphical boot menu and partition manager. It can also be used to dump the eMMC storage data and
+create an "emuMMC” (a virtualized eMMC partition that can be used to run a backup image of HorizonOS, the stock firmware
+without modifying the actual eMMC data.)
 
 ## Implementation
 
-The Switchroot boot process creates a boot menu entry in hekate that loads [U-Boot], which in turn reads a custom boot script that does the following:
+The Switchroot boot process creates a boot menu entry in Hekate that loads [U-Boot], which in turn reads a custom boot script that does the following:
 
 1. (If the user is on a Switch Lite) loads the calibration data for the embedded analog sticks
 2. Loads the device tree blobs (DTB) for the Switch from the SD card
