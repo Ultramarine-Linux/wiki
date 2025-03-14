@@ -9,17 +9,17 @@ import Alert from "../../../../components/Docs/Alert.astro";
 
 Ultramarine only supports WSL2. WSL2 is essentially a "lightweight utility virtual machine" running through Hyper-V, Microsoft's hypervisor. This gives Ultramarine full access to the Windows filesystem, and direct hardware access, with performance similar to that of baremetal Linux.
 
-It is possible to install and run graphical Linux applications, and even full desktop environments. We plan to make running a desktop environment through Ultramarine WSL easier in the near future.
+It is possible to install and run graphical Linux applications, and even full desktop environments. We plan to make running a desktop environment through Ultramarine WSL easier in the future.
 
 ## System Requirements
 
 WSL2, and by extension Ultramarine WSL, needs the following:
 
-- Windows 10 (Version 2004 Build 19041), or Windows 11. Note IPv6 spport requires Windows 11.
-- Hardware Virtualization enabled. Note all pre-installed Windows 11 computers come with Virtualization enabled.
+- Windows 10 (Version 2004 Build 19041), or Windows 11. IPv6 may have issues in Windows 10.
+- Hardware Virtualization enabled. All pre-installed Windows 11 computers come with Virtualization enabled.
 - For DDEV, at least 8GBs RAM and 256GBs storage is required.
 
-**DDEV** is a local web development tool for Drupal, and is reccomended to run on Docker through WSL2, rather then Docker through Windows, but has higher hardware requirements then WSL itself. For more information, click [here](https://www.drupal.org/docs/develop/local-server-setup/windows-development-environment/installing-drupal-with-ddev-in-wsl2-on-windows).
+**DDEV** is a local web development tool for Drupal, and is recommended to run on Docker through WSL2, rather then Docker through Windows, but has higher hardware requirements then WSL itself. For more information, click [here](https://www.drupal.org/docs/develop/local-server-setup/windows-development-environment/installing-drupal-with-ddev-in-wsl2-on-windows).
 
 To determine your virtualization status, look in Task Manager -> Preformance tab -> CPU, and locate virtualization information. You can also open a command prompt or PowerShell window and run the following command:
 
@@ -31,15 +31,15 @@ Locate the 'Hyper-V Requirements' section, near the bottom. Within that section,
 
 ## How to enable Virtualization in your UEFI/BIOS
 
-- Enter the UEFI/BIOS of your system, restart your device, then enter your bios/setup key. A list of these keys can be found [here](/en/setup/bioskeys).
+- Restart your device, then enter your bios/setup key when the system comes back on. A list of these keys can be found [here](/en/setup/bioskeys).
 - Locate the virtualization option. This can be in various places depending on the motherboard/manufactorer. Typically, this will be in the CPU settings/configuration menu. If unsure, research the option location according to your motherboard/computer.
-- Save and exit, with a key or option in the base of the UEFI/BIOS menu.
+- Save and exit. There will typically be a deticated key to do this, or a select option on the main or exit page.
 
-Hardware virtualization should now be enabled, and you can proceed to the installation section.
+Hardware virtualization should now be enabled, and you can proceed to installation.
 
 ## Installation
 
-There are a few different methods to install Ultramarine WSL, here are all supported methods.
+There are a few different ways to install a WSL distro. Below are what we recommended.
 
 ### Install from the Microsoft Store
 
@@ -91,7 +91,15 @@ When you start up Ultramarine WSL for the first time, it may take a bit to insta
 
 ### Making a user (REQUIRED)
 
-When you boot into Ultramarine WSL (or and WSL for that matter), you will be prompted to enter a username and password. Follow the prompts to create a user, then sign into your new user, and then you're all good to go!
+When you boot into Ultramarine WSL (or any WSL for that matter), you will be prompted to enter a username and password. Follow the prompts to create a user, then sign into your new user, and then you're all good to go!
+
+### Updating
+
+It is always recommended to update a fresh system. To do this, please run the following command:
+
+```
+sudo dnf upgrade
+```
 
 ### Changing your default WSL distro to Ultramarine
 
@@ -107,15 +115,7 @@ If, for whatever reason, Ultramarine is not detected, you can run the following 
 wsl -l
 ```
 
-Then, replace `Ultramarine` in the setdefault command to your installed distro name.
-
-### Updating
-
-It is always reccomended to update a fresh system. To do this, please run the following command:
-
-```
-sudo dnf upgrade
-```
+Then, replace `Ultramarine` in the setdefault command to the listed name.
 
 ### Further Information
 
@@ -129,6 +129,6 @@ Best Practices: https://learn.microsoft.com/en-us/windows/wsl/setup/environment
 
 Frequently Asked Questions: https://learn.microsoft.com/en-us/windows/wsl/faq
 
-#### [Next Up: Linux Concepts, What is Linux? →](/en/linux/overview)
+#### [Next Up: Gaming on Ultramarine →](/en/usage/gaming)
 
 #### [← Back To: Raspberry Pi](/en/anywhere/rpi)
