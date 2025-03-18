@@ -181,6 +181,35 @@ Welcome to Ultramarine Linux!
 
 ---
 
+# Encryption
+
+FDE (full-disk encryption) is a method in which all data on a disk is made unreadable (encrypted), and can be decrypted with a matching authentication key. This authentication key can be unlocked using a password, hardware security key, TPM, biometrics, etc. This means that if the drive was removed and placed into another computer, the data would still be unreadable without one of these unlock methods.
+
+BitLocker is common on Windows systems, FileVault is common on macOS systems, and LUKS is common on Linux systems. When using enabling disk encryption when installing Ultramarine Linux, you are using LUKS.
+
+## LUKS FDE
+
+LUKS (Linux Unified Key Setup), specifically LUKS2, is the standard disk encryption method on many Linux systems.
+
+LUKS uses a multi-layered encryption approach, meaning that when you use LUKS encryption, you enter a passphrase that is then used to unlock the master key, which is stored in the LUKS partition header. This master key is then used to unlock the partition's encrypted data. You will loose access to your data if the header is overwritten, or the password is forgotten.
+
+### TPM backed LUKS FDE
+
+What a TPM is and how it works is beyond the scope for this wiki, refer [here](https://en.wikipedia.org/wiki/Trusted_Platform_Module) for more information regarding TPMs.
+
+TPM encryption can be enabled in Readymade by selecting `Enable TPM` after selecting `Enable disk encryption`. Please note a TPM 2.0 is required for using TPM backed FDE in Readymade.
+
+TPM backed full-disk encryption replaces your LUKS password entry step by storing the decryption key (to the master key stored in the LUKS partition header) in the TPM instead. Here are some reasons this could be useful to you:
+
+- The TPM can detect malicious system changes, helping to prevent [evil maid attacks](https://en.wikipedia.org/wiki/Evil_maid_attack), among other vulnerabilities.
+- TPM backed FDE is also useful in preventing LUKS passphrase brute-forcing in the case of drive theft, as the only way to decrypt the master key is using the TPM associated with the drive (and it is much, much more difficult to crack the mastery key).
+- When using a TPM, you are also safe from keylogging and memory extraction attacks.
+
+There can also be drawbacks to using TPM as well. Here are some reasons this could not be useful to you:
+
+- TPM/motherboard failure can prevent data recovery. If this is a concern, we reccomend creating a backup key.
+- If an entire computer is stolen, the encryption will still auto-decrypt itself, leaving a system with essentailly user passphrase security only, which can be bypassed and broken.
+
 #### [Next Up: Post-Installation →](/en/setup/postinstall)
 
 #### [← Back To: BIOS Keys](/en/setup/bioskeys)
