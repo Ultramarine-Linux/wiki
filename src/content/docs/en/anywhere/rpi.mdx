@@ -5,27 +5,37 @@ description: "Raspberry Pi in the Ultramarine Anywhere Initiative"
 
 import Alert from "../../../../components/Docs/Alert.astro";
 
-### Ultramarine Linux currently supports the Raspberry Pi 3 and 4/400. For information on other Pis, see [below](/en/anywhere/rpi#raspberry-pi-5).
+### Ultramarine Linux currently supports the Raspberry Pi 3, 4/400, and 5/500.
+
+We are using the official Raspberry Pi kernel for all our Pi images, provided by [this Copr repository](https://copr.fedorainfracloud.org/coprs/dwrobel/kernel-rpi/). This enables us to have much better GPU support, improved HAT support, and more.
+
+## Raspberry Pi 5
+
+Raspberry Pi 5 family support microSD cards and USB storage. It also supports NVMe SSDs, more information can be found [here](https://www.raspberrypi.com/documentation/accessories/m2-hat-plus.html#m2-hat-plus). Your storage device must be 16GB or larger.
+
+The best experience will be with an SSD connected over an adapter, or the Pi M.2 HAT. A USB 3.0 flash drive will be on-par to slightly better then a microSD card. All of the options are good, it's up to your needs.
+
+## Raspberry Pi 4 Family
+
+Raspberry Pi 4 family support microSD cards and USB storage. Your storage device must be 16GB or larger.
+
+The best experience will be with an SSD connected over an adapter. A USB 3.0 flash drive will be on-par to slightly better then a microSD card. All of the options are good, it's up to your needs.
+
+## Raspberry Pi 3 Family
+
+Raspberry Pi 3 family support only microSD cards. Your storage device must be 16GB or larger.
+
+You should also look for a class 10 SDHC or SDXC microSD.
 
 ## Selecting a Drive
 
 The drive you use deeply affects the experience you will have on Ultramarine.
 
-### Raspberry Pi 3 Series
-
-Raspberry Pi 3 Series support only microSD cards. Your storage device must be 16GB or larger.
-
-You should also look for a class 10 SDHC or SDXC microSD.
-
-### Raspberry Pi 4 Series
-
-Raspberry Pi 4 Series support microSD cards and USB storage. Your storage device must be 16GB or larger.
-
-The best experience will be with an SSD connected over an adapter. A USB 3.0 flash drive will be on-par to slightly better then a microSD card. All of the options are good, it's up to your needs.
+# Installing
 
 ## Flashing the Image
 
-If you're using a Raspberry Pi 4/400, you can skip these steps and use
+If you're using a Raspberry Pi 4 or later, you can skip these steps and use
 [Raspberry Pi Imager instead](/en/anywhere/rpi#raspberry-pi-imager).
 First, you will need to decompress it.
 
@@ -90,9 +100,9 @@ dnf install PACKAGENAME
 
 # (Currently) Unsupported Raspberry Pi Devices
 
-## Raspberry Pi 5
+## Raspberry Pi Zero 2
 
-The Raspberry Pi 5 is not currently supported in Fedora. We are packaging the official Raspberry Pi kernel (which will also provide a better experience on the other Pi models).
+We do not currently support this device due to not being powerful enough to run a desktop. We may suport these devices in the future with a CLI only image.
 
 ## Raspberry Pi Zero, 1, and 2
 
@@ -100,6 +110,6 @@ The Raspberry Pi 5 is not currently supported in Fedora. We are packaging the of
   These devices are **Not Supported** due to 32bit CPUs.
 </Alert>
 
-#### [Next Up: Gaming on Ultramarine →](/en/usage/gaming)
+#### [Next Up: Windows Subsystem for Linux →](/en/anywhere/wsl)
 
 #### [← Back To: Microsoft Surface](/en/anywhere/surface)
