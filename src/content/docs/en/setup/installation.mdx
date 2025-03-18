@@ -5,10 +5,6 @@ description: "A guide on how to install Ultramarine Linux"
 
 import Alert from "../../../../components/Docs/Alert.astro";
 
-If you are using an Anaconda image, proceed with the instructions below. If you are using a Readymade Preview image, go [here](#readymade). If installing to a Chromebook, go [here](/en/chromebook/installing).
-
-# Anaconda
-
 After booting into the live system, you will see a dialog box asking you whether to start the installer or continue with the live system.
 
 ![The Welcome Dialog box](/assets/welcome-window.png)
@@ -53,7 +49,7 @@ By default, the time is set from your IP address geolocation. If you're using a 
 
 This is where you select where you want Ultramarine to be installed, you can have the installer automatically partition your disk, or, select a custom layout.
 
-By default, Ultramarine uses [Btrfs](https://en.wikipedia.org/wiki/Btrfs) on standard computers. We default to ext4 on Chromebooks as Btrfs may shorten the life of the EMMC found in most Chromebooks.
+By default, Ultramarine uses [Btrfs](https://en.wikipedia.org/wiki/Btrfs) on standard computers.
 
 <Alert type="info">
   We recommend encrypting your disk for added security. Simply select the
@@ -103,6 +99,8 @@ If you type in an insecure password, you must press the `Done` button twice to c
 
 </Alert>
 
+---
+
 After completing your system configuration, press the `Begin Installation` button to continue. The installation process will start and may take a few minutes.
 
 <Alert type="danger">
@@ -114,72 +112,6 @@ After completing your system configuration, press the `Begin Installation` butto
 After the installation process is complete, Anaconda will prompt you to reboot your device, simply reboot and enjoy!
 
 Welcome to Ultramarine Linux!
-
----
-
-# Readymade
-
-After booting into the live system, you will see an icon on the desktop labeled "install to Computer." Open this to launch the Readymade installer, or continue with the live system.
-
-## Language Selection
-
-![The Language Selection Screen](/assets/readymade/language.png)
-
-Before we get started, select your preferred language.
-
-## Welcome Screen
-
-![The Welcome Dialog box](/assets/readymade/install-or-try.png)
-
-From here you can select `Try` to continue using the live system, or `Install` to proceed with installation.
-
-## Install Destination
-
-![Destination Selection](/assets/readymade/devices.png)
-
-On the Destination page, select the device you would like to install to. Make sure you select the correct device, since after installation the data on the selected device will be wiped.
-
-## Installation Type
-
-![Installation type](/assets/readymade/install-type.png)
-
-From here, you have the option to install to the entire disk, or customize your install.
-
-You also have the option to encrypt your disk, and enable TPM encryption. When you encrypt your disk, you will be prompted to enter a password used for encryption. Note that this is in no way tied to your Ultramarine user password.
-
-For more information on how encryption works, refer [here](#encryption).
-
-## Custom Installation
-
-![custom](/assets/readymade/install-custom-mountpoint.png)
-
-In this mode, you can manually configure the layout of the disk.
-
-On UEFI-based systems, you need a partition mounted as `/boot/EFI` and another mounted as `/`.
-
-On BIOS-based systems, you need a `BIOSBoot` partition, a partition mounted as `/boot` and another mounted as `/`.
-
-# Confirmation
-
-![Confirmation](/assets/readymade/confirm.png)
-
-Now, you are ready to install. Select `Install` to begin. You will then be taken to the page below, with links to out wiki, chats, and contribution information that will open in the live environment during the install.
-
-## Installing
-
-![Installing](/assets/readymade/installing.png)
-
-<Alert type="danger">
-  This process is **IRREVERSIBLE**. If you manage to stop the installer before
-  it finishes, you will end up with a broken system. <br /> To fix this, you
-  will have to reinstall Ultramarine Linux or your preferred operating system.
-</Alert>
-
-After the installation process is complete, Readymade will prompt you to reboot your device, simply reboot and enjoy!
-
-Welcome to Ultramarine Linux!
-
----
 
 #### [Next Up: Post-Installation →](/en/setup/postinstall)
 
