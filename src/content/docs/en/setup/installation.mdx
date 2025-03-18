@@ -187,13 +187,13 @@ FDE (full-disk encryption) is a method in which all data on a disk is made unrea
 
 BitLocker is common on Windows systems, FileVault is common on macOS systems, and LUKS is common on Linux systems. When using enabling disk encryption when installing Ultramarine Linux, you are using LUKS.
 
-## LUKS FDE
+## LUKS Full-Disk Encryption
 
 LUKS (Linux Unified Key Setup), specifically LUKS2, is the standard disk encryption method on many Linux systems.
 
 LUKS uses a multi-layered encryption approach, meaning that when you use LUKS encryption, you enter a passphrase that is then used to unlock the master key, which is stored in the LUKS partition header. This master key is then used to unlock the partition's encrypted data. You will loose access to your data if the header is overwritten, or the password is forgotten.
 
-### TPM backed LUKS FDE
+### TPM backed LUKS Full-Disk Encryption
 
 What a TPM is and how it works is beyond the scope for this wiki, refer [here](https://en.wikipedia.org/wiki/Trusted_Platform_Module) for more information regarding TPMs.
 
