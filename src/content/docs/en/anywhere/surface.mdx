@@ -5,44 +5,62 @@ description: "Information about Ultramarine Linux on Microsoft Surfaces"
 
 import Alert from "../../../../components/Docs/Alert.astro";
 
-Surfaces require a special kernel to work properly under Ultramarine.
+Microsoft Surface support is provided using the [Linux Surface team's](https://github.com/linux-surface/linux-surface) Surface kernel and packages/software.
 
-These are currently provided by the Surface Linux team, for more information (including camera and other hardware support, package info, etc.) please visit their [wiki](https://github.com/linux-surface/linux-surface/wiki).
+## Supported Devices
 
-Start by adding their repository:
+| Device                       | Surface Image Required? | Notes                                                                                                                                              | Fyra has This |
+| ---------------------------- | ----------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- | ------------- |
+| Surface Pro 1                | No                      |                                                                                                                                                    | ✓             |
+| Surface Pro 2                | No                      | Identical to Pro 1                                                                                                                                 |               |
+| Surface Pro 3                | Yes                     | Boots without, but things may be broken                                                                                                            | ✓             |
+| Surface Pro 4                | Yes                     |                                                                                                                                                    |               |
+| Surface Pro (5th Generation) | Yes                     | Nearly identical to Pro 4                                                                                                                          | ✓             |
+| Surface Pro 6                | Yes                     | Nearly identical to 5th gen                                                                                                                        |               |
+| Surface Pro 7                | Yes                     |                                                                                                                                                    |               |
+| Surface Pro 7+               | Yes                     |                                                                                                                                                    |               |
+| Surface Pro 8                | Yes                     |                                                                                                                                                    |               |
+| Surface Pro 9                | Yes                     |                                                                                                                                                    |               |
+| Surface 3                    | Yes                     | Battery and touch will not work without Surface Kernel                                                                                             |               |
+| Surface Go                   | No                      | Cameras and LTE will not work without Surface Kernel                                                                                               | ✓             |
+| Surface Go 2                 | No                      | Same as Surface Go                                                                                                                                 | ✓             |
+| Surface Go 3                 | No                      | May need Secure Boot disabled to boot properly.                                                                                                    |               |
+| Surface Go 4                 | Yes                     | UFS Storage, requires some [manual intervention](https://github.com/linux-surface/linux-surface/wiki/Surface-Go-4) to get working                  |               |
+| Surface Book                 | Yes                     | NVIDIA needed for some SKUs, fans may not work                                                                                                     | ✓             |
+| Surface Book 2               | Yes                     | NVIDIA needed for some SKUs, fans may not work                                                                                                     | ✓             |
+| Surface Book 3               | Yes                     | NVIDIA needed for some SKUs. Additionally, surface_aggregator and associated kernel modules NEED to be in initramfs                                |               |
+| Surface Laptop               | Yes                     | Some thermal issues due to bad sensor readings                                                                                                     |               |
+| Surface Laptop 2             | Yes                     | surface_aggregator and associated kernel modules NEED to be in initramfs                                                                           |               |
+| Surface Laptop 3             | Yes                     | surface_aggregator and associated kernel modules NEED to be in initramfs                                                                           |               |
+| Surface Laptop 4             | Yes                     | surface_aggregator and associated kernel modules NEED to be in initramfs. Video is VERY unstable on AMD and Intel models                           |               |
+| Surface Laptop 5             | Yes                     | Hibernation and shutdown are broken, ACPI is generally messed up on here. surface_aggregator and associated kernel modules NEED to be in initramfs |               |
+| Surface Laptop Go            | Yes                     | Touchpad may stop working when resuming from suspend. Intel PSR causes tearing. Fans may not work                                                  | ✓             |
+| Surface Laptop Go 2          | Yes                     |                                                                                                                                                    |               |
+| Surface Laptop Go 3          | Yes                     | No data, we assume surface_aggregator is required                                                                                                  |               |
+| Surface Studio               | Yes                     | No data, we assume surface_aggregator is required                                                                                                  |               |
+| Surface Studio 2             | Yes                     | No data, we assume surface_aggregator is required                                                                                                  |               |
+| Surface Studio 2+            | Yes                     | No data, we assume surface_aggregator is required                                                                                                  |               |
+| Surface Laptop Studio        | Yes                     | GPU may be limited to 10W                                                                                                                          |               |
+| Surface Laptop Studio 2      | Yes                     |                                                                                                                                                    |               |
 
-```shell
-sudo dnf config-manager \
-    --add-repo=https://pkg.surfacelinux.com/fedora/linux-surface.repo
+Please review the [Linux Surface wiki page](https://github.com/linux-surface/linux-surface/wiki) for your device, there may be important information in there.
+
+## Cameras
+
+All packages to enable (lib)camera support OOTB for supported models is included. Camera support for some models is still a work in progress upstream. The Surface Pro 7, Intel Surface Laptop 3, and the Surface Book 3 use an IPU4, which is not at all supported at this time. Feature matrix, troubleshooting, and more information can be found [here](https://github.com/linux-surface/linux-surface/wiki/Camera-Support).
+
+To enable the camera functionality on current Surface images, you need to add your user to the video group. Future Surface images with the Taidan out-of-box applicaion will add your user to this group for you. To add yourself to the video group:
+
+```
+sudo usermod -aG video $USER
+newgrp video
 ```
 
-Then, install the kernel and it's dependencies:
+#### Notes
 
-```shell
-sudo dnf install --allowerasing kernel-surface iptsd libwacom-surface
-```
-
-If you want to use secure boot, you need to install `surface-secureboot`, enable 3rd party keys in the EFI settings, and enroll the key in cert-manager. This does not work well on some devices, so we recommend disabling secure boot.
-
-<Alert type="info">We intend to make this easier in future releases.</Alert>
-
-Some Surface models may not boot with a stock copy of Ultramarine Linux. If this is the case for your device, you have to install the kernel before leaving the live environment.
-
-1. Ensure your internal storage is mounted, Anaconda should leave it mounted by default.
-
-2. Check the root partition, it should be mounted as `/mnt/sysroot`
-
-3. Chroot into the installed system
-
-```
-sudo chroot /mnt/sysroot
-```
-
-4. Follow the above instructions
-
-5. Run `dracut -f` to make sure the new kernel is installed as the initramfs.
-
-6. Exit the chroot and reboot!
+- We do not and will **NEVER** support the Surface 1, 2, or RT.
+- We do not support the Surface Pro X or Windows DevKit, and probably won't. If you'd like to change this you can [donate hardware](/en/contributing/contributorguide/#hardware).
+- We do not support the "Copilot+ PC" Surfaces **YET**.
 
 #### [Next Up: Raspberry Pi →](/en/anywhere/rpi)
 
