@@ -45,10 +45,6 @@ export const SIDEBAR: Sidebar = {
       //},
       { text: "Post-Installation", link: "en/setup/postinstall" },
       {
-        text: "Advanced Post-Install Steps",
-        link: "en/setup/post-advanced",
-      },
-      {
         text: "Broadcom and Realtek Networking",
         link: "en/setup/broadcom-realtek",
       },
