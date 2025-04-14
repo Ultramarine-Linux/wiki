@@ -49,7 +49,7 @@ By default, the time is set from your IP address geolocation. If you're using a 
 
 This is where you select where you want Ultramarine to be installed, you can have the installer automatically partition your disk, or, select a custom layout.
 
-By default, Ultramarine uses [Btrfs](https://en.wikipedia.org/wiki/Btrfs) on standard computers. We default to ext4 on Chromebooks as Btrfs may shorten the life of the EMMC found in most Chromebooks.
+By default, Ultramarine uses [Btrfs](https://en.wikipedia.org/wiki/Btrfs) on standard computers.
 
 <Alert type="info">
   We recommend encrypting your disk for added security. Simply select the
@@ -73,32 +73,6 @@ On BIOS-based systems, you need a `BIOSBoot` partition, a partition mounted as `
 
 In this mode, Anaconda uses a tool called blivet-gui for you to manually partition your drive. This mode provides more freedom, so make sure you know what you're doing.
 
-### Networking
-
-![](/assets/anaconda-8.png)
-
-On this screen, you can configure the hostname for the installed system. This is what other computers will call your device.
-
-### User Accounts
-
-![](/assets/anaconda-9.png)
-
-In this screen, you must set up a user account. This account will be the administrator for the installed system.
-
-You can also click on the `Advanced` button for a more in-depth configuration of your account, such as your user folder location, account ID, and group membership.
-
-<Alert type="warning">
-
-You must enter a password. Applications may misbehave without one.
-
-</Alert>
-
-<Alert type="info">
-
-If you type in an insecure password, you must press the `Done` button twice to continue.
-
-</Alert>
-
 ---
 
 After completing your system configuration, press the `Begin Installation` button to continue. The installation process will start and may take a few minutes.
@@ -109,9 +83,9 @@ After completing your system configuration, press the `Begin Installation` butto
   will have to reinstall Ultramarine Linux or your preferred operating system.
 </Alert>
 
-After the installation process is complete, Anaconda will prompt you to reboot your device, simply reboot and enjoy!
+After the installation process is complete, Anaconda will prompt you to exit. You can reboot your device from the live environment.
 
-Welcome to Ultramarine Linux!
+Next you'll set up your system.
 
 #### [Next Up: Post-Installation →](/en/setup/postinstall)
 

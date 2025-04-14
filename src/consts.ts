@@ -21,7 +21,7 @@ export const KNOWN_LANGUAGE_CODES = Object.values(KNOWN_LANGUAGES);
 
 export const GITHUB_EDIT_URL = `https://github.com/Ultramarine-Linux/wiki-new/blob/main`;
 
-export const COMMUNITY_INVITE_URL = `https://discord.gg/bUuQasHdrF`;
+export const COMMUNITY_INVITE_URL = `https://fyralabs.com/discord`;
 
 export type Sidebar = Record<
   (typeof KNOWN_LANGUAGE_CODES)[number],
@@ -45,10 +45,6 @@ export const SIDEBAR: Sidebar = {
       //},
       { text: "Post-Installation", link: "en/setup/postinstall" },
       {
-        text: "Advanced Post-Install Steps",
-        link: "en/setup/post-advanced",
-      },
-      {
         text: "Broadcom and Realtek Networking",
         link: "en/setup/broadcom-realtek",
       },
@@ -71,7 +67,7 @@ export const SIDEBAR: Sidebar = {
       { text: "Ultramarine Anywhere", link: "en/anywhere/anywhere" },
       { text: "Microsoft Surface", link: "en/anywhere/surface" },
       { text: "Raspberry Pi", link: "en/anywhere/rpi" },
-      //{ text: "WSL", link: "en/anywhere/wsl" },
+      { text: "WSL", link: "en/anywhere/wsl" },
     ],
     Usage: [
       { text: "Gaming on Ultramarine", link: "en/usage/gaming" },
