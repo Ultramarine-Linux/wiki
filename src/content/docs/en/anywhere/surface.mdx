@@ -14,7 +14,7 @@ Microsoft Surface support is provided using the [Linux Surface team's](https://g
 | Surface Pro 1                | No                      |                                                                                                                                                    | ✓             |
 | Surface Pro 2                | No                      | Identical to Pro 1                                                                                                                                 |               |
 | Surface Pro 3                | Yes                     | Boots without, but things may be broken                                                                                                            | ✓             |
-| Surface Pro 4                | Yes                     |                                                                                                                                                    |               |
+| Surface Pro 4                | Yes                     |                                                                                                                                                    |       ✓       |
 | Surface Pro (5th Generation) | Yes                     | Nearly identical to Pro 4                                                                                                                          | ✓             |
 | Surface Pro 6                | Yes                     | Nearly identical to 5th gen                                                                                                                        |               |
 | Surface Pro 7                | Yes                     |                                                                                                                                                    |               |
@@ -49,7 +49,7 @@ Please review the [Linux Surface wiki page](https://github.com/linux-surface/lin
 
 All packages to enable (lib)camera support OOTB for supported models is included. Camera support for some models is still a work in progress upstream. The Surface Pro 7, Intel Surface Laptop 3, and the Surface Book 3 use an IPU4, which is not at all supported at this time. Feature matrix, troubleshooting, and more information can be found [here](https://github.com/linux-surface/linux-surface/wiki/Camera-Support).
 
-To enable the camera functionality on current Surface images, you need to add your user to the video group. Future Surface images with the Taidan out-of-box applicaion will add your user to this group for you. To add yourself to the video group:
+To enable the camera functionality on current Surface images, you need to add your user to the video group. Future Surface images with the full version of Taidan (our out-of-box applicaion) will add your user to this group for you. To add yourself to the video group:
 
 ```
 sudo usermod -aG video $USER
