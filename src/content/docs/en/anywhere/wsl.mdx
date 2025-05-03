@@ -15,7 +15,7 @@ It is possible to install and run graphical Linux applications, and even full de
 
 WSL2, and by extension Ultramarine WSL, needs the following:
 
-- Windows 10 (Version 2004 Build 19041), or Windows 11. IPv6 may have issues in Windows 10.
+- Windows 10 (Version 2004/Build 19041), or Windows 11. IPv6 may have issues in Windows 10.
 - Hardware Virtualization enabled. All pre-installed Windows 11 computers come with Virtualization enabled.
 
 To determine your virtualization status, look in Task Manager -> Performance tab -> CPU, and find virtualization information. You can also open a command prompt or PowerShell window and run the following command:
@@ -37,39 +37,67 @@ Hardware virtualization should now be enabled, and you can proceed to installati
 
 ## Installing Ultramarine WSL
 
-Open the Microsoft Store, and search 'Ultramarine Linux' in the Microsoft Store app, or [this link](https://apps.microsoft.com/detail/9PBPG2RDMZB9?hl=en-us&gl=US&ocid=pdpshare)
+### Install using the Microsoft Store
+
+Open the Microsoft Store, and search 'Ultramarine Linux' in the Microsoft Store app, or use [this link](https://apps.microsoft.com/detail/9PBPG2RDMZB9?hl=en-us&gl=US&ocid=pdpshare)
 
 Select 'Ultramarine Linux,' verify the author is Fyra Labs, and then select 'Get.'
 
 After this, Ultramarine WSL will appear as a Windows app. You can select 'Open' from the Microsoft Store window.
 
-You're now ready for the post-install section!
-
-## Alternate Installation Methods
-
-### Install from the Command Line
-
-Open an administrator Command Prompt or PowerShell window, and enter the following command:
-
-```
-wsl --install -d ultramarine
-```
-
-You're now ready for the post-install section!
+You're now ready for the [Post-Installation](/en/anywhere/wsl#post-installation) section!
 
 ### Install with WinGet
+
+Before installing with WinGet, you must install WSL itself. To do this, run the following command in an Administrator PowerShell Window or Windows Command Prompt:
+
+```
+wsl --install
+```
+
+Note — this will also install the default Ubuntu WSL distribution.
+
+After WSL is installed, we can install Ultramarine. Open a PowerShell Window or Windows Command Prompt, and enter the following command:
 
 ```
 winget install ultramarine
 ```
 
-After this, Ultramarine WSL will appear as a Windows application. This will install everything needed for WSL, and Ultramarine WSL, assuming the requirements are met. You are now ready for the post-install section.
+After this, Ultramarine WSL will appear as a Windows application. This will install everything needed for WSL, and Ultramarine WSL, assuming the requirements are met.
+
+You're now ready for the [Post-Installation](/en/anywhere/wsl#post-installation) section!
+
+### Install from the Command Line
+
+Before installing through the command line, you must install WSL itself. To do this, run the following command in an Administrator PowerShell Window or Windows Command Prompt:
+
+```
+wsl --install
+```
+
+Note — this will also install the default Ubuntu WSL distribution.
+
+After WSL is installed, we can install Ultramarine. Open a PowerShell Window or Windows Command Prompt, and enter the following command:
+
+{/* wsl --install -d ultramarine NOT AVAILABLE YET, MAY NOT EVER BE */}
+
+```
+curl https://images.fyralabs.com/images/ultramarine/41/wsl-wsl-x86_64.wsl -o ultramarine.wsl; wsl --install --from-file ultramarine.wsl
+```
+
+This command will download the latest available Ultramarine WSL build, output the file as `ultramarine.wsl`, then install `ultramarine.wsl` with WSL.
+
+Be sure to replace the file name in the URL to match your architecture. If you are on x86_64, you don't need to change anything. If you're using AArch64 (Windows on ARM), change to `wsl-wsl-aarch64.wsl`.
+
+After this, Ultramarine WSL will appear as a Windows application. This will install everything needed for WSL, and Ultramarine WSL, assuming the requirements are met.
+
+You're now ready for the [Post-Installation](/en/anywhere/wsl#post-installation) section!
 
 ## Post-installation
 
 Ultramarine WSL may take a few minutes to start up for the first time, as Windows installs the required files.
 
-### Creating a User
+### Creating a User and Password
 
 When WSL finishes starting. you will be prompted to enter a username and password. This does not need to be the same as your Windows username and password.
 
@@ -81,7 +109,7 @@ It is always recommended to update a fresh install. To do this, please run the f
 sudo dnf upgrade
 ```
 
-### Changing your Default WSL Distro to Ultramarine
+### Setting your Default WSL Distro as Ultramarine
 
 To change your default WSL distro to Ultramarine, run the following command:
 
@@ -97,7 +125,7 @@ wsl -l
 
 Then, replace `Ultramarine` in the setdefault command with the listed name.
 
-### More Information
+## More Information
 
 Microsoft has vast resources about WSL, here are some helpful links:
 
