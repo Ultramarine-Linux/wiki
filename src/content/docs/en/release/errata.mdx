@@ -15,7 +15,27 @@ Releases older than 37 will not have their eratta modified as we do not have rec
 
 This is solved by distributors including Ultramarine as a synonym to Fedora.
 
-### Ultramarine Linux 40
+## Ultramarine Linux 42
+
+### All Editions
+
+- Taidan (out-of-box app) won't launch on VirtualBox and VMWare virtual machines.
+
+  We are [aware of this issue](https://blog.fyralabs.com/advisory-ultramarine-41-and-vmware/) and are solving it in UM42.
+
+- Taidan won't run again if you power off during or before setup.
+
+- Nvidia and Surface users may experience a kernel panic after upgrade.
+
+  This is caused by the boot partition running out of space, you can boot into the previous kernel entry and either install `dnf-strip-trigger` (which will break moving drives to another device) or [tell DNF to keep less kernels](https://discussion.fedoraproject.org/t/how-can-i-change-the-number-of-kernels-retained-when-updating-in-fedora/73863/2).
+
+### Plasma Edition
+
+- Login/Lockscreen wallpaper is white
+
+  This appears to be an upstream issue.
+
+## Ultramarine Linux 40
 
 ### Xfce Edition
 
