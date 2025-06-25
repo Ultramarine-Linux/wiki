@@ -19,6 +19,20 @@ This is solved by distributors including Ultramarine as a synonym to Fedora.
 
 ### All Editions
 
+- Nvidia and Surface users may experience a kernel panic after upgrade.
+
+  This is caused by the boot partition running out of space, you can boot into the previous kernel entry and either install `dnf-strip-trigger` (which will break moving drives to another device) or [tell DNF to keep less kernels](https://discussion.fedoraproject.org/t/how-can-i-change-the-number-of-kernels-retained-when-updating-in-fedora/73863/2).
+
+### Plasma Edition
+
+- Login/Lockscreen wallpaper is white
+
+  This appears to be an upstream issue. Can be fixed by manually setting a login screen wallpaper.
+
+## Ultramarine Linux 41
+
+### All Editions
+
 - Taidan (out-of-box app) won't launch on VirtualBox and VMWare virtual machines.
 
   We are [aware of this issue](https://blog.fyralabs.com/advisory-ultramarine-41-and-vmware/) and are solving it in UM42.
@@ -29,11 +43,6 @@ This is solved by distributors including Ultramarine as a synonym to Fedora.
 
   This is caused by the boot partition running out of space, you can boot into the previous kernel entry and either install `dnf-strip-trigger` (which will break moving drives to another device) or [tell DNF to keep less kernels](https://discussion.fedoraproject.org/t/how-can-i-change-the-number-of-kernels-retained-when-updating-in-fedora/73863/2).
 
-### Plasma Edition
-
-- Login/Lockscreen wallpaper is white
-
-  This appears to be an upstream issue.
 
 ## Ultramarine Linux 40
 
@@ -155,4 +164,4 @@ As the standard release includes a script to modify the system, due to the natur
 
 #### [Next Up: Differences with Fedora →](/en/release/diff-fedora)
 
-#### [← Back To: Linux Concepts, Security and Privacy](/en/linux/securityprivacy)
+#### [← Back To: Ultramarine 42 Upgrades →](/en/release/42-upgrades)
