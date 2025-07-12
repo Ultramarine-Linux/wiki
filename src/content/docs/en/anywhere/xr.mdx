@@ -3,14 +3,7 @@ title: "XR and Spatial Computing"
 description: "XR and Spatial Computing in the Ultramarine Anywhere Initiative"
 ---
 
-import Alert from "../../../../components/Docs/Alert.astro";
-
-<Alert type="info">
-  This device type is still in the **Planning Phase**. All information on this
-  page is subject to change.
-</Alert>
-
-We will provide full support for [Stardust XR](https://stardustxr.org/). 
+We are working on providing full support for [Stardust XR](https://stardustxr.org/). 
 
 ### Packages
 
@@ -28,12 +21,16 @@ All core Stardust XR components are packaged in the [Terra repository](https://t
 - [stardust-xr-server](https://repology.org/project/stardust-xr-server/versions)
 - [stardust-xr-telescope](https://repology.org/project/stardust-xr-telescope/versions)
 
-To install all of these packages (note if you're using `rpm-ostree` you will need to install each package individually):
+To install all of these packages:
 
 ```
 sudo dnf group install stardust-xr
 ```
+To install all of these packages on an rpm-ostree/bootc based install:
+```
+sudo rpm-ostree install stardust-xr-armillary stardust-xr-atmosphere stardust-xr-black-hole stardust-xr-comet stardust-xr-flatland stardust-xr-gravity stardust-xr-magnetar stardust-xr-non-spatial-input stardust-xr-protostar stardust-xr-server stardust-xr-telescope
+```
 
-Then, run `telescope -f` in your terminal. 
+Then, run `telescope` in your terminal, or `telescope -f` for flatscreen mode. 
 
 For further information, check out [the Stardust XR docs](https://stardustxr.org/docs/get-started/What-is-Stardust).
