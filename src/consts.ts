@@ -77,6 +77,7 @@ export const SIDEBAR: Sidebar = {
         text: "Switching Desktop Environments / Edition",
         link: "en/usage/hop",
       },
+      { text: "umcli", link: "en/usage/umcli" },
     ],
     "Linux Concepts": [
       { text: "What is Linux?", link: "en/linux/overview" },
