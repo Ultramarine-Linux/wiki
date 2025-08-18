@@ -43,10 +43,9 @@ sudo dnf install openssh-server
 Then start the server using:
 
 ```zsh
-sudo systemctl start sshd
+systemctl enable --now sshd
 ```
-
-Note that the above command uses `sudo`. The `sudo` command will execute the following commands as root (the superuser). For many commands that involve starting and stopping servers, the permission of the system's superuser is necessary. You can read more about the `sudo` command [here](en/linux/permissions). The above command also uses the `systemctl` command. This command is mostly used to manage servers or other Linux services.
+You will be prompted to enter your password, enter it.
 
 Once the above command is run, your machine will begin listening for incoming connections on port 22. You can verify that the SSH server application started correctly by using the command
 
