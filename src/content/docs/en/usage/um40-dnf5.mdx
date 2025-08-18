@@ -23,7 +23,7 @@ By using `dnf5`, users will be able to install, remove and upgrade packages much
 shouldn't need to do anything to adapt to this change.
 
 Since `dnf5` isn't bug-for-bug compatible with `dnf-3`, programs that rely on `dnf-3` should use the
-`dnf-3` or `dnf4` command to use the older version of `dnf`. If you are facing compatiblility issues
+`dnf-3` or `dnf4` command to use the older version of `dnf`. If you are facing compatibility issues
 with some apps that rely on the `dnf` symlink instead of the actual `/usr/bin/dnf-3` binary, you are
 advised to report this bug to upstreams (i.e. the apps in concern), not `dnf5` or Ultramarine.
 
@@ -32,7 +32,7 @@ advised to report this bug to upstreams (i.e. the apps in concern), not `dnf5` o
 ### Why `dnf5`?
 
 - `dnf5` provides better performance over `dnf-3` because it's written in C++ instead of Python.
-- We hope this change will push apps in the Fedora neighbourhood to switch to `dnf5` and at the same
+- We hope this change will push apps in the Fedora neighborhood to switch to `dnf5` and at the same
   time discover apps that are poorly maintained/written and rely on `dnf`/`dnf-3`.
 
 ### Does UM40 remove `dnf`?
