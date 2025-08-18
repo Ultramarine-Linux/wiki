@@ -73,14 +73,10 @@ And extra file system drivers can be installed, such as:
 
 - ZFS
 
-The Ultramarine Linux installer will be configured to use the BTRFS file system by default, as it is the most modern file system that is supported by the Linux kernel, and has many features that are useful for desktop users, such as snapshots, virtual volumes, journalling, error correction and compression.
+Ultramarine's installer is configured to use Btrfs by default. Btrfs is a modern filesystem with snapshots, virtual volumes, journaling, error correction and compression.
 
-By default, it will use up all the available space on the disk. It uses a small portion of the spaces for the EFI bootloader partition, and create a BTRFS JBOD array using the rest of all the available space on all selected disks.
+By default, the installer will use all the available space on the disk. 500mb is dedicated to the EFI boot partition (2mb on BIOS systems, 16mb on x86 Chromebooks, and 64mb on ARM Chromebooks), 1gb for /boot, a Btrfs volume uses the rest of the space on the selected disks.
 It then creates 2 subvolumes, one for the root directory `/`, and one for the home directory `/home`, which will share the same space but have different filesystem settings.
-
-So unless specified otherwise, the installer will use all your disks to create a JBOD (spanned) array, which may be undesirable if you do not want to risk losing all your data if one of the disks fail.
-
-Most server installations will use XFS or ZFS, as they have better performance and reliability for servers, and are more suitable for RAID arrays.
 
 ### Remote Filesystems
 
