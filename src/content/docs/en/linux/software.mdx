@@ -19,7 +19,7 @@ Flatpaks can be installed from **Software** on Flagship, GNOME, and Xfce, and **
 
 You can browse the available software in these app stores, or on the [Flathub website](https://flathub.org/).
 
-Despite most applications being installed from Flatpak, some apps may not work properly, or may not be available at all. The following sections will help with software in other formats.
+Most desktop apps should be installed as a Flatpak, but in some cases, like with Steam, IDEs, or other apps that require access to the system, they may not work. The following sections will help with software in other formats.
 
 ### Software Downloaded from the Internet
 
@@ -27,31 +27,23 @@ Sometimes, the software you need may come as a package file downloaded from the 
 
 #### RPM Packages
 
-To install RPMs on Flagship, GNOME, or KDE, simply double-click it.
-
-To install an RPM on Pantheon, open a Terminal and run
-
-```
-sudo dnf localinstall /path/to/package.rpm
-```
-
-(Replacing `/path/to/package.rpm` with the real path, it's usually `~/Downloads/package.rpm`)
+To install RPMs simply double-click the downloaded file in the file manager.
 
 #### AppImages
 
-1. Install AppImage Launcher from **Software** or **Discover**. On Pantheon Edition, run
+1. Install AppImage Launcher from **Software** or **Discover**.
 
-```
-sudo dnf install appimagelauncher
-```
+2. Double-click the AppImage file and you're done!
 
-2. Double-click the file and you're done!
+<Alert type="warning">
 
-We recommend avoiding AppImages as they are not automatically updated and may have compatibility issues.
+AppImages are not automatically updated and may have issues communicating with other apps and the system. We recommend looking for a Flatpak or RPM instead.
+
+</Alert>
 
 ### Snap
 
-Snap is a package manager made by Canonical for Ubuntu. It contains a large amount of proprietary applications that you may not be able to find elsewhere.
+Snap is a package manager made by Canonical. It contains a large amount of proprietary applications that you may not be able to find elsewhere.
 
 <Alert type="warning">
 
@@ -80,7 +72,7 @@ Snap packages load slowly and may not work at all on editions other than GNOME. 
 
 ### DNF
 
-Ultramarine Linux uses the DNF package manager. While this package manager primarily handles system software (like the kernel, and your desktop environment) it can install user apps as well.
+Ultramarine uses the DNF package manager. While this package manager primarily handles system software (like the kernel, and your desktop environment) it can install user apps as well.
 
 ```bash
 sudo dnf install steam # Install Steam
