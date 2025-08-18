@@ -5,19 +5,28 @@ description: "How to use umcli"
 
 import Alert from "../../../../components/Docs/Alert.astro";
 
-umcli is a utility included in Ultramarine. It has many planned features, but this is a list of current ones. 
+umcli is a utility included in Ultramarine. It has many planned features, and this is a list of current and planned ones.
 
-# Arguments
+## Current Features
 
-`um`, `um h`, `um --help` - Display help and general info.
+Syntax: `um` [global options] command [command options]
 
-`um --status` - Displays information about the system.
+#### Global Options
 
-`um status --upload` - creates a shareable link to view your system specs online. This information is end-to-end encrypted, auto-expires, and not tied to you in any way.
+`-h`, `--help` -- Display the `um` help screen if not attached to commands. Displays the Command's help page if run before a command. Just running `um` will also show the base `um` help screen.
 
-# Planned Features
+#### Commands/Features
+
+`status` -- Displays information about the system. This includes system version info, hardware overview, disk information, system status, network information, and more.
+- `--upload` -- Creates a shareable link to view your system specs online. This information is end-to-end encrypted, auto-expires in 7 days, and not tied to you in any way.
+- `--json` -- Outputs status in JSON format.
+
+## Planned Features
 
 - umcli wrapper around the Nix language installer. Also pre-configure nix to instantly be able to have an easy to use experience.
-- `umcli upgrade, potentially a wrapper around the `topgrade` package. Would update everything on the system (system packages, flatpaks, firmware, etc.).
-- `um get PACKAGE`. A way to easily install packages that are not in a common package repository, but do distribute their own RPMs, or their own repositories.
+- `umcli upgrade`, potentially a wrapper around the `topgrade` package. Would update everything on the system (system packages, flatpaks, firmware, etc.).
+- `um get PACKAGE`. A way to easily install packages that are not in a common package repository, but do distribute their own RPMs, or their own repositories. Based on [deb-get](https://github.com/wimpysworld/deb-get)
 - And more!
+
+#### [Next Up: Linux Concepts, what is Linux? →](/en/linux/overview)
+#### [← Back To: Switching Ultramarine Desktop Editions](/en/usage/hop)
