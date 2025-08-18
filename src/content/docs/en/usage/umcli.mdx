@@ -1,0 +1,23 @@
+---
+title: umcli
+description: "How to use umcli"
+---
+
+import Alert from "../../../../components/Docs/Alert.astro";
+
+umcli is a utility included in Ultramarine. It has many planned features, but this is a list of current ones. 
+
+# Arguments
+
+`um`, `um h`, `um --help` - Display help and general info.
+
+`um --status` - Displays information about the system.
+
+`um status --upload` - creates a shareable link to view your system specs online. This information is end-to-end encrypted, auto-expires, and not tied to you in any way.
+
+# Planned Features
+
+- umcli wrapper around the Nix language installer. Also pre-configure nix to instantly be able to have an easy to use experience.
+- `umcli upgrade, potentially a wrapper around the `topgrade` package. Would update everything on the system (system packages, flatpaks, firmware, etc.).
+- `um get PACKAGE`. A way to easily install packages that are not in a common package repository, but do distribute their own RPMs, or their own repositories.
+- And more!
