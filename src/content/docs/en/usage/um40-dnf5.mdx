@@ -8,7 +8,7 @@ import Alert from "../../../../components/Docs/Alert.astro";
 Starting with UM40, `dnf5` will replace `dnf-3` as the default package manager.
 This is done via the `dnf5-default-package-manager` package provided by the UM40 repositories.
 
-## Technical details
+## Technical Details
 
 The `dnf5-default-package-manager` package has a `%triggerin` script for `dnf` and `yum`. When these
 2 packages get installed/updated, the script will be executed, which will replace `/usr/bin/dnf` and
@@ -35,11 +35,11 @@ advised to report this bug to upstreams (i.e. the apps in concern), not `dnf5` o
 - We hope this change will push apps in the Fedora neighborhood to switch to `dnf5` and at the same
   time discover apps that are poorly maintained/written and rely on `dnf`/`dnf-3`.
 
-### Does UM40 remove `dnf`?
+### Does UM40 Remove `dnf`?
 
 - We do not remove `dnf-3`. We only replace the symlinks for `dnf` and `yum` to point to `dnf5`.
 
-### Wouldn't that break compatiblility?
+### Wouldn't that Break Compatiblility?
 
 - If changing only 2 symlinks actually breaks your workflows, either your workflows are poorly made,
   or there are some apps you use that rely on the 2 symlinks, which evinces that those apps are
@@ -50,7 +50,7 @@ advised to report this bug to upstreams (i.e. the apps in concern), not `dnf5` o
   has been working hard on making `dnf5` the replacement for `dnf-3`. There are works in progress to
   adapt GNOME software for `dnf5`, and to make `dnf5` much more feature-complete.
 
-### But some features are missing in `dnf5`!
+### But Some Features are Missing in `dnf5`!
 
 - There are efforts on making `dnf5` more feature-complete compared with `dnf-3`. You may help speed
   this up by [contributing to upstream](https://github.com/rpm-software-management/dnf5/).
