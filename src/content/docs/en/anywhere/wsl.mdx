@@ -125,6 +125,26 @@ wsl -l
 
 Then, replace `Ultramarine` in the setdefault command with the listed name.
 
+### Hardware Acceleration
+
+To enable hardware acceletation, run the following command to enable the `terra-mesa` repo (note that you need to be running Ultramarine WSL 42 or later):
+
+```sh
+sudo sed -i '0,/enabled=0/s/enabled=0/enabled=1/' /etc/yum.repos.d/terra-mesa.repo
+```
+
+And then install the `mesa-vulkan-drivers` package:
+
+```sh
+sudo dnf install mesa-vulkan-drivers
+```
+
+This will install everything you need for hardware acceleration through Ultramarine WSL.
+
+### Version Upgrading
+
+To version upgrade Ultramarine WSL, check the instructions [here](https://wiki.ultramarine-linux.org/en/release/42-upgrades#upgrading-ultramarine-wsl-system-versions).
+
 ## More Information
 
 Microsoft has vast resources about WSL, here are some helpful links:
