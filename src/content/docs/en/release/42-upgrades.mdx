@@ -28,6 +28,16 @@ sudo dnf system-upgrade download --releasever=42
 sudo dnf offline reboot
 ```
 
+### Upgrading Ultramarine WSL System Versions
+
+WSL works a bit differently, to upgrade Ultramarine 41 WSL, run the following and follow the prompts:
+
+```sh
+sudo dnf upgrade --refresh
+sudo dnf install dnf-plugin-system-upgrade
+sudo dnf distro-sync --allowerasing --releasever=42
+```
+
 ## Getting Support
 
 If you need any help please reach out in [one of our chats.](/en/community/community/)
