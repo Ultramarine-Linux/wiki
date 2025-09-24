@@ -22,6 +22,14 @@ Syntax: `um` [global options] command [command options]
 - `--upload` -- Creates a shareable link to view your system specs online. This information is end-to-end encrypted, auto-expires in 7 days, and not tied to you in any way.
 - `--json` -- Outputs status in JSON format.
 
+`tweaks` -- Manage Ultramarine Tweaks. Tweaks are Ansible playbooks or arbitrary shell scripts that modify the system following a preset. This can be used to configure specific software, change system settings, and more.
+
+- `list` -- Lists all available tweaks.
+- `enable TWEAK` -- Enables a tweak.
+- `disable TWEAK` -- Disables a tweak.
+- `run TWEAK` -- Runs a script tweak
+- `--yes`, `-y` -- Automatically answer yes to all prompts. Use with caution.
+
 ## Planned Features
 
 - umcli wrapper around the Nix language installer. Also pre-configure nix to instantly be able to have an easy to use experience.
