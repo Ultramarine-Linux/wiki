@@ -21,7 +21,11 @@ This is solved by distributors including Ultramarine as a synonym to Fedora.
 
 - Nvidia and Surface users may experience a kernel panic after upgrade.
 
-  This is caused by the boot partition running out of space, you can boot into the previous kernel entry and either install `dnf-strip-trigger` (which will break moving drives to another device) or [tell DNF to keep less kernels](https://discussion.fedoraproject.org/t/how-can-i-change-the-number-of-kernels-retained-when-updating-in-fedora/73863/2).
+  This is caused by the boot partition running out of space, you can boot into the previous kernel entry and either install `dracut-strip-trigger` (which will break moving drives to another device) or [tell DNF to keep less kernels](https://discussion.fedoraproject.org/t/how-can-i-change-the-number-of-kernels-retained-when-updating-in-fedora/73863/2).
+
+  Since Ultramarine 42, only 2 kernel versions are kept, and `dracut-strip-trigger` should be installed by default.
+
+- Taidan language switching does not work
 
 ### Plasma Edition
 
