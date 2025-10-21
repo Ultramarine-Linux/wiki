@@ -127,7 +127,10 @@ Then, replace `Ultramarine` in the setdefault command with the listed name.
 
 ### Hardware Acceleration
 
-To enable hardware acceletation, run the following command to enable the `terra-mesa` repo (note that you need to be running Ultramarine WSL 42 or later):
+Starting with Ultramarine WSL 42, hardware acceleration packages are included by default.
+
+If you upgraded from 41 to 42, you may need to enable the terra-mesa repository to install the needed packages.
+Run the following command to enable the repo:
 
 ```sh
 sudo sed -i '0,/enabled=0/s/enabled=0/enabled=1/' /etc/yum.repos.d/terra-mesa.repo
