@@ -34,11 +34,11 @@ List of umcli Tweaks:
 
 | Tweak                      | Type   | Function                                  | Notes                                       |
 | -------------------------- | ------ | ----------------------------------------- | ------------------------------------------- |
-| cleanup-old-kernels        | Run    | Remove all but the 2 most recent kernels  |                                             |
-| mtu-probing                | Enable | Enable MTU probing                        |                                             |
-| openssl-legacy-negotiation | Enable | Use unsafe legacy negotiation for OpenSSL | Should only be used if absolutely necessary |
-| sudo-pwfeedback            | Enable | Add `*` feedback when entering in password during a sudo prompt |                       |
-| cachyos-kernel             | Enable | Install the [CachyOS kernel](https://wiki.cachyos.org/features/kernel/) via the COPR, and enable as default kernel entry | If you are using Secure Boot, you will need to set up `sbctl` according to the CachyOS specification. More info can be found when enabling the tweak |
+| cleanup-old-kernels        | Oneshot    | Remove all but the 2 most recent kernels  |                                             |
+| mtu-probing                | Toggleable | Enable MTU probing                        |                                             |
+| openssl-legacy-negotiation | Toggleable | Use unsafe legacy negotiation for OpenSSL | Should only be used if absolutely necessary |
+| sudo-pwfeedback            | Toggleable | Add `*` feedback when entering in password during a sudo prompt |                       |
+| cachyos-kernel             | Toggleable | Install the [CachyOS kernel](https://wiki.cachyos.org/features/kernel/) via the COPR, and enable as default kernel entry | If you are using Secure Boot, you will need to set up `sbctl` according to the CachyOS specification. More info can be found when enabling the tweak |
 
 ## Planned Features
 
