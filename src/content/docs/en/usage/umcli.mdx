@@ -30,6 +30,16 @@ Syntax: `um` [global options] command [command options]
 - `run TWEAK` -- Runs a script tweak
 - `--yes`, `-y` -- Automatically answer yes to all prompts. Use with caution.
 
+List of umcli Tweaks:
+
+| Tweak                      | Type   | Function                                  | Notes                                       |
+| -------------------------- | ------ | ----------------------------------------- | ------------------------------------------- |
+| cleanup-old-kernels        | Oneshot    | Remove all but the 2 most recent kernels  |                                             |
+| mtu-probing                | Toggleable | Enable MTU probing                        |                                             |
+| openssl-legacy-negotiation | Toggleable | Use unsafe legacy negotiation for OpenSSL | Should only be used if absolutely necessary |
+| sudo-pwfeedback            | Toggleable | Add `*` feedback when entering in password during a sudo prompt |                       |
+| cachyos-kernel             | Toggleable | Install the [CachyOS kernel](https://wiki.cachyos.org/features/kernel/) via the COPR, and enable as default kernel entry | If you are using Secure Boot, you will need to set up `sbctl` according to the CachyOS specification. More info can be found when enabling the tweak |
+
 ## Planned Features
 
 - umcli wrapper around the Nix language installer. Also pre-configure nix to instantly be able to have an easy to use experience.
