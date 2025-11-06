@@ -1,0 +1,82 @@
+---
+title: Differences with Fedora
+description: "Known differences and changes compared with Fedora"
+---
+
+import Alert from "../../../../components/Docs/Alert.astro";
+
+This page documents Ultramarine Linux's significant changes compared with a typical Fedora workstation setup.
+
+Changes listed below are non-exhaustive and cumulative, meaning each section contains changes from all the sections below it.
+
+### Emoji meanings
+
+- 📦 This is packaged in [Terra]
+- 🛳️ This ships existing Fedora packages
+- 🔥 This is a significant change/improvement
+
+## Ultramarine 42
+
+- 🔥 Many Taidan fixes and new pages/features
+- 📦 Use netto for network connection in Taidan
+- Properly enable terra-mesa repo for all images
+- 📦 `umcli` tweaks feature included ootb
+- 📦 Surface images switch to upstream surface-dtx-daemon package
+- WSL gains hardware acceleration, proper Ultramarine shell configs, and some packages ported over from Ultramarine proper.
+- Update preset systemd services
+- A towel is included with every install
+- Reduce initramfs size
+- Only keep 2 kernel versions at a time
+
+## Ultramarine 41
+
+- 🔥 Switched to Taidan, our out-of-box experience
+- 🔥 All raw images (including Pi) switched to Btrfs
+- 🔥 Move many core desktop apps to Flatpak
+- 🔥 WSL support
+- 🔥 Surface Images
+- 🛳️ `fastfetch`
+- 🛳️ `zstd`
+- 📦 `umcli`
+- 📦 NVIDIA drivers shipped in [Terra]
+- 📦 Codecs shipped in [Terra]
+
+## Ultramarine 40
+
+- 🔥 [Change default package manager to `dnf5`](/en/usage/um40-dnf5) (`dnf5-default-package-manager`)
+- Drop Pantheon Edition
+- `ultramarine-fun`
+- 🛳️ `git`
+- 🛳️ XFCE Edition
+- Improve key bindings for `zsh`
+- Supported by [Raspberry Pi Imager](https://github.com/raspberrypi/rpi-imager)
+- Use `ext4` instead of `btrfs` for Raspberry Pis
+
+## Before Ultramarine 40
+
+- Out of box repositories: [Terra], full set of [RPM Fusion], [Flathub]
+- IP MTU probing enabled (which fixes [Ubisoft Connect](https://en.wikipedia.org/wiki/Ubisoft_Connect) games)
+- [Custom wallpapers](https://github.com/Ultramarine-Linux/backgrounds) 🌇 by Aikoyori
+- 📦 [System76 Scheduler](https://github.com/pop-os/system76-scheduler) (significantly better scheduling for low-end devices)
+  - 📦 [KWin Script for system76-scheduler Integration](https://github.com/maxiberta/kwin-system76-scheduler-integration)
+- Numerous popular GNOME extensions
+  - 🛳️ [AppIndicator/KStatusNotifierItem support](https://github.com/ubuntu/gnome-shell-extension-appindicator) (`gnome-shell-extension-appindicator`)
+  - 🛳️ [Pop shell extension](https://github.com/pop-os/shell) (`gnome-shell-extension-pop-shell`)
+  - 🛳️ Support for keyboard selection of windows and workspaces in GNOME Shell (`gnome-shell-extension-windowsNavigator`)
+  - 🛳️ [Bringing back the app menu](https://github.com/fthx/appmenu-is-back) (`gnome-shell-extension-appmenu-is-back`)
+  - 📦 [Pop Launcher](https://github.com/pop-os/launcher) (`pop-launcher`)
+- 🛳️ Most drivers and codecs
+- 🛳️ Guest Desktop Agents (`@guest-desktop-agents`)
+- 📦 `sipa-fonts` ([Thai National Fonts](https://en.wikipedia.org/wiki/National_Fonts))
+- 🛳️ Mozc (Japanese Input Method Editor)
+- 📦 ~~Pantheon Edition (`@pantheon-desktop`)~~ (deprecated since UM40)
+- 📦 [Starship](https://starship.rs)
+- Custom Budgie Layout that focuses on simplicity
+
+(Last Updated October 2025)
+
+[Terra]: https://terra.fyralabs.com
+[RPM Fusion]: https://rpmfusion.org
+[Flathub]: https://flathub.org
+
+#### [← Back To: Errata](/en/release/errata)

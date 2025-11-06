@@ -1,0 +1,81 @@
+---
+title: Mirroring
+description: "A guide of how you can mirror Ultramarine Linux, making downloads faster for everyone"
+---
+
+Mirroring allows you to contribute by hosting packages closer to users, making downloads faster, more reliable, and reducing load on Fyra Labs' infrastructure.
+
+When users update or install packages, they'll hit our mirror director service, [Tetsudou](https://github.com/terrapkg/tetsudou), which will calculate an optimal set of mirrors to download updates from.
+
+## Requirements
+
+- A publicly accessible server with good uptime
+- A domain name
+- A good internet connection (1Gbps or more)
+- A moderate amount of disk space (100GB or more)
+- Experience with server administration
+
+## Mirroring using Terra Mirror Scripts
+
+We provide a mirror script (and accessory Docker image) to help you get started. Documentation is available on [GitHub](https://github.com/terrapkg/mirror-script).
+
+## Mirroring using rsync
+
+You can also mirror the repositories using the `rsync-ssl` utility.
+
+```sh
+rsync-ssl -avPzr --delete rsync://repos.fyralabs.com/repo/ /path/to/your/mirror
+```
+
+## Running on a schedule
+
+Regardless of whether you're using the mirror script or directly calling rsync, you'll need to rerun to keep your mirror up-to-date. We recommend syncing every 5 minutes.
+
+This is required if you want to submit your mirror to the public list. We will remove mirrors that are not kept up-to-date.
+
+You can use any method for this, but we recommend systemd timers. A good guide on how to set up a systemd timer can be found [here](https://opensource.com/article/20/7/systemd-timers).
+
+## Serving your mirror
+
+All mirrors must be served over HTTPS. You can use a web server of your choosing to serve your mirror, we recommend using [Static Web Server](https://static-web-server.net/) or [Caddy](https://caddyserver.com/).
+
+## Submitting your mirror
+
+Once you have your mirror set up, you can submit it to the public mirror list by opening a pull request on the [Tetsudou repository](https://github.com/terrapkg/tetsudou).
+
+The public mirror configuration is stored in the `repos/` directory. Each JSON file represents a repository that can be mirrored. You can add your mirror in the appropriate JSON files.
+If you're mirroring all repositories (the default), you ned to add your mirror to all JSON files.
+
+Here is an example of an entry:
+
+```json
+{
+  "url": "repos.fyralabs.com/terra43",
+  "asn": 24940,
+  "continent": "EU",
+  "country": "DE",
+  "lat": 50.5597,
+  "lon": 6.7705,
+  "protocols": ["https"]
+}
+```
+
+And here is a table of what each field means:
+| Field | Meaning | Example |
+| ------- | ------------ | ------- |
+| url | The URL of your mirror, do not include the protocol. | `repos.fyralabs.com/terra43` |
+| asn | Your Autonomous System Number (ASN). | `24940` |
+| continent | The shortcode of the continent your mirror is located on. | `EU` |
+| country | The shortcode of the country your mirror is located in. | `DE` |
+| lat | The latitude of your mirror. | `50.5597` |
+| lon | The longitude of your mirror. | `6.7705` |
+| protocols | The protocols your mirror supports, only `https` is supported. | `["https"]` |
+
+### Notes
+
+- You can use a service like [ipinfo.io](https://ipinfo.io/) to get your ASN, continent, country, latitute, and longitude from your server's IP address.
+- The location doesn't have to be exact, but it should be close to your actual location.
+
+#### [Next Up: Ultramarine Anywhere →](/en/anywhere/anywhere)
+
+#### [← Back To: Code Contributions](/en/contributing/hacking)

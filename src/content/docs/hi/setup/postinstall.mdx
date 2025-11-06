@@ -1,0 +1,161 @@
+---
+title: Post-Installation
+description: "Things to do after installing Ultramarine Linux."
+---
+
+import Alert from "../../../../components/Docs/Alert.astro";
+
+## Creating a User Account
+
+After Ultramarine is installed and you've rebooted into it, you'll be greeted with the out of box experience, Taidan.
+
+You'll be guided through a setup process from here, configure your system as you please.
+Welcome to Ultramarine Linux!
+
+## Install NVIDIA Drivers
+
+If you were connected to the Internet during installation NVIDIA drivers were installed automatically.
+If this didn't happen or you missed the chance to enable them on first boot, you can install them with these commands:
+
+```bash
+sudo dnf update # Update the system first, the drivers may not work if you don't.
+sudo dnf install akmod-nvidia # Install the NVIDIA kernel module.
+```
+
+Then, reboot your system.
+
+<Alert type="warning">
+  You MUST wait until the process is finished before rebooting. Rebooting too
+  early might result in a broken driver installation! This may take upwards of
+  15 minutes! You can check the progress by running `sudo akmods`
+</Alert>
+
+### Use NVIDIA Graphics Card as the primary card on Optimus Laptops
+
+This change is is completely optional. You can skip this step if you don't
+want to use your NVIDIA Graphics Card as the primary card, or you do not use a
+dual-GPU laptop connected to an external monitor. It may also cause issues
+with some applications, such as Steam and Bottles.
+
+Run the following commands to make your NVIDIA Graphics Card the primary Graphics Card:
+
+```bash
+sudo cp -p /usr/share/X11/xorg.conf.d/nvidia.conf /etc/X11/xorg.conf.d/nvidia.conf
+sudo sed -i '10i\        Option "PrimaryGPU" "yes"' /etc/X11/xorg.conf.d/nvidia.conf # Add PrimaryGPU = yes to the 10th line of the file.
+```
+
+Then reboot your system.
+
+## Install Codecs
+
+Ultramarine Linux includes codecs for most of the media you'll come across. **You shouldn't need to install any additional codecs.** Most of these packages below should be installed by default, excluding
+the VLC and MPV media players, and the `libdvdcss` library.
+
+However, if you find yourself in the situation where you do not have those codecs (if you converted for example), or require additional codecs other than we have provided (i.e obscure formats, or proprietary codecs not included in any repositories), you can look into the following packages:
+
+- `x264` and `x265` for better H.264 and HEVC video support - Developed by the VideoLAN (VLC) project.
+- [FFmpeg](https://ffmpeg.org/) (`ffmpeg`) - A cross-platform multimedia framework that can manipulate, convert and transcode to and from various media formats.
+- [VLC Media Player](https://www.videolan.org/vlc/) (`vlc`) - A free and open-source media player that can play most multimedia files, can also be used to test out the codecs' functionality.
+- [MPV](https://mpv.io/) (`mpv`) - A free and open-source media player that can also play most multimedia files. Can be used as a lightweight alternative to VLC.
+- [libvpx](https://www.webmproject.org/) (`libvpx`) - A free and open-source codec for VP8 and VP9 video formats.
+- [libdvdcss](https://www.videolan.org/developers/libdvdcss.html) (`libdvdcss`) - A library that can be used to read encrypted DVDs. This is not legal in some countries, so please check your local laws before using it. We also do not provide decryption keys for any encrypted DVDs.
+- [Opus](https://opus-codec.org/) (`opus`) - A free and open-source audio codec that can be used for both speech and music. Should be installed by default.
+- [OpenH264](https://www.openh264.org/) (`openh264`) - A free and open-source codec for H.264 video formats. Should be installed by default, required for WebRTC and partially Firefox.
+- [aptX](https://www.aptx.com/) (`pipewire-codec-aptx`) - A proprietary codec for high-quality audio streaming over Bluetooth. Required for wireless Bluetooth audio devices that support it.
+- `nv-codec-headers` - NVIDIA's codec headers for encoding and decoding video on NVIDIA GPUs. Required for hardware-accelerated video encoding and decoding on NVIDIA GPUs. May not be used by default assuming you do not have an NVIDIA GPU.
+- [LAME](https://lame.sourceforge.io/) (`lame`) - A free and open-source MP3 encoder. Required for encoding MP3 files.
+- `PackageKit-gstreamer-plugin` - PackageKit plugin that helps you install the above codec packages using GNOME Software/KDE Discover.
+
+## Set up Backups
+
+You may want to back up your files to an external volume, you can use [Pika Backup] or [Déjà Dup] to do so.
+
+Instructions are available on the [Pika Backup] and [Déjà Dup] websites.
+
+[Déjà Dup]: https://wiki.gnome.org/Apps/DejaDup
+[Pika Backup]: https://apps.gnome.org/PikaBackup/
+
+# Advanced Tweaks
+
+These are tweaks that you probably don't care about, if you don't know what you're doing, skip this section.
+
+## Use systemd-boot as the Bootloader
+
+Ultramarine uses GRUB as its bootloader for compatibility reasons. However, if you have a UEFI system, you may switch to
+systemd-boot, a modern bootloader. It may even speed up boot!
+
+<Alert type="warning">
+  This step is optional. You can skip this step if you don't want to use
+  systemd-boot. Make sure to back up your data and have a live USB ready in case
+  something goes wrong. Incorrectly configuring a new bootloader can make your
+  OS unbootable.
+</Alert>
+
+1. Make sure you turn off Secure Boot in your UEFI settings for now, You can re-enable it later after you [sign systemd-boot with your own keys.](#secure-boot-with-systemd-boot)
+2. Remove GRUB from protected packages:
+
+```bash
+sudo rm /etc/dnf/protected.d/grub*
+```
+
+3. Start uninstalling GRUB:
+
+```bash
+sudo dnf remove -y grubby grub2\* memtest86\* && sudo rm -rf /boot/grub2 && sudo rm -rf /boot/loader
+```
+
+4. Install unsigned systemd-boot binaries and the `sdubby` tool:
+
+```bash
+sudo dnf install systemd-boot-unsigned sdubby
+```
+
+5. Install systemd-boot to the ESP:
+
+```bash
+# Copy your current cmdline options just in case
+cat /proc/cmdline | cut -d ' ' -f 2- | sudo tee /etc/kernel/cmdline
+# Install systemd-boot
+sudo bootctl install
+# Now, reinstall and regenerate the current kernel entry
+sudo kernel-install add $(uname -r) /lib/modules/$(uname -r)/vmlinuz
+# Reinstall the kernel again, just in case we need to trigger some hooks
+sudo dnf reinstall -y kernel-core
+```
+
+6. Reboot your system and make sure it boots correctly, run `sudo bootctl` to check if the boot process is correct.
+7. (Optional) proceed to [Set up Secure Boot](#secure-boot-with-systemd-boot) if you want to re-enable Secure Boot.
+
+### Secure Boot with systemd-boot
+
+If you switch to systemd-boot your bootloader will no longer have Red Hat's signing keys, breaking secure boot. If you'd like to keep using secure boot, you can sign systemd-boot with your own keys.
+
+Fortunately, there's a tool to automate this called sbctl. You can install it from the Terra repository:
+
+```bash
+sudo dnf install sbctl
+```
+
+After installing `sbctl`, you can use it to enroll, sign, and manage your Secure Boot keys. For example, to generate a new key and enroll it in your UEFI firmware:
+
+```bash
+# Generate a new key
+sudo sbctl create-keys
+# Enroll the key
+sudo sbctl enroll-keys
+```
+
+You can then use `sbctl sign` to sign your kernel, initramfs, and bootloader binaries. For example:
+
+```bash
+# Sign the kernel
+sudo sbctl sign /boot/vmlinuz-$(uname -r)
+```
+
+However, once you have installed sbctl, it should've already set up a hook to sign the kernel, initramfs and bootloader binaries automatically on kernel updates.
+
+After signing the necessary files and enrolling them in your firmware, you can re-enable Secure Boot in your UEFI settings.
+
+#### [Next Up: Broadcom and Realtek Networking →](/en/setup/broadcom-realtek)
+
+#### [← Back To: Installation](/en/setup/installation)

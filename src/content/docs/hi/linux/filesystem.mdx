@@ -1,0 +1,87 @@
+---
+title: The File System
+description: "An overview of the file system in Linux."
+---
+
+import Alert from "../../../../components/Docs/Alert.astro";
+
+There are a few notable differences in how files work on Linux when compared to Windows or macOS.
+
+The most noticeable difference is case sensitivity. Windows and macOS are case-insensitive, meaning that `FOLDER` and `Folder` are the same folder. Linux on the other hand is case-sensitive, so `FOLDER` and `Folder` are two different folders.
+
+In Linux, and more widely, UNIX, everything is a file. Unlike Windows which has other object types to represent physical devices.
+
+## The File System Hierarchy
+
+Linux has a standardized file system hierarchy called the [*Filesystem Hierarchy Standard*](https://en.wikipedia.org/wiki/Filesystem_Hierarchy_Standard) (FHS). The FHS is contained within `/` (called root.) Root doesn't only contain normal files, but also physical devices, virtual devices, and various other special files that control the system itself.
+
+It should also be noted that Linux uses a forward slash (`/`) to represent going deeper in a directory, unlike Windows which uses a backslash (`\`)
+
+The directory structure is as follows:
+
+| Directory | Description                                                                                                                                                                  |
+| :-------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| /         | The root directory with the all the other directories and files. This is as far back as you can go                                                                           |
+| /bin      | Executables and command binares required for a functioning system. Most applications installed from RPM end up here.                                                         |
+| /boot     | The bootloader and files used during early boot process. May usually be in a seperate partition.                                                                             |
+| /dev      | Special device files for various purposes (`/dev/sda` for a drive, `/dev/null` for blank data, `/dev/random` for pseudo-random data, `/dev/tty` for terminal sessions, etc). |
+| /etc      | System-wide settings and configuration files.                                                                                                                                |
+| /home     | User files. This is where your stuff lives!                                                                                                                                  |
+| /lib      | Libraries required for executables in `/bin` to function. May be also named `/lib<arch>`.                                                                                    |
+| /media    | Mount points for when the system mounts removable media, such as USB drives, SD cards, etc.                                                                                  |
+| /mnt      | Temporary mount points for media. Usually used when manually mounting a drive.                                                                                               |
+| /opt      | Optional packages that may be installed by the user. Most packages don't actually install here.                                                                              |
+| /proc     | Process data and kernel information for inter-process communication managed by the kernel.                                                                                   |
+| /root     | User data for the root user. Don't confuse this with `/` (root)                                                                                                              |
+| /sbin     | Executables for system tasks.                                                                                                                                                |
+| /srv      | Shared service data used by server processes, such as web servers and NAS/File servers.                                                                                      |
+| /tmp      | Temporary data.                                                                                                                                                              |
+| /usr      | Shared application data used by all users.                                                                                                                                   |
+| /var      | Variable data used by system processes.                                                                                                                                      |
+
+## The Home Directory
+
+The home folder is the place where your personal data, and most of your apps are stored. It's a folder located in the `/home` directory named after your username. It is similar to the `Users` folder in Windows.
+
+In Linux, the home folder is used more than in Windows, as it stores all user-specific data, settings, and the majority of your apps (Flatpaks). The system folders are only used when making system-wide changes or installing applications from DNF or an RPM File.
+
+## Virtual Memory
+
+[Virtual memory](https://en.wikipedia.org/wiki/Virtual_memory) is a feature in Linux and other operating systems that allows the system to use a portion of the disk as RAM. This is useful when the system runs out of RAM and needs to use the disk as a temporary storage for data.
+
+Swap comes with many issues, for example, it can reduce the lifespan of lower-cost SSDs, and is too slow on hard drives. To combat this Ultramarine uses memory compression [(zram specifically)](https://en.wikipedia.org/wiki/Zram).
+
+By default, we compress to .5x of your physical memory. (e.g. 16gb physical memory=8gb zram)
+
+Although this may sound magical, it does come at the cost of your CPU working a little bit harder. Luckily this is not very noticeable on modern computers.
+
+[Learn more about zram →](https://en.wikipedia.org/wiki/Zram)
+
+## File system formats
+
+Ultramarine Linux supports a wide variety of file systems, and can be configured to use any of them during installation.
+
+It currently supports most file systems that are supported by the Linux kernel, including:
+
+- ext2, ext3, ext4
+- Btrfs
+- XFS
+- NTFS
+- FAT32
+
+And extra file system drivers can be installed, such as:
+
+- ZFS
+
+Ultramarine's installer is configured to use Btrfs by default. Btrfs is a modern filesystem with snapshots, virtual volumes, journaling, error correction and compression.
+
+By default, the installer will use all the available space on the disk. 500mb is dedicated to the EFI boot partition (2mb on BIOS systems, 16mb on x86 Chromebooks, and 64mb on ARM Chromebooks), 1gb for /boot, a Btrfs volume uses the rest of the space on the selected disks.
+It then creates 2 subvolumes, one for the root directory `/`, and one for the home directory `/home`, which will share the same space but have different filesystem settings.
+
+### Remote Filesystems
+
+Ultramarine Linux can also mount remote file systems from a remote server or NAS, using the NFS, SFTP, SMB, and WebDAV protocols.
+
+#### [Next Up: Device Files →](../linux/devicefiles)
+
+#### [← Back To: What is Linux?](../linux/overview)
