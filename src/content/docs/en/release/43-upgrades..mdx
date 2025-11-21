@@ -1,0 +1,46 @@
+---
+title: Upgrades for Ultramarine 43
+description: "A temporary notice for the 42 to 43 upgrade path."
+---
+
+import Alert from "../../../../components/Docs/Alert.astro";
+
+We're proud to announce that upgrades to Ultramarine Linux 43 (Gas Meter) are ready right now in your edition's app store!
+
+Ultramarine 43 comes with the usual desktop and under-the-hood changes for our existing users.
+
+## Upgrading
+
+Per usual, everything is handled in your edition's app store. If you're on Flagship, GNOME, or Xfce, it's called Software. On Plasma, it's called Discover.
+
+You may need to update your copy of Ultramarine 42 before the upgrade will become available.
+
+## Command Line
+
+In case the above doesn't work, you can always upgrade through the command line, using `dnf system-upgrade`.
+
+Run the following and follow the prompts:
+
+```sh
+sudo dnf upgrade --refresh
+sudo dnf install dnf-plugin-system-upgrade
+sudo dnf system-upgrade download --releasever=43
+sudo dnf offline reboot
+```
+
+### Upgrading Ultramarine WSL System Versions
+
+WSL works a bit differently, to upgrade Ultramarine 41 WSL, run the following and follow the prompts:
+
+```sh
+sudo dnf upgrade --refresh
+sudo dnf distro-sync --releasever=43
+```
+
+## Getting Support
+
+If you need any help please reach out in [one of our chats.](/en/community/community/)
+
+#### [Next Up: Errata →](/en/release/errata)
+
+#### [← Back To: Linux Concepts, Security and Privacy →](/en/linux/securityprivacy)
