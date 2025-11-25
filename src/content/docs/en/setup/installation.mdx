@@ -49,8 +49,7 @@ If you want to set up a custom storage config, select the 3-dot menu on the top 
 
 <Alert type="info">
   We recommend encrypting your disk for added security. Simply select the
-  "Encrypt" checkbox, you will be prompted to enter a new password after
-  pressing done, and the password you provided to the installer on every boot.
+  "Encrypt" checkbox, and you will be prompted to enter a passphrase for encryption. You will need to enter this passphrase every time your system reboots.
 </Alert>
 
 For more information on how encryption works, refer [here](#encryption).
@@ -65,7 +64,7 @@ After completing your system configuration, press the `Erase data and Install` b
   will have to reinstall.
 </Alert>
 
-After the installation process is complete, Anaconda will prompt you to exit. You can reboot your device from the live environment.
+After the installation process is complete, Anaconda will prompt you to exit back to the live environment. You can reboot your device from the live environment.
 
 Next you'll set up your system.
 
@@ -84,6 +83,7 @@ First, select your preferred language.
 ![The Welcome Dialog box](/assets/readymade/install-or-try.png)
 
 From here you can select `Try` to continue using the live system, or `Install` to proceed with installation.
+You can select the `Install to Device` application on the desktop to install at any time.
 
 ### Install Destination
 
@@ -101,8 +101,7 @@ You also have the option to encrypt your disk, and enable TPM encryption. When y
 
 <Alert type="info">
   We recommend encrypting your disk for added security. Simply select the
-  "Encrypt" checkbox, you will be prompted to enter a new password after
-  pressing done, and the password you provided to the installer on every boot.
+  "Encrypt" checkbox, and you will be prompted to enter a passphrase for encryption. You will need to enter this passphrase every time your system reboots.
 </Alert>
 
 For more information on how encryption works, refer [here](#encryption).
@@ -111,7 +110,7 @@ For more information on how encryption works, refer [here](#encryption).
 
 ![Confirmation](/assets/readymade/confirm.png)
 
-Now, you are ready to install. Select `Install` to begin. You will then be taken to the page below, with links to out wiki, chats, and contribution information that will open in the live environment during the install.
+Now, you are ready to install. Select `Install` to begin. You will then be taken to the page below, with links to our wiki, chats, and contribution information that will open in the live environment during the install.
 
 ### Installing
 
@@ -131,9 +130,10 @@ Welcome to Ultramarine Linux!
 
 ## Encryption
 
-FDE (full-disk encryption) is a method in which all data on a disk is made unreadable (encrypted) without first trying to be read with a matching authentication key.
+FDE (full-disk encryption) is a method to secure your data from potential theft/attack.
+It works by rendering all data unreadable (encrypted), unless unlocked with a matching authentication key (this typically occurs when the device is turned on).
 - In Anaconda, This authentication key can be unlocked using a passphrase. This means that if the drive was removed and placed into another computer, the data would still be unreadable until the passphrase is entered.
-- In Readymade, This authentication key can be unlocked using a passphrase or a devices TPM2. This means that if the drive was removed and placed into another computer, the data would still be unreadable until the passphrase is entered, and if using TPM2, the data will be unreadable.
+- In Readymade, This authentication key can be unlocked using a passphrase or a device's TPM2. This means that if the drive was removed and placed into another computer, the data would still be unreadable until the passphrase is entered. If the drive was encrypted using TPM2, the data will be unreadable if attached to another device.
 
 BitLocker is common on Windows systems, FileVault is common on macOS systems, and LUKS is common on Linux systems. When enabling disk encryption when installing Ultramarine Linux, you are using LUKS.
 
@@ -159,6 +159,15 @@ There can also be drawbacks to using TPM as well. Here are some reasons this cou
 
 - TPM/motherboard failure can prevent data recovery. If this is a concern, we reccomend creating a backup key.
 - If an entire computer is stolen, the encryption will still auto-decrypt itself, leaving a system with essentailly user passphrase security only, which can be bypassed and broken.
+
+---
+
+## Taidan (Out-of-Box) Guide
+
+After rebooting into the installed system, you will be greeted with our out-of-box app, Taidan.
+Below is a simple guide on each Taidan page.
+
+
 
 #### [Next Up: Post-Installation →](/en/setup/postinstall)
 
