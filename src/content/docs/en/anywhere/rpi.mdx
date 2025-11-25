@@ -44,10 +44,10 @@ You can also use the Disks application on Flagship, Xfce, and GNOME editions.
 
 ## Raspberry Pi Imager
 
-- Install [Raspberry Pi Imager](https://www.raspberrypi.com/software/). Note that this should be packaged in your distibution, and it also available on other opperating systems, and the Raspberry Pi firmware. We also do not reccomend using the flatpak, since it can have permissions trouble when flashing the disk.
+- Install [Raspberry Pi Imager](https://www.raspberrypi.com/software/). Note that this should be packaged in your distribution, and it also available on other operating systems, and the Raspberry Pi firmware. We also do not recommend using the flatpak, since it can have permissions trouble when flashing the disk.
 - Open Raspberry Pi Imager, select 'Choose Device,' then select 'Raspberry Pi 4.'
 - Select 'Choose OS' then scroll down to 'Other General-Purpose OS,' select 'Ultramarine Linux,' then select your edition of choice.
-- Select 'Choose Storage,' and select your storage device you would like to flash to. Double check you have the correct device selected, as this is a destructive opperation.
+- Select 'Choose Storage,' and select your storage device you would like to flash to. Double check you have the correct device selected, as this is a destructive operation.
 - Select 'Next,' then select 'Yes.'
 - Once the flash and validation is complete, remove your disk, and insert it into your Raspberry Pi 4.
 
@@ -70,8 +70,14 @@ Fedora has upstream support for the Pi 4, 400, and 3. Ultramarine Anywhere inten
 We have Raspberry Pi packages packaged in [Terra](https://terra.fyralabs.com/). We are working on packaging as many as we can, currently included packages:
 
 - [rpi-utils](https://github.com/raspberrypi/utils), a collection of miscellaneous tools for Raspberry Pis. You may install these individually, or all together as `rpi-utils`
-- [rpi-update](https://github.com/raspberrypi/rpi-update), a script to update Raspierry Pi firmware.
+- [rpi-update](https://github.com/raspberrypi/rpi-update), a script to update Raspberry Pi firmware.
 - [Picotool](https://github.com/raspberrypi/picotool), a tool for working with RP2040/RP2350 devices.
+
+We also have a collection of Raspberry Pi's desktop application:
+
+- [Piclone](https://github.com/raspberrypi-ui/piclone), Utility to back up a Raspberry Pi to an SD card.
+- [Bookshelf](https://github.com/raspberrypi-ui/bookshelf), A browser for Raspberry Pi Press publications.
+- [Raindrop](https://github.com/raspberrypi-ui/raindrop), Graphical display configurator for Raspberry Pi, using arandr and wlrandr.
 
 To install any of these:
 
@@ -84,8 +90,8 @@ dnf install PACKAGENAME
 - RPi4B has a 1GB and 2GB model, we suggest against running a desktop environment on these (Xfce may be alright).
 - RPi3B has only 1GB of RAM, and the 3A only has 512MB, we suggest against running a desktop environment (Xfce may be alright).
 - The Pi 4 series has native USB boot support. Your experience may be better with a fast USB Drive or SSD connected through an adapter. See [this article](https://www.raspberrypi.com/documentation/computers/raspberry-pi.html#usb-mass-storage-boot) for more info.
-- If using a USB drive on a Pi 4, ensure it's USB 3.0 or newer and plugged into a USB 3.0 (blue) port. 2.0 will be a signifcantly worse experience than a microSD.
-- If using a microSD card, we reccomend using a Class 10 microSD card, your experience will be signifcantly better than lower classes.
+- If using a USB drive on a Pi 4, ensure it's USB 3.0 or newer and plugged into a USB 3.0 (blue) port. 2.0 will be a significantly worse experience than a microSD.
+- If using a microSD card, we recommend using a Class 10 microSD card, your experience will be significantly better than lower classes.
 - Your storage device will need to be larger than 9GB (the image is 8.59GB). We suggest 16GB so you have space for software.
 
 # (Currently) Unsupported Raspberry Pi Devices
@@ -100,6 +106,6 @@ The Raspberry Pi 5 is not currently supported in Fedora. We are packaging the of
   These devices are **Not Supported** due to 32bit CPUs.
 </Alert>
 
-#### [Next Up: Gaming on Ultramarine →](/en/usage/gaming)
+#### [Next Up: Windows Subsystem for Linux →](/en/anywhere/wsl)
 
 #### [← Back To: Microsoft Surface](/en/anywhere/surface)

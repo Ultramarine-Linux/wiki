@@ -7,11 +7,11 @@ import Alert from "../../../../components/Docs/Alert.astro";
 
 ## Mandatory Access Controls
 
-Ultramarine Linux uses SELinux, a software that implements Mandatory Access Control. This prevents applications (and users) from accessing files they shouldn't be able to.
+Ultramarine uses SELinux, a software that implements Mandatory Access Controls. This prevents applications (and users) from accessing files they shouldn't be able to.
 
-Users will usually be required to have root access to modify system files, and even then, SELinux may prevent you from doing so unless you have set the correct contexts for the files.
+Users are usually required to have root access to modify system files, and even then, SELinux may prevent you from doing so unless you have set the correct contexts for the files.
 
-By default, SELinux is in "Enforcing" mode, which means that it will prevent you from modifying system files unless you have the correct permissions. This shouldn't cause any issues. If you would like to disable SELinux you can run`sudo setenforce 0`. We don't recommend this as it makes your system less secure.
+By default, SELinux is in "Enforcing" mode, which means that it will prevent you (and others) from modifying system files unless you have the correct permissions. This shouldn't cause any issues. If you would like to disable SELinux you can run `sudo setenforce 0`. We don't recommend this as it makes your system less secure.
 
 [Learn more about SELinux →](https://www.redhat.com/en/topics/linux/what-is-selinux)
 
@@ -19,7 +19,7 @@ By default, SELinux is in "Enforcing" mode, which means that it will prevent you
 
 ## Privilege Control
 
-Ultramarine Linux includes polkit, a tool used to manage privilege elevation. If you've ever gotten a graphical password prompt on your system, you've interacted with polkit.
+Ultramarine includes polkit, a tool used to manage privilege elevation. If you've ever gotten a graphical password prompt on your system, you've interacted with polkit.
 
 <Alert type="info">
 
@@ -31,7 +31,7 @@ polkit also manages communication between privileged and non privileged applicat
 
 ## Disk Encryption
 
-Ultramarine Linux offers the option to encrypt your entire disk at install time. This protects your data from physical attacks and theft.
+Ultramarine offers the option to encrypt your entire disk at install time. This protects your data from physical attacks and theft.
 
 ## Sandboxing
 
@@ -39,8 +39,8 @@ When you install an app as a Flatpak, it's contained within a sandbox, meaning i
 
 ## Restricted Memory Access
 
-Ultramarine Linux and Fedora restrict access to physical memory. This should prevent most memory injection attacks.
+Ultramarine and Fedora restrict access to physical memory. This should prevent most memory injection attacks.
 
-#### [Next Up: Ultramarine Release Notes, Errata →](/en/release/errata)
+#### [Next Up: Ultramarine Release Notes, Ultramarine 42 Upgrades →](/en/release/42-upgrades)
 
 #### [← Back To: SSH](/en/linux/ssh)

@@ -74,26 +74,26 @@ We use [keyd](https://github.com/rvaiya/keyd) to map keys on Chromebooks.
 
 | Device    | Reason                                                                                                 |
 | --------- | ------------------------------------------------------------------------------------------------------ |
-| Mario     | Firmware Limitations                                                                                   |
-| Alex      | Firmware Limitations                                                                                   |
-| ZGB       | Firmware Limitations                                                                                   |
-| Stumpy    | Boot parttion size Limitation (this can be [corebooted](https://docs.chrultrabook.com/docs/firmware/)) |
-| Lumpy     | Boot parttion size Limitation (this can be [corebooted](https://docs.chrultrabook.com/docs/firmware/)) |
-| Parrot    | Boot parttion size Limitation (this can be [corebooted](https://docs.chrultrabook.com/docs/firmware/)) |
-| Butterfly | Boot parttion size Limitation (this can be [corebooted](https://docs.chrultrabook.com/docs/firmware/)) |
-| Link      | Boot parttion size Limitation (this can be [corebooted](https://docs.chrultrabook.com/docs/firmware/)) |
-| Stout     | Boot parttion size Limitation (this can be [corebooted](https://docs.chrultrabook.com/docs/firmware/)) |
+| Mario     | Firmware limitations                                                                                   |
+| Alex      | Firmware limitations                                                                                   |
+| ZGB       | Firmware limitations                                                                                   |
+| Stumpy    | Boot partition size limitation (this can be [corebooted](https://docs.chrultrabook.com/docs/firmware/)) |
+| Lumpy     | Boot partition size limitation (this can be [corebooted](https://docs.chrultrabook.com/docs/firmware/)) |
+| Parrot    | Boot partition size limitation (this can be [corebooted](https://docs.chrultrabook.com/docs/firmware/)) |
+| Butterfly | Boot partition size limitation (this can be [corebooted](https://docs.chrultrabook.com/docs/firmware/)) |
+| Link      | Boot partition size limitation (this can be [corebooted](https://docs.chrultrabook.com/docs/firmware/)) |
+| Stout     | Boot partition size limitation (this can be [corebooted](https://docs.chrultrabook.com/docs/firmware/)) |
 
 These are among the first few generations of Chromebooks, and either use an unsupported firmware, or have limitations preventing us from booting a partition large enough to fit Submarine.
 
 ## Installation
 
-Chromebook Edition will be released soon, installation guide for that will be found on a seperate menu in this wiki at the time of release.
+Ultramarine on Chromebook will be released soon, installation guide for that will be found on a separate menu in this wiki at the time of release.
 
-## Manual Installation - PROCEED AT YOUR OWN RISK, Ultramarine Chromebook Edition will be a much easier experience once released
+## Manual Installation - Note that Ultramarine Chromebook Edition will be a much easier experience once released
 
 <Alert type="warning">
-  This method is **NOT RECOMMENDED**. Only do this if you know what you're
+  This method is more technical than our usual wiki content, proceed if you know what you're
   doing. We are not responsible for brickage, thermonuclear war, the death of a
   pet, etc.
 </Alert>
@@ -108,7 +108,7 @@ This guide assumes you are on x86 and have [Developer Mode](https://chromium.goo
 4. Set the partition flags with cgpt (may have to install `vboot-utils`).
 
 ```
-cgpt add -i <Submarine partition number> -t kernel -P 15 -T 1 -S 1 /dev/sdX
+sudo cgpt add -i <Submarine partition number> -t kernel -P 15 -T 1 -S 1 /dev/sdX
 ```
 
 5. Boot the image on the Chromebook.
@@ -152,7 +152,7 @@ cgpt add -i <partition number> -t kernel -P 15 -T 1 -S 1 /dev/sdX
 11. Done!
 
 <Alert type="warning">
-  Once Ultramarine has been sucessfully installed onto your Chromebook's internal disk, rebooting will take you back to the ChromeOS recovery screen. To boot to Ultramarine, select 'Boot to Internal Disk' or press <kbd>Ctrl</kbd>+<kbd>D</kbd>
+  Once Ultramarine has been successfully installed onto your Chromebook's internal disk, rebooting will take you back to the ChromeOS recovery screen. To boot to Ultramarine, select 'Boot to Internal Disk' or press <kbd>Ctrl</kbd>+<kbd>D</kbd>
 </Alert>
 
 ## ARM

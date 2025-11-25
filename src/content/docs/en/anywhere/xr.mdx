@@ -3,14 +3,9 @@ title: "XR and Spatial Computing"
 description: "XR and Spatial Computing in the Ultramarine Anywhere Initiative"
 ---
 
-import Alert from "../../../../components/Docs/Alert.astro";
+We are working on providing full support for [Stardust XR](https://stardustxr.org/). 
 
-<Alert type="info">
-  This device type is still in the **Planning Phase**. All information on this
-  page is subject to change.
-</Alert>
-
-We will provide full support for [Stardust XR](https://stardustxr.org/). 
+### Packages
 
 All core Stardust XR components are packaged in the [Terra repository](https://terra.fyralabs.com/) (shipped with Ultramarine):
 
@@ -31,7 +26,11 @@ To install all of these packages:
 ```
 sudo dnf group install stardust-xr
 ```
+To install these packages on an RPM-OSTree/bootc based system:
+```
+sudo rpm-ostree install stardust-xr-armillary stardust-xr-atmosphere stardust-xr-black-hole stardust-xr-comet stardust-xr-flatland stardust-xr-gravity stardust-xr-magnetar stardust-xr-non-spatial-input stardust-xr-protostar stardust-xr-server stardust-xr-telescope
+```
 
-Then, run `telescope -f` in your terminal. 
+Then, run `telescope` in your terminal, or `telescope -f` for flatscreen mode. 
 
 For further information, check out [the Stardust XR docs](https://stardustxr.org/docs/get-started/What-is-Stardust).

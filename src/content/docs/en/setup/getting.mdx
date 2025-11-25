@@ -14,14 +14,9 @@ If your computer could run Windows 7 well, chances are it'll run Ultramarine Lin
 Ultramarine Linux comes in 4 variants:
 
 - **Flagship Edition**: Our default and most popular variant. Choose Flagship if you'd like a familiar and stylish experience.
-- **KDE Edition**: Our second most popular variant. Choose KDE if you'd like a simply customisable experience.
+- **Plasma Edition**: Our second most popular variant. Choose Plasma if you'd like a simply customisable experience.
 - **GNOME Edition**: Elegant and Modern. Choose GNOME if you'd like a simple, unique experience.
 - **Xfce Edition**: Lightweight and Configurable. Choose Xfce if you'd like a lighter experience.
-
-<Alert type="info">
-  Pantheon Edition was dropped in UM40 due to a growing maintenance burden and
-  shrinking userbase.
-</Alert>
 
 Check the [System Requirements](/en/hardware/requirements) to make sure your hardware is supported.
 
@@ -32,37 +27,27 @@ Ultramarine Linux is distributed in various formats available for download from 
   sites other than our website or FOSSTorrents
 </Alert>
 
-### Atomic
+### Microsoft Surface Devices
 
-Ultramarine Linux also comes in Atomic versions. Ultramarine Atomic works similarly to Fedora Silverblue, CoreOS, and other OSTree-based operating systems. This variant is made for users who want a stable, immutable system that is easy to recover from.
-We see immutability as the future of Linux systems. Ideally, this will become the standard edition in the future.
+Ultramarine is available with Microsoft Surface support out of the box.
+Downloads can be found on our website, and more information can be found [here](../anywhere/surface).
 
-These builds are currently in beta. If you are planning to test them, please join our [Discord](https://discord.gg/5fdPuxTg5Q) or [Matrix](https://matrix.to/#/#hub:fyralabs.com) community first and let us know. We'll be happy to receive feedback and assist you.
+### Windows Subsystem for Linux
 
-[Try Ultramarine Atomic →](https://nightly.link/Ultramarine-Linux/ostree-config/workflows/ci-isos.yaml/main?preview)
-
-(The "Home" and "Base" images are copies of [tauOS](https://tauos.co) - These **ARE NOT READY FOR DAILY USE!!**)
+Ultramarine offers a WSL build/application.
+This can be found on the microsoft store, with `winget`, or can be installed with an offline script found on it's anywhere page [here](../anywhere/wsl).
 
 ### Raw Images and Raspberry Pi
 
-Ultramarine is also availible as a raw (or preinstalled) image. These images come with a desktop preinstalled and are intended to be flashed directly to the drive your device will boot from (like an SSD or an SD card.)
+Ultramarine is also available as a raw (or preinstalled) image. These images come with a desktop preinstalled and are intended to be flashed directly to the drive your device will boot from (like an SSD or an SD card.)
 
-These can be found in the [Raw Image](https://images.fyralabs.com/images/ultramarine/40/) sections of the download page.
+These can be found in the [Raw Image](https://images.fyralabs.com/images/ultramarine) sections of the download page.
 
 <Alert type="info">
   If you're using a Raspberry Pi 4, you can skip these steps and use Raspberry
   Pi Imager! Either insert an empty microSD and press shfit at startup, or use
   it on another device.
 </Alert>
-
-{/* ### Chromebook Edition */}
-
-{/* Ultramarine is available for most x86 ChromeOS devices. See the [Chromebook Edition section](/en/chromebook/chromebook) for more information. */}
-
-{/* ### Kanopy */}
-
-{/* **Ultramarine Kanopy** is an upcoming variant of Ultramarine Linux, which is made for servers and cloud computing. It is currently in development and does not have a release date yet, but we plan to target Qx '2x */}
-{/* It will be based on Ultramarine OSTree and is designed as a simple and easy-to-use server operating system, with a focus on containerized applications with a simple, easy-to-use web interface as a competitor to TrueNAS SCALE, OpenMediaVault, and other similar operating systems. */}
 
 ## Verifying the Safety of an Ultramarine Image (Recommended)
 
@@ -92,7 +77,7 @@ CertUtil -hashfile PATH\TO\ULTRAMARINE.ISO SHA256
 
 <Alert type="info">
   If you're using a Raspberry Pi, stop here and go to the [Raspberry Pi
-  instructions](/en/installation/rpi)
+  instructions](/en/anywhere/rpi)
 </Alert>
 
 ## Creating the Installer
@@ -126,9 +111,9 @@ Most computers have a special key that can be used to select a boot device, or t
 ## Footnotes
 
 - The Anaconda installer is very complex and hard to work with, we are working on a new installer that is easier to use and more reliable.
-- Since Fedora 37 the Ultramarine team has maintained Pantheon, in Ultramarine 40 we will be dropping Pantheon due to major issues with the experience.
 - Ultramarine's Budgie edition provides a close to stock Budgie experience, with a custom theme. Unlike Fedora's Budgie Spin, which provides a completely custom layout and experience.
 
 #### [Next Up: BIOS Keys →](/en/setup/bioskeys)
 
 #### [← Back To: System Requirements](/en/setup/requirements)
+

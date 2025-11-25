@@ -5,27 +5,24 @@ description: "Things to do after installing Ultramarine Linux."
 
 import Alert from "../../../../components/Docs/Alert.astro";
 
-After installing Ultramarine Linux, There are a few things you should do to make the most out of your new system.
+## Creating a User Account
+
+After Ultramarine is installed and you've rebooted into it, you'll be greeted with the out of box experience, Taidan.
+
+You'll be guided through a setup process from here, configure your system as you please.
+Welcome to Ultramarine Linux!
 
 ## Install NVIDIA Drivers
 
-NVIDIA drivers were installed during the installation process
-if you were connected to the Internet during the time of installation.
+If you were connected to the Internet during installation NVIDIA drivers were installed automatically.
 If this didn't happen or you missed the chance to enable them on first boot, you can install them with these commands:
 
 ```bash
-sudo dnf update # Update the system first, the drivers may not work right if you don't.
+sudo dnf update # Update the system first, the drivers may not work if you don't.
 sudo dnf install akmod-nvidia # Install the NVIDIA kernel module.
 ```
 
 Then, reboot your system.
-
-<Alert type="info">
-  The automatic installation of extra drivers does **not** cover all hardware
-  and may not work on some systems, and is only included in the live
-  environment. If you are having trouble with the drivers, you can install them
-  manually using the commands above.
-</Alert>
 
 <Alert type="warning">
   You MUST wait until the process is finished before rebooting. Rebooting too
@@ -78,6 +75,87 @@ Instructions are available on the [Pika Backup] and [Déjà Dup] websites.
 [Déjà Dup]: https://wiki.gnome.org/Apps/DejaDup
 [Pika Backup]: https://apps.gnome.org/PikaBackup/
 
-#### [Next Up: Advanced Post-Install Scripts →](/en/setup/post-advanced)
+# Advanced Tweaks
+
+These are tweaks that you probably don't care about, if you don't know what you're doing, skip this section.
+
+## Use systemd-boot as the Bootloader
+
+Ultramarine uses GRUB as its bootloader for compatibility reasons. However, if you have a UEFI system, you may switch to
+systemd-boot, a modern bootloader. It may even speed up boot!
+
+<Alert type="warning">
+  This step is optional. You can skip this step if you don't want to use
+  systemd-boot. Make sure to back up your data and have a live USB ready in case
+  something goes wrong. Incorrectly configuring a new bootloader can make your
+  OS unbootable.
+</Alert>
+
+1. Make sure you turn off Secure Boot in your UEFI settings for now, You can re-enable it later after you [sign systemd-boot with your own keys.](#secure-boot-with-systemd-boot)
+2. Remove GRUB from protected packages:
+
+```bash
+sudo rm /etc/dnf/protected.d/grub*
+```
+
+3. Start uninstalling GRUB:
+
+```bash
+sudo dnf remove -y grubby grub2\* memtest86\* && sudo rm -rf /boot/grub2 && sudo rm -rf /boot/loader
+```
+
+4. Install unsigned systemd-boot binaries and the `sdubby` tool:
+
+```bash
+sudo dnf install systemd-boot-unsigned sdubby
+```
+
+5. Install systemd-boot to the ESP:
+
+```bash
+# Copy your current cmdline options just in case
+cat /proc/cmdline | cut -d ' ' -f 2- | sudo tee /etc/kernel/cmdline
+# Install systemd-boot
+sudo bootctl install
+# Now, reinstall and regenerate the current kernel entry
+sudo kernel-install add $(uname -r) /lib/modules/$(uname -r)/vmlinuz
+# Reinstall the kernel again, just in case we need to trigger some hooks
+sudo dnf reinstall -y kernel-core
+```
+
+6. Reboot your system and make sure it boots correctly, run `sudo bootctl` to check if the boot process is correct.
+7. (Optional) proceed to [Set up Secure Boot](#secure-boot-with-systemd-boot) if you want to re-enable Secure Boot.
+
+### Secure Boot with systemd-boot
+
+If you switch to systemd-boot your bootloader will no longer have Red Hat's signing keys, breaking secure boot. If you'd like to keep using secure boot, you can sign systemd-boot with your own keys.
+
+Fortunately, there's a tool to automate this called sbctl. You can install it from the Terra repository:
+
+```bash
+sudo dnf install sbctl
+```
+
+After installing `sbctl`, you can use it to enroll, sign, and manage your Secure Boot keys. For example, to generate a new key and enroll it in your UEFI firmware:
+
+```bash
+# Generate a new key
+sudo sbctl create-keys
+# Enroll the key
+sudo sbctl enroll-keys
+```
+
+You can then use `sbctl sign` to sign your kernel, initramfs, and bootloader binaries. For example:
+
+```bash
+# Sign the kernel
+sudo sbctl sign /boot/vmlinuz-$(uname -r)
+```
+
+However, once you have installed sbctl, it should've already set up a hook to sign the kernel, initramfs and bootloader binaries automatically on kernel updates.
+
+After signing the necessary files and enrolling them in your firmware, you can re-enable Secure Boot in your UEFI settings.
+
+#### [Next Up: Broadcom and Realtek Networking →](/en/setup/broadcom-realtek)
 
 #### [← Back To: Installation](/en/setup/installation)

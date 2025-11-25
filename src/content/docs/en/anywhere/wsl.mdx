@@ -7,7 +7,7 @@ import Alert from "../../../../components/Docs/Alert.astro";
 
 [Windows Subsystem for Linux](https://learn.microsoft.com/en-us/windows/wsl/about) is a feature in Windows 10 and 11 that, in essence, is a Linux system as a Windows application.
 
-Ultramarine only supports WSL2. WSL2 is essentially a "lightweight utility virtual machine" running through Hyper-V, Microsoft's hypervisor. This gives Ultramarine full access to the Windows filesystem, and direct hardware access, with performance similar to that of baremetal Linux.
+Ultramarine only supports WSL2. WSL2 is essentially a "lightweight utility virtual machine" running through Hyper-V, Microsoft's hypervisor. This gives Ultramarine full access to the Windows filesystem, and direct hardware access, with performance similar to that of bare metal Linux.
 
 It is possible to install and run graphical Linux applications, and even full desktop environments. We plan to make running a desktop environment through Ultramarine WSL easier in the future.
 
@@ -15,13 +15,10 @@ It is possible to install and run graphical Linux applications, and even full de
 
 WSL2, and by extension Ultramarine WSL, needs the following:
 
-- Windows 10 (Version 2004 Build 19041), or Windows 11. IPv6 may have issues in Windows 10.
+- Windows 10 (Version 2004/Build 19041), or Windows 11. IPv6 may have issues in Windows 10.
 - Hardware Virtualization enabled. All pre-installed Windows 11 computers come with Virtualization enabled.
-- For DDEV, at least 8GBs RAM and 256GBs storage is required.
 
-**DDEV** is a local web development tool for Drupal, and is recommended to run on Docker through WSL2, rather then Docker through Windows, but has higher hardware requirements then WSL itself. For more information, click [here](https://www.drupal.org/docs/develop/local-server-setup/windows-development-environment/installing-drupal-with-ddev-in-wsl2-on-windows).
-
-To determine your virtualization status, look in Task Manager -> Preformance tab -> CPU, and locate virtualization information. You can also open a command prompt or PowerShell window and run the following command:
+To determine your virtualization status, look in Task Manager -> Performance tab -> CPU, and find virtualization information. You can also open a command prompt or PowerShell window and run the following command:
 
 ```
 systeminfo.exe
@@ -29,79 +26,94 @@ systeminfo.exe
 
 Locate the 'Hyper-V Requirements' section, near the bottom. Within that section, locate 'Virtualization Enabled In Firmware: yes/no.' If yes, you are good to go. If no, you will need to enable it in your UEFI/BIOS.
 
-## How to enable Virtualization in your UEFI/BIOS
+## Enabling Virtualization
 
-- Restart your device, then enter your bios/setup key when the system comes back on. A list of these keys can be found [here](/en/setup/bioskeys).
-- Locate the virtualization option. This can be in various places depending on the motherboard/manufactorer. Typically, this will be in the CPU settings/configuration menu. If unsure, research the option location according to your motherboard/computer.
-- Save and exit. There will typically be a deticated key to do this, or a select option on the main or exit page.
+- Power off your device.
+- Press the power button, then press your [BIOS key](/en/setup/bioskeys).
+- Locate the virtualization option. This can be in various places depending on the motherboard/manufacturer. Typically, this will be in the CPU configuration menu. Check with your manufacturer if you need help.
+- Save and exit. There will typically be a dedicated key to do this, or a select option on the main or exit page.
 
 Hardware virtualization should now be enabled, and you can proceed to installation.
 
-## Installation
+## Installing Ultramarine WSL
 
-There are a few different ways to install a WSL distro. Below are what we recommended.
+### Install using the Microsoft Store
 
-### Install from the Microsoft Store
-
-First we must install WSL. Open an administrator Command Prompt or PowerShell window, and enter the following command:
-
-```
-wsl --install
-```
-
-This will install everything needed for WSL, assuming the requirements are met. By default, this will also install Ubuntu for WSL. Ubuntu is the default WSL distro, but you can change your default, or delete Ubuntu. Deleting Ubuntu is out of the scope of this guide, but see [below](/en/anywhere/wsl#changing-your-default-wsl-distro-to-ultramarine) on changing your default distro to Ultramarine WSL.
-
-Then, open the Microsoft Store, and search 'Ultramarine Linux' in the Microsoft Store app, or [this link] NEEDS LINK THAT DOESNT EXIST YET
+Open the Microsoft Store, and search 'Ultramarine Linux' in the Microsoft Store app, or use [this link](https://apps.microsoft.com/detail/9PBPG2RDMZB9?hl=en-us&gl=US&ocid=pdpshare)
 
 Select 'Ultramarine Linux,' verify the author is Fyra Labs, and then select 'Get.'
 
-After this, Ultramarine WSL will appear as a Windows application. You can select 'Open' from the Microsoft Store window, and process to post installation steps.
+After this, Ultramarine WSL will appear as a Windows app. You can select 'Open' from the Microsoft Store window.
 
-### Install WSL2 and Ultramarine with a Single Command
-
-Open an administrator Command Prompt or PowerShell window, and enter the following command:
-
-```
-wsl --install -d ultramarine
-```
-
-This will install everything needed for WSL, and Ultramarine WSL, assuming the requirements are met. Ultramarine WSL will now appear as a Windows application and you are now ready for the post-install section.
+You're now ready for the [Post-Installation](/en/anywhere/wsl#post-installation) section!
 
 ### Install with WinGet
 
-First we must install WSL. Open an administrator Command Prompt or PowerShell window, and enter the following command:
+Before installing with WinGet, you must install WSL itself. To do this, run the following command in an Administrator PowerShell Window or Windows Command Prompt:
 
 ```
 wsl --install
 ```
 
-This will install everything needed for WSL, assuming the requirements are met. By default, this will also install Ubuntu for WSL. Ubuntu is the default WSL distro, but you can change your default, or delete Ubuntu. Deleting Ubuntu is out of the scope of this guide, but see [below](/en/anywhere/wsl#changing-your-default-wsl-distro-to-ultramarine) on changing your default distro to Ultramarine WSL.
+Note — this will also install the default Ubuntu WSL distribution.
 
-After this, in the same administrator Command Prompt or PowerShell window, enter this command:
+After WSL is installed, we can install Ultramarine. Open a PowerShell Window or Windows Command Prompt, and enter the following command:
 
 ```
 winget install ultramarine
 ```
 
-After this, Ultramarine WSL will appear as a Windows application. This will install everything needed for WSL, and Ultramarine WSL, assuming the requirements are met. You are now ready for the post-install section.
+After this, Ultramarine WSL will appear as a Windows application. This will install everything needed for WSL, and Ultramarine WSL, assuming the requirements are met.
+
+You're now ready for the [Post-Installation](/en/anywhere/wsl#post-installation) section!
+
+### Install from the Command Line
+
+Before installing through the command line, you must install WSL itself. To do this, run the following command in an Administrator PowerShell Window or Windows Command Prompt:
+
+```
+wsl --install
+```
+
+Note — this will also install the default Ubuntu WSL distribution.
+
+After WSL is installed, we can install Ultramarine. Open a non-admin PowerShell Window or Windows Command Prompt, and enter the following command (for x86_64 users):
+
+```
+curl https://images.fyralabs.com/images/ultramarine/42/ports-wsl-wsl-x86_64.tar.gz -o ultramarine.wsl; wsl --install --from-file ultramarine.wsl
+```
+
+For aarch64 users:
+
+```
+curl https://images.fyralabs.com/images/ultramarine/42/ports-wsl-wsl-aarch64.tar.gz -o ultramarine.wsl; wsl --install --from-file ultramarine.wsl
+```
+
+This command will download the latest available Ultramarine WSL build, output the file as `ultramarine.wsl`, then install `ultramarine.wsl` with WSL.
+
+Be sure to replace the file name in the URL to match your architecture. If you are on x86_64, you don't need to change anything. If you're using AArch64 (Windows on ARM), change to `wsl-wsl-aarch64.wsl`.
+
+After this, Ultramarine WSL will appear as a Windows application. This will install everything needed for WSL, and Ultramarine WSL, assuming the requirements are met.
+
+You're now ready for the [Post-Installation](/en/anywhere/wsl#post-installation) section!
 
 ## Post-installation
 
-When you start up Ultramarine WSL for the first time, it may take a bit to install all files. Wait until this finishes to proceed.
+Ultramarine WSL may take a few minutes to start up for the first time, as Windows installs the required files.
 
-### Making a user (REQUIRED)
+### Creating a User and Password
 
-When you boot into Ultramarine WSL (or any WSL for that matter), you will be prompted to enter a username and password. Follow the prompts to create a user, then sign into your new user, and then you're all good to go!
+When WSL finishes starting. you will be prompted to enter a username and password. This does not need to be the same as your Windows username and password.
 
 ### Updating
 
-It is always recommended to update a fresh system. To do this, please run the following command:
+It is always recommended to update a fresh install. To do this, please run the following command:
 
 ```
 sudo dnf upgrade
 ```
 
-### Changing your default WSL distro to Ultramarine
+### Setting your Default WSL Distro as Ultramarine
 
 To change your default WSL distro to Ultramarine, run the following command:
 
@@ -109,17 +121,40 @@ To change your default WSL distro to Ultramarine, run the following command:
 wsl --setdefault Ultramarine
 ```
 
-If, for whatever reason, Ultramarine is not detected, you can run the following command to list all installed WSL distros:
+If Ultramarine is not detected, you can run the following command to list all installed WSL distros:
 
 ```
 wsl -l
 ```
 
-Then, replace `Ultramarine` in the setdefault command to the listed name.
+Then, replace `Ultramarine` in the setdefault command with the listed name.
 
-### Further Information
+### Hardware Acceleration
 
-WSL has a lot of documentation, way to much for this one page. Microsoft has great resources and documentation, here are some helpful links:
+Starting with Ultramarine WSL 42, hardware acceleration packages are included by default.
+
+If you upgraded from 41 to 42, you may need to enable the terra-mesa repository to install the needed packages.
+Run the following command to enable the repo:
+
+```sh
+sudo sed -i '0,/enabled=0/s/enabled=0/enabled=1/' /etc/yum.repos.d/terra-mesa.repo
+```
+
+And then install the `mesa-vulkan-drivers` package:
+
+```sh
+sudo dnf install mesa-vulkan-drivers
+```
+
+This will install everything you need for hardware acceleration through Ultramarine WSL.
+
+### Version Upgrading
+
+To version upgrade Ultramarine WSL, check the instructions [here](/en/release/43-upgrades#upgrading-ultramarine-wsl-system-versions).
+
+## More Information
+
+Microsoft has vast resources about WSL, here are some helpful links:
 
 General WSL information: https://learn.microsoft.com/en-us/windows/wsl/about
 
@@ -129,6 +164,6 @@ Best Practices: https://learn.microsoft.com/en-us/windows/wsl/setup/environment
 
 Frequently Asked Questions: https://learn.microsoft.com/en-us/windows/wsl/faq
 
-#### [Next Up: Linux Concepts, What is Linux? →](/en/linux/overview)
+#### [Next Up: Gaming on Ultramarine →](/en/usage/gaming)
 
 #### [← Back To: Raspberry Pi](/en/anywhere/rpi)

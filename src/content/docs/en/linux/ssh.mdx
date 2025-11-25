@@ -5,7 +5,7 @@ description: "An overview of the SSH utility."
 
 import Alert from "../../../../components/Docs/Alert.astro";
 
-Secure Shell ("SSH") is one of the most common utilities when access to a remote device is needed. It's encrypted, powerful, and simple to understand.
+Secure Shell ("SSH") is a tool used to access a shell on a remote device.
 
 ## SSH overview
 
@@ -34,13 +34,18 @@ When using any of the above commands, once connected to the remote server you'll
 
 ## Running Your Own SSH Server
 
-Most modern Linux distros come with the required software to host your own SSH server. To allow users to connect to your machine, start the SSH server application using
+Start by installing the SSH server:
 
 ```zsh
-sudo systemctl start sshd
+sudo dnf install openssh-server
 ```
 
-Note that the above command uses `sudo`. The `sudo` command will execute the following commands as root (the superuser). For many commands that involve starting and stopping servers, the permission of the system's superuser is necessary. You can read more about the `sudo` command [here](en/linux/permissions). The above command also uses the `systemctl` command. This command is mostly used to manage servers or other Linux services.
+Then start the server using:
+
+```zsh
+systemctl enable --now sshd
+```
+You will be prompted to enter your password, enter it.
 
 Once the above command is run, your machine will begin listening for incoming connections on port 22. You can verify that the SSH server application started correctly by using the command
 

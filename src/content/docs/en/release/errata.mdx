@@ -15,7 +15,51 @@ Releases older than 37 will not have their eratta modified as we do not have rec
 
 This is solved by distributors including Ultramarine as a synonym to Fedora.
 
-### Ultramarine Linux 40
+## Ultramarine Linux 43
+
+### All Editions
+
+- Ultramarine Hop (our tool for adding/removing/switching editions and desktop environments) may not work. The new version is blocked by [an upstream bug from dnf5](https://github.com/rpm-software-management/dnf5/issues/2510).
+- Anaconda Web Installer shows "Fedora" on the first page. This is fixed [in upstream](https://github.com/rhinstaller/anaconda-webui/pull/1082).
+
+## Ultramarine Linux 42
+
+### All Editions
+
+- Nvidia and Surface users may experience a kernel panic after upgrade.
+
+  This is caused by the boot partition running out of space, you can boot into the previous kernel entry and either install `dracut-strip-trigger` (which will break moving drives to another device) or [tell DNF to keep less kernels](https://discussion.fedoraproject.org/t/how-can-i-change-the-number-of-kernels-retained-when-updating-in-fedora/73863/2).
+
+  Since Ultramarine 42, only 2 kernel versions are kept, and `dracut-strip-trigger` should be installed by default.
+
+- Taidan language switching does not work
+
+### Plasma Edition
+
+- Login/Lockscreen wallpaper is white
+
+  This appears to be an upstream issue. Switch the SDDM theme from "Fedora" to anything else (such as Breeze).
+
+### Flagship Edition
+
+- Install icon may not be using the Ultramarine icon.
+
+## Ultramarine Linux 41
+
+### All Editions
+
+- Taidan (out-of-box app) won't launch on VirtualBox and VMWare virtual machines.
+
+  We are [aware of this issue](https://blog.fyralabs.com/advisory-ultramarine-41-and-vmware/) and are solving it in UM42.
+
+- Taidan won't run again if you power off during or before setup.
+
+- Nvidia and Surface users may experience a kernel panic after upgrade.
+
+  This is caused by the boot partition running out of space, you can boot into the previous kernel entry and either install `dnf-strip-trigger` (which will break moving drives to another device) or [tell DNF to keep less kernels](https://discussion.fedoraproject.org/t/how-can-i-change-the-number-of-kernels-retained-when-updating-in-fedora/73863/2).
+
+
+## Ultramarine Linux 40
 
 ### Xfce Edition
 
@@ -61,7 +105,7 @@ This is solved by distributors including Ultramarine as a synonym to Fedora.
 
 [Instructions for getting 40.1 and 40.2 fixes ->](https://blog.fyralabs.com/ultramarine-linux-40-hotfixes/)
 
-## Ultramarine Linux 39
+## Ultramarine Linux 39 (EOL)
 
 ### Pre-release Images
 
@@ -127,14 +171,12 @@ This was caused by missing Pantheon Switchboard modules, which are not included 
 
 You can help us fix this issue by offering to maintain these packages ourselves, or by [contributing to help submit them to upstream Fedora.](https://fedoraproject.org/wiki/SIGs/Pantheon)
 
-### OSTree Edition
+### OSTree Edition (EOL)
 
 - Missing Tweaks from the Standard Releases
 
 As the standard release includes a script to modify the system, due to the nature of OSTree, we are unable to include these tweaks unless we rebuild all major packages with our custom patches.
 
-You can help us fix this issue by contributing and maintaining these packages yourself.
-
 #### [Next Up: Differences with Fedora →](/en/release/diff-fedora)
 
-#### [← Back To: Linux Concepts, Security and Privacy](/en/linux/securityprivacy)
+#### [← Back To: Ultramarine 42 Upgrades →](/en/release/42-upgrades)
