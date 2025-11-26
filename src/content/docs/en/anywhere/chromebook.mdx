@@ -102,7 +102,7 @@ This guide assumes you are on x86 and have [Developer Mode](https://chromium.goo
 
 ### Raw (.img) images:
 
-1. Download, decompress, and flash an [Ultramarine Raw Image](https://images.fyralabs.com/images/ultramarine/) with a desktop environment (for example, flagship-base-disk-x86_64.img), to a USB Drive or SD Card smaller then the internal disk of your Chromebook.
+1. Download, decompress, and flash an [Ultramarine Raw Image](https://images.fyralabs.com/images/ultramarine/) with a desktop environment (for example, plasma-base-disk-x86_64.img), to a USB Drive or SD Card smaller then the internal disk of your Chromebook.
 2. Create a 16MB partition at the END of the disk (for proper resizing after installation). In GParted, do this by making a new partition in the unallocated space, and dragging it all the way to the right while still in the 'Create new Partition' menu. If GParted gives you a 'Libparted Warning,' select 'Fix.'
 3. Flash the [submarine-x86.kpart](https://nightly.link/FyraLabs/submarine/workflows/build/main/submarine-x86_64.zip) file to the new partition.
 4. Set the partition flags with cgpt (may have to install `vboot-utils`).
@@ -133,7 +133,7 @@ dd if=/dev/sda of=/dev/mmcblk0 bs=4M status=progress
 
 If you're using other devices, adjust accordingly. If your're using an SD card to install to eMMC, or a USB stick to install to UFS, both devices will show as 'mmcblkX' (mmcblk 0/1/2), and 'sdX' (sd a/b/c). Adjust the numbers/letters accordingly.
 
-7. Once `dd` is done, verify the Submarine partition on the internal storage shows 'ChromeOS Kernel' as a flag. You can use the Disks app on Flagship, GNOME, and Xfce, or, KDE Partition Manager on KDE. Simply select the disk and partition, the label should appear under the logical view.
+7. Once `dd` is done, verify the Submarine partition on the internal storage shows 'ChromeOS Kernel' as a flag. You can use the Disks app on Budgie, GNOME, and Xfce, or, KDE Partition Manager on KDE. Simply select the disk and partition, the label should appear under the logical view.
 
 ### ISO Images:
 
