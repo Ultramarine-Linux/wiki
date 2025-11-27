@@ -1,0 +1,39 @@
+---
+title: "Pinebook Pro (Anywhere)"
+description: "Pinebook Pro in the Ultramarine Anywhere Initiative"
+---
+
+import Alert from "../../../../components/Docs/Alert.astro";
+
+## Using Tow-Boot
+
+Tow-Boot provides an EFI environment, meaning you can boot our ARM Generic ISOs and install normally
+
+## Using Stock u-boot
+
+### Flashing the Image
+
+Start by grabbing [any Preinstalled Image](https://images.fyralabs.com/images/ultramarine/43/) from our website.
+
+Now, you'll need to decompress it.
+
+- On Linux, run `unzstd FILENAME.img.zst`, you may need to install the `zstd` package
+- On Windows 11 or ChromeOS, zstd is natively supported. Decompress like you would a `.zip` file.
+- On Windows 10, use 7zip or WinRaR
+- On macOS, install `zstd` from [Homebrew](https://brew.sh/) (`brew install zstd`), then `unzstd FILENAME.img.zst`.
+
+Grab an SD Card! Use a flasher program to flash Ultramarine to your storage device. [balenaEtcher](https://www.balena.io/etcher/) is an easy cross-platform choice.
+
+If you'd prefer to install it to the internal eMMC or a NVMe drive, you can just reflash from the OS booted off the SD card.
+
+![](/assets/balenaetcher.png)
+
+Simply select the .img file, the device you're using, and click flash.
+
+You can also use the Disks application on Budgie, Xfce, and GNOME editions.
+
+### First Boot
+
+On first boot, the root file system will automatically be expanded, and you’ll be prompted with our out-of-box app, [Taidan](/en/setup/installation/#taidan-out-of-box-guide).
+
+That’s it! Ultramarine is on your Pinebook Pro!
