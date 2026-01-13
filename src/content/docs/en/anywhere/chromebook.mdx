@@ -74,26 +74,26 @@ We use [keyd](https://github.com/rvaiya/keyd) to map keys on Chromebooks.
 
 | Device    | Reason                                                                                                 |
 | --------- | ------------------------------------------------------------------------------------------------------ |
-| Mario     | Firmware Limitations                                                                                   |
-| Alex      | Firmware Limitations                                                                                   |
-| ZGB       | Firmware Limitations                                                                                   |
-| Stumpy    | Boot parttion size Limitation (this can be [corebooted](https://docs.chrultrabook.com/docs/firmware/)) |
-| Lumpy     | Boot parttion size Limitation (this can be [corebooted](https://docs.chrultrabook.com/docs/firmware/)) |
-| Parrot    | Boot parttion size Limitation (this can be [corebooted](https://docs.chrultrabook.com/docs/firmware/)) |
-| Butterfly | Boot parttion size Limitation (this can be [corebooted](https://docs.chrultrabook.com/docs/firmware/)) |
-| Link      | Boot parttion size Limitation (this can be [corebooted](https://docs.chrultrabook.com/docs/firmware/)) |
-| Stout     | Boot parttion size Limitation (this can be [corebooted](https://docs.chrultrabook.com/docs/firmware/)) |
+| Mario     | Firmware limitations                                                                                   |
+| Alex      | Firmware limitations                                                                                   |
+| ZGB       | Firmware limitations                                                                                   |
+| Stumpy    | Boot partition size limitation (this can be [corebooted](https://docs.chrultrabook.com/docs/firmware/)) |
+| Lumpy     | Boot partition size limitation (this can be [corebooted](https://docs.chrultrabook.com/docs/firmware/)) |
+| Parrot    | Boot partition size limitation (this can be [corebooted](https://docs.chrultrabook.com/docs/firmware/)) |
+| Butterfly | Boot partition size limitation (this can be [corebooted](https://docs.chrultrabook.com/docs/firmware/)) |
+| Link      | Boot partition size limitation (this can be [corebooted](https://docs.chrultrabook.com/docs/firmware/)) |
+| Stout     | Boot partition size limitation (this can be [corebooted](https://docs.chrultrabook.com/docs/firmware/)) |
 
 These are among the first few generations of Chromebooks, and either use an unsupported firmware, or have limitations preventing us from booting a partition large enough to fit Submarine.
 
 ## Installation
 
-Chromebook Edition will be released soon, installation guide for that will be found on a seperate menu in this wiki at the time of release.
+Ultramarine on Chromebook will be released soon, installation guide for that will be found on a separate menu in this wiki at the time of release.
 
-## Manual Installation - PROCEED AT YOUR OWN RISK, Ultramarine Chromebook Edition will be a much easier experience once released
+## Manual Installation - Note that Ultramarine Chromebook Edition will be a much easier experience once released
 
 <Alert type="warning">
-  This method is **NOT RECOMMENDED**. Only do this if you know what you're
+  This method is more technical than our usual wiki content, proceed if you know what you're
   doing. We are not responsible for brickage, thermonuclear war, the death of a
   pet, etc.
 </Alert>
@@ -102,13 +102,13 @@ This guide assumes you are on x86 and have [Developer Mode](https://chromium.goo
 
 ### Raw (.img) images:
 
-1. Download, decompress, and flash an [Ultramarine Raw Image](https://images.fyralabs.com/images/ultramarine/) with a desktop environment (for example, flagship-base-disk-x86_64.img), to a USB Drive or SD Card smaller then the internal disk of your Chromebook.
+1. Download, decompress, and flash a [Preinstalled Image](https://images.fyralabs.com/images/ultramarine/) with a desktop environment (for example, plasma-base-disk-x86_64.img), to a USB Drive or SD Card smaller then the internal disk of your Chromebook.
 2. Create a 16MB partition at the END of the disk (for proper resizing after installation). In GParted, do this by making a new partition in the unallocated space, and dragging it all the way to the right while still in the 'Create new Partition' menu. If GParted gives you a 'Libparted Warning,' select 'Fix.'
 3. Flash the [submarine-x86.kpart](https://nightly.link/FyraLabs/submarine/workflows/build/main/submarine-x86_64.zip) file to the new partition.
 4. Set the partition flags with cgpt (may have to install `vboot-utils`).
 
 ```
-cgpt add -i <Submarine partition number> -t kernel -P 15 -T 1 -S 1 /dev/sdX
+sudo cgpt add -i <Submarine partition number> -t kernel -P 15 -T 1 -S 1 /dev/sdX
 ```
 
 5. Boot the image on the Chromebook.
@@ -118,7 +118,7 @@ You're now inside the Ultramarine install on your USB/SD card. Slowness and lag 
 6. Use `dd` to copy the contents of the USB/SD card to the internal storage of the Chromebook.
 
 <Alert type="info">
-  You do NOT need to resize the root filesystem, it should do this automatically upon first boot. Depending on the size of your Chromebook's internal storage, you may need to move the Submarine partiiton to the end of the disk again, after it is copied to internal.
+  You do NOT need to resize the root filesystem, it should do this automatically upon first boot. Depending on the size of your Chromebook's internal storage, you may need to move the Submarine partition to the end of the disk again, after it is copied to internal.
 </Alert>
 
 If you need help with `dd` syntax, here are some pointers -
@@ -133,7 +133,7 @@ dd if=/dev/sda of=/dev/mmcblk0 bs=4M status=progress
 
 If you're using other devices, adjust accordingly. If your're using an SD card to install to eMMC, or a USB stick to install to UFS, both devices will show as 'mmcblkX' (mmcblk 0/1/2), and 'sdX' (sd a/b/c). Adjust the numbers/letters accordingly.
 
-7. Once `dd` is done, verify the Submarine partition on the internal storage shows 'ChromeOS Kernel' as a flag. You can use the Disks app on Flagship, GNOME, and Xfce, or, KDE Partition Manager on KDE. Simply select the disk and partition, the label should appear under the logical view.
+7. Once `dd` is done, verify the Submarine partition on the internal storage shows 'ChromeOS Kernel' as a flag. You can use the Disks app on Budgie, GNOME, and Xfce, or, Partition Manager on Plasma. Simply select the disk and partition, the label should appear under the logical view.
 
 ### ISO Images:
 
