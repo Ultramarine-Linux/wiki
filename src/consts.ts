@@ -103,7 +103,7 @@ export const SIDEBAR: Sidebar = {
         text: "Troubleshooting and FAQ",
         link: "en/chromebook/faq-and-troubleshooting",
       },
-      { text: "ARM Chromebooks (Beta)", link: "en/chromebook/armbeta" },
+      { text: "ARM Chromebooks (Beta)", link: "en/chromebook/arm" },
       { text: "Terminology", link: "en/chromebook/terminology" },
     ],
 
