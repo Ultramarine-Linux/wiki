@@ -41,17 +41,11 @@ You may have an audio device unsupported by the audio script by default (max9835
 
 ### USBC/Thunderbolt doesn't work
 
-You probably have an 11th or 12th gen Intel CPU. We have a systemd service packaged in terra that will fix this:
+Try restarting the systemd service:
 
 ```
-sudo dnf install chromebook-usbc-fix
+sudo systemctl restart chromebook-usbc-fix
 ```
-your USBC ports should immediatly work after package installation. If it does not, try a reboot. If it still doesn't work:
-
-```
-sudo systemctl enable chromebook-usbc-fix
-```
-This package may also work on 13th gen or higher platforms.
 
 ## FAQs
 
@@ -73,8 +67,8 @@ The goal here is to be as easy and safe to use as possible. It is also easier to
 
 ### Will this make my Chromebook faster?
 
-It often does, as Ultramarine can be more lightweight then ChromeOS, but we do not guarantee a preformance gain vs ChromeOS.
-If you are using an older/slower Chromebook and want to maximize performance, we reccomend using Xfce or Flagship edition.
+Ultramarine can be more lightweight then ChromeOS, but we do not guarantee a preformance gain vs ChromeOS.
+If you are using an older/slower Chromebook and want to maximize performance, we reccomend using Xfce Edition.
 
 ### Should I Buy a Chromebook Instead of a Regular Laptop Now?
 
@@ -82,7 +76,12 @@ Generally, it is recommended not to, however you can get really good Chromebook 
 
 ### This Installer Looks Different, What Is It?
 
-We are using our in-house installer [Readymade](https://github.com/FyraLabs/readymade). We always intended to use our own installer in Ultramarine, but Chromebook Edition is the first to use it due to the limitations of other installers. Chromebook Edition uses an early version of Readymade with pretty basic features, enough for a Chromeobok install. We hope to have a more complete build of Readymade for Ultramarine 41.
+We are using our in-house installer [Readymade](https://github.com/FyraLabs/readymade).
+
+### What is this Chrultrabook Tools app?
+
+An application to interact with your Chromebook's hardware, provided through Terra.
+More info can be found [here](https://github.com/death7654/Chrultrabook-Tools).
 
 #### Ultramarine Chromebook Edition Known Issues
 

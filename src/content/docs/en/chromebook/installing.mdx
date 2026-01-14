@@ -7,17 +7,17 @@ import Alert from "../../../../components/Docs/Alert.astro";
 
 Before we insert the installer, we will need to do a few things with your ChromeOS device.
 
-### 1. Back up your data (optional)
+### 1. Back Up Your Data (Optional)
 
 Step 2 will wipe all local data from your device, If you have any files you wish to save or move to Ultramarine Chromebook, back up your data off the device, either to the cloud or locally. For a small number of files, we recommend backing up to Google Drive, or another cloud storage provider. For a larger number of files, we recommend backing up to an external storage medium, such as a USB flash drive (seperate from the one you will turn into the instaler) or other external drive.
 
 If you choose to back up with Google Drive, you will be prompted to add your Google Drive to the Ultramarine Chromebook file manager in the GNOME, KDE, and Flagship editions during setup to easily access and redownload your data.
 
-### 2. Enable developer mode
+### 2. Enable Developer Mode
 
 <Alert type="warning">Enabling developer mode will wipe your data</Alert>
 
-#### Developer mode on Chromebooks (ChromeOS laptops only):
+#### Developer Mode on Chromebooks (ChromeOS Laptops Only):
 
 1. Shut down the device, then hold <kbd>esc</kbd> + <kbd>⟳</kbd> + <kbd>⏻ [power]</kbd> to enter Recovery mode.
 2. When you see a screen that says 'ChromeOS is missing or damaged,' press <kbd>Ctrl</kbd>+<kbd>D</kbd>.
@@ -26,7 +26,7 @@ If you choose to back up with Google Drive, you will be prompted to add your Goo
    Your system is now transitioning into Developer Mode! (This may take a few minutes)
 5. After it has transitioned, press <kbd>Ctrl</kbd>+<kbd>D</kbd> to boot back into ChromeOS as a developer. You are now ready for step 3
 
-#### Developer Mode on Chromeboxes and Chromebases (ChromeOS Desktops and All-in-ones):
+#### Developer Mode on Chromeboxes and Chromebases (ChromeOS Desktops and All-in-Ones):
 
 <Alert type="warning">
   Not all monitors will work with the Chromebox OS Verification screens. This
@@ -50,7 +50,7 @@ If you choose to back up with Google Drive, you will be prompted to add your Goo
 
 If you have any problems with these steps, refer to [this guide](https://chromium.googlesource.com/chromiumos/docs/+/main/debug_buttons.md#Firmware-Keyboard-Interface) or request support in our [discord](https://discord.com/invite/5fdPuxTg5Q).
 
-### 3. USB booting
+### 3. USB Booting
 
 1. In ChromeOS Developer mode, press <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>F2</kbd>.
 2. Type in 'chronos' for the login (there is no password, unless you set one previously. If you did, you probably know what you are doing).
@@ -63,43 +63,7 @@ sudo enable_dev_usb_boot
 4. You should have an output saying 'SUCCESS: Booting and self-assigned kernel from SSD/USB/SDCard slot is enabled.' Plug in your Ultramarine Chromebook installer and restart the device. If needed, press <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>F1</kbd> to leave the terminal.
 5. Restarting the device will boot to the recovery screen. Upon reaching it, press <kbd>Ctrl</kbd>+<kbd>U</kbd>> to boot from USB/SD. If on a ChromeOS tablet, use the volume keys to navigate to 'Developer Options,' select using the Power Button, then select 'Boot to External Disk.'
 
-### 4. Installing
-
-After booting into the installer, you will see a dialog box asking you whether to start the installer or continue with the live system.
-
-You can pick whichever you want, and you’ll be able to start the installer later by opening the Install to system application.
-
-#### Language Selection
-
-![](/assets/language.png)
-
-After starting the installer, you will be greeted with a language selection screen. Choose the language you would like to use.
-
-### Install
-
-![](/assets/install-or-try.png)
-
-If you wish to install now, proceed with the installation. If you would like to continue testing the system, select `Try`
-
-### Destination
-
-![](/assets/devices.png)
-
-Select your Destination. A Chromebooks internal disk should be `mmcblk0`, `sda`, or `nvme0n1`
-
-### Installation Type
-
-![](/assets/chromebook-install.png)
-
-Select `Chromebook`.
-
-### Confirmation
-
-![](/assets/confirm.png)
-
-Select `Install` and you're good to go!
-
-After Readymade has completed, you may reboot and remove the instaler.
+From here, you can follow the [Ultramarine install guide](/en/setup/installation/).
 
 <Alert type="warning">Important: How to boot upon restart</Alert>
 
