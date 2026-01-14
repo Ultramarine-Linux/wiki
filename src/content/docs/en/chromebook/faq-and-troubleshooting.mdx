@@ -12,11 +12,11 @@ import Alert from "../../../../components/Docs/Alert.astro";
   chats](/en/community/community) and make a support forum post.
 </Alert>
 
-### Chromebook fails to boot to internal disk
+### Chromebook Fails To Boot to Internal Disk
 
 Assuming 'Boot to Internal Disk', or pressing <kbd>Ctrl</kbd>+<kbd>D</kbd> does not fully boot (usually only to Submarine, the boot entries screen before Ultramarine boots), the device has probably died. Plug in your Chromebook.
 
-### Keyboard is not properly mapped
+### Keyboard Is Not Properly Mapped
 
 Try re-installing the cros-keyboard-map package. Simply run ` sudo dnf install cros-keyboard-remap`. If this does not work, try running this command:
 
@@ -26,7 +26,7 @@ sudo systemctl enable cros-keyboard-map
 
 If this does not work, try running WeirdTreeThing's [keyd script](https://github.com/WeirdTreeThing/cros-keyboard-map).
 
-### Chromebook Audio Doesn't Work
+### Chromebook Audio Doesn’t Work
 
 This should not happen unless you have unsupported speakers, but if it does, try running WeirdTreeThing's [audio script](https://github.com/WeirdTreeThing/chromebook-linux-audio) manually.
 
@@ -39,7 +39,7 @@ You may have an audio device unsupported by the audio script by default (max9835
   will get damaged.
 </Alert>
 
-### USBC/Thunderbolt doesn't work
+### USBC/Thunderbolt Doesn’t Work
 
 Try restarting the systemd service:
 
@@ -53,19 +53,19 @@ sudo systemctl restart chromebook-usbc-fix
 
 All hardware should work on almost every supported Chromebook model, but some specific Chromebooks may have some missing features (ex. Drallion, Sarien, and Arcada have a Wilco (Dell Enterprise) EC, and may have missing features).
 
-### Is this legal?
+### Is This Legal?
 
 Yes, it is perfectly legal. Chromebooks and ChromeOS are backed by the [Chromium Projects' ChromiumOS](https://www.chromium.org/chromium-os/}). All information on how to mod Chromebooks is on this site, and open to anyone to use.
 
-### Will the installer boot through a USB 2.0/3.0 adaptor/hub?
+### Will the Installer Boot Through a USB 2.0/3.0 Adaptor/Hub?
 
 Yes.
 
-### Why not just run [MrChromebox's Firmware Utility Script?](https://mrchromebox.tech/#fwscript)
+### Why Not Just Run [MrChromebox's Firmware Utility Script?](https://mrchromebox.tech/#fwscript)
 
 The goal here is to be as easy and safe to use as possible. It is also easier to go back to ChromeOS if you keep the stock firmware. With that being said, we fully support the use of mrchromebox's script, it has many great use cases.
 
-### Will this make my Chromebook faster?
+### Will This Make My Chromebook Faster?
 
 Ultramarine can be more lightweight then ChromeOS, but we do not guarantee a preformance gain vs ChromeOS.
 If you are using an older/slower Chromebook and want to maximize performance, we reccomend using Xfce Edition.
@@ -78,12 +78,12 @@ Generally, it is recommended not to, however you can get really good Chromebook 
 
 We are using our in-house installer [Readymade](https://github.com/FyraLabs/readymade).
 
-### What is this Chrultrabook Tools app?
+### What Is This Chrultrabook Tools App?
 
 An application to interact with your Chromebook's hardware, provided through Terra.
 More info can be found [here](https://github.com/death7654/Chrultrabook-Tools).
 
-#### Ultramarine Chromebook Edition Known Issues
+#### Known Issues
 
 Found an issue? [Let us know](/en/community/community)
 
