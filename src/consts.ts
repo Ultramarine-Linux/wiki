@@ -95,14 +95,26 @@ export const SIDEBAR: Sidebar = {
       { text: "Errata", link: "en/release/errata" },
       { text: "Differences with Fedora", link: "en/release/diff-fedora" },
     ],
-    // Chromebook: [
-    //   { text: "Getting Started", link: "en/chromebook/chromebook" },
-    //   { text: "Getting Chromebook Edition", link: "en/chromebook/getting" },
-    //   { text: "Installing to a Chromebook", link: "en/chromebook/preparing" },
-    //   { text: "Post-Install", link: "en/chromebook/postinstall" },
-    //   { text: "ARM Chromebooks (Beta)", link: "en/chromebook/armbeta" },
-    //   { text: "Terminology", link: "en/chromebook/terminology" },
-    // ],
+    Chromebook: [
+      { text: "Getting Started", link: "en/chromebook/chromebook" },
+      { text: "Getting Chromebook Edition", link: "en/chromebook/getting" },
+      { text: "Installing", link: "en/chromebook/installing" },
+      {
+        text: "Troubleshooting and FAQ",
+        link: "en/chromebook/faq-and-troubleshooting",
+      },
+      { text: "ARM Chromebooks (Beta)", link: "en/chromebook/arm" },
+      { text: "Terminology", link: "en/chromebook/terminology" },
+    ],
+
+    Development: [
+      {
+        text: "Developing for Ultramarine",
+        link: "en/development/developing-for-ultramarine",
+      },
+      { text: "Using Andaman", link: "en/development/anda" },
+      { text: "UX Guidelines", link: "en/development/ux-guide" },
+    ],
   },
   de: {
     Introduction: [{ text: "Welcome", link: "de/welcome" }],
