@@ -15,7 +15,7 @@
     "@astrojs/mdx": "^2.0.5",
     "@astrojs/preact": "^3.1.0",
     "@astrojs/react": "^3.0.9",
-    "@docsearch/css": "^3.5.2",
+    "@docsearch/css": "^4.5.3",
     "@docsearch/react": "^3.5.2",
     "@iconify-json/bi": "^1.1.23",
     "@iconify-json/lucide": "^1.1.156",
