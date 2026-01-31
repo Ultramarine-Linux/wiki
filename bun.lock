@@ -9,7 +9,7 @@
         "@astrojs/mdx": "^2.0.5",
         "@astrojs/preact": "^3.1.0",
         "@astrojs/react": "^3.0.9",
-        "@docsearch/css": "^3.5.2",
+        "@docsearch/css": "^4.5.3",
         "@docsearch/react": "^3.5.2",
         "@iconify-json/bi": "^1.1.23",
         "@iconify-json/lucide": "^1.1.156",
@@ -140,7 +140,7 @@
 
     "@babel/types": ["@babel/types@7.28.6", "", { "dependencies": { "@babel/helper-string-parser": "^7.27.1", "@babel/helper-validator-identifier": "^7.28.5" } }, "sha512-0ZrskXVEHSWIqZM/sQZ4EV3jZJXRkio/WCxaqKZP1g//CEWEPSfeZFcms4XeKBCHU0ZKnIkdJeU/kF+eRp5lBg=="],
 
-    "@docsearch/css": ["@docsearch/css@3.9.0", "", {}, "sha512-cQbnVbq0rrBwNAKegIac/t6a8nWoUAn8frnkLFW6YARaRmAQr5/Eoe6Ln2fqkUCZ40KpdrKbpSAmgrkviOxuWA=="],
+    "@docsearch/css": ["@docsearch/css@4.5.3", "", {}, "sha512-kUpHaxn0AgI3LQfyzTYkNUuaFY4uEz/Ym9/N/FvyDE+PzSgZsCyDH9jE49B6N6f1eLCm9Yp64J9wENd6vypdxA=="],
 
     "@docsearch/react": ["@docsearch/react@3.9.0", "", { "dependencies": { "@algolia/autocomplete-core": "1.17.9", "@algolia/autocomplete-preset-algolia": "1.17.9", "@docsearch/css": "3.9.0", "algoliasearch": "^5.14.2" }, "peerDependencies": { "@types/react": ">= 16.8.0 < 20.0.0", "react": ">= 16.8.0 < 20.0.0", "react-dom": ">= 16.8.0 < 20.0.0", "search-insights": ">= 1 < 3" }, "optionalPeers": ["@types/react", "react", "react-dom", "search-insights"] }, "sha512-mb5FOZYZIkRQ6s/NWnM98k879vu5pscWqTLubLFBO87igYYT4VzVazh4h5o/zCvTIZgEt3PvsCOMOswOUo9yHQ=="],
 
@@ -1173,6 +1173,8 @@
     "@babel/core/semver": ["semver@6.3.1", "", { "bin": { "semver": "bin/semver.js" } }, "sha512-BR7VvDCVHO+q2xBEWskxS6DJE1qRnb7DxzUrogb71CWoSficBxYsiAGd+Kl0mmq/MprG9yArRkyrQxTO6XjMzA=="],
 
     "@babel/helper-compilation-targets/semver": ["semver@6.3.1", "", { "bin": { "semver": "bin/semver.js" } }, "sha512-BR7VvDCVHO+q2xBEWskxS6DJE1qRnb7DxzUrogb71CWoSficBxYsiAGd+Kl0mmq/MprG9yArRkyrQxTO6XjMzA=="],
+
+    "@docsearch/react/@docsearch/css": ["@docsearch/css@3.9.0", "", {}, "sha512-cQbnVbq0rrBwNAKegIac/t6a8nWoUAn8frnkLFW6YARaRmAQr5/Eoe6Ln2fqkUCZ40KpdrKbpSAmgrkviOxuWA=="],
 
     "@preact/preset-vite/@rollup/pluginutils": ["@rollup/pluginutils@4.2.1", "", { "dependencies": { "estree-walker": "^2.0.1", "picomatch": "^2.2.2" } }, "sha512-iKnFXr7NkdZAIHiIWE+BX5ULi/ucVFYWD6TbAV+rZctiRTY2PL6tsIKhoIOaoskiWAkgu+VsbXgUVDNLHf+InQ=="],
 
