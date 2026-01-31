@@ -31,6 +31,6 @@
   "devDependencies": {
     "html-escaper": "^3.0.3",
     "prettier": "^3.2.4",
-    "prettier-plugin-astro": "^0.13.0"
+    "prettier-plugin-astro": "^0.14.1"
   }
 }
