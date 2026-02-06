@@ -30,6 +30,31 @@ sudo dnf install power-profiles-daemon --allowerasing
 systemctl enable --now power-profiles-daemon.service
 ```
 
-Notes:
+### Improve Battery on AMD Laptops
+
+If you are using `power-profiles-daemon`, it has two functions that are disabled by default: Panel power savings and AMDGPU Dynamic power management. These are dedicated to AMD iGPU, and you must follow these steps:
+
+Enable panel power savings:
+
+```
+powerprofilesctl configure-action amdgpu_panel_power --enable
+```
+
+Make sure this is above 0:
+
+```
+cat /sys/class/drm/card2/card2-eDP-2/amdgpu/panel_power_savings
+```
+
+Enable AMDGPU Dynamic power management:
+
+```
+powerprofilesctl configure-action amdgpu_dpm --enable
+```
+
+For more information: [PPD Documentation](https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/gitlab_freedesktop_org/hadess/power-profiles-daemon)
+
+# Notes
+
 - When installing `asusctl` and `supergfxctl`, These services will be pre-enabled: `asusd.service`, `asusd-user.service`, `superfgxd.service`.
 - ROG Control Center is available in your app store, just search "ROG"!
