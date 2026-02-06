@@ -7,22 +7,22 @@ import Alert from "../../../../components/Docs/Alert.astro";
 
 We have partnered with the [ASUS Linux project](https://asus-linux.org/) to make the ROG experience on Ultramarine easier.
 
-# Setup
+## Setup
 
-## Kernel
+### Kernel
 
 ASUS ROG devices from before 2022 can use the stock Ultramarine kernel.
 ROG devices from 2023 onwards, you should consider using the CachyOS kernel, which may include more drivers for your device than the Fedora kernel used by default.
 Ultramarine includes a `umcli` tweak to easily enable or disable the CachyOS kernel, information can be found [here](../usage/umcli)
 
-## Packages
+### Packages
 
 We have the following ASUS Linux/ASUS ROG support packages in Terra:
 - [asusctl and rog-control-center](https://gitlab.com/asus-linux/asusctl)
 - [supergfxctl](https://gitlab.com/asus-linux/supergfxctl)
 - [gnome-shell-extension-gpu-switcher-supergfxctl](https://extensions.gnome.org/extension/7018/gpu-supergfxctl-switch/)
 
-## TuneD Issues
+### TuneD Issues
 If you are having issues with `tuned`, you may want to instead use `power-profiles-daemon`:
 
 ```
@@ -30,7 +30,7 @@ sudo dnf install power-profiles-daemon --allowerasing
 systemctl enable --now power-profiles-daemon.service
 ```
 
-### Improve Battery on AMD Laptops
+#### Improve Battery on AMD Laptops
 
 If you are using `power-profiles-daemon`, two features useful for ROG laptops are disabled by default; Panel power savings and AMDGPU Dynamic power management. These are specific to AMD iGPUs. Follow these steps to enable them:
 
@@ -54,7 +54,7 @@ powerprofilesctl configure-action amdgpu_dpm --enable
 
 For more information: [PPD Documentation](https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/gitlab_freedesktop_org/hadess/power-profiles-daemon)
 
-# Notes
+## Notes
 
 - When installing `asusctl` and `supergfxctl`, These services will be pre-enabled: `asusd.service`, `asusd-user.service`, `superfgxd.service`.
 - ROG Control Center is available in your app store, just search "ROG"!
