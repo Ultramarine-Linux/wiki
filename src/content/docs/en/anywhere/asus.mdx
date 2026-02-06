@@ -22,6 +22,14 @@ We have the following Asus Linux/Asus ROG device support packages in Terra:
 - [supergfxctl](https://gitlab.com/asus-linux/supergfxctl)
 - [gnome-shell-extension-gpu-switcher-supergfxctl](https://extensions.gnome.org/extension/7018/gpu-supergfxctl-switch/)
 
+## TuneD Issues
+If you are having issues with `tuned`, you may want to instead use `power-profiles-daemon`:
+
+```
+sudo dnf install power-profiles-daemon --allowerasing
+systemctl enable --now power-profiles-daemon.service
+```
+
 Notes:
 - When installing `asusctl` and `supergfxctl`, These services will be pre-enabled: `asusd.service`, `asusd-user.service`, `superfgxd.service`.
 - ROG Control Center is available in your app store, just search "ROG"!
