@@ -5,14 +5,14 @@ description: "ASUS ROG devices in the Ultramarine Anywhere Initiative"
 
 import Alert from "../../../../components/Docs/Alert.astro";
 
-We have partnered with the [ASUS Linux project](https://asus-linux.org/) to provide an easy-to-setup Asus Linux setup in Ultramarine.
+We have partnered with the [ASUS Linux project](https://asus-linux.org/) to make the ROG experience on Ultramarine easier.
 
 # Setup
 
 ## Kernel
 
 ASUS ROG devices from before 2022 can use the stock Ultramarine kernel.
-For 2023 and above ROG models, you can use the CachyOS kernel, which may include more drivers for your device then the Fedora kernel that Ultramarine uses.
+ROG devices from 2023 onwards, you should consider using the CachyOS kernel, which may include more drivers for your device than the Fedora kernel used by default.
 Ultramarine includes a `umcli` tweak to easily enable or disable the CachyOS kernel, information can be found [here](../usage/umcli)
 
 ## Packages
@@ -32,7 +32,7 @@ systemctl enable --now power-profiles-daemon.service
 
 ### Improve Battery on AMD Laptops
 
-If you are using `power-profiles-daemon`, it has two functions that are disabled by default: Panel power savings and AMDGPU Dynamic power management. These are dedicated to AMD iGPU, and you must follow these steps:
+If you are using `power-profiles-daemon`, two features useful for ROG laptops are disabled by default; Panel power savings and AMDGPU Dynamic power management. These are specific to AMD iGPUs. Follow these steps to enable them:
 
 Enable panel power savings:
 
