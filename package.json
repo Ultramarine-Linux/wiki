@@ -15,11 +15,11 @@
     "@astrojs/mdx": "^2.0.5",
     "@astrojs/preact": "^3.1.0",
     "@astrojs/react": "^3.0.9",
-    "@docsearch/css": "^3.5.2",
+    "@docsearch/css": "^4.5.3",
     "@docsearch/react": "^3.5.2",
     "@iconify-json/bi": "^1.1.23",
     "@iconify-json/lucide": "^1.1.156",
-    "@types/node": "^20.11.5",
+    "@types/node": "^25.0.10",
     "@types/react": "^18.2.48",
     "@types/react-dom": "^18.2.18",
     "astro": "^4.2.1",
@@ -31,6 +31,6 @@
   "devDependencies": {
     "html-escaper": "^3.0.3",
     "prettier": "^3.2.4",
-    "prettier-plugin-astro": "^0.13.0"
+    "prettier-plugin-astro": "^0.14.1"
   }
 }
