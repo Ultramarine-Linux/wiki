@@ -1,0 +1,98 @@
+---
+title: Nix
+description: "Getting Started with Nix on Ultramarine Linux"
+---
+
+Nix is a package manager aiming to provide reproducable development 
+environments and builds by removing _dependency hell_. For us, this means
+no longer having to install `-devel` packages we only use occasionally,
+ephemeral shells that we can create for temporarily checking out utilities,
+quickly assimilating into codebases with a `flake.nix` file, and more!
+
+The world of Nix is vast and difficult to navigate, so let's see Nix in action
+with real-world examples
+
+# Installing Nix
+
+Ultramarine Linux provides a nice little tweak for quickly installing Nix.
+
+```bash
+$ um tweaks enable nix
+``` 
+
+# Real-world example 1: Ephemeral shell
+
+Let's say you wanna try a cute new package, like something that prints out a
+cute little character saying a string, but you don't really feel like
+insatlling yet another system package
+
+```bash
+$ nix run nixpkgs#ponysay "hey nixos is pretty cool"
+```
+
+# Real-world example 2: Schmoyalties
+
+FFmpeg hides some great functionality behind a compile-time `--enable-nonfree`
+flag that makes the resulting binary not something a repository can legally
+distribute, requiring the end user to compile it with their desired settings
+instead. If only there was a way to manage that elegantly (i.e not under 
+`make` and `make install` that overwrites the system FFmpeg).
+
+`nix flake init` in a folder, then paste this into `flake.nix` (overriding
+the default):
+
+```nix
+{
+  inputs = {
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    flake-utils.url = "github:numtide/flake-utils";
+  };
+  outputs = { self, nixpkgs, flake-utils }:
+    flake-utils.lib.eachDefaultSystem
+      (system:
+        let
+          pkgs = import nixpkgs {
+            inherit system;
+            overlays = [
+                (self: super: {ffmpeg = super.ffmpeg.override {
+                    ## We define the build options here
+                    withUnfree = true; 
+                    withDav1d = true;
+                    withFdkAac = true;
+                };})
+          };
+        in
+        with pkgs;
+        {
+          devShells.default = mkShell {
+            buildInputs = [
+                ffmpeg
+            ];
+          };
+        }
+      );
+}
+```
+
+Then `nix develop`, wait, and bam! FFmpeg with all the nitty-gritty unfree
+codecs~
+
+# Real-world example 3: Working with a Nix project
+
+TBD
+
+# End
+
+With this piece, I hope you can see the value of the Nix package manager
+within Ultramarine Linux. Whether you're a poweruser or a developer, you'll
+find great power within Nix.
+
+
+And hey, if you're still not sold on it, the tweak is a toggleable, and we've
+made sure to make it a clean uninstall so you'll be back to a "clean" machine
+if you're still not convinced (or if you run out of storage, Nix can get a
+little unwieldy). 
+
+#### [Next Up: Linux Concepts: What is Linux? →](/en/linux/overview)
+
+#### [← Back To: eduroam](/en/usage/eduroam/)
