@@ -1,0 +1,36 @@
+---
+title: "XR and Spatial Computing"
+description: "XR and Spatial Computing in the Ultramarine Anywhere Initiative"
+---
+
+We are working on providing full support for [Stardust XR](https://stardustxr.org/). 
+
+### Packages
+
+All core Stardust XR components are packaged in the [Terra repository](https://terra.fyralabs.com/) (shipped with Ultramarine):
+
+- [stardust-xr-armillary](https://repology.org/project/stardust-xr-armillary/versions)
+- [stardust-xr-atmosphere](https://repology.org/project/stardust-xr-atmosphere/versions)
+- [stardust-xr-black-hole](https://repology.org/project/stardust-xr-black-hole/versions)
+- [stardust-xr-comet](https://repology.org/project/stardust-xr-comet/versions)
+- [stardust-xr-flatland](https://repology.org/project/stardust-xr-flatland/versions)
+- [stardust-xr-gravity](https://repology.org/project/stardust-xr-gravity/versions)
+- [stardust-xr-magnetar](https://repology.org/project/stardust-xr-magnetar/versions)
+- [stardust-xr-non-spatial-input](https://repology.org/project/stardust-xr-non-spatial-input/versions)
+- [stardust-xr-protostar](https://repology.org/project/stardust-xr-protostar/versions)
+- [stardust-xr-server](https://repology.org/project/stardust-xr-server/versions)
+- [stardust-xr-telescope](https://repology.org/project/stardust-xr-telescope/versions)
+
+To install all of these packages:
+
+```
+sudo dnf group install stardust-xr
+```
+To install these packages on an RPM-OSTree/bootc based system:
+```
+sudo rpm-ostree install stardust-xr-armillary stardust-xr-atmosphere stardust-xr-black-hole stardust-xr-comet stardust-xr-flatland stardust-xr-gravity stardust-xr-magnetar stardust-xr-non-spatial-input stardust-xr-protostar stardust-xr-server stardust-xr-telescope
+```
+
+Then, run `telescope` in your terminal, or `telescope -f` for flatscreen mode. 
+
+For further information, check out [the Stardust XR docs](https://stardustxr.org/docs/get-started/What-is-Stardust).
