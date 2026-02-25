@@ -22,7 +22,7 @@
     "@types/node": "^25.0.10",
     "@types/react": "^18.2.48",
     "@types/react-dom": "^18.2.18",
-    "astro": "^4.2.1",
+    "astro": "^5.17.3",
     "astro-icon": "^1.0.2",
     "preact": "^10.19.3",
     "react": "^18.2.0",
