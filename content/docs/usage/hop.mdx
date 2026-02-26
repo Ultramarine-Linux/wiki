@@ -1,0 +1,36 @@
+---
+title: Switching Editions (Advanced)
+description: "Switch Editions with Hop"
+---
+<Callout>
+This is for advanced users. Your system may get a mix of components and things get messy really quickly. Be ready to troubleshoot.
+      </Callout>
+
+Hop<sup>dnf</sup> is an app that allows you to switch between Editions or install
+multiple desktop environments on your system.
+
+## Installation
+
+The package name is `ultramarine-hop`<sup>dnf</sup> but it is also aliased as `hop`<sup>dnf</sup>.
+
+```sh
+sudo dnf install hop
+```
+
+## Using Hop
+
+1. Open the launcher (usually by pressing `Windows`, `command`, or the search key).
+2. Type `hop`. `Ultramarine Hop` should pop up as the first option.
+3. Select the option. A dialog asking for privileges will pop out. Type in your
+   password to continue.
+4. Select the corresponding action you would like to perform.
+   - if you would like to add a new desktop environment to your system, click
+     the first option. This will download and install an extra desktop
+     environment onto your system.
+   - if you would like to remove an existing desktop environment on your
+     system, click the middle option. This will remove the selected desktop
+     environment from your system. You may only select this option if you have
+     more than 2 desktop environments installed, otherwise this option will be
+     greyed out.
+   - if you would like to switch to another edition, select the last option.
+5. Select the corresponding desktop environment / edition.

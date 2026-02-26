@@ -1,0 +1,32 @@
+---
+title: NVIDIA Drivers
+description: "Get your NVIDIA GPU working"
+---
+
+
+For computers with NVIDIA graphics cards, you have two choices for drivers.
+
+## Nouveau Driver
+
+[The Nouveau driver](https://nouveau.freedesktop.org/) is a fully open-source driver for NVIDIA graphics cards. It's built into Ultramarine so you can use your GPU instantly.
+
+Despite how good this sounds, modern NVIDIA GPUs will suffer performance issues and screen tearing under the Nouveau driver.
+
+Older NVIDIA GPUs work well with the Nouveau driver (and may only work with Nouveau.)
+
+## Proprietary Driver
+
+This is our recommended solution. Proprietary drivers support all of the features and performance of your GPU. They are automatically installed during installation if you are connected to the internet.
+
+If drivers weren't installed, or you switched to an NVIDIA GPU, you can install drivers by opening the "Software" app and searching for "NVIDIA" or by running the following commands in terminal:
+
+```bash
+sudo dnf update # Update the system first, the drivers may not work right if you don't.
+sudo dnf install akmod-nvidia # Install the NVIDIA kernel module.
+```
+
+<Callout type="warning">
+  You MUST wait until the process is finished before rebooting. Rebooting too
+  early might result in a broken installation! This may take upwards of 15
+  minutes!
+</Callout>

@@ -1,18 +1,47 @@
-# Ultramarine Linux Wiki
+# wiki
 
-Welcome to the source repository behind the [Ultramarine Wiki]! We welcome any contributions and
-you may freely send pull requests to this repository if you would like to modify any of the
-content here!
+This is a Next.js application generated with
+[Create Fumadocs](https://github.com/fuma-nama/fumadocs).
 
-## Translations
+It is a Next.js app with [Static Export](https://nextjs.org/docs/app/guides/static-exports) configured.
 
-If you'd like to translate for a new language:
+Run development server:
 
-1. Go to `src/consts.ts` to add a new language into `KNOWN_LANGUAGES`
-2. Copy everything from `src/content/docs/en` to `src/content/docs/<your_language_code>`[^1]
-3. Add pages into `SIDEBAR` in `src/consts.ts`
-4. Start translating!
+```bash
+npm run dev
+# or
+pnpm dev
+# or
+yarn dev
+```
 
-[^1]: We encourage you to use a generic language code without limiting the region.
+Open http://localhost:3000 with your browser to see the result.
 
-[Ultramarine Wiki]: https://wiki.ultramarine-linux.org
+## Explore
+
+In the project, you can see:
+
+- `lib/source.ts`: Code for content source adapter, [`loader()`](https://fumadocs.dev/docs/headless/source-api) provides the interface to access your content.
+- `lib/layout.shared.tsx`: Shared options for layouts, optional but preferred to keep.
+
+| Route                     | Description                                            |
+| ------------------------- | ------------------------------------------------------ |
+| `app/(home)`              | The route group for your landing page and other pages. |
+| `app/docs`                | The documentation layout and pages.                    |
+| `app/api/search/route.ts` | The Route Handler for search.                          |
+
+### Fumadocs MDX
+
+A `source.config.ts` config file has been included, you can customise different options like frontmatter schema.
+
+Read the [Introduction](https://fumadocs.dev/docs/mdx) for further details.
+
+## Learn More
+
+To learn more about Next.js and Fumadocs, take a look at the following
+resources:
+
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js
+  features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- [Fumadocs](https://fumadocs.dev) - learn about Fumadocs

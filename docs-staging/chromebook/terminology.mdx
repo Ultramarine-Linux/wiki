@@ -1,0 +1,114 @@
+---
+title: Chromebook Terminology
+description: "Get to Know Chromebook Terms"
+---
+
+The Chromebook Community, (and Google themselves) have made terminology for many of the practices and quirks of Chrome hardware.
+
+### Chromium OS
+
+Where the magic happens. Just like Chrome proper, Chrome OS is a derivative of the open source Chromium OS.
+
+### Chrome OS
+
+The consumer variant of Chromium OS found on all Chrome devices.
+
+### Write Protect (WP)
+
+Usually refers to Firmware Write Protect (FW_WP), a feature of Chromebooks that marks a region of the ROM that holds firmware as read-only. It is possible (and rather easy) to remove the protection on most Chromebooks. [1]
+
+#### Cr50/Battery WP
+
+One of the methods for implementing write protect, WP is enabled when a battery is connected, and disabled when the battery is removed. [1]
+
+#### WP Switch
+
+This is just a toggle, not much to explain here. [1]
+
+#### WP Screw
+
+The primary implementation of write protect on older devices, a screw shorts a connection, WP can be disabled by removing the short. Most of the time the screw is removed, but you could in theory place Kapton tape over the pad. [1]
+
+### Closed Case Debugging (CCD)
+
+Allows people with cr50 to disable WP without opening the device. This requires a special cable called suzyQ. [1] [2]
+
+### Verified Boot
+
+Tamper protection, it's signing essentially. [3]
+
+### Developer Mode
+
+Loosens verified boot and gives you the ability to enable USB/SD boot and elevate to root.
+
+### ChromeEC
+
+EC Refers to a lot of things, and it's honestly better to read the [official docs](https://chromium.googlesource.com/chromiumos/platform/ec/+/HEAD/README.md#Terminology) on this one.
+
+### Depthcharge
+
+Depthcharge is the stock firmware on your Chromebook. Unless you somehow have an original Chromebook
+
+#### Depthcharge Manipulation
+
+A method to run Linux on Chromebooks without modifying the stock firmware by tricking said firmware (Depthcharge) into booting a Linux kernel. This is what we are using.
+
+### altFW/Custom Firmware [5]
+
+altFW is the Chrultrabook Project's name for custom firmware.
+
+#### Coreboot/Full ROM
+
+Coreboot replaces the original firmware on your Chromebook with full UEFI.
+
+#### RW_Legacy
+
+RW_Legacy allows you to use the included BIOS on your Chromebook.
+
+#### Firmware Utility Script/MrChromebox's Script
+
+A popular tool used to manage and install custom firmware
+
+### Auto Update Expiration
+
+When Google stops providing updates for a Chromebook. Usually 10 years after the release. You can see a list of [AUE Dates here](https://support.google.com/chrome/a/answer/6220366?hl=en).
+
+### Codename
+
+Refers to a specific Chromebook, this may be the same as the board name (For example: Caroline and Chell are also the board name for their respective models)
+
+### Board Name
+
+Refers to the motherboard, these may be shared across Chromebooks (For example: Hana (board) is used on hana, maple, sycamore, and telesu)
+
+### Baseboard
+
+Exactly what it sounds like, a board that acts as the base for others (For example: Caroline, Chell, and Cave are all based on Glados, see the reference)
+
+### Chrultrabook
+
+Our partners in crime. Chrultrabook builds drivers and other tools for Chrome hardware. The name is a portmanteau from "*Chr*omebook to *Ultra*book"
+
+### Chromebook Plus
+
+Google's branding for Chromebooks at what would be the entry level for standard laptops [4]
+
+### Premium Chromebook
+
+Kinda official term to refer to higher spec Chromebooks. The Pixelbooks, Framework, and some of the nicer HPs fall into this category
+
+### Gaming Chromebook
+
+No real definition besides an RGB keyboard, specs and price are all over the place
+
+### Footnotes
+
+[1: Firmware Overview and Porting Guide > Firmware / EC Write Protection](https://www.chromium.org/chromium-os/firmware-porting-guide/firmware-ec-write-protection/)
+
+[2: CrOS EC > Google Security Chip (GSC) Case Closed Debugging (CCD)](https://chromium.googlesource.com/chromiumos/platform/ec/+/cr50_stab/docs/case_closed_debugging_gsc.md)
+
+[3: Design Documents > Verified Boot](https://www.chromium.org/chromium-os/chromiumos-design-docs/verified-boot/)
+
+[4: Chromebook Plus: more performance and AI capabilities](https://blog.google/products/chromebooks/chromebook-plus/)
+
+[5: Chrultrabook Docs > Firmware > Types of Firmware](https://docs.chrultrabook.com/docs/firmware/about.html)

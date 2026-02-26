@@ -1,0 +1,97 @@
+---
+title: Software and Package Management
+description: "How to manage software on Linux."
+---
+<Callout>
+You may have noticed package manager tags (like this<sup>dnf</sup> and this<sup>flatpak</sup>) across the wiki. This shows our reccomended way to get that software, either from `dnf` or as a `flatpak`.
+This page goes more into depth about package managers, to help you make choices like this on your own.
+      </Callout>
+
+## Using the App Store
+Ultramarine comes with an app store. It's called "Discover" on Plasma Edition, and "Software" on GNOME, Budgie, and Xfce Edition.
+
+You can search for and install all of the software available for Ultramarine in the app store, and it will handle installing RPMs and flatpakrefs from the internet.
+
+You can also install software with the terminal, which we'll cover in the next section.
+
+If you're trying to install something from the internet, check the [Software Downloaded from the Internet](#software-downloaded-from-the-internet) section.
+
+## The Package Manager
+
+Unlike Windows, most software for Ultramarine is stored in online collections of software called repositories. You can browse and install software (packages) from these repositories using something called a package manager.
+
+### Flatpak
+
+Flatpak is the primary package manager for regular apps. It installs applications in a sandbox, keeping them separate from anything they don't need to access.
+
+You can install Flatpaks from your app store, or with `flatpak install` in the terminal.
+
+You can browse the available software in your app store, or on the [Flathub website](https://flathub.org/).
+
+Most desktop apps should be installed as a Flatpak, but in some cases, like with Steam<sup>dnf</sup>, IDEs, or other apps that require access to the system, they may not work. The following sections will help with software in other formats.
+
+### DNF
+
+Ultramarine uses the DNF package manager. While this package manager primarily handles system software (like the kernel, and your desktop environment) it can install user apps as well.
+
+```bash
+sudo dnf install steam # Install Steam
+```
+
+You can also install groups of packages, like full desktop environments or a suite of tools for music production, using the `dnf groupinstall` command.
+
+```bash
+sudo dnf groupinstall "Audio Production" # installs multiple packages at once, in this case a suite of music/audio production tools
+```
+
+For a full list of available groups, run `sudo dnf group list`
+
+
+### Snap
+
+Snap is a package manager made by Canonical. It contains a large amount of proprietary applications that you may not be able to find elsewhere.
+
+<Callout type="warning">
+
+Snap may cause your system to run noticeably slower!
+
+</Callout>
+
+To get started, install Snap.
+
+```bash
+sudo dnf install snapd
+```
+
+Then, verify snap is working
+
+```bash
+sudo snap install helloworld
+helloworld
+```
+
+<Callout>
+
+Snap packages can load slowly and may not work on editions other than GNOME. We recommend avoiding Snaps.
+
+</Callout>
+
+### Software Downloaded from the Internet
+
+Sometimes, the software you need may come as a package file downloaded from the internet.
+
+#### RPM Packages
+
+To install RPMs simply double-click the downloaded file in the file manager.
+
+#### AppImages
+
+1. Install Gear Lever from **Software** or **Discover**.
+
+2. Double-click the AppImage file, select "Install" and you're done!
+
+<Callout type="warning">
+
+AppImages are not automatically updated and may have issues communicating with other apps and the system. We recommend looking for a Flatpak or RPM instead.
+
+</Callout>
