@@ -8,13 +8,13 @@ const START = [
     title: "Get Started",
     href: "/docs/get-started",
     slug: "get-started",
-    icon: "Sailboat",
+    icon: "CirclePower",
   },
   {
     title: "Using Ultramarine",
     href: "/docs/usage",
     slug: "usage",
-    icon: "Workflow",
+    icon: "Sailboat",
   },
 ] as const;
 
@@ -23,7 +23,7 @@ const LEARN = [
     title: "Anywhere",
     href: "/docs/anywhere",
     slug: "anywhere",
-    icon: "Microchip",
+    icon: "Cpu",
   },
   {
     title: "Join the Community",
@@ -41,7 +41,7 @@ const LEARN = [
     title: "About Ultramarine",
     href: "/docs/about",
     slug: "about",
-    icon: "Info",
+    icon: "PawPrint",
   },
 ] as const;
 
