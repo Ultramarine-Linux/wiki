@@ -1,0 +1,128 @@
+---
+title: Gaming
+description: "Extra instructions for gaming on Ultramarine Linux."
+---
+
+Ultramarine isn't explicitly optimized for gaming, but that doesn't mean it can't game.
+
+Fyra Labs (the developer of Ultramarine) is a member of the [Open Gaming Collective](https://opengamingcollective.org). We use many of their patches (like Mesa) in Ultramarine, making Ultramarine slightly more optimized than normal distributions.
+
+Gaming on Linux has gotten a lot easier over the years. In some cases it may be even easier than Windows.
+
+"I was talking to a friend about GTA 4, and they were warning me about how much setup it needed to run on Windows and told me it would probably be worse on Linux. I opened Steam, pressed play, and the game just launched."
+
+Linux may be missing games like Fortnite and League of Legends, but beyond those (and a handful of other exceptions) your library should run just fine, or potentially better than it did on Windows.
+
+
+## Steam
+You're gonna have the best luck with Steam<sup>dnf</sup>, and you probably already have a library there.
+
+Valve has been improving the Linux experience in Steam<sup>dnf</sup> over the last few years. Most notably, Valve has been pushing Proton, a compatability layer, forward. Things have become far better across the board, and even outside of Steam, after the release of the Steam Deck.
+
+Install Steam<sup>dnf</sup> from the app store, make sure that you select "terra" instead of Flathub.
+![Source selector](/assets/steam/selector.png)
+
+Once you launch and sign into Steam, open Settings from the Steam menu.
+
+![Steam menu](/assets/steam/menu.png)
+
+Then, go to the Compatibility page, and ensure that "Steam Play is enabled for all titles" is listed, and Proton is set either to Experimental, or the latest version.
+
+![Compat page](/assets/steam/compat.png)
+
+Now you're ready to play! Simply download and run any game in your library.
+
+<Callout>
+Sometimes, it may appear like Steam isn't launching. Just wait, sometimes its updater doesn't get shown on screen.
+      </Callout>
+
+If you're looking for some games that run great on Linux to get started, here's some of our team's favorites:
+
+
+- [HoloCure](https://store.steampowered.com/app/2420510) (Free)
+- [Peggle Deluxe](https://store.steampowered.com/app/3480/Peggle_Deluxe) ($5)
+- Any Valve game
+   - [Counter-Strike 2](https://store.steampowered.com/app/730/CounterStrike_2/) (Free)
+   - [Portal Bundle](https://store.steampowered.com/bundle/234/Portal_Bundle) ($15, regularly on sale)
+- [SIGNALIS](https://store.steampowered.com/app/1262350/SIGNALIS/) ($20)
+- [Untitled Goose Game](https://store.steampowered.com/app/837470/Untitled_Goose_Game/) ($20)
+- [Ultrakill](https://store.steampowered.com/app/1229490/ULTRAKILL/) ($25)
+- [Any Jackbox Party Pack](https://store.steampowered.com/developer/jackboxgames) ($25-30)
+- [Stray](https://store.steampowered.com/app/1332010/Stray/) ($30)
+- [Cyberpunk: 2077](https://store.steampowered.com/app/1091500/Cyberpunk_2077/) ($60)
+
+These are not affiliate links, just games we love.
+
+## itch.io
+
+[itch.io](https://itch.io)<sup>flatpak</sup> is a platform for indie games, and it has a native Linux client. It has a large library of indie games, and some of them are available for free. You can install the itch.io client as a Flatpak from [Flathub](https://flathub.org/apps/io.itch.itch).
+
+## Epic Games Store, GOG, and Amazon Games
+
+The Epic Games Store, GOG, and Amazon Games do not have native Linux clients, but you can use the [Heroic Games Launcher](https://heroicgameslauncher.com/)<sup>flatpak</sup> to install and run games from these platforms on Linux.
+
+Simply search for Heroic in the app store and hit install!
+
+## EA Desktop/Origin
+
+We suggest using [Bottles](https://usebottles.com/gaming)<sup>flatpak</sup> to install EA Desktop and your games from it.
+
+Although you can use Bottles for Steam, and Epic Games, we suggest using the solutions we mentioned above instead.
+
+## Ubisoft Connect/Uplay
+
+If you still own games on Ubisoft Connect (formerly known as Uplay), you may be able to run some of them on Linux using Wine/Proton. However, some games may not work due to Ubisoft's anti-cheat software.
+
+We suggest using [Bottles](https://usebottles.com/gaming)<sup>flatpak</sup> to install Ubisoft Connect and your games from it.
+
+## Anything Else
+
+If you have loose game files, or games from a source we didn't list, check [ProtonDB](https://www.protondb.com) and try running them in [Bottles](https://usebottles.com/gaming)<sup>flatpak</sup>, your mileage my vary, but game support in Bottles gets better every day.
+
+## Known Incompatible Games
+These games are known to not work on Ultramarine due to various reasons, such as anti-cheat software, DRM, or API incompatibilities:
+
+### Games that Simply Won't Run
+
+Some of these may run, but they just aren't worth it. This list is not exhaustive.
+
+| Game                                                | Anti-Cheat implementation | Reason (if applicable)          | Notes                                          |
+| --------------------------------------------------- | ------------------------- | ------------------------------- | ---------------------------------------------- |
+| Apex Legends                                        | Easy Anti-Cheat           | -                               | Support for Proton recently removed            |
+| Fortnite                                            | Easy Anti-Cheat, BattlEye | -                               | Officially unsupported according to Epic Games |
+| Tom Clancy's Rainbow Six Siege                      | BattlEye, MouseTrap       | -                               | -                                              |
+| The Crew 2                                          | Easy Anti-Cheat           | -                               | -                                              |
+| Valorant                                            | Vanguard                  | -                               | -                                              |
+| League of Legends                                   | Vanguard                  | -                               | -                                              |
+| Battlefield V                                       | EA Anti-Cheat             | -                               | -                                              |
+| Battlefield 2042                                    | EA Anti-Cheat             | -                               | -                                              |
+| Need for Speed Unbound                              | EA Anti-Cheat             | -                               | -                                              |
+| Command & Conquer Red Alert 3 & Uprising            | -                         | SAGE 2 Path resolver is broken  | [^3]                                           |
+| Command & Conquer 3: Tiberium Wars & Kane's Wrath   | -                         | SAGE 2 Path resolver is broken  | [^3]                                           |
+| Command & Conquer games up to Yuri's Revenge        | -                         | DirectDraw compatibility issues | [^4]                                           |
+
+### Games with Broken Online Play
+This ranges from online play not working to being banned for trying to. We reccomend just playing these in their single player form.
+
+| Game                                                | Anti-Cheat                | Notes                           |
+|-----------------------------------------------------|---------------------------|---------------------------------|
+| Watch_Dogs                                          | Easy Anti-Cheat           | Single player works             |
+| Watch_Dogs 2                                        | Easy Anti-Cheat           | Single player works             |
+| Watch_Dogs: Legion                                  | Easy Anti-Cheat           | Single player works             |
+| Honkai Impact 3rd                                   | Tencent Anti-Cheat Expert | [^1]                            |
+| Honkai: Star Rail                                   | HoYoProtect               | [^1]                            |
+| Infinity Nikki                                      | Tencent Anti-Cheat Expert | [^1] [^2]                       |
+| Strinova                                            | Tencent Anti-Cheat Expert | [^1] [^2]                       |
+| Phantasy Star Online 2: New Genesis (Japan)         | Easy Anti-Cheat           | [^2]                            |
+
+
+## Gaming Performance
+
+Ultramarine (and Linux distributions generally) use less resources than Windows, meaning you should be able to sqeeuze a couple more frames out of your hardware.
+
+Proton is frequently updated, so performance of non-native games is always being worked on.
+
+[^1]: There may be workarounds for these games, but they are not officially supported and you may risk getting banned for its use. The recommended way to play these games is to play on a mobile device or a Windows machine.
+[^2]: These games have a known whitelist for the Steam Deck specifically, but does not guarantee that it will work on other Linux systems.
+[^3]: You may run this game if you install the game in a path that does not contain periods (e.g. `~/Games/` instead of `~/.local/share/Steam/`).
+[^4]: You may need to install DDrawCompat or CnC-DDraw to run this game properly, as it has compatibility issues even with Windows systems. You may also use CnCNet to apply the aforementioned fixes and enable multiplayer.

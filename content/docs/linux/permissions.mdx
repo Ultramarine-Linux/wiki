@@ -1,0 +1,28 @@
+---
+title: Permissions
+description: "How permissions work on Linux."
+---
+
+On Linux, permissions are used to determine who can read, write, and execute files, or do certain actions.
+
+Users are separated into various groups with different IDs, and each file or action can be assigned a permission level.
+
+A user can be assigned a permission level that is higher than the permission level of the group they are in. And users in a group can do certain things that other users cannot.
+
+However, users in UNIX-like systems are more akin to a principal, as these "users" may not actually be a person, but a program.
+
+Files are owned by a user and can be assigned a permission level. The user who owns the file can modify the file and modify the permissions of the file.
+
+Permission levels are displayed in octal and are represented by several digits. The first digit is the owner, the second is the group, and the third is the other users. Permissions range from 0 to 7, with 0 being no access, and 7 being full access.
+
+## The Root User
+
+The root user (or the superuser) is a special user that grants access to all files and actions. It is akin to the Administrator on Windows.
+
+To execute commands as a superuser, use the `sudo` command, followed by the command you want to execute.
+
+```bash
+sudo dnf install vim # This will install vim as the root user
+```
+
+

@@ -1,0 +1,105 @@
+---
+title: "Raspberry Pi"
+description: "Technical details about Ultramarine on Raspberry Pi devices"
+---
+
+## Raspberry Pi 3, 4, and 400
+### Selecting a Drive
+
+The drive you use will affect the experience you'll have on Ultramarine.
+
+#### Raspberry Pi 3 Series
+
+Raspberry Pi 3 Series support only microSD cards. Your storage device must be 16GB or larger.
+
+You should also look for a class 10 SDHC or SDXC microSD.
+
+#### Raspberry Pi 4 Series
+
+Raspberry Pi 4 Series support microSD cards and USB storage. Your storage device must be 16GB or larger.
+
+The best experience will be with an SSD connected over an adapter. A USB 3.0 flash drive will be on-par to slightly better then a microSD card. All of the options are good, it's up to your needs.
+
+### Flashing the Image
+
+If you're using a Raspberry Pi 4/400, you can skip these steps and use
+[Raspberry Pi Imager instead](#raspberry-pi-imager).
+First, you will need to decompress it.
+
+- On Linux, run `unzstd FILENAME.img.zst`, you may need to install the `zstd` package
+- On Windows 11 or ChromeOS, zstd is natively supported. Decompress like you would a `.zip` file.
+- On Windows 10, use 7zip or WinRaR
+- On macOS, install `zstd` from [Homebrew](https://brew.sh/) (`brew install zstd`), then `unzstd FILENAME.img.zst`.
+
+Grab a USB stick or SD Card! Use a flasher program to flash Ultramarine to your storage device. [Moonshot](https://www.github.com/fyralabs/moonshot)<sup>flatpak</sup> is an easy cross-platform choice.
+
+![](/assets/moonshot/moonshot.png)
+
+Simply select the .img file, the device you're using, and click flash.
+
+You can also use the Disks application on Budgie, Xfce, and GNOME editions.
+
+### Raspberry Pi Imager
+
+- Install [Raspberry Pi Imager](https://www.raspberrypi.com/software/)<sup>flatpak</sup>. You can grab this from the app store on Ultramarine. If you're on Windows or Mac you can [download it from here](https://www.raspberrypi.com/software/), or use it [directly in the Raspberry Pi firmware](https://www.raspberrypi.com/documentation/computers/getting-started.html#install-over-the-network).
+- Open Raspberry Pi Imager, select 'Choose Device,' then select 'Raspberry Pi 4.'
+- Select 'Choose OS' then scroll down to 'Other General-Purpose OS,' select 'Ultramarine Linux,' then select your edition of choice.
+- Select 'Choose Storage,' and select your storage device you would like to flash to. Double check you have the correct device selected, as this is a destructive operation.
+- Select 'Next,' then select 'Yes.'
+- Once the flash and validation is complete, remove your disk, and insert it into your Raspberry Pi 4.
+
+![](/assets/rpi-imager.png)
+
+Your Imager app should look something like this when ready to flash.
+
+### First Boot
+
+On first boot, the root file system will automatically be expanded, and you’ll be prompted with our out-of-box app, [Taidan](/en/setup/installation/#taidan-out-of-box-guide).
+
+That’s it! You’re ready to enjoy Ultramarine on your Raspberry Pi! We’re working hard on making the experience better so stay tuned!
+
+Fedora has upstream support for the Pi 4, 400, and 3. Ultramarine Anywhere intends to extend support to the Pi 5 and Zero 2.
+
+### Packages
+
+We have Raspberry Pi packages packaged in [Terra](https://terra.fyralabs.com/). We are working on packaging as many as we can, currently included packages:
+
+- [rpi-utils](https://github.com/raspberrypi/utils)<sup>dnf</sup>, a collection of miscellaneous tools for Raspberry Pis. You may install these individually, or all together as `rpi-utils`
+- [rpi-update](https://github.com/raspberrypi/rpi-update)<sup>dnf</sup>, a script to update Raspberry Pi firmware.
+- [Picotool](https://github.com/raspberrypi/picotool)<sup>dnf</sup>, a tool for working with RP2040/RP2350 devices.
+
+We also have the [Raspberry Pi Control Center](https://github.com/raspberrypi-ui/rpcc)<sup>dnf</sup> application, and its various plugins:
+
+- [Appset](https://github.com/raspberrypi-ui/appset)<sup>dnf</sup>, Application for customisation of appearance of Raspberry Pi Desktop.
+- [Bookshelf](https://github.com/raspberrypi-ui/bookshelf)<sup>dnf</sup>, A browser for Raspberry Pi Press publications.
+- [Piclone](https://github.com/raspberrypi-ui/piclone)<sup>dnf</sup>, Utility to back up a Raspberry Pi to an SD card.
+- [Raindrop](https://github.com/raspberrypi-ui/raindrop)<sup>dnf</sup>, Graphical display configurator for Raspberry Pi, using arandr and wlrandr.
+- [Rasputin](https://github.com/raspberrypi-ui/rasputin)<sup>dnf</sup>, Mouse and keyboard settings for Raspberry Pi Desktop.
+- [Rpinters](https://github.com/raspberrypi-ui/rpinters)<sup>dnf</sup>, Printing utility
+
+To install any of these:
+
+```
+dnf install PACKAGENAME
+```
+
+#### Notes
+
+- RPi4B has a 1GB and 2GB model, we suggest against running a desktop environment on these (Xfce may be alright).
+- RPi3B has only 1GB of RAM, and the 3A only has 512MB, we suggest against running a desktop environment (Xfce may be alright).
+- The Pi 4 series has native USB boot support. Your experience may be better with a fast USB Drive or SSD connected through an adapter. See [this article](https://www.raspberrypi.com/documentation/computers/raspberry-pi.html#usb-mass-storage-boot) for more info.
+- If using a USB drive on a Pi 4, ensure it's USB 3.0 or newer and plugged into a USB 3.0 (blue) port. 2.0 will be a significantly worse experience than a microSD.
+- If using a microSD card, we recommend using a Class 10 microSD card, your experience will be significantly better than lower classes.
+- Your storage device will need to be larger than 9GB (the image is 8.59GB). We suggest 16GB so you have space for software.
+
+## Unsupported Raspberry Pi Devices
+
+### Raspberry Pi 5
+
+The Raspberry Pi 5 is not currently supported in Fedora. We are packaging the official Raspberry Pi kernel (which will also provide a better experience on the other Pi models).
+
+### Raspberry Pi Zero, 1, and 2
+
+<Callout>
+  These devices are **Not Supported** due to 32bit CPUs.
+</Callout>

@@ -1,0 +1,56 @@
+---
+title: Keyboard Configuration
+description: Remapping keys and building macros with keyd
+---
+
+
+## Layouts
+
+The default keyboard layout is English (US). You may change the keyboard layout in your desktop's settings.
+
+If you would like to type in another language, we have a dedicated [localization guide](/docs/usage/l10n#inputting-in-another-language).
+
+## Remapping Keys
+
+keyd<sup>dnf</sup> is a key remapping tool that works at the kernel level, this means your remapped keys will work regardless of the desktop you use (or lack thereof).
+
+### Creating a Config
+
+1. Make sure you are an administrator
+2. Create `/etc/keyd/default.conf` and paste the example configuration below into it. Save the file.
+3. Install keyd<sup>dnf</sup> (from [Terra]): `sudo dnf install keyd`
+4. Start the keyd service `systemctl enable --now keyd`
+
+Every time you change your configuration, you will need to reload keyd using `sudo keyd reload`
+
+### Example configuration
+
+```ini
+[ids]
+
+*
+
+[main]
+
+# Maps capslock to escape when pressed and control when held.
+capslock = overload(control, esc)
+
+# Remaps the escape key to capslock
+esc = capslock
+```
+
+Lines starting with a `#` are comments, they will be ignored by `keyd`.
+
+For more information, read the [Quickstart](https://github.com/rvaiya/keyd?tab=readme-ov-file#quickstart) section from upstream.
+
+### Advanced Configuration
+
+keyd supports more advanced configuration, including:
+
+- Mapping macros
+- Key timeouts
+- Custom layers / modifier keys (keys that can change behaviours of other keys when held, like shift, ctrl, alt, meta/winkey)
+
+[Learn More at keyd's Documentation ->](https://github.com/rvaiya/keyd/blob/master/docs/keyd.scdoc)
+
+[Terra]: https://terra.fyralabs.com

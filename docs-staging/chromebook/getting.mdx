@@ -1,0 +1,78 @@
+---
+title: Getting Chromebook Edition
+description: "Getting started with installing Ultramarine Chromebook Edition"
+---
+
+
+## Minimum System Requirements
+
+1GB RAM, 8GB storage, 16MB boot partition (essentially any 2017 or newer ChromeOS device). List of ChromeOS device boot partition sizes can be found [here](https://raw.githubusercontent.com/alpernebbi/depthcharge-tools/master/depthcharge_tools/boards.ini)
+
+## Choosing Your Edition
+
+Ultramarine Chromebook comes in 4 variants:
+
+- **Plasma Edition**: Our recommended edition for general use and a community favorite with an Ultramarine twist. Simple defaults and wide-ranging customizations.
+- **Xfce Edition**: A lightweight and elegant experience designed to help you squeeze the most out of your device, or revive an old one.
+- **Budgie Edition**: A familiar and stylish experience with a bit of flair.
+- **GNOME Edition**: A simple, elegant, and intuitive desktop with a large ecosystem of apps and extensions.
+
+Ultramarine Linux is distributed with image files available for download from [our website](https://ultramarine-linux.org/download/chromebook).
+
+<Callout type="warning">
+  Fyra Labs cannot guarantee the safety or quality of images downloaded from
+  sites other than our website or FOSSTorrents
+</Callout>
+
+## Verifying the Safety of an Ultramarine ISO (Recommended)
+
+Ultramarine ISO images have a matching `CHECKSUM` file that can be checked against the image itself.
+
+They can be downloaded by clicking the `View Checksum` button on the [download page](https://ultramarine-linux.org/download/chromebook).
+
+### Verifying the Checksum on Linux and macOS
+
+You can use the following commands to check the integrity of the images:
+
+```bash
+sha256sum -b /path/to/ultramarine.img # Generate the checksum for the image
+cat /path/to/CHECKSUM # Check the checksum
+
+# Now you can compare the checksum
+```
+
+### Verifying the Checksum on ChromeOS
+
+You can use the [ChromeOS Linux Container](https://chromeos.dev/en/linux) to verify the image on ChromeOS
+
+```bash
+sha256sum -b /path/to/ultramarine.img # Generate the checksum for the image
+cat /path/to/CHECKSUM # Check the checksum
+
+# Now you can compare the checksum
+```
+
+### Verifying the Checksum on Windows
+
+In Powershell, run this command:
+
+```powershell
+CertUtil -hashfile PATH\TO\ULTRAMARINE.ISO SHA256
+# Open the CHECKSUM file with Notepad and compare the checksum
+```
+
+## Creating the Installer
+
+### Download [balenaEtcher](https://www.balena.io/etcher/) to create a bootable media from the img image.
+
+![](/assets/balenaetcher.png)
+
+Simply select the img file, a device to use for the installer, and click flash.
+
+
+
+## Footnotes
+
+- The Anaconda installer is very complex and hard to work with, we are working on a new installer that is easier to use and more reliable.
+- Since Fedora 37, Fedora's official support for the Pantheon desktop environment has been dropped due to compatibility issues and the Pantheon port is now maintained by the Ultramarine Linux team. This means that the Pantheon desktop environment is only available through Ultramarine Linux, or Fedora with Terra enabled.
+- Ultramarine's Budgie edition provides a close to stock Budgie experience, with a custom theme. Unlike Fedora's Budgie Spin, which provides a completely custom layout and experience.

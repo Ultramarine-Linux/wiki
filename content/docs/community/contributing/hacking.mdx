@@ -1,0 +1,66 @@
+---
+title: Code Contributions
+description: "A step-by-step guide to hacking on Ultramarine Linux components"
+---
+
+
+One of the most noticeable contributions you can make is code contributions. Whether it's building a new feature or fixing a bug, contributing code is a great way to make a noticeable difference to the operating system itself.
+
+This page serves as a step-by-step guide to hacking on Ultramarine Linux components.
+
+## Find Something to Work On
+
+There's no shortage of things to work on in Ultramarine Linux. From a feature you think would be cool, to something on our issue tracker, to an entirely new project in the Ultramarine ecosystem.
+
+For example, Nvidia drivers, this is an issue with most Linux distributions that Ultramarine solves.
+
+This problem can be anything from a tiny papercut to a massive structural change. There's no such thing as a bad idea. If you're having trouble finding something to work on, [ask around in our community](/en/community/community), we're always happy to help.
+
+## Gather Information
+
+If you're fixing an issue, what's the cause? If you're building a feature, what's the goal? What's the best way to implement it?
+
+A great place to gather information is within our [community](/docs/community), simply ask and see what users, contributors, and developers think.
+
+## Getting the Ultramarine Toolchain
+
+If you're contributing to an existing component, simply get the tools needed for it (we're slowly adding a list to our repositories.)
+
+If you're building a completely new feature, we recommend [Rust](https://www.rust-lang.org/) (`cargo`<sup>dnf</sup>) or [Go](https://go.dev) (`golang`<sup>dnf</sup>) for features without a GUI.
+
+If you're building with a GUI, we recommend using [libhelium](https://github.com/tau-os/libhelium)<sup>dnf</sup>, you can find more information here.
+
+Get to work! Make a fork of a project and tinker away!
+
+<Callout>
+<div className="full-width">
+**Big Changes**
+
+For especially big changes, or, major features, ask for help. We'll help you refine and build your idea.
+
+</div>
+</Callout>
+
+## Writing the Code
+
+Write the code! Make sure to continuously test your solution as you go. This will help you catch bugs early and make sure your changes are on the right track. It's also important to document your code when you're done, as this will help other contributors understand your changes.
+
+Remember, you're not alone, no problem is too big or too small to ask for help. If you have a question or want to work with another contributor, ask in our [community](/docs/community).
+
+## Getting into Ultramarine
+
+After you've tested, it's time to contribute. Simply open a pull request to the appropriate repository and we'll review it. Make sure your pull request is descriptive, outlining the motivation, scope, and implementation of your changes.
+
+There's three possible outcomes
+
+- **Approval**
+
+We approve your solution, be proud as very few PRs get merged without changes.
+
+- **Request for Changes**
+
+Something needs to change! Fix a problem or two and you're golden! Most PRs go through this process.
+
+- **Denial**
+
+This doesn't happen very often, sometimes a feature just doesn't align with our plan. It's more likely that we'll simply ask you for changes.

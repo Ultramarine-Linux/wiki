@@ -1,0 +1,91 @@
+---
+title: Use systemd-boot as the Bootloader (Advanced)
+description: Try a modern bootloader
+---
+
+Ultramarine Linux currently still uses GRUB as the default bootloader for compatibility reasons. However, if you have a UEFI system, you can simply switch to
+systemd-boot, which is a more modern bootloader.
+
+<Callout type="warning">
+  Don't try this if you don't know what you're doing.
+  Make sure to back up your data and have a live USB ready in case
+  something goes wrong. Incorrectly configuring a new bootloader can make your
+  OS unbootable.
+</Callout>
+
+## Switching to systemd-boot
+
+1. Make sure you turn off Secure Boot in your UEFI settings for now, You can re-enable it later after [Setting up Secure Boot](#using-secure-boot-with-systemd-boot)
+2. Remove GRUB from protected packages:
+
+```bash
+sudo rm /etc/dnf/protected.d/grub*
+```
+
+3. Start uninstalling GRUB:
+
+```bash
+sudo dnf remove -y grubby grub2\* memtest86\* && sudo rm -rf /boot/grub2 && sudo rm -rf /boot/loader
+```
+
+4. Install `systemd-boot-unsigned`<sup>dnf</sup> and `sdubby`<sup>dnf</sup>:
+
+```bash
+sudo dnf install systemd-boot-unsigned sdubby
+```
+
+5. Install systemd-boot to the ESP:
+
+```bash
+# Copy your current cmdline options just in case
+cat /proc/cmdline | cut -d ' ' -f 2- | sudo tee /etc/kernel/cmdline
+# Install systemd-boot
+sudo bootctl install
+# Now, reinstall and regenerate the current kernel entry
+sudo kernel-install add $(uname -r) /lib/modules/$(uname -r)/vmlinuz
+# Reinstall the kernel again, just in case we need to trigger some hooks
+sudo dnf reinstall -y kernel-core
+```
+
+6. Reboot your system and make sure it boots correctly, run `sudo bootctl` to check if the boot process is correct.
+7. (Optional) Proceed to [Set up Secure Boot](#using-secure-boot-with-systemd-boot) if you want to re-enable Secure Boot.
+
+## Using Secure Boot with systemd-boot
+
+[Secure Boot] is a UEFI security protocol that secures the boot process by ensuring that
+only signed executables are allowed to boot. While Ultramarine Linux's bootloader shim is signed by Microsoft and Red Hat,
+you may want to use a different bootloader (i.e systemd-boot or rEFInd) or kernel. In that case, you will need to manually enroll
+and sign the files with your own keys.
+
+Fortunately, there's a tool to automate this called [sbctl]<sup>dnf</sup>. You can install it from the Terra repository:
+
+<Callout>
+  `sbctl` is only available on Ultramarine/Fedora 40 and later.
+</Callout>
+
+```bash
+sudo dnf install sbctl
+```
+
+After installing `sbctl`, you can use it to enroll, sign, and manage your Secure Boot keys. For example, to generate a new key and enroll it in your UEFI firmware:
+
+```bash
+# Generate a new key
+sudo sbctl create-keys
+# Enroll the key
+sudo sbctl enroll-keys
+```
+
+You can then use `sbctl sign` to sign your kernel, initramfs, and bootloader binaries. For example:
+
+```bash
+# Sign the kernel
+sudo sbctl sign /boot/vmlinuz-$(uname -r)
+```
+
+However, once you have installed sbctl, it should've already set up a hook to sign the kernel, initramfs and bootloader binaries automatically on kernel updates.
+
+After signing the necessary files and enrolling them in your firmware, you can re-enable Secure Boot in your UEFI settings.
+
+[Secure Boot]: https://learn.microsoft.com/en-us/windows-hardware/design/device-experiences/oem-secure-boot
+[sbctl]: https://github.com/Foxboron/sbctl
