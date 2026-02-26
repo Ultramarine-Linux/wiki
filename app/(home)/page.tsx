@@ -8,13 +8,13 @@ const START = [
     title: "Get Started",
     href: "/docs/get-started",
     slug: "get-started",
-    icon: "sailboat",
+    icon: "Sailboat",
   },
   {
     title: "Using Ultramarine",
     href: "/docs/usage",
     slug: "usage",
-    icon: "sailboat",
+    icon: "Workflow",
   },
 ] as const;
 
@@ -23,25 +23,25 @@ const LEARN = [
     title: "Anywhere",
     href: "/docs/anywhere",
     slug: "anywhere",
-    icon: "microchip",
+    icon: "Microchip",
   },
   {
     title: "Join the Community",
     href: "/docs/community",
     slug: "community",
-    icon: "message-circle-heart",
+    icon: "MessageCircleHeart",
   },
   {
     title: "Linux Concepts",
     href: "/docs/linux",
     slug: "linux",
-    icon: "graduation-cap",
+    icon: "GraduationCap",
   },
   {
     title: "About Ultramarine",
     href: "/docs/about",
     slug: "about",
-    icon: "graduation-cap",
+    icon: "Info",
   },
 ] as const;
 
