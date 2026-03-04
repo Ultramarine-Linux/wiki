@@ -16,7 +16,7 @@ export const KNOWN_LANGUAGES = {
   English: "en",
   Deutsch: "de",
   正體中文: "zh_hant",
-  hindi:   "hi"
+  hindi: "hi",
 } as const;
 export const KNOWN_LANGUAGE_CODES = Object.values(KNOWN_LANGUAGES);
 
@@ -180,6 +180,66 @@ export const SIDEBAR: Sidebar = {
         text: "為 Ultramarine 開發",
         link: "zh_hant/development/developing-for-ultramarine",
       },
+    ],
+  },
+  hi: {
+    Introduction: [{ text: "स्वागत है", link: "hi/welcome" }],
+    Community: [
+      { text: "Join the Community", link: "hi/community/community" },
+      { text: "Code of Conduct", link: "hi/community/codeofconduct" },
+    ],
+    Setup: [
+      { text: "System Requirements", link: "hi/setup/requirements" },
+      { text: "Getting Ultramarine Linux", link: "hi/setup/getting" },
+      { text: "BIOS Keys", link: "hi/setup/bioskeys" },
+      { text: "Installation", link: "hi/setup/installation" },
+      { text: "Post-Installation", link: "hi/setup/postinstall" },
+      {
+        text: "Advanced Post-Installation Steps",
+        link: "hi/setup/post-advanced",
+      },
+      {
+        text: "Broadcom and Realtek Networking",
+        link: "hi/setup/broadcom-realtek",
+      },
+      { text: "NVIDIA Drivers", link: "hi/setup/nvidia" },
+    ],
+    Contributing: [
+      { text: "Overview", link: "hi/contributing/contributorguide" },
+      { text: "Development", link: "hi/contributing/hacking" },
+      { text: "Mirroring", link: "hi/contributing/mirroring" },
+    ],
+    Anywhere: [
+      { text: "Ultramarine Anywhere", link: "hi/anywhere/anywhere" },
+      { text: "Microsoft Surface", link: "hi/anywhere/surface" },
+      { text: "Raspberry Pi", link: "hi/anywhere/rpi" },
+      { text: "WSL", link: "hi/anywhere/wsl" },
+    ],
+    Usage: [
+      { text: "Gaming on Ultramarine", link: "hi/usage/gaming" },
+      {
+        text: "Localization",
+        link: "hi/usage/l10n",
+      },
+      { text: "Keyboard Configuration", link: "hi/usage/keyboard-cfg" },
+      { text: "Switching Desktop Environments / Editions", link: "hi/usage/hop" },
+      { text: "umcli", link: "hi/usage/umcli" },
+      { text: "eduroam", link: "hi/usage/eduroam" },
+    ],
+    "Linux Concepts": [
+      { text: "What is Linux?", link: "hi/linux/overview" },
+      { text: "The File System", link: "hi/linux/filesystem" },
+      { text: "Device Files", link: "hi/linux/devicefiles" },
+      { text: "Permissions", link: "hi/linux/permissions" },
+      { text: "Software and Package Management", link: "hi/linux/software" },
+      { text: "The Shell", link: "hi/linux/shell" },
+      { text: "SSH", link: "hi/linux/ssh" },
+      { text: "Security and Privacy", link: "hi/linux/securityprivacy" },
+    ],
+    "Release Notes": [
+      { text: "Ultramarine 43 Upgrades", link: "hi/release/42-upgrades" },
+      { text: "Errata", link: "hi/release/errata" },
+      { text: "Differences with Fedora", link: "hi/release/diff-fedora" },
     ],
   },
 };
