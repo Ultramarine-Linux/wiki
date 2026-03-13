@@ -156,6 +156,75 @@ However, once you have installed sbctl, it should've already set up a hook to si
 
 After signing the necessary files and enrolling them in your firmware, you can re-enable Secure Boot in your UEFI settings.
 
+## Using a FIDO2-Compliant Security Key for Decryption
+
+If you [encrypted your setup during installation](/en/setup/installation/#luks-full-disk-encryption), you have the option
+of using a FIDO2-Compliant security key (such as a Yubikey 5) to decrypt your disk upon boot.
+
+You'll need to find the encrypted disk name first:
+
+```bash
+# Get the list of available block devices
+lsblk
+```
+
+Find the entry with type `crypt` and mountpoint `/home` or `/`. The disk name should look something like `nvme0n1p3`, `sda3`, or `mmcblk0p2`
+
+Next, enroll your security key with the disk:
+
+```bash
+# Enroll security key
+sudo systemd-cryptenroll --fido2-device=auto /dev/your_disk_name
+```
+
+Replace the disk name with the name found previously. You'll be asked to input the security key PIN and activate the key,
+refer to your key's documentation for information on how to do this.
+
+Once the disk has been enrolled, the initramfs must be told to use the security key.
+
+Open the file `/etc/crypttab` in your preferred terminal editor, and after the section labelled `none discard`,
+add the line `fido2-device=auto`. It should appear similar to the following:
+
+```bash
+# /etc/crypttab
+luks-my-disk-id UUID=my-disk-id none discard,fido2-device=auto
+```
+
+Lastly, edit the bootloader configuration and specify to use FIDO2. The instructions for this will deviate depending on whether you use systemd-boot or GRUB.
+
+#### GRUB
+
+Edit the file `/etc/default/grub` in your preferred terminal editor.
+
+On the line `GRUB_CMDLINE_LINUX`, add the option `rd.luks.fido2-device=auto` before the `rd.luks.uuid` line. An example is provided as follows:
+
+```bash
+# /etc/default/grub
+GRUB_CMDLINE_LINUX="rd.luks.fido2-device=auto rd.luks.uuid=luks-my-disk-id rhgb quiet"
+```
+
+#### systemd-boot
+
+Find the loader file. Use `sudo bootctl status` to find all entries. Look for the entry titled "Ultramarine Linux", and note the source entry. It should appear similar to `/boot/efi//loader/entries/id-6.18.5-200.fc43.x86_64.conf` (In general, the format is id-kernel_version.fedora_version.arch.conf). Edit this file in your preferred terminal editor.
+
+On the line `options`, add the option `rd.luks.fido2-device=auto` before the `root=UUID=` line. An example is provided as follows:
+
+```bash
+# /boot/efi//loader/entries/*.conf
+options    rd.luks.fido2-device=auto root=UUID=id ro ...
+```
+
+#### Final Steps
+
+Regenerate the initramfs.
+
+```bash
+# Regenerate dracut initramfs
+sudo dracut --regenerate-all --force
+```
+
+If all went well, reboot the machine. When booting, you should be prompted to enter the PIN for your security key. This may not have any words, just a text box with a lock icon. Enter the PIN and press `Enter`. You will then be asked to activate the security key. Once activated, your drive will be properly decrypted and the boot will finish.
+
 #### [Next Up: Broadcom and Realtek Networking →](/en/setup/broadcom-realtek)
 
 #### [← Back To: Installation](/en/setup/installation)
