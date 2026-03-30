@@ -10,7 +10,7 @@ This page goes more into depth about package managers, to help you make choices 
 ## Using the App Store
 Ultramarine comes with an app store. It's called "Discover" on Plasma Edition, and "Software" on GNOME, Budgie, and Xfce Edition.
 
-You can search for and install all of the software available for Ultramarine in the app store, and it will handle installing RPMs and flatpakrefs from the internet.
+You can search for and install the majority of software available for Ultramarine in the app store, and it will handle installing RPMs and flatpakrefs from the internet.
 
 You can also install software with the terminal, which we'll cover in the next section.
 
@@ -41,7 +41,7 @@ sudo dnf install steam # Install Steam
 You can also install groups of packages, like full desktop environments or a suite of tools for music production, using the `dnf group install` command.
 
 ```bash
-sudo dnf groupinstall "Audio Production" # installs multiple packages at once, in this case a suite of music/audio production tools
+sudo dnf group install audio # installs multiple packages at once, in this case a suite of music/audio production tools
 ```
 
 For a full list of available groups, run `sudo dnf group list`

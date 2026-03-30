@@ -1,47 +1,38 @@
-# wiki
+# Ultramarine Linux Wiki
 
-This is a Next.js application generated with
-[Create Fumadocs](https://github.com/fuma-nama/fumadocs).
+Welcome to the source repository behind the [Ultramarine Wiki]! We welcome any contributions and
+you may freely send pull requests to this repository if you would like to modify any of the
+content here!
 
-It is a Next.js app with [Static Export](https://nextjs.org/docs/app/guides/static-exports) configured.
+## Translations
 
-Run development server:
+TBD as we shift to our new docs site
 
-```bash
-npm run dev
-# or
-pnpm dev
-# or
-yarn dev
-```
+## Hacking
+### Dev Containers
 
-Open http://localhost:3000 with your browser to see the result.
+1. Install the Dev Containers extension in your IDE
+   - Zed comes with Dev Containers, see [this documentation](https://zed.dev/docs/dev-containers)
 
-## Explore
+   - VSCode users need to install the Dev Containers extension
 
-In the project, you can see:
+   - Podman users need to install `podman-docker` from their package manager
+   
+2. Open your IDE and select the "Reopen in Dev Container" option
+3. Run `bun i` to install deps
+4. Run `bun dev` or `bun dev --host` to start the dev server
+   
+### Flox
+1. Get [Flox](https://flox.dev/docs/install-flox/install/)
+2. Clone and enter this repo
+3. Run `flox activate`
 
-- `lib/source.ts`: Code for content source adapter, [`loader()`](https://fumadocs.dev/docs/headless/source-api) provides the interface to access your content.
-- `lib/layout.shared.tsx`: Shared options for layouts, optional but preferred to keep.
+You can run the dev server with `flox services start dev`, or to expose to LAN or Tailnet, run `flox services start dev-host`
 
-| Route                     | Description                                            |
-| ------------------------- | ------------------------------------------------------ |
-| `app/(home)`              | The route group for your landing page and other pages. |
-| `app/docs`                | The documentation layout and pages.                    |
-| `app/api/search/route.ts` | The Route Handler for search.                          |
+### On the Host
+1. Install `bun` and `nodejs`
+2. Run `bun i` to install deps
+3. Run `bun dev` or `bun dev --host` to start the dev server
 
-### Fumadocs MDX
 
-A `source.config.ts` config file has been included, you can customise different options like frontmatter schema.
-
-Read the [Introduction](https://fumadocs.dev/docs/mdx) for further details.
-
-## Learn More
-
-To learn more about Next.js and Fumadocs, take a look at the following
-resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js
-  features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-- [Fumadocs](https://fumadocs.dev) - learn about Fumadocs
+[Ultramarine Wiki]: https://wiki.ultramarine-linux.org
