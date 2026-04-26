@@ -92,16 +92,16 @@ systemd-boot, a modern bootloader. It may even speed up boot!
 </Alert>
 
 1. Make sure you turn off Secure Boot in your UEFI settings for now, You can re-enable it later after you [sign systemd-boot with your own keys.](#secure-boot-with-systemd-boot)
-2. Remove GRUB from protected packages:
+2. Remove GRUB  and shim from protected packages:
 
 ```bash
-sudo rm /etc/dnf/protected.d/grub*
+sudo rm /etc/dnf/protected.d/grub* && sudo rm /etc/dnf/protected.d/shim*
 ```
 
 3. Start uninstalling GRUB:
 
 ```bash
-sudo dnf remove -y grubby grub2\* memtest86\* && sudo rm -rf /boot/grub2 && sudo rm -rf /boot/loader
+sudo dnf remove -y grubby shim\* grub2\* memtest86\* && sudo rm -rf /boot/grub2 && sudo rm -rf /boot/loader
 ```
 
 4. Install unsigned systemd-boot binaries and the `sdubby` tool:
