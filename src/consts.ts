@@ -112,7 +112,7 @@ export const SIDEBAR: Sidebar = {
       { text: "Введение в сообщество", link: "ru/community/community" },
       { text: "Наши правила", link: "ru/community/codeofconduct" },
     ],
-    Установка,настройка: [
+    "Установка,настройка": [
       { text: "Системные требования", link: "ru/setup/requirements" },
       { text: "Получение образа Ultramarine", link: "ru/setup/getting" },
       { text: "Клавиши для входа в BIOS", link: "ru/setup/bioskeys" },
