@@ -17,6 +17,7 @@ export const KNOWN_LANGUAGES = {
   Deutsch: "de",
   正體中文: "zh_hant",
   hindi: "hi",
+  Русский: "ru"
 } as const;
 export const KNOWN_LANGUAGE_CODES = Object.values(KNOWN_LANGUAGES);
 
@@ -95,6 +96,82 @@ export const SIDEBAR: Sidebar = {
       { text: "Ultramarine 43 Upgrades", link: "en/release/43-upgrades" },
       { text: "Errata", link: "en/release/errata" },
       { text: "Differences with Fedora", link: "en/release/diff-fedora" },
+    ],
+    // Chromebook: [
+    //   { text: "Getting Started", link: "en/chromebook/chromebook" },
+    //   { text: "Getting Chromebook Edition", link: "en/chromebook/getting" },
+    //   { text: "Installing to a Chromebook", link: "en/chromebook/preparing" },
+    //   { text: "Post-Install", link: "en/chromebook/postinstall" },
+    //   { text: "ARM Chromebooks (Beta)", link: "en/chromebook/armbeta" },
+    //   { text: "Terminology", link: "en/chromebook/terminology" },
+    // ],
+  },
+  ru: {
+    Введение: [{ text: "Добро пожаловать!", link: "ru/welcome" }],
+    Сообщество: [
+      { text: "Введение в сообщество", link: "ru/community/community" },
+      { text: "Наши правила", link: "ru/community/codeofconduct" },
+    ],
+    "Установка,настройка": [
+      { text: "Системные требования", link: "ru/setup/requirements" },
+      { text: "Получение образа Ultramarine", link: "ru/setup/getting" },
+      { text: "Клавиши для входа в BIOS", link: "ru/setup/bioskeys" },
+      { text: "Установка", link: "ru/setup/installation" },
+      // {
+      // text: "Установка при помощи Readymade",
+      //link: "ru/installation/readymade",
+      //},
+      { text: "Поосле установки", link: "ru/setup/postinstall" },
+      {
+        text: "Драйверы Broadcom и Realtek",
+        link: "ru/setup/broadcom-realtek",
+      },
+      { text: "NVIDIA", link: "ru/setup/nvidia" },
+    ],
+    Вклад: [
+      { text: "Обзор", link: "ru/contributing/contributorguide" },
+      { text: "Разработка", link: "ru/contributing/hacking" },
+      { text: "Создание зеркал", link: "ru/contributing/mirroring" },
+    ],
+    //Hardware: [
+    //{ text: "Ultramarine Anywhere", link: "en/hardware/anywhere" },
+    //{ text: "Microsoft Surface", link: "en/hardware/surface" },
+    //{
+    //  text: "Broadcom and Realtek Networking",
+    //  link: "en/hardware/broadcom-realtek",
+    //},
+    //],
+    Универсальность: [
+      { text: "Ultramarine везде", link: "ru/anywhere/anywhere" },
+      { text: "Microsoft Surface", link: "ru/anywhere/surface" },
+      { text: "Raspberry Pi", link: "ru/anywhere/rpi" },
+      { text: "WSL", link: "ru/anywhere/wsl" },
+    ],
+    Использование: [
+      { text: "Gaming on Ultramarine", link: "ru/usage/gaming" },
+      { text: "Localization", link: "ru/usage/l10n" },
+      { text: "Keyboard Configuration", link: "ru/usage/keyboard-cfg" },
+      {
+        text: "Смена рабочей среды / издания",
+        link: "ru/usage/hop",
+      },
+      { text: "umcli", link: "ru/usage/umcli" },
+      { text: "eduroam", link: "ru/usage/eduroam" },
+    ],
+    "Понятия Linux": [
+      { text: "Что такое Linux?", link: "ru/linux/overview" },
+      { text: "Файловая система", link: "ru/linux/filesystem" },
+      { text: "Файлы устройств", link: "ru/linux/devicefiles" },
+      { text: "Права доступа", link: "ru/linux/permissions" },
+      { text: "Управление ПО и пакетами", link: "ru/linux/software" },
+      { text: "Терминал", link: "ru/linux/shell" },
+      { text: "SSH", link: "ru/linux/ssh" },
+      { text: "Безопасность и приватность", link: "ru/linux/securityprivacy" },
+    ],
+    "Список изменений": [
+      { text: "Улучшения в Ultramarine 43", link: "ru/release/43-upgrades" },
+      { text: "Проблемы", link: "ru/release/errata" },
+      { text: "Отличия от Fedora", link: "ru/release/diff-fedora" },
     ],
     // Chromebook: [
     //   { text: "Getting Started", link: "en/chromebook/chromebook" },
