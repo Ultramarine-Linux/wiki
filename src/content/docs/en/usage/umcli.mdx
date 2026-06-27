@@ -39,10 +39,10 @@ List of umcli Tweaks:
 | openssl-legacy-negotiation | Toggleable | Use unsafe legacy negotiation for OpenSSL | Should only be used if absolutely necessary |
 | sudo-pwfeedback            | Toggleable | Add `*` feedback when entering in password during a sudo prompt |                       |
 | cachyos-kernel             | Toggleable | Install the [CachyOS kernel](https://wiki.cachyos.org/features/kernel/) via the COPR, and enable as default kernel entry | If you are using Secure Boot, you will need to set up `sbctl` according to the CachyOS specification. More info can be found when enabling the tweak |
+| nix                        | Toggleable | Install/Uninstall the Nix package manager |                                             |
 
 ## Planned Features
 
-- umcli wrapper around the Nix language installer. Also pre-configure nix to instantly be able to have an easy to use experience.
 - `umcli upgrade`, potentially a wrapper around the `topgrade` package. Would update everything on the system (system packages, flatpaks, firmware, etc.).
 - `um get PACKAGE`. A way to easily install packages that are not in a common package repository, but do distribute their own RPMs, or their own repositories. Based on [deb-get](https://github.com/wimpysworld/deb-get)
 - And more!

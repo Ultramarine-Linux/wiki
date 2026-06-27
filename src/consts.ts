@@ -82,6 +82,7 @@ export const SIDEBAR: Sidebar = {
       },
       { text: "umcli", link: "en/usage/umcli" },
       { text: "eduroam", link: "en/usage/eduroam" },
+      { text: "Nix", link: "en/usage/nix" },
     ],
     "Linux Concepts": [
       { text: "What is Linux?", link: "en/linux/overview" },
