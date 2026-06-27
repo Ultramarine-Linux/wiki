@@ -94,7 +94,8 @@ export const SIDEBAR: Sidebar = {
       { text: "Security and Privacy", link: "en/linux/securityprivacy" },
     ],
     "Release Notes": [
-      { text: "Ultramarine 43 Upgrades", link: "en/release/43-upgrades" },
+      { text: "Ultramarine 44 Upgrades", link: "en/release/44-upgrades" },
+      { text: "Budgie SDDM", link: "en/release/budgie-sddm" },
       { text: "Errata", link: "en/release/errata" },
       { text: "Differences with Fedora", link: "en/release/diff-fedora" },
     ],

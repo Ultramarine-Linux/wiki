@@ -1,0 +1,19 @@
+---
+title: Ultramarine Atomic Public Preview
+description: "How to test Ultramarine Atomic's Public Preview."
+---
+
+import Alert from "../../../../components/Docs/Alert.astro";
+
+Ultramarine 44 comes with the first public preview of Ultramarine Atomic, our vision of the future of the Linux desktop. Atomic is powered by Bootable Containers, or bootc for short. The OS itself and updates are distributed as Podman containers and layers.
+
+## Installing
+
+If you want to try out Atomic, boot one of our normal live images, wipe your disk, and run this command in the terminal.
+
+```
+sudo bootc install to-disk --target-transport containers-storage --source-imgref ghcr.io/ultramarine-linux/[EDITION]-bootc:44 --wipe --filesystem btrfs --bootloader grub /dev/{disk}
+```
+## Package Management
+
+Atomic has no package manager besides Flatpak right now. We are working on DNF functionality for Atomic, but during the first bit of this preview period you can try one like [Homebrew](https://brew.sh) or Nix using the [umcli tweak](/en/usage/umcli).
