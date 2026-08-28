@@ -22,6 +22,26 @@ Syntax: `um` [global options] command [command options]
 - `--upload` -- Creates a shareable link to view your system specs online. This information is end-to-end encrypted, auto-expires in 7 days, and not tied to you in any way.
 - `--json` -- Outputs status in JSON format.
 
+`system-version-upgrade` -- Upgrades your system to the next major release version (for example, Ultramarine 43 to 44).
+
+- `--yes, -y`       Automatically accept the upgrade without prompts, same behavior as dnf's --assumeyes (default: false)
+- `--check`         Check if a newer version is available without upgrading (default: false)
+- `--allowerasing`  Forcefully remove some packages (this is potentially destructive! make sure you know what you're doing) (default: false)
+- `--help, -h`      show help
+
+`env` -- Manage local bootc derivations (only useful if running on a bootc system. If you don't know what this is you do not need this).
+
+- `init`           Create a bootc environment manifest and containerfile
+- `build, b`       Build the local derivation from a Containerfile
+- `apply-changes`  Apply pending changes to the bootc environment
+- `update`         Update the base image and rebuild the environment
+- `help, h`        Shows a list of commands or help for one command
+-  Package management helpers:
+     `add, install, i, a, in`    Add a package to the environment
+     `remove, uninstall, rm, r`  Remove a package from the environment
+- `--help, -h`  show help
+
+
 `tweaks` -- Manage Ultramarine Tweaks. Tweaks are Ansible playbooks or arbitrary shell scripts that modify the system following a preset. This can be used to configure specific software, change system settings, and more.
 
 - `list` -- Lists all available tweaks.
