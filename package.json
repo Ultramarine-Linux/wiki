@@ -8,7 +8,8 @@
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "deploy": "wrangler deploy"
   },
   "dependencies": {
     "@algolia/client-search": "^5.49.0",
@@ -31,6 +32,7 @@
   "devDependencies": {
     "html-escaper": "^3.0.3",
     "prettier": "^3.2.4",
-    "prettier-plugin-astro": "^0.14.1"
+    "prettier-plugin-astro": "^0.14.1",
+    "wrangler": "^4.129.0"
   }
 }
