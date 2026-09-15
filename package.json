@@ -21,12 +21,12 @@
     "@iconify-json/bi": "^1.2.7",
     "@iconify-json/lucide": "^1.2.132",
     "@types/node": "^25.9.6",
-    "@types/react": "^18.3.31",
+    "@types/react": "^19.3.0",
     "@types/react-dom": "^18.3.7",
     "astro": "^4.16.19",
     "astro-icon": "^1.2.0",
     "preact": "^10.29.8",
-    "react": "^18.3.1",
+    "react": "^19.3.0",
     "react-dom": "^18.3.1"
   },
   "devDependencies": {
