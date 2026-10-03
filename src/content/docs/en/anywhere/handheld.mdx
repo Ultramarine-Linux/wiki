@@ -1,0 +1,30 @@
+---
+title: "Retro-gaming Handhelds (Anywhere)"
+description: "Retro-gaming handhelds in the Ultramarine Anywhere Initiative"
+---
+
+import Alert from "../../../../components/Docs/Alert.astro";
+
+<Alert type="info">
+  This device type is still in the **In Progress Phase**. All information on
+  this page is subject to change. Do not follow any instructions unless you know
+  what you're doing.
+</Alert>
+
+Ultramarine aims to provide support for various ARM-based retro-gaming handhelds from various vendors, including but not limited to:
+
+- AYANEO
+- TRIMUI
+- Anbernic
+- Retroid
+- Mangmi
+- Powkiddy
+
+Most of these handhelds have low-powered AArch64-based SoCs from Rockchip, Mediatek and/or Allwinner, comes with very tight memory requirements as small as 1GB
+and requires extensive custom BSP (Board support packages) integration to handle specific vendor hardware and Boot ROM implementations.
+
+The currently experimental [Ultramarine Embedded Handheld](https://github.com/Ultramarine-Linux/ultramarine-handheld) edition is designed for these weaker handhelds that do not have the hardware capability to handle Steam and/or SteamOS.
+
+Since traditional desktop environments and shells do not typically target this hardware profile or form factor, we created [Marina](https://github.com/Ultramarine-Linux/marina), a lightweight gamepad-first shell built to handle the hardware and software requirement of these low-powered devices.
+
+Currently Ultramarine Handheld only supports the **TRIMUI Smart Pro S** powered by a custom Allwinner Tina Linux SDK kernel patch, with planned experimental support for the **Anbernic RG55G1** from our fellow Open Gaming Collective member [ArmadaOS](https://armadaos.dev/) for Qualcomm ABL support
