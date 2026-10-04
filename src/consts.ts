@@ -292,7 +292,6 @@ export const SIDEBAR: Sidebar = {
       { text: "Ultramarine Anywhere", link: "hi/anywhere/anywhere" },
       { text: "Microsoft Surface", link: "hi/anywhere/surface" },
       { text: "Raspberry Pi", link: "hi/anywhere/rpi" },
-      { text: "WSL", link: "hi/anywhere/wsl" },
     ],
     Usage: [
       { text: "Gaming on Ultramarine", link: "hi/usage/gaming" },
