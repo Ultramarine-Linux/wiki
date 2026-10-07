@@ -70,6 +70,7 @@ export const SIDEBAR: Sidebar = {
       { text: "Microsoft Surface", link: "en/anywhere/surface" },
       { text: "Raspberry Pi", link: "en/anywhere/rpi" },
       { text: "ASUS ROG", link: "en/anywhere/asus" },
+      { text: "WSL", link: "en/anywhere/wsl" },
     ],
     Usage: [
       { text: "Gaming on Ultramarine", link: "en/usage/gaming" },
