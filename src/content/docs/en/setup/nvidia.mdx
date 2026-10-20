@@ -24,6 +24,13 @@ If drivers weren't installed, or you switched to an NVIDIA GPU, you can install 
 ```bash
 sudo dnf update # Update the system first, the drivers may not work right if you don't.
 sudo dnf install akmod-nvidia # Install the NVIDIA kernel module.
+sudo dnf install xorg-x11-drv-nvidia-cuda # Installs core 3D libraries (Vulkan/OpenGL) and CUDA support needed for gaming. 
+```
+
+To run a game or a program explicitly with a dedicated graphics card (like Nvidia):
+
+```bash
+switcherooctl launch <program path>
 ```
 
 <Alert type="warning">
