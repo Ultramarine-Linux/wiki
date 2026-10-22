@@ -18,7 +18,7 @@ Ultramarine Chromebook comes in 4 variants:
 - **Budgie Edition**: A familiar and stylish experience with a bit of flair.
 - **GNOME Edition**: A simple, elegant, and intuitive desktop with a large ecosystem of apps and extensions.
 
-Ultramarine Linux is distributed with image files available for download from [our website](https://ultramarine-linux.org/download/chromebook).
+Ultramarine for Chromebooks is distributed with image files available for download from [our website](https://ultramarine-linux.org/download/chromebook).
 
 <Alert type="warning">
   Fyra Labs cannot guarantee the safety or quality of images downloaded from
@@ -62,20 +62,29 @@ CertUtil -hashfile PATH\TO\ULTRAMARINE.ISO SHA256
 # Open the CHECKSUM file with Notepad and compare the checksum
 ```
 
-## Creating the Installer
+## Creating the Installer on Windows, macOS, or Linux
 
 ### Download [balenaEtcher](https://www.balena.io/etcher/) to create a bootable media from the img image.
 
 ![](/assets/balenaetcher.png)
 
-Simply select the img file, a device to use for the installer, and click flash.
+After downloading Ultramarine Chromebook, select the img file, a device to use for the installer, and click flash.
 
-#### [Next Up: Installing to a Chromebook →](preparing)
+## Creating the installer on ChromeOS
+
+### Download the [Chromebook Recovery Utility extension](https://chromewebstore.google.com/detail/chromebook-recovery-utili/pocpnlppkickgojjlmhdmidojbmbodfm) from the Chrome Web Store
+
+![](/assets/Chromebook-Recovery-Utility.png)
+
+1. Download the Ultramarine Chromebook image
+2. Navigate to the image, and change the '.img' to '.bin'
+3. Open the Chromebook Recovery Utility extension
+4. Click the 'settings' icon in the top right corner, and select 'Use Local Image'
+5. Navigate to and select your Ultramarine Chromebook .bin image, and select 'OPEN'
+6. Insert and select the instalation media you would like to use under the dropdown
+7. Select 'Continue'
+8. Disregard the warning, then press 'Create now'
+
+#### [Next Up: Installing →](installing)
 
 #### [← Back To: Getting Started](chromebook)
-
-## Footnotes
-
-- The Anaconda installer is very complex and hard to work with, we are working on a new installer that is easier to use and more reliable.
-- Since Fedora 37, Fedora's official support for the Pantheon desktop environment has been dropped due to compatibility issues and the Pantheon port is now maintained by the Ultramarine Linux team. This means that the Pantheon desktop environment is only available through Ultramarine Linux, or Fedora with Terra enabled.
-- Ultramarine's Budgie edition provides a close to stock Budgie experience, with a custom theme. Unlike Fedora's Budgie Spin, which provides a completely custom layout and experience.
