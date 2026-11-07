@@ -1,0 +1,79 @@
+---
+title: Secure Boot
+description: "Set up secure boot key signing for third-party kernels and kernel modules"
+---
+
+[Secure Boot] is a UEFI security protocol that secures the boot process by ensuring that
+only signed executables are allowed to boot. While Ultramarine Linux's bootloader shim is signed by Microsoft and Red Hat,
+you may want to use a different bootloader (i.e systemd-boot or rEFInd), kernel, or proprietary driver (such as Nvidia drivers). In that case, you will need to manually enroll
+and sign the files with your own keys.
+
+<Alert type="info">
+    You must be able to disable secure boot and place your BIOS in secure boot setup mode.
+</Alert>
+
+First, install `sbctl`:
+
+```bash
+sudo dnf install sbctl
+```
+
+As a good first step, check your system's secure boot status:
+
+```bash
+sbctl status
+```
+
+Typically, if your system is running secure boot and hasn't had your keys enrolled, you'll see something like this:
+
+```
+# sbctl status
+Installed:   ✘ Sbctl is not installed
+Setup Mode:  ✔ Disabled
+Secure Boot: ✔ Enabled
+```
+
+In this case, you'll need to go into your system BIOS to enter setup mode. On most systems, you do this by going to the boot tab, then secure boot. From there, sometimes there may be a separate key management section.
+Either way, make sure you disable envorcement (if that option is available), then clear the existing secure boot keys. There may also be an option to enter setup mode or clear keys on next boot.
+
+Once you've made those changes, exit your firmware and save changes. Once you're back into Ultramarine, run `sbctl status` again. This time, it should look like this:
+```
+# sbctl status
+Installed:   ✘ Sbctl is not installed
+Setup Mode:  ✘ Enabled
+Secure Boot: ✘ Disabled
+```
+
+Now, create your own secure boot keys:
+
+```bash
+sudo sbctl create-keys
+```
+
+From here, you simply need to enroll the keys. We recommend that you pass the `--microsoft` flag to the command to enroll the typical Microsoft signing keys, as those are the stock signing keys for Windows and most other Linux distributions.
+
+```bash
+sudo sbctl enroll-keys --microsoft
+```
+<Alert type="warning">
+    Sign your kernel before rebooting at this point.
+</Alert>
+
+To sign your current kernel, run the following:
+
+```bash
+sudo sbctl sign /boot/vmlinuz-$(uname -r)
+```
+
+Your system will now have hooks in place to sign all future kernels at install. You can also now install third-party kernel modules.
+
+To verify this process, reboot your system, then run `sbctl status` again. It should look something like this:
+```
+# sbctl status
+Installed:   ✔ Sbctl is installed
+Owner GUID:  a9fbbdb7-a05f-48d5-b63a-08c5df45ee70
+Setup Mode:  ✔ Disabled
+Secure Boot: ✔ Enabled
+```
+
+Where your owner GUID will be randomized.
