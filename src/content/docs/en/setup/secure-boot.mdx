@@ -37,6 +37,7 @@ In this case, you'll need to go into your system BIOS to enter setup mode. On mo
 Either way, make sure you disable envorcement (if that option is available), then clear the existing secure boot keys. There may also be an option to enter setup mode or clear keys on next boot.
 
 Once you've made those changes, exit your firmware and save changes. Once you're back into Ultramarine, run `sbctl status` again. This time, it should look like this:
+
 ```
 # sbctl status
 Installed:   ✘ Sbctl is not installed
@@ -68,6 +69,7 @@ sudo sbctl sign /boot/vmlinuz-$(uname -r)
 Your system will now have hooks in place to sign all future kernels at install. You can also now install third-party kernel modules.
 
 To verify this process, reboot your system, then run `sbctl status` again. It should look something like this:
+
 ```
 # sbctl status
 Installed:   ✔ Sbctl is installed
@@ -77,3 +79,7 @@ Secure Boot: ✔ Enabled
 ```
 
 Where your owner GUID will be randomized.
+
+#### [Next Up: Broadcom and Realtek Networking →](/en/setup/broadcom-realtek)
+
+#### [← Back To: Post-Installation](/en/setup/postinstall)
