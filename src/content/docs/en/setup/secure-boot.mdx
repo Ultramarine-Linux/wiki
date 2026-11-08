@@ -59,7 +59,11 @@ Now, create your own Secure Boot keys:
 sudo sbctl create-keys
 ```
 
-Then, enroll the keys. We strongly recommend passing the `--microsoft` flag to also enroll Microsoft's keys. Besides being needed to boot Windows and Ultramarine's stock shim, many devices (such as graphics cards) have firmware signed by Microsoft that must load during boot. Leaving those keys out can leave your system unable to boot.
+Then, enroll the keys.
+
+<Alert type="info">
+    We strongly recommend passing the `--microsoft` flag to also enroll Microsoft's keys. Besides being needed to boot Windows and Ultramarine's stock shim, many devices (such as graphics cards) have firmware signed by Microsoft that must load during boot. Leaving those keys out can leave your system unable to boot
+</Alert>
 
 ```bash
 sudo sbctl enroll-keys --microsoft
