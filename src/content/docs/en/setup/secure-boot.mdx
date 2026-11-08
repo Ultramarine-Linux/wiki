@@ -37,6 +37,10 @@ Vendor Keys:	microsoft
 
 Don't worry about the "Installed" line. It means that sbctl hasn't created any keys yet, not that the package is missing.
 
+<Alert type="warning">
+    If you dual boot Windows with BitLocker turned on, make sure you have your BitLocker recovery key before continuing. Changing your Secure Boot keys will cause Windows to ask for it on the next boot. You can find it at [aka.ms/myrecoverykey](https://aka.ms/myrecoverykey) if you signed in with a Microsoft account.
+</Alert>
+
 Next, you'll need to go into your system's firmware settings to enter setup mode. On most systems, you do this by going to the boot tab, then Secure Boot. Some systems have a separate key management section.
 Either way, disable Secure Boot enforcement (if that option is available), then clear the existing Secure Boot keys. Some firmware instead has an option to reset to setup mode or clear the keys on next boot.
 
