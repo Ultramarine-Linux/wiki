@@ -46,6 +46,7 @@ export const SIDEBAR: Sidebar = {
       //link: "en/installation/readymade",
       //},
       { text: "Post-Installation", link: "en/setup/postinstall" },
+      { text: "Secure Boot", link: "en/setup/secure-boot" },
       {
         text: "Broadcom and Realtek Networking",
         link: "en/setup/broadcom-realtek",

@@ -1,0 +1,140 @@
+---
+title: Secure Boot
+description: "Set up Secure Boot with your own keys for custom bootloaders, kernels, and kernel modules"
+---
+
+import Alert from "../../../../components/Docs/Alert.astro";
+
+Secure Boot is a UEFI security feature that protects the boot process by making sure that
+only signed executables are allowed to boot. Ultramarine Linux's default boot chain (shim, GRUB, and the kernel) is already signed and works with Secure Boot out of the box.
+However, if you want to use a different bootloader (e.g., systemd-boot or rEFInd) or a custom kernel, you will need to enroll your own keys
+and sign those files with them. If you only need third-party kernel modules (such as the NVIDIA drivers), skip to [Signing kernel modules](#signing-kernel-modules).
+
+<Alert type="info">
+    You must be able to disable Secure Boot and put your firmware into Secure Boot setup mode.
+</Alert>
+
+First, install `sbctl`:
+
+```bash
+sudo dnf install sbctl
+```
+
+As a good first step, check your system's Secure Boot status:
+
+```bash
+sbctl status
+```
+
+If your system is running Secure Boot with the factory keys, you'll see something like this:
+
+```
+Installed:	✗ sbctl is not installed
+Setup Mode:	✓ Disabled
+Secure Boot:	✓ Enabled
+Vendor Keys:	microsoft
+```
+
+Don't worry about the "Installed" line. It means that sbctl hasn't created any keys yet, not that the package is missing.
+
+<Alert type="warning">
+    If you dual boot Windows with BitLocker turned on, make sure you have your BitLocker recovery key before continuing. Changing your Secure Boot keys will cause Windows to ask for it on the next boot. You can find it at [aka.ms/myrecoverykey](https://aka.ms/myrecoverykey) if you signed in with a Microsoft account.
+</Alert>
+
+Next, you'll need to go into your system's firmware settings to enter setup mode. On most systems, you do this by going to the boot tab, then Secure Boot. Some systems have a separate key management section.
+Either way, disable Secure Boot enforcement (if that option is available), then clear the existing Secure Boot keys. Some firmware instead has an option to reset to setup mode or clear the keys on next boot.
+
+Once you've made those changes, save them and exit your firmware. Once you're back in Ultramarine, run `sbctl status` again. This time, it should look like this:
+
+```
+Installed:	✗ sbctl is not installed
+Setup Mode:	✗ Enabled
+Secure Boot:	✗ Disabled
+Vendor Keys:	none
+```
+
+Now, create your own Secure Boot keys:
+
+```bash
+sudo sbctl create-keys
+```
+
+Then, enroll the keys.
+
+<Alert type="info">
+    We strongly recommend passing the `--microsoft` flag to also enroll Microsoft's keys. Besides being needed to boot Windows and Ultramarine's stock shim, many devices (such as graphics cards) have firmware signed by Microsoft that must load during boot. Leaving those keys out can leave your system unable to boot
+</Alert>
+
+```bash
+sudo sbctl enroll-keys --microsoft
+```
+
+## Signing your boot files
+
+Next, sign every file that your firmware will load. To see which files on your EFI system partition still need to be signed, run:
+
+```bash
+sudo sbctl verify
+```
+
+Sign each file that's marked with `✗`. If you use systemd-boot, this includes `systemd-bootx64.efi` and the fallback `BOOTX64.EFI`. The `-s` flag saves the file to sbctl's database, so it gets re-signed automatically later:
+
+```bash
+sudo sbctl sign -s /path/to/file.efi
+```
+
+If your kernel is stored outside the EFI system partition (as it is with GRUB), sign it too:
+
+```bash
+sudo sbctl sign -s /boot/vmlinuz-$(uname -r)
+```
+
+<Alert type="warning">
+    If you use systemd-boot, rEFInd, or a custom kernel, make sure `sudo sbctl verify` doesn't show any unsigned files before you reboot. Otherwise, your system won't boot with Secure Boot turned on.
+</Alert>
+
+The `sbctl` package will now automatically sign new kernels and bootloader updates when they're installed.
+
+## Turning Secure Boot back on
+
+Reboot into your firmware settings and turn Secure Boot (or Secure Boot enforcement) back on, then boot into Ultramarine. Run `sbctl status` again, and it should look something like this:
+
+```
+Installed:	✓ sbctl is installed
+Owner GUID:	a9fbbdb7-a05f-48d5-b63a-08c5df45ee70
+Setup Mode:	✓ Disabled
+Secure Boot:	✓ Enabled
+Vendor Keys:	microsoft
+```
+
+Your owner GUID will be different, since it's randomly generated.
+
+## Signing kernel modules
+
+The keys you enrolled with sbctl only cover bootloaders and kernels. Linux doesn't use them to check kernel modules, so third-party modules (such as `akmod-nvidia`) still won't load with Secure Boot on. Instead, they must be signed with a key enrolled in shim's Machine Owner Key (MOK) list.
+
+<Alert type="info">
+    MOK keys are loaded by shim, so this only works if you boot through shim (Ultramarine's default GRUB setup). It doesn't apply if you boot systemd-boot or rEFInd directly.
+</Alert>
+
+Generate a signing key for akmods, then queue it for enrollment:
+
+```bash
+sudo dnf install akmods mokutil
+sudo kmodgenca -a
+sudo mokutil --import /etc/pki/akmods/certs/public_key.der
+```
+
+`mokutil` will ask you to make a one-time password. Reboot, and the MOK manager will appear before Ultramarine boots. Choose "Enroll MOK", confirm the key, and enter the password you just made. Keep in mind that the MOK manager always uses a QWERTY keyboard layout.
+
+Once you're back in Ultramarine, rebuild your modules so they're signed with the new key:
+
+```bash
+sudo akmods --force --rebuild
+```
+
+For more details, see [RPM Fusion's Secure Boot guide](https://rpmfusion.org/Howto/Secure%20Boot).
+
+#### [Next Up: Broadcom and Realtek Networking →](/en/setup/broadcom-realtek)
+
+#### [← Back To: Post-Installation](/en/setup/postinstall)
