@@ -15,7 +15,7 @@
     "@algolia/client-search": "^5.59.0",
     "@astrojs/mdx": "^3.1.9",
     "@astrojs/preact": "^6.1.1",
-    "@astrojs/react": "^7.0.0",
+    "@astrojs/react": "^7.1.7",
     "@docsearch/css": "^5.2.0",
     "@docsearch/react": "^3.9.0",
     "@iconify-json/bi": "^1.2.7",
