@@ -1,0 +1,73 @@
+---
+title: Shell Configuration
+description: How to utilize the Ultramarine shell configuration
+---
+
+import Alert from "../../../../components/Docs/Alert.astro";
+
+## Zsh
+
+### Included tools
+
+- **[Starship](https://starship.rs/)**: Displays a custom terminal prompt that shows your username, hostname, current directory, and extra info like the Git branch you're on. See [Changing the prompt](#changing-the-prompt) to customize it.
+- **[zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting)**: Colors commands as you type them, so you can spot typos (like a command that doesn't exist) before pressing Enter.
+- **[zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions)**: Suggests commands from your history as you type. Press `→` or `End` to accept a suggestion.
+- **[fzf](https://github.com/junegunn/fzf)**: A fuzzy finder used for searching your command history, files and directories (see [Keybindings](#keybindings)).
+
+### Keybindings
+
+| Keys | Action |
+| - | - |
+| `Ctrl` + `←` or `→` | Move back / forward one word |
+| `Ctrl` + `Backspace` | Delete the previous word |
+| `Ctrl` + `Delete` | Delete the next word |
+| `Alt` + `Delete` | Same as `Ctrl + Delete` |
+| `Delete` | Delete the character under the cursor |
+| `Home` / `End` | Jump to the start / end of the line |
+| `Ctrl` + `R` | Search your command history with fzf |
+| `↑` or `↓` | Scroll through your command history, if you've already typed something, only entries starting with that are shown |
+| `Ctrl` + `T` | Search for files and insert the path |
+| `Alt` + `C` | Search for a directory and `cd` into it |
+| `Ctrl` + `Z` | Undo |
+| `Alt` + `Z` | Redo |
+
+### History
+
+- Your command history is saved to `~/.zsh_history`, and the last 10,000 commands are kept.
+- History is shared between all open terminals, so a command you run in one window is immediately available (with `↑` or `Ctrl` + `R`) in the others.
+- Duplicate commands arent saved multiple times in a row.
+
+### Other behaviour
+
+- **Auto `cd`**: Type the name of a directory on its own and press Enter to `cd` into it. For example, typing `Downloads` is the same as `cd Downloads`.
+- **Case-insensitive autocomplete**: Autocomplete finds `~/Documents` regardless of if you type `~/Documents` or `~/documents`.
+- **Colored completion lists**: When you press `Tab` and a list of matches is shown, files and folders are colored the same way as in `ls`.
+- **Bash-style word movement**: `Ctrl` + `←` / `→`, `Ctrl` + `Backspace` and `Ctrl` + `Delete` stop at punctuation like `/`, `.` and `-`, the same as in Bash. For example, `Ctrl` + `Backspace` on `~/Documents/notes` deletes `notes` instead of the whole path.
+
+## Customizing
+
+### Editing your config
+
+Your shell config is in `~/.zshrc`. You can add your own aliases, options and plugins there, or remove any of the default configs added by Ultramarine. Changes apply to new terminals, or you can apply them to your current terminal by reloading Zsh:
+
+```bash
+source ~/.zshrc
+```
+
+For an in-depth (albeit densly techinal) guide to configure Zsh, see the [Zsh User's Guide](https://zsh.sourceforge.io/Guide/zshguide.html).
+
+### Changing the prompt
+
+Ultramarine's Starship config lives at `/usr/share/ultramarine-shell-config/starship.toml`. It is used as long as you don't have your own.
+
+To customize your prompt, copy it to your config folder and edit it there:
+
+```bash
+cp /usr/share/ultramarine-shell-config/starship.toml ~/.config/starship.toml
+```
+
+Once `~/.config/starship.toml` exists, Starship uses it instead of Ultramarine's global config. See the [Starship configuration docs](https://starship.rs/config/) for more info.
+
+#### [Next Up: Switching Desktop Editions →](/en/usage/hop)
+
+#### [← Back To: Keyboard Configuration](/en/usage/keyboard-cfg)
