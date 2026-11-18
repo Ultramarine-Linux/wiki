@@ -25,19 +25,24 @@ import Alert from "../../../../components/Docs/Alert.astro";
 | `Delete` | Delete the character under the cursor |
 | `Home` / `End` | Jump to the start / end of the line |
 | `Ctrl` + `R` | Search your command history with fzf |
-| `↑` or `↓` | scroll through your command history |
+| `↑` or `↓` | Scroll through your command history, if you've already typed something, only entries starting with that are shown |
 | `Ctrl` + `T` | Search for files and insert the path |
 | `Alt` + `C` | Search for a directory and `cd` into it |
+| `Ctrl` + `Z` | Undo your last edit to the command line |
+| `Alt` + `Z` | Redo |
 
 ### History
 
-Your command history is saved to `~/.zsh_history`, and the last 10,000 commands are kept.
-History is shared between all open terminals, so a command you run in one window is immediately available (with `↑` or `Ctrl` + `R`) in the others.
+- Your command history is saved to `~/.zsh_history`, and the last 10,000 commands are kept.
+- History is shared between all open terminals, so a command you run in one window is immediately available (with `↑` or `Ctrl` + `R`) in the others.
+- If you run the same command several times in a row, it is only saved once.
 
 ### Other behaviour
 
 - **Auto `cd`**: type the name of a directory on its own and press Enter to `cd` into it. For example, typing `Downloads` is the same as `cd Downloads`.
-- **Case-insensitive autocomplete**: autocomplete finds `~/Documents` regardless of if you type `~/Docu` or `~/docu`.
+- **Case-insensitive autocomplete**: autocomplete finds `~/Documents` regardless of if you type `~/Documents` or `~/documents`.
+- **Colored completion lists**: when you press `Tab` and a list of matches is shown, files and folders are colored the same way as in `ls`.
+- **Bash-style word movement**: `Ctrl` + `←` / `→`, `Ctrl` + `Backspace` and `Ctrl` + `Delete` stop at punctuation like `/`, `.` and `-`, the same as in Bash. For example, `Ctrl` + `Backspace` on `~/Documents/notes` deletes `notes` instead of the whole path.
 
 ## Customizing
 
