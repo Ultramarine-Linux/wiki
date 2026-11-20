@@ -7,9 +7,9 @@ updates:
     open-pull-requests-limit: 20
     groups:
       astro:
-        patterns: ["astro", "@astrojs*"]
+        patterns: ["astro", "@astrojs*", "astro-icon"]
       icons:
-        patterns: ["astro-icon", "@iconify*"]
+        patterns: ["@iconify*"]
       playwright:
         patterns: ["*playwright*"]
       prettier:
