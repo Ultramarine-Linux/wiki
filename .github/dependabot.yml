@@ -4,3 +4,22 @@ updates:
     directory: "/"
     schedule:
       interval: "weekly"
+    open-pull-requests-limit: 20
+    groups:
+      astro:
+        patterns: ["astro", "@astrojs*"]
+      icons:
+        patterns: ["astro-icon", "@iconify*"]
+      playwright:
+        patterns: ["*playwright*"]
+      prettier:
+        patterns: ["prettier*"]
+      react:
+        patterns: ["react", "react-dom", "@types/react", "@types/react-dom"]
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    groups:
+      actions:
+        patterns: ["*"]
