@@ -197,7 +197,7 @@ GRUB_CMDLINE_LINUX="rd.luks.fido2-device=auto rd.luks.uuid=luks-my-disk-id rhgb 
 
 #### systemd-boot
 
-Find the loader file. Use `sudo bootctl status` to find all entries. Look for the entry titled "Ultramarine Linux", and note the source entry. It should appear similar to `/boot/efi//loader/entries/id-6.18.5-200.fc43.x86_64.conf` (In general, the format is id-kernel_version.fedora_version.arch.conf). Edit this file in your preferred terminal editor.
+Find the loader file. Use `sudo bootctl status` to find all entries. Look for the entry titled "Ultramarine", and note the source entry. It should appear similar to `/boot/efi//loader/entries/id-6.18.5-200.fc43.x86_64.conf` (In general, the format is id-kernel_version.fedora_version.arch.conf). Edit this file in your preferred terminal editor.
 
 On the line `options`, add the option `rd.luks.fido2-device=auto` before the `root=UUID=` line. An example is provided as follows:
 

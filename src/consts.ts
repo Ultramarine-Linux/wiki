@@ -79,7 +79,7 @@ export const SIDEBAR: Sidebar = {
       { text: "Keyboard Configuration", link: "en/usage/keyboard-cfg" },
       { text: "Shell Configuration", link: "en/usage/shell-cfg" },
       {
-        text: "Switching Desktop Environments / Edition",
+        text: "Switching Desktop Environments",
         link: "en/usage/hop",
       },
       { text: "umcli", link: "en/usage/umcli" },
@@ -104,7 +104,7 @@ export const SIDEBAR: Sidebar = {
     ],
     // Chromebook: [
     //   { text: "Getting Started", link: "en/chromebook/chromebook" },
-    //   { text: "Getting Chromebook Edition", link: "en/chromebook/getting" },
+    //   { text: "Getting Ultramarine for Chromebook", link: "en/chromebook/getting" },
     //   { text: "Installing to a Chromebook", link: "en/chromebook/preparing" },
     //   { text: "Post-Install", link: "en/chromebook/postinstall" },
     //   { text: "ARM Chromebooks (Beta)", link: "en/chromebook/armbeta" },
@@ -180,7 +180,7 @@ export const SIDEBAR: Sidebar = {
     ],
     // Chromebook: [
     //   { text: "Getting Started", link: "en/chromebook/chromebook" },
-    //   { text: "Getting Chromebook Edition", link: "en/chromebook/getting" },
+    //   { text: "Getting Ultramarine for Chromebook", link: "en/chromebook/getting" },
     //   { text: "Installing to a Chromebook", link: "en/chromebook/preparing" },
     //   { text: "Post-Install", link: "en/chromebook/postinstall" },
     //   { text: "ARM Chromebooks (Beta)", link: "en/chromebook/armbeta" },
