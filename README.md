@@ -6,13 +6,6 @@ content here!
 
 ## Translations
 
-If you'd like to translate for a new language:
-
-1. Go to `src/consts.ts` to add a new language into `KNOWN_LANGUAGES`
-2. Copy everything from `src/content/docs/en` to `src/content/docs/<your_language_code>`[^1]
-3. Add pages into `SIDEBAR` in `src/consts.ts`
-4. Start translating!
-
-[^1]: We encourage you to use a generic language code without limiting the region.
+Translations are managed on [Weblate](https://weblate.fyralabs.com), so don't edit translated pages directly. Untranslated pages fall back to English.
 
 [Ultramarine Wiki]: https://wiki.ultramarine-linux.org

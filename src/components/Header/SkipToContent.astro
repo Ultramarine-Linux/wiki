@@ -1,10 +1,12 @@
 ---
-type Props = {};
+type Props = { label: string };
+
+const { label } = Astro.props;
 ---
 
-<a href="#article" class="sr-only focus:not-sr-only skiplink"
-  ><span>Skip to Content</span></a
->
+<a href="#article" class="sr-only focus:not-sr-only skiplink">
+  <span>{label}</span>
+</a>
 
 <style>
   .skiplink,

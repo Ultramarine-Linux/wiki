@@ -1,22 +1,40 @@
 ---
 import { type CollectionEntry, getCollection, render } from "astro:content";
 import MainLayout from "../layouts/MainLayout.astro";
+import LocalizedLink from "../components/Docs/LocalizedLink.astro";
+import { DEFAULT_LANGUAGE } from "../consts";
+import { LANGUAGE_CODES, splitDocId } from "../i18n";
 
 export async function getStaticPaths() {
   const docs = await getCollection("docs");
-  return docs.map((entry) => ({
-    params: {
-      slug: entry.id,
-    },
-    props: entry,
-  }));
-}
-type Props = CollectionEntry<"docs">;
+  const docsById = new Map(docs.map((entry) => [entry.id, entry]));
+  const sourceDocs = docs.filter(
+    (entry) => splitDocId(entry.id).lang === DEFAULT_LANGUAGE,
+  );
 
-const post = Astro.props;
-const { Content, headings } = await render(post);
+  return LANGUAGE_CODES.flatMap((lang) =>
+    sourceDocs.map((source) => {
+      const { slug } = splitDocId(source.id);
+      const translated = docsById.get(`${lang}/${slug}`);
+      return {
+        params: { slug: `${lang}/${slug}` },
+        props: { entry: translated ?? source, isFallback: !translated },
+      };
+    }),
+  );
+}
+
+type Props = { entry: CollectionEntry<"docs">; isFallback: boolean };
+
+const { entry, isFallback } = Astro.props;
+const { Content, headings } = await render(entry);
 ---
 
-<MainLayout headings={headings} {...post.data}>
-  <Content />
+<MainLayout
+  headings={headings}
+  isFallback={isFallback}
+  sourceFile={entry.filePath}
+  {...entry.data}
+>
+  <Content components={{ a: LocalizedLink }} />
 </MainLayout>

@@ -1,7 +1,7 @@
 import type { FunctionalComponent } from "preact";
 import { useState, useEffect } from "preact/hooks";
 
-const MenuToggle: FunctionalComponent = () => {
+const MenuToggle: FunctionalComponent<{ label: string }> = ({ label }) => {
   const [sidebarShown, setSidebarShown] = useState(false);
 
   useEffect(() => {
@@ -35,7 +35,7 @@ const MenuToggle: FunctionalComponent = () => {
           d="M4 6h16M4 12h16M4 18h16"
         />
       </svg>
-      <span className="sr-only">Toggle sidebar</span>
+      <span className="sr-only">{label}</span>
     </button>
   );
 };

@@ -1,8 +1,9 @@
 import type { FunctionComponent } from "react";
 import "./LanguageSelect.css";
-import { KNOWN_LANGUAGES, langPathRegex } from "../../languages";
-
-const LanguageSelect: FunctionComponent<{ lang: string }> = ({ lang }) => {
+const LanguageSelect: FunctionComponent<{
+  lang: string;
+  languageNames: Record<string, string>;
+}> = ({ lang, languageNames }) => {
   return (
     <div className="language-select-wrapper">
       <svg
@@ -27,19 +28,16 @@ const LanguageSelect: FunctionComponent<{ lang: string }> = ({ lang }) => {
         className="language-select"
         value={lang}
         onChange={(e) => {
-          const newLang = e.target.value;
-          let actualDest = window.location.pathname.replace(langPathRegex, "/");
-          if (actualDest == "/") actualDest = `/introduction`;
-          window.location.pathname = "/" + newLang + actualDest;
+          const [, , ...slug] = window.location.pathname.split("/");
+          const destination = slug.join("/") || "welcome";
+          window.location.pathname = `/${e.target.value}/${destination}`;
         }}
       >
-        {Object.entries(KNOWN_LANGUAGES).map(([key, value]) => {
-          return (
-            <option value={value} key={value}>
-              {key}
-            </option>
-          );
-        })}
+        {Object.entries(languageNames).map(([code, name]) => (
+          <option value={code} key={code}>
+            {name}
+          </option>
+        ))}
       </select>
     </div>
   );

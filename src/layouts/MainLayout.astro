@@ -8,23 +8,29 @@ import PageContent from "../components/PageContent/PageContent.astro";
 import LeftSidebar from "../components/LeftSidebar/LeftSidebar.astro";
 import RightSidebar from "../components/RightSidebar/RightSidebar.astro";
 import Footer from "../components/Footer/Footer.astro";
+import Alert from "../components/Docs/Alert.astro";
 import { GITHUB_EDIT_URL, SITE } from "../consts";
+import { getLanguageFromURL, htmlLangFor, makeT } from "../i18n";
 
 type Props = CollectionEntry<"docs">["data"] & {
   headings: MarkdownHeading[];
+  isFallback: boolean;
+  sourceFile?: string;
 };
 
-const { headings, ...data } = Astro.props;
+const { headings, isFallback, sourceFile, ...data } = Astro.props;
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 const currentPage = Astro.url.pathname;
-const currentFile = `src/content/docs${currentPage.replace(/\/$/, "")}.mdx`;
-const githubEditUrl = `${GITHUB_EDIT_URL}/${currentFile}`;
+const lang = getLanguageFromURL(currentPage);
+const t = makeT(lang);
+const githubEditUrl = sourceFile ? `${GITHUB_EDIT_URL}/${sourceFile}` : "";
+const contentLang = isFallback ? undefined : htmlLangFor(lang);
 ---
 
-<html dir={data.dir} lang={data.lang} class="initial">
+<html dir={data.dir} lang={htmlLangFor(lang)} class="initial">
   <head>
     <HeadCommon />
-    <HeadSEO {...data} canonicalUrl={canonicalURL} />
+    <HeadSEO {...data} lang={lang} canonicalUrl={canonicalURL} />
     <title>
       {`${data.title} | ${SITE.title}`}
     </title>
@@ -133,14 +139,17 @@ const githubEditUrl = `${GITHUB_EDIT_URL}/${currentFile}`;
           headings={headings}
           githubEditUrl={githubEditUrl}
         >
-          <slot />
+          {isFallback && <Alert type="info">{t("page.untranslated")}</Alert>}
+          <div lang={isFallback ? "en" : contentLang}>
+            <slot />
+          </div>
         </PageContent>
       </div>
       <aside id="grid-right" class="grid-sidebar" title="Table of Contents">
         <RightSidebar headings={headings} githubEditUrl={githubEditUrl} />
       </aside>
     </main>
-    <Footer path={currentFile} />
+    <Footer />
     <script is:inline>
       const copyButtonLabel = "Copy Code";
 

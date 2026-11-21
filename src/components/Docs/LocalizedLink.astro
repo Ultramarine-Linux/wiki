@@ -1,0 +1,12 @@
+---
+import { getLanguageFromURL, localizeHref } from "../../i18n";
+
+const { href, ...attributes } = Astro.props;
+const lang = getLanguageFromURL(Astro.url.pathname);
+const localizedHref =
+  typeof href === "string" ? localizeHref(href, lang) : href;
+---
+
+<a href={localizedHref} {...attributes}>
+  <slot />
+</a>

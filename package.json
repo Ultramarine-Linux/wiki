@@ -25,6 +25,7 @@
     "@types/react-dom": "^19.3.0",
     "astro": "^7.4.12",
     "astro-icon": "^1.2.0",
+    "i18nya": "^0.2.6",
     "preact": "^11.2.0",
     "react": "^19.3.1",
     "react-dom": "^19.3.1"

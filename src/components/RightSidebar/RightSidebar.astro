@@ -1,5 +1,6 @@
 ---
 import type { MarkdownHeading } from "astro";
+import { getLanguageFromURL, makeT } from "../../i18n";
 import TableOfContents from "./TableOfContents";
 import MoreMenu from "./MoreMenu.astro";
 
@@ -9,11 +10,16 @@ type Props = {
 };
 
 const { headings, githubEditUrl } = Astro.props;
+const t = makeT(getLanguageFromURL(Astro.url.pathname));
 ---
 
 <nav class="sidebar-nav" aria-labelledby="grid-right">
   <div class="sidebar-nav-inner">
-    <TableOfContents client:media="(min-width: 50em)" headings={headings} />
+    <TableOfContents
+      client:media="(min-width: 50em)"
+      headings={headings}
+      label={t("page.onThisPage")}
+    />
     <MoreMenu editHref={githubEditUrl} />
   </div>
 </nav>

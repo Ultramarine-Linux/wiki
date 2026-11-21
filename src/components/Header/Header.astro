@@ -1,5 +1,5 @@
 ---
-import { getLanguageFromURL, KNOWN_LANGUAGE_CODES } from "../../languages";
+import { getLanguageFromURL, languageNames, makeT } from "../../i18n";
 import { SITE } from "../../consts";
 import UltramarineLogo from "./UltramarineLogo.astro";
 import SkipToContent from "./SkipToContent.astro";
@@ -14,10 +14,11 @@ type Props = {
 
 const { currentPage } = Astro.props;
 const lang = getLanguageFromURL(currentPage);
+const t = makeT(lang);
 ---
 
 <header>
-  <SkipToContent />
+  <SkipToContent label={t("a11y.skipToContent")} />
   <nav class="nav-wrapper">
     <div class="logo flex">
       <a href="/">
@@ -53,13 +54,11 @@ const lang = getLanguageFromURL(currentPage);
           <Icon name="bi:github" />
         </a>
       </div>
-      {
-        KNOWN_LANGUAGE_CODES.length > 1 && (
-          <LanguageSelect lang={lang} client:idle />
-        )
-      }
+      {Object.keys(languageNames).length > 1 && (
+        <LanguageSelect lang={lang} languageNames={languageNames} client:idle />
+      )}
       <div class="menu-toggle">
-        <SidebarToggle client:idle />
+        <SidebarToggle label={t("a11y.toggleSidebar")} client:idle />
       </div>
     </div>
   </nav>

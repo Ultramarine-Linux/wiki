@@ -1,6 +1,7 @@
 ---
-import { getLanguageFromURL } from "../../languages";
-import { SIDEBAR } from "../../consts";
+import { getCollection } from "astro:content";
+import { DEFAULT_LANGUAGE, SIDEBAR, type SidebarSection } from "../../consts";
+import { getLanguageFromURL, makeT } from "../../i18n";
 
 type Props = {
   currentPage: string;
@@ -10,38 +11,51 @@ const { currentPage } = Astro.props;
 const currentPageMatch = currentPage.endsWith("/")
   ? currentPage.slice(1, -1)
   : currentPage.slice(1);
-const langCode = getLanguageFromURL(currentPage);
-const sidebar = SIDEBAR[langCode];
+const lang = getLanguageFromURL(currentPage);
+const t = makeT(lang);
+const docsById = new Map(
+  (await getCollection("docs")).map((entry) => [entry.id, entry.data]),
+);
+
+const pageLabel = (slug: string) => {
+  const page =
+    docsById.get(`${lang}/${slug}`) ??
+    docsById.get(`${DEFAULT_LANGUAGE}/${slug}`);
+  return page?.sidebarLabel ?? page?.title ?? slug;
+};
+
+const sidebar = Object.entries(SIDEBAR).map(([section, slugs]) => [
+  t(`sidebar.${section as SidebarSection}`),
+  slugs.map((slug) => ({ text: pageLabel(slug), link: `${lang}/${slug}` })),
+]) as [string, { text: string; link: string }[]][];
 ---
 
 <nav aria-labelledby="grid-left">
   <ul class="nav-groups">
-    {
-      Object.entries(sidebar).map(([header, children]) => (
-        <li>
-          <div class="nav-group">
-            <h2>{header}</h2>
-            <ul>
-              {children.map((child) => {
-                const url = Astro.site?.pathname + child.link;
-                return (
-                  <li class="nav-link">
-                    <a
-                      href={url}
-                      aria-current={
-                        currentPageMatch === child.link ? "page" : false
-                      }
-                    >
-                      {child.text}
-                    </a>
-                  </li>
-                );
-              })}
-            </ul>
-          </div>
-        </li>
-      ))
-    }
+    {sidebar.map(([header, children]) => (
+      <li>
+        <div class="nav-group">
+          <h2>{header}</h2>
+          <ul>
+            {children.map((child) => {
+              const url = Astro.site?.pathname + child.link;
+              return (
+                <li class="nav-link">
+                  <a
+                    href={url}
+                    aria-current={
+                      currentPageMatch === child.link ? "page" : false
+                    }
+                  >
+                    {child.text}
+                  </a>
+                </li>
+              );
+            })}
+          </ul>
+        </div>
+      </li>
+    ))}
   </ul>
 </nav>
 

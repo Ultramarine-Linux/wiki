@@ -1,0 +1,18 @@
+{
+  "language.name": "English",
+  "sidebar.introduction": "Introduction",
+  "sidebar.community": "Community",
+  "sidebar.setup": "Setup",
+  "sidebar.contributing": "Contributing",
+  "sidebar.anywhere": "Anywhere",
+  "sidebar.usage": "Usage",
+  "sidebar.linuxConcepts": "Linux Concepts",
+  "sidebar.releaseNotes": "Release Notes",
+  "page.untranslated": "This page hasn't been translated yet, so you're reading the English version.",
+  "page.onThisPage": "On this page",
+  "page.more": "More",
+  "page.edit": "Edit this page",
+  "page.joinCommunity": "Join our community",
+  "a11y.skipToContent": "Skip to Content",
+  "a11y.toggleSidebar": "Toggle sidebar"
+}

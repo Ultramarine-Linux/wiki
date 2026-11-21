@@ -1,6 +1,7 @@
 ---
 import type { MarkdownHeading } from "astro";
 import MoreMenu from "../RightSidebar/MoreMenu.astro";
+import { getLanguageFromURL, makeT } from "../../i18n";
 import TableOfContents from "../RightSidebar/TableOfContents";
 
 type Props = {
@@ -10,13 +11,20 @@ type Props = {
 };
 
 const { title, headings, githubEditUrl } = Astro.props;
+const t = makeT(getLanguageFromURL(Astro.url.pathname));
 ---
 
 <article id="article" class="content">
   <section class="main-section">
-    <h1 class="content-title" id="overview">{title}</h1>
+    <h1 class="content-title" id="overview">
+      {title}
+    </h1>
     <nav class="block sm:hidden">
-      <TableOfContents client:media="(max-width: 50em)" headings={headings} />
+      <TableOfContents
+        client:media="(max-width: 50em)"
+        headings={headings}
+        label={t("page.onThisPage")}
+      />
     </nav>
     <slot />
   </section>
