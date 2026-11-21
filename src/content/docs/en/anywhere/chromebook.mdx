@@ -14,13 +14,13 @@ import Alert from "../../../../components/Docs/Alert.astro";
 Chromebooks were an obvious target for Ultramarine Anywhere, despite being mostly
 standard hardware, they have custom EC and strange firmware.
 
-Chromebook support in Ultramarine Linux is provided in partnership with the [Chrultrabook Project](https://chrultrabook.com).
+Chromebook support in Ultramarine is provided in partnership with the [Chrultrabook Project](https://chrultrabook.com).
 
 # x86
 
 ## How it Works
 
-Ultramarine Chromebook Edition uses a special bootloader called [Submarine](https://developer.fyralabs.com/submarine) to load the kernel.
+Ultramarine for Chromebook uses a special bootloader called [Submarine](https://developer.fyralabs.com/submarine) to load the kernel.
 
 Under the hood, Submarine is an incredibly minimal Linux OS based on [u-root](https://github.com/u-root/u-root), it's only really usable for debug and booting a full distribution. Once Submarine is loaded, we use [LinuxBoot](https://www.linuxboot.org/) to boot a full copy of Ultramarine (and hopefully more distros in the future).
 
@@ -88,9 +88,9 @@ These are among the first few generations of Chromebooks, and either use an unsu
 
 ## Installation
 
-Ultramarine on Chromebook will be released soon, installation guide for that will be found on a separate menu in this wiki at the time of release.
+Ultramarine for Chromebook will be released soon. An installation guide for that will be found on a separate menu in this wiki at the time of release.
 
-## Manual Installation - Note that Ultramarine Chromebook Edition will be a much easier experience once released
+## Manual Installation - Note that Ultramarine for Chromebook will be a much easier experience once released
 
 <Alert type="warning">
   This method is more technical than our usual wiki content, proceed if you know what you're
@@ -133,15 +133,15 @@ dd if=/dev/sda of=/dev/mmcblk0 bs=4M status=progress
 
 If you're using other devices, adjust accordingly. If your're using an SD card to install to eMMC, or a USB stick to install to UFS, both devices will show as 'mmcblkX' (mmcblk 0/1/2), and 'sdX' (sd a/b/c). Adjust the numbers/letters accordingly.
 
-7. Once `dd` is done, verify the Submarine partition on the internal storage shows 'ChromeOS Kernel' as a flag. You can use the Disks app on Budgie, GNOME, and Xfce, or, Partition Manager on Plasma. Simply select the disk and partition, the label should appear under the logical view.
+7. Once `dd` is done, verify the Submarine partition on the internal storage shows 'ChromeOS Kernel' as a flag. You can use the Disks app on GNOME and Xfce, or Partition Manager on Plasma. Simply select the disk and partition, the label should appear under the logical view.
 
 ### ISO Images:
 
 1. Flash an [Ultramarine ISO Image](https://ultramarine-linux.org/download/) to a USB Drive or SD Card.
 2. Flash submarine.bin to another USB Drive or SD Card.
 3. Plug in both drives you just flashed to the Chromebook (a USB hub works!).
-4. Boot to the installer's live environment by pressing <kbd>Ctrl</kbd>+<kbd>U</kbd> (You shouldn't boot to a boot option that lists a kernel version (ex ultramarine-linux-6.10.0-X-X-X), just boot to 'Ultramarine Linux _EDITION_.' If you still have ChromeOS on the internel disk, it is likely that this will be the 14th entry, if not, it may be the 3rd). If it does not boot, restart and try a different Ultramarine Linux entry.
-5. In the live enviornment of the ISO, install as normal.
+4. Boot to the installer's live environment by pressing <kbd>Ctrl</kbd>+<kbd>U</kbd> (You shouldn't boot to a boot option that lists a kernel version (ex ultramarine-6.10.0-X-X-X), just boot to 'Ultramarine _EDITION_.' If you still have ChromeOS on the internal disk, it is likely that this will be the 14th entry, if not, it may be the 3rd). If it does not boot, restart and try a different Ultramarine entry.
+5. In the live environment of the ISO, install as normal.
 6. Once the install is done, return to the live environment desktop. Make a new 16MiB ext4 partition, this can be done by resizing the 'root' partition (the largest one).
 7. flash [submarine.kpart](https://nightly.link/FyraLabs/submarine/workflows/build/main/submarine-x86_64.zip) to the new partition, and set flags with cgpt (may have to install `vboot-utils`).
 

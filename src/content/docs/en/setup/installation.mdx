@@ -1,6 +1,6 @@
 ---
 title: Installation
-description: "A guide on how to install Ultramarine Linux"
+description: "A guide on how to install Ultramarine"
 ---
 
 import Alert from "../../../../components/Docs/Alert.astro";
@@ -13,7 +13,7 @@ You can pick whichever you want, and you'll be able to start the installer later
 
 ## Anaconda
 
-After booting into the live system, you will see a dialog box asking you whether to start the installer or continue with the live system (note, depending on the edition, this dialog box may look different then the screenshot below).
+After booting into the live system, you will see a dialog box asking you whether to start the installer or continue with the live system (note, depending on the variant, this dialog box may look different then the screenshot below).
 
 ### Language Selection
 
@@ -137,7 +137,7 @@ It works by rendering all data unreadable (encrypted), unless unlocked with a ma
 - In Anaconda, This authentication key can be unlocked using a passphrase. This means that if the drive was removed and placed into another computer, the data would still be unreadable until the passphrase is entered.
 - In Readymade, This authentication key can be unlocked using a passphrase or a device's TPM2. This means that if the drive was removed and placed into another computer, the data would still be unreadable until the passphrase is entered. If the drive was encrypted using TPM2, the data will be unreadable if attached to another device.
 
-BitLocker is common on Windows systems, FileVault is common on macOS systems, and LUKS is common on Linux systems. When enabling disk encryption when installing Ultramarine Linux, you are using LUKS.
+BitLocker is common on Windows systems, FileVault is common on macOS systems, and LUKS is common on Linux systems. When enabling disk encryption when installing Ultramarine, you are using LUKS.
 
 ### LUKS Full-Disk Encryption
 
@@ -159,8 +159,8 @@ TPM backed full-disk encryption replaces your LUKS password entry step by storin
 
 There can also be drawbacks to using TPM as well. Here are some reasons this could not be useful to you:
 
-- TPM/motherboard failure can prevent data recovery. If this is a concern, we reccomend creating a backup key.
-- If an entire computer is stolen, the encryption will still auto-decrypt itself, leaving a system with essentailly user passphrase security only, which can be bypassed and broken.
+- TPM/motherboard failure can prevent data recovery. If this is a concern, we recommend creating a backup key.
+- If an entire computer is stolen, the encryption will still auto-decrypt itself, leaving a system with essentially user passphrase security only, which can be bypassed and broken.
 
 ---
 
