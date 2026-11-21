@@ -1,13 +1,13 @@
 export const SITE = {
   title: "Ultramarine Wiki",
-  description: "The wiki for Ultramarine Linux.",
+  description: "The wiki for Ultramarine.",
   defaultLanguage: "en-us",
 } as const;
 
 export const OPEN_GRAPH = {
   image: {
     src: "https://i.imgur.com/thZm6Qc.png",
-    alt: "Ultramarine Linux Wiki Text with an abstract background with two blue circles",
+    alt: "Ultramarine Wiki Text with an abstract background with two blue circles",
   },
   twitter: "UltramarineProj",
 };
@@ -272,7 +272,7 @@ export const SIDEBAR: Sidebar = {
     ],
     Setup: [
       { text: "System Requirements", link: "hi/setup/requirements" },
-      { text: "Getting Ultramarine Linux", link: "hi/setup/getting" },
+      { text: "Getting Ultramarine", link: "hi/setup/getting" },
       { text: "BIOS Keys", link: "hi/setup/bioskeys" },
       { text: "Installation", link: "hi/setup/installation" },
       { text: "Post-Installation", link: "hi/setup/postinstall" },
