@@ -1,6 +1,6 @@
 ---
 title: Microsoft Surface
-description: "Information about Ultramarine Linux on Microsoft Surfaces"
+description: "Information about Ultramarine on Microsoft Surfaces"
 ---
 
 import Alert from "../../../../components/Docs/Alert.astro";
@@ -16,24 +16,24 @@ Microsoft Surface support is provided using the [Linux Surface team's](https://g
 | Surface Pro 3                | Yes                     | Boots without, but things may be broken                                                                                                            | ✓             |
 | Surface Pro 4                | Yes                     |                                                                                                                                                    |       ✓       |
 | Surface Pro (5th Generation) | Yes                     | Nearly identical to Pro 4                                                                                                                          | ✓             |
-| Surface Pro 6                | Yes                     | Nearly identical to 5th gen                                                                                                                        |               |
+| Surface Pro 6                | Yes                     | Nearly identical to 5th gen                                                                                                                        | ✓              |
 | Surface Pro 7                | Yes                     |                                                                                                                                                    |               |
 | Surface Pro 7+               | Yes                     |                                                                                                                                                    |               |
 | Surface Pro 8                | Yes                     |                                                                                                                                                    |               |
 | Surface Pro 9                | Yes                     | Must disable Secure Core in BIOS to boot from USB storage                                                                                          |               |
 | Surface 3                    | Yes                     | Battery and touch will not work without Surface Kernel                                                                                             |               |
-| Surface Go                   | No                      | Cameras and LTE will not work without Surface Kernel                                                                                               | ✓             |
+| Surface Go                   | No                      | Cameras and LTE will not work without Surface Kernel                                                                                               |             |
 | Surface Go 2                 | No                      | Same as Surface Go                                                                                                                                 | ✓             |
 | Surface Go 3                 | No                      | May need Secure Boot disabled to boot properly.                                                                                                    |               |
 | Surface Go 4                 | Yes                     | UFS Storage, requires some [manual intervention](https://github.com/linux-surface/linux-surface/wiki/Surface-Go-4) to get working                  |               |
 | Surface Book                 | Yes                     | NVIDIA needed for some SKUs, fans may not work                                                                                                     | ✓             |
 | Surface Book 2               | Yes                     | NVIDIA needed for some SKUs, fans may not work                                                                                                     | ✓             |
-| Surface Book 3               | Yes                     | NVIDIA needed for some SKUs. Additionally, surface_aggregator and associated kernel modules NEED to be in initramfs                                |               |
+| Surface Book 3               | Yes                     | NVIDIA needed for some SKUs. Additionally, surface_aggregator and associated kernel modules NEED to be in initramfs                                | ✓              |
 | Surface Laptop               | Yes                     | Some thermal issues due to bad sensor readings                                                                                                     |               |
 | Surface Laptop 2             | Yes                     | surface_aggregator and associated kernel modules NEED to be in initramfs                                                                           |               |
 | Surface Laptop 3             | Yes                     | surface_aggregator and associated kernel modules NEED to be in initramfs                                                                           |               |
 | Surface Laptop 4             | Yes                     | surface_aggregator and associated kernel modules NEED to be in initramfs. Video is VERY unstable on AMD and Intel models                           |               |
-| Surface Laptop 5             | Yes                     | Hibernation and shutdown are broken, ACPI is generally messed up on here. surface_aggregator and associated kernel modules NEED to be in initramfs |               |
+| Surface Laptop 5             | Yes                     | Hibernation and shutdown are broken, ACPI is generally messed up on here. surface_aggregator and associated kernel modules NEED to be in initramfs | ✓              |
 | Surface Laptop Go            | Yes                     | Touchpad may stop working when resuming from suspend. Intel PSR causes tearing. Fans may not work                                                  | ✓             |
 | Surface Laptop Go 2          | Yes                     |                                                                                                                                                    |               |
 | Surface Laptop Go 3          | Yes                     | No data, we assume surface_aggregator is required                                                                                                  |               |

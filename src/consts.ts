@@ -1,13 +1,13 @@
 export const SITE = {
   title: "Ultramarine Wiki",
-  description: "The wiki for Ultramarine Linux.",
+  description: "The wiki for Ultramarine.",
   defaultLanguage: "en-us",
 } as const;
 
 export const OPEN_GRAPH = {
   image: {
     src: "https://i.imgur.com/thZm6Qc.png",
-    alt: "Ultramarine Linux Wiki Text with an abstract background with two blue circles",
+    alt: "Ultramarine Wiki Text with an abstract background with two blue circles",
   },
   twitter: "UltramarineProj",
 };
@@ -79,7 +79,7 @@ export const SIDEBAR: Sidebar = {
       { text: "Keyboard Configuration", link: "en/usage/keyboard-cfg" },
       { text: "Shell Configuration", link: "en/usage/shell-cfg" },
       {
-        text: "Switching Desktop Environments / Edition",
+        text: "Switching Between Variants",
         link: "en/usage/hop",
       },
       { text: "umcli", link: "en/usage/umcli" },
