@@ -79,7 +79,7 @@ export const SIDEBAR: Sidebar = {
       { text: "Keyboard Configuration", link: "en/usage/keyboard-cfg" },
       { text: "Shell Configuration", link: "en/usage/shell-cfg" },
       {
-        text: "Switching Desktop Environments / Edition",
+        text: "Switching Between Variants",
         link: "en/usage/hop",
       },
       { text: "umcli", link: "en/usage/umcli" },

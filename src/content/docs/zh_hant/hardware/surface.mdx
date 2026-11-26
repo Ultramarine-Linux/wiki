@@ -1,13 +1,13 @@
 ---
 title: Microsoft Surface
-description: "Information about Ultramarine Linux on Microsoft Surfaces"
+description: "Information about Ultramarine on Microsoft Surfaces"
 ---
 
 import Alert from "../../../../components/Docs/Alert.astro";
 
 Surfaces require a special kernel to work properly under Ultramarine.
 
-These are currently provided by the Surface Linux team, start by adding their repository
+These are currently provided by the Surface team, start by adding their repository
 
 ```shell
 sudo dnf config-manager \
@@ -24,7 +24,7 @@ If you want to use secure boot, you need to install `surface-secureboot`, enable
 
 <Alert type="info">We intend to make this easier in future releases.</Alert>
 
-Some Surface models may not boot with a stock copy of Ultramarine Linux. If this is the case for your device, you have to install the kernel before leaving the live environment.
+Some Surface models may not boot with a stock copy of Ultramarine. If this is the case for your device, you have to install the kernel before leaving the live environment.
 
 1. Ensure your internal storage is mounted, Anaconda should leave it mounted by default.
 
