@@ -6,7 +6,7 @@ description: "Set up Secure Boot with your own keys for custom bootloaders, kern
 import Alert from "../../../../components/Docs/Alert.astro";
 
 Secure Boot is a UEFI security feature that protects the boot process by making sure that
-only signed executables are allowed to boot. Ultramarine Linux's default boot chain (shim, GRUB, and the kernel) is already signed and works with Secure Boot out of the box.
+only signed executables are allowed to boot. Ultramarine's default boot chain (shim, GRUB, and the kernel) is already signed and works with Secure Boot out of the box.
 However, if you want to use a different bootloader (e.g., systemd-boot or rEFInd) or a custom kernel, you will need to enroll your own keys
 and sign those files with them. If you only need third-party kernel modules (such as the NVIDIA drivers), skip to [Signing kernel modules](#signing-kernel-modules).
 

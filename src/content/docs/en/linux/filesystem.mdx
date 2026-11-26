@@ -22,8 +22,8 @@ The directory structure is as follows:
 | Directory | Description                                                                                                                                                                  |
 | :-------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | /         | The root directory with the all the other directories and files. This is as far back as you can go                                                                           |
-| /bin      | Executables and command binares required for a functioning system. Most applications installed from RPM end up here.                                                         |
-| /boot     | The bootloader and files used during early boot process. May usually be in a seperate partition.                                                                             |
+| /bin      | Executables and command binaries required for a functioning system. Most applications installed from RPM end up here.                                                         |
+| /boot     | The bootloader and files used during early boot process. May usually be in a separate partition.                                                                             |
 | /dev      | Special device files for various purposes (`/dev/sda` for a drive, `/dev/null` for blank data, `/dev/random` for pseudo-random data, `/dev/tty` for terminal sessions, etc). |
 | /etc      | System-wide settings and configuration files.                                                                                                                                |
 | /home     | User files. This is where your stuff lives!                                                                                                                                  |
@@ -59,7 +59,7 @@ Although this may sound magical, it does come at the cost of your CPU working a 
 
 ## File system formats
 
-Ultramarine Linux supports a wide variety of file systems, and can be configured to use any of them during installation.
+Ultramarine supports a wide variety of file systems, and can be configured to use any of them during installation.
 
 It currently supports most file systems that are supported by the Linux kernel, including:
 
@@ -80,7 +80,7 @@ It then creates 2 subvolumes, one for the root directory `/`, and one for the ho
 
 ### Remote Filesystems
 
-Ultramarine Linux can also mount remote file systems from a remote server or NAS, using the NFS, SFTP, SMB, and WebDAV protocols.
+Ultramarine can also mount remote file systems from a remote server or NAS, using the NFS, SFTP, SMB, and WebDAV protocols.
 
 #### [Next Up: Device Files →](../linux/devicefiles)
 

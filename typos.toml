@@ -4,4 +4,4 @@ extend-exclude = ["pnpm-lock.yaml", "src/content/docs/*/", "!src/content/docs/en
 
 [default]
 # skips "ABL" but not "abl"
-extend-ignore-re = ["\\bABL\\b"]
+extend-ignore-re = ["\\bABL\\b", "as \"enviroment\""]
