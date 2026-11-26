@@ -1,0 +1,231 @@
+---
+title: Ultramarine Niri
+description: "How to navigate Ultramarine Niri Edition"
+---
+
+import Alert from "../../../../components/Docs/Alert.astro";
+import MouseButton from "../../../../components/Docs/MouseButton.astro";
+
+## Niri Fundamentals
+
+[Niri] is different from Plasma or GNOME. Imagine it as an endless grid of rows and columns, where instead of windows overlapping each other, they tile side by side. You can slide windows along rows, or move them up and down into the columns of adjacent workspaces. 
+
+Almost everything in Niri is done using keyboard shortcuts or trackpad gestures, most use the <kbd>Super</kbd> key (aka Windows or ⌘ key).
+
+{/* TODO: add gif of opening a new image then moving it across a workspace and between workspaces */}
+
+### Noctalia Shell
+
+[Noctalia] is a desktop shell that sits on top of Niri. It provides the bar, launcher, theming, control center, settings, a login page, and much more.
+
+## Keybinds
+
+A list of default shortcuts, <kbd>Super</kbd> is the Windows/⌘ key.
+
+### Applications
+
+| Shortcut | Action |
+| --- | --- |
+| <kbd>Super</kbd> + <kbd>T</kbd> | Open a terminal (Alacritty) |
+| <kbd>Super</kbd> + <kbd>B</kbd> | Open the web browser (Firefox) |
+| <kbd>Super</kbd> + <kbd>E</kbd> | Open the file manager (Nautilus) |
+| <kbd>Super</kbd> + <kbd>Q</kbd> | Close the focused window |
+
+### Noctalia
+
+| Shortcut | Action |
+| --- | --- |
+| <kbd>Super</kbd> + <kbd>Space</kbd> | Open the app launcher |
+| <kbd>Super</kbd> + <kbd>;</kbd> | Open the control center |
+| <kbd>Super</kbd> + <kbd>Shift</kbd> + <kbd>,</kbd> | Open Noctalia settings |
+| <kbd>Alt</kbd> + <kbd>Tab</kbd> | Switch between windows |
+| <kbd>Super</kbd> + <kbd>/</kbd> | Show the most important hotkeys |
+
+### Moving Around
+
+| Shortcut | Action |
+| --- | --- |
+| <kbd>Super</kbd> + <kbd>←</kbd> | Focus the column to the left |
+| <kbd>Super</kbd> + <kbd>→</kbd> | Focus the column to the right |
+| <kbd>Super</kbd> + <kbd>↑</kbd> | Focus the window above |
+| <kbd>Super</kbd> + <kbd>↓</kbd> | Focus the window below |
+| <kbd>Super</kbd> + <kbd>Home</kbd> | Focus the first column |
+| <kbd>Super</kbd> + <kbd>End</kbd> | Focus the last column |
+| <kbd>Super</kbd> + <kbd>O</kbd> | Toggle the overview |
+
+<Alert type="info">
+    <kbd>H</kbd>, <kbd>J</kbd>, <kbd>K</kbd>, and <kbd>L</kbd> work in place of the arrow keys in every shortcut on this page that uses them.
+</Alert>
+
+### Moving Windows
+
+| Shortcut | Action |
+| --- | --- |
+| <kbd>Super</kbd> + <kbd>Ctrl</kbd> + <kbd>←</kbd> | Move column left |
+| <kbd>Super</kbd> + <kbd>Ctrl</kbd> + <kbd>→</kbd> | Move column right |
+| <kbd>Super</kbd> + <kbd>Ctrl</kbd> + <kbd>↑</kbd> | Move window up within its column |
+| <kbd>Super</kbd> + <kbd>Ctrl</kbd> + <kbd>↓</kbd> | Move window down within its column |
+| <kbd>Super</kbd> + <kbd>Ctrl</kbd> + <kbd>Home</kbd> | Move column to the far left |
+| <kbd>Super</kbd> + <kbd>Ctrl</kbd> + <kbd>End</kbd> | Move column to the far right |
+| <kbd>Super</kbd> + <kbd>[</kbd> | Move the window into or out of the column on the left |
+| <kbd>Super</kbd> + <kbd>]</kbd> | Move the window into or out of the column on the right |
+| <kbd>Super</kbd> + <kbd>,</kbd> | Pull the next window into this column |
+| <kbd>Super</kbd> + <kbd>.</kbd> | Push the bottom window out of this column |
+| <kbd>Super</kbd> + <kbd>W</kbd> | Toggle tabs for the column |
+| <kbd>Super</kbd> + <kbd>V</kbd> | Toggle floating for the window |
+| <kbd>Super</kbd> + <kbd>Shift</kbd> + <kbd>V</kbd> | Switch focus between floating and tiled windows |
+
+### Window Size
+
+| Shortcut | Action |
+| --- | --- |
+| <kbd>Super</kbd> + <kbd>R</kbd> | Cycle through preset column widths |
+| <kbd>Super</kbd> + <kbd>Shift</kbd> + <kbd>R</kbd> | Cycle preset column widths backwards |
+| <kbd>Super</kbd> + <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>R</kbd> | Cycle through preset window heights |
+| Double-<MouseButton button="left" /> a window's top or bottom edge | Reset the window height |
+| <kbd>Super</kbd> + <kbd>-</kbd> | Make the column 10% narrower |
+| <kbd>Super</kbd> + <kbd>=</kbd> | Make the column 10% wider |
+| <kbd>Super</kbd> + <kbd>Shift</kbd> + <kbd>=</kbd> | Make the window 10% taller |
+| <kbd>Super</kbd> + <kbd>F</kbd> | Maximize the column |
+| <kbd>Super</kbd> + <kbd>M</kbd> | Maximize the window to the screen edges |
+| <kbd>Super</kbd> + <kbd>Shift</kbd> + <kbd>F</kbd> | Make the window fullscreen |
+| <kbd>Super</kbd> + <kbd>Ctrl</kbd> + <kbd>F</kbd> | Expand the column to fill the free space |
+| <kbd>Super</kbd> + <kbd>C</kbd> | Center the column |
+| <kbd>Super</kbd> + <kbd>Ctrl</kbd> + <kbd>C</kbd> | Center all visible columns |
+
+### Workspaces
+
+| Shortcut | Action |
+| --- | --- |
+| <kbd>Super</kbd> + <kbd>1</kbd>–<kbd>9</kbd> | Go to workspace 1–9 |
+| <kbd>Super</kbd> + <kbd>Ctrl</kbd> + <kbd>1</kbd>–<kbd>9</kbd> | Move the column to workspace 1–9 |
+| <kbd>Super</kbd> + <kbd>PageUp</kbd> | Go to the workspace above |
+| <kbd>Super</kbd> + <kbd>PageDown</kbd> | Go to the workspace below |
+| <kbd>Super</kbd> + <kbd>Ctrl</kbd> + <kbd>PageUp</kbd> | Move column to the workspace above |
+| <kbd>Super</kbd> + <kbd>Ctrl</kbd> + <kbd>PageDown</kbd> | Move column to the workspace below |
+| <kbd>Super</kbd> + <kbd>Shift</kbd> + <kbd>PageUp</kbd> | Move the whole workspace up |
+| <kbd>Super</kbd> + <kbd>Shift</kbd> + <kbd>PageDown</kbd> | Move the whole workspace down |
+| <kbd>Super</kbd> + <kbd>Scroll Wheel</kbd> | Switch between workspaces |
+
+<Alert type="info">
+    <kbd>U</kbd> and <kbd>I</kbd> work in place of <kbd>PageDown</kbd> and <kbd>PageUp</kbd>.
+</Alert>
+
+### Multiple Monitors
+
+| Shortcut | Action |
+| --- | --- |
+| <kbd>Super</kbd> + <kbd>Shift</kbd> + <kbd>Arrow</kbd> | Focus the monitor in that direction |
+| <kbd>Super</kbd> + <kbd>Shift</kbd> + <kbd>Ctrl</kbd> + <kbd>Arrow</kbd> | Move the column to that monitor |
+| <kbd>Super</kbd> + <kbd>Shift</kbd> + <kbd>P</kbd> | Turn off the monitors |
+
+### Screenshots
+
+| Shortcut | Action |
+| --- | --- |
+| <kbd>Print</kbd> or <kbd>Super</kbd> + <kbd>S</kbd> | Screenshot a region |
+| <kbd>Super</kbd> + <kbd>Print</kbd> or <kbd>Super</kbd> + <kbd>Shift</kbd> + <kbd>S</kbd> | Screenshot the whole screen |
+| <kbd>Shift</kbd> + <kbd>Print</kbd> | Screenshot a window |
+
+### Sound, Media, and Brightness
+
+| Shortcut | Action |
+| --- | --- |
+| <kbd>Super</kbd> + <kbd>Ctrl</kbd> + <kbd>=</kbd> | Volume up |
+| <kbd>Super</kbd> + <kbd>Ctrl</kbd> + <kbd>-</kbd> | Volume down |
+| <kbd>Super</kbd> + <kbd>Ctrl</kbd> + <kbd>M</kbd> | Mute audio |
+| <kbd>Super</kbd> + <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>-</kbd> | Mute the microphone |
+| <kbd>Super</kbd> + <kbd>Alt</kbd> + <kbd>=</kbd> | Brightness up |
+| <kbd>Super</kbd> + <kbd>Alt</kbd> + <kbd>-</kbd> | Brightness down |
+
+### Session
+
+| Shortcut | Action |
+| --- | --- |
+| <kbd>Super</kbd> + <kbd>Alt</kbd> + <kbd>L</kbd> | Lock the screen |
+| <kbd>Super</kbd> + <kbd>Shift</kbd> + <kbd>E</kbd> or <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>Delete</kbd> | Open the session menu (log out, restart, shut down) |
+| <kbd>Super</kbd> + <kbd>Escape</kbd> | Toggle sending shortcuts to the focused window (useful for VMs) |
+| <kbd>Super</kbd> + <kbd>Alt</kbd> + <kbd>S</kbd> | Toggle the Orca screen reader |
+
+## Gestures
+
+### Touchpad
+
+| Gesture | Action |
+| --- | --- |
+| Three-finger swipe left or right | Scroll through your columns |
+| Three-finger swipe up or down | Switch workspaces |
+| Four-finger swipe up or down | Toggle the window overview |
+
+### Mouse
+
+| Gesture | Action |
+| --- | --- |
+| Move cursor into top-left corner | Toggle the window overview |
+| <kbd>Super</kbd> + <MouseButton button="left" /> and drag | Move a window |
+| <MouseButton button="right" /> while moving a window | Switch between placing it as floating or tiled |
+| <kbd>Super</kbd> + <MouseButton button="right" /> and drag | Resize a window |
+| <kbd>Super</kbd> + <MouseButton button="middle" /> and drag | Scroll through columns (sideways) or switch workspaces (up and down) |
+| Double-<MouseButton button="left" /> a window's top or bottom edge | Reset the window height |
+| Double-<MouseButton button="left" /> a window's left or right edge | Make the column full width |
+| <kbd>Super</kbd> + <kbd>Scroll Wheel</kbd> | Switch workspaces |
+| <kbd>Super</kbd> + <kbd>Shift</kbd> + <kbd>Scroll Wheel</kbd> | Scroll through columns |
+| <kbd>Super</kbd> + <kbd>Ctrl</kbd> + <kbd>Scroll Wheel</kbd> | Move the column to the workspace above or below |
+
+## Configuration
+
+
+### Niri
+
+Your personal changes to the Niri config go in `~/.config/niri/config.kdl`. This file starts with two `include` lines, one loads Ultramarine's defaults from `/etc/niri/config.kdl`, and the other loads the colors Noctalia generates for your theme. Anything you add below them is applied on top, so you only need to write the settings you want to change.
+
+For example, to make <kbd>Super</kbd> + <kbd>T</kbd> open Kitty instead of Alacritty, add this to the end of the file:
+
+```kdl
+binds {
+    Mod+T { spawn "kitty"; }
+}
+```
+
+`Mod` is the <kbd>Super</kbd> key. Niri applies your changes as soon as you save the file, and shows an error notification if something is wrong. Avoid editing `/etc/niri/config.kdl` directly, keeping your changes in their own file means you still get Ultramarine's improved defaults when updating. See the [Niri documentation][niri-config] for more.
+
+### Noctalia
+
+Most of Noctalia can be configured through its settings app. Changes are saved to `~/.local/state/noctalia/settings.toml` and override `~/.config/noctalia/`. See the [Noctalia docs][noctalia-docs] for more.
+
+<Alert type="info">
+    You can also sync theme changes with the login screen by going to **Security → Noctalia Greeter → Sync Now** in Noctalia settings.
+</Alert>
+
+#### Theming Apps
+
+Noctalia uses templates to recolor many apps to match your theme. You can toggle templates on and off, or browse many community templates for more apps, in **Settings → Templates**. See [Noctalia's app theming docs][noctalia-templates] for more.
+
+If an app hasn't picked up your colors, for example Thunderbird after you first set it up, apply the templates again:
+
+```sh
+noctalia msg templates-apply
+```
+
+<Alert type="info">
+    To theme Firefox, install the [Pywalfox extension][pywalfox] and restart Firefox once. We've already enabled the Firefox template, but decided not to install its accompanying extension by default.
+</Alert>
+
+## Troubleshooting
+
+### Black Screen in a Virtual Machine
+
+Niri needs a GPU with 3D acceleration and will not start with software rendering. In a virtual machine (GNOME Boxes, virt-manager, VirtualBox, etc.), enable **3D acceleration** in the VM's display settings. Without it, the screen stays black or stops at a text message about `import-environment`. See [Niri's notes on virtual machines][Niri-vm].
+
+[Niri]: https://github.com/niri-wm/niri
+[Noctalia]: https://noctalia.dev
+[Niri-docs]: https://niri-wm.github.io/niri/
+[Niri-config]: https://niri-wm.github.io/niri/Configuration%3A-Introduction.html
+[Niri-vm]: https://niri-wm.github.io/niri/Getting-Started.html#virtual-machines
+[noctalia-docs]: https://docs.noctalia.dev
+[noctalia-templates]: https://docs.noctalia.dev/noctalia/theming/app-theming/
+[pywalfox]: https://addons.mozilla.org/en-US/firefox/addon/pywalfox/
+
+#### [Next Up: umcli →](/en/usage/umcli)
+
+#### [← Back To: Switching Desktop Editions](/en/usage/hop)

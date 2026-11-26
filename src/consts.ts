@@ -80,6 +80,7 @@ export const SIDEBAR: Sidebar = {
         text: "Switching Desktop Environments",
         link: "en/usage/hop",
       },
+      { text: "Ultramarine Niri", link: "en/usage/niri" },
       { text: "umcli", link: "en/usage/umcli" },
       { text: "eduroam", link: "en/usage/eduroam" },
       { text: "Nix", link: "en/usage/nix" },

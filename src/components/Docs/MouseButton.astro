@@ -1,0 +1,36 @@
+---
+// Inline mouse button icons
+// Usage: <MouseButton button="left" />
+import { Icon } from "astro-icon/components";
+
+const buttons = {
+  left: { icon: "ph:mouse-left-click-fill", label: "Left mouse button" },
+  right: { icon: "ph:mouse-right-click-fill", label: "Right mouse button" },
+  middle: { icon: "ph:mouse-middle-click-fill", label: "Middle mouse button" },
+};
+
+interface Props {
+  button: keyof typeof buttons;
+}
+
+const { icon, label } = buttons[Astro.props.button];
+---
+
+<kbd class="mouse-button" title={label}>
+  <Icon name={icon} class="mouse-button-icon" aria-hidden="true" />
+  <span class="sr-only">{label}</span>
+</kbd>
+
+<style>
+  .mouse-button {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.1em 0.2em;
+    vertical-align: middle;
+  }
+
+  .mouse-button-icon {
+    width: 1.2em;
+    height: 1.2em;
+  }
+</style>
