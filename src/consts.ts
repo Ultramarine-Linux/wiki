@@ -1,13 +1,13 @@
 export const SITE = {
   title: "Ultramarine Wiki",
-  description: "The wiki for Ultramarine Linux.",
+  description: "The wiki for Ultramarine.",
   defaultLanguage: "en-us",
 } as const;
 
 export const OPEN_GRAPH = {
   image: {
     src: "https://i.imgur.com/thZm6Qc.png",
-    alt: "Ultramarine Linux Wiki Text with an abstract background with two blue circles",
+    alt: "Ultramarine Wiki Text with an abstract background with two blue circles",
   },
   twitter: "UltramarineProj",
 };
