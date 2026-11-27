@@ -10,17 +10,17 @@ import MouseButton from "../../../../components/Docs/MouseButton.astro";
 
 [Niri] is different from a traditional desktop environment like Plasma or GNOME. Imagine it as an endless grid of rows and columns, where instead of windows overlapping each other, they tile side by side. You can slide windows along rows, or move them up and down into the columns of adjacent workspaces.
 
-Almost everything in Niri is done using keyboard shortcuts or trackpad gestures, most use the <kbd>Super</kbd> key (aka Windows, Meta, or ⌘ key).
+Almost everything in Niri is done using keyboard shortcuts or trackpad gestures, most use the <kbd>Super</kbd> key (aka <kbd>Windows</kbd> or <kbd>⌘</kbd> key).
 
-{/* TODO: add gif of opening a new image then moving it across a workspace and between workspaces */}
+TODO: add gif of opening a new image then moving it across a workspace and between workspaces
 
 ### Noctalia Shell
 
-[Noctalia] is a desktop shell that sits on top of Niri. It provides the bar, launcher, theming, control center, settings, a login page, and much more.
+[Noctalia] is a desktop shell that sits on top of Niri. It provides the bottom bar/panel, launcher, theming, control center, settings, a login page, and much more.
 
 ## Keybinds
 
-A list of default shortcuts, <kbd>Super</kbd> is the Windows/⌘ key.
+A list of default shortcuts, <kbd>Super</kbd> is the <kbd>Windows</kbd> / <kbd>⌘</kbd> key.
 
 ### Applications
 
@@ -51,7 +51,7 @@ A list of default shortcuts, <kbd>Super</kbd> is the Windows/⌘ key.
 | <kbd>Super</kbd> + <kbd>↓</kbd> | Focus the window below |
 | <kbd>Super</kbd> + <kbd>Home</kbd> | Focus the first column |
 | <kbd>Super</kbd> + <kbd>End</kbd> | Focus the last column |
-| <kbd>Super</kbd> + <kbd>O</kbd> | Toggle the overview |
+| <kbd>Alt</kbd> + <kbd>Space</kbd> | Toggle the overview |
 
 <Alert type="info">
     <kbd>H</kbd>, <kbd>J</kbd>, <kbd>K</kbd>, and <kbd>L</kbd> work in place of the arrow keys in every shortcut on this page that uses them.
@@ -133,8 +133,8 @@ A list of default shortcuts, <kbd>Super</kbd> is the Windows/⌘ key.
 | --- | --- |
 | <kbd>Super</kbd> + <kbd>Ctrl</kbd> + <kbd>=</kbd> | Volume up |
 | <kbd>Super</kbd> + <kbd>Ctrl</kbd> + <kbd>-</kbd> | Volume down |
-| <kbd>Super</kbd> + <kbd>Ctrl</kbd> + <kbd>M</kbd> | Mute audio |
-| <kbd>Super</kbd> + <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>-</kbd> | Mute the microphone |
+| <kbd>Super</kbd> + <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>-</kbd> | Mute audio |
+| <kbd>Super</kbd> + <kbd>Ctrl</kbd> + <kbd>M</kbd> | Mute the microphone |
 | <kbd>Super</kbd> + <kbd>Alt</kbd> + <kbd>=</kbd> | Brightness up |
 | <kbd>Super</kbd> + <kbd>Alt</kbd> + <kbd>-</kbd> | Brightness down |
 
@@ -175,7 +175,7 @@ A list of default shortcuts, <kbd>Super</kbd> is the Windows/⌘ key.
 ## Configuration
 ### Niri
 
-Your personal changes to the Niri config go in `~/.config/niri/config.kdl`. This file starts with two `include` lines, one loads Ultramarine's defaults from `/etc/niri/config.kdl`, and the other loads the colors Noctalia generates for your theme. Anything you add below them is applied on top, so you only need to write the settings you want to change.
+Your personal changes to the Niri config go in `~/.config/niri/config.kdl` (`~` represents your home folder). This file starts with two `include` lines, one loads Ultramarine's defaults from `/etc/niri/config.kdl`, and the other loads the colors Noctalia generates for your theme. Anything you add below them is applied on top, so you only need to write the settings you want to change.
 
 For example, to make <kbd>Super</kbd> + <kbd>T</kbd> open Kitty instead of Alacritty, add this to the end of the file:
 
@@ -197,7 +197,7 @@ Most of Noctalia can be configured through its settings app. Changes are saved t
 
 #### Theming Apps
 
-Noctalia uses templates to recolor many apps to match your theme. You can toggle templates on and off, or browse many community templates for more apps, in **Settings → Templates**. See [Noctalia's app theming docs][noctalia-templates] for more.
+Noctalia uses templates to recolor many apps to match your theme. You can toggle templates on or off, and browse many community templates for other apps, in **Settings → Templates**. See [Noctalia's app theming docs][noctalia-templates] for more.
 
 If an app hasn't picked up your colors, for example Thunderbird after you first set it up, apply the templates again:
 
