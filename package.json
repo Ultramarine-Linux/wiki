@@ -33,6 +33,6 @@
     "html-escaper": "^3.0.3",
     "prettier": "^3.10.1",
     "prettier-plugin-astro": "^1.1.2",
-    "wrangler": "^4.164.0"
+    "wrangler": "^4.168.0"
   }
 }
